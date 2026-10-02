@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alexa 中文练习 – 3 Oct 2026 (Day 2)</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f4f7fb;color:#222;font-family:-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",Arial,sans-serif;font-size:20px;line-height:1.6}
+.wrap{max-width:760px;margin:0 auto;padding:16px}
+h1{font-size:1.4em;margin:.3em 0 0}
+.sub{color:#666;font-size:.8em;margin-bottom:1em}
+#timer{position:sticky;top:0;background:#fff;border-radius:12px;padding:8px 14px;box-shadow:0 2px 6px rgba(0,0,0,.08);font-size:.85em;z-index:5;display:flex;justify-content:space-between}
+section{background:#fff;border-radius:16px;padding:14px 16px;margin:16px 0;box-shadow:0 2px 6px rgba(0,0,0,.06)}
+h2{font-size:1.1em;margin:.2em 0 .5em}
+h2 small{font-weight:normal;color:#777;font-size:.7em}
+.item{padding:10px 8px;margin:8px 0;border-radius:12px;border:2px solid transparent}
+.q{margin-bottom:6px}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opt{font-size:1em;padding:10px 16px;border-radius:12px;border:2px solid #c9d4e3;background:#f8fbff;cursor:pointer;min-width:64px;font-family:inherit}
+.opt.sel{background:#3b82f6;color:#fff;border-color:#3b82f6}
+input.txt{font-size:1.1em;padding:8px 12px;border:2px solid #c9d4e3;border-radius:12px;width:10em;max-width:100%;font-family:inherit}
+.passage{background:#fffbea;border-left:5px solid #f5c542;padding:10px 14px;border-radius:8px;font-size:1.05em}
+.item.ok{border-color:#22c55e;background:#effdf3}
+.item.bad{border-color:#ef4444;background:#fef1f1}
+.fb{margin-top:6px;font-size:.85em;display:none}
+.item.ok .fb,.item.bad .fb{display:block}
+.item.ok .fb{color:#15803d}.item.bad .fb{color:#b91c1c}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
+.big{font-size:1.1em;padding:14px 24px;border:none;border-radius:14px;background:#16a34a;color:#fff;cursor:pointer;font-family:inherit}
+.big.sec{background:#64748b}
+#result{display:none;font-size:1.2em;text-align:center;background:#fff;border-radius:16px;padding:16px;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.locked .opt,.locked input.txt{pointer-events:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Alexa 中文练习 🌟 Day 2</h1>
+<div class="sub">3 Oct 2026 · HSK标准教程 5(上) · Lesson 5 济南的泉水 (+ L3/L4 review) · about 10 minutes</div>
+<div id="timer"><span>⏱ <span id="clock">0:00</span></span><span id="prog"></span></div>
+<div id="quiz"></div>
+<div class="btns"><button class="big" id="check">✅ Check answers</button><button class="big sec" id="reset">↺ Try again</button></div>
+<div id="result"></div>
+</div>
+<script>
+var SECTIONS=[
+ {title:"一、默写 Dictation",hint:"type the characters",items:[
+  {t:"text",q:"jìzǎi — record (in writing)",a:["记载"],ex:"记载 jìzǎi — 文字记载"},
+  {t:"text",q:"miáoxiě — describe",a:["描写"],ex:"描写 miáoxiě — 描写风景"},
+  {t:"text",q:"yōuměi — graceful / beautiful",a:["优美"],ex:"优美 yōuměi — 优美的泉水"},
+  {t:"text",q:"dútè — unique",a:["独特"],ex:"独特 dútè — 独特的文化"},
+  {t:"text",q:"qínfèn — diligent (L4 review)",a:["勤奋"],ex:"勤奋 qínfèn"},
+  {t:"text",q:"shūshì — comfortable (L3 review)",a:["舒适"],ex:"舒适 shūshì"}]},
+ {title:"二、拼音 Pinyin & tones",hint:"tap the correct pinyin",items:[
+  {t:"mc",q:"救 (to rescue)",o:["jiū","jiǔ","jiù"],a:2,ex:"救 jiù (4th tone) — 救人 to rescue someone"},
+  {t:"mc",q:"藏 (to hide)",o:["cāng","cáng","càng"],a:1,ex:"藏 cáng (2nd tone) — 躲藏 to hide; (西藏 is Xīzàng)"},
+  {t:"mc",q:"冲 (to rush)",o:["chōng","chóng","chòng"],a:0,ex:"冲 chōng (1st tone) — 冲出去 to rush out"},
+  {t:"mc",q:"碰 (to bump into)",o:["pēng","péng","pèng"],a:2,ex:"碰 pèng (4th tone) — 碰到 to bump into / meet"}]},
+ {title:"三、认字 Character recognition",hint:"tap the correct character",items:[
+  {t:"mc",q:"shī — poem",o:["时","诗","事"],a:1,ex:"诗 — 讠 speech radical: poems are made of words. 时 shí = time; 事 shì = matter"},
+  {t:"mc",q:"zhì — to cure / treat",o:["治","冶","始"],a:0,ex:"治 — 氵 water radical (governing / treating). 冶 yě = smelt metal; 始 shǐ = begin"},
+  {t:"mc",q:"miáo — to describe / depict",o:["苗","描","瞄"],a:1,ex:"描 — 扌 hand radical: you depict with your hand. 苗 miáo = seedling; 瞄 miáo = aim"}]},
+ {title:"四、完成句子 Sentence building",hint:"1–2: type 反而 or 描写; 3: tap the right word",items:[
+  {t:"text",q:"他本来很累，＿＿＿＿不肯休息，继续学习。",a:["反而"],ex:"反而 = on the contrary: 他本来很累，反而不肯休息。"},
+  {t:"text",q:"这篇课文＿＿＿＿了济南泉水的形状和特点。",a:["描写","记载"],ex:"描写 = describe: 这篇课文描写了济南泉水的形状和特点。(记载 also OK)"},
+  {t:"mc",q:"这座城市的泉水很＿＿＿＿，别的地方很少见。",o:["独特","惭愧","委屈"],a:0,ex:"独特 = unique: 这座城市的泉水很独特。"}]},
+ {title:"五、阅读 Reading",hint:"read, then tap the answer",passage:"济南的泉水不但优美，而且很独特。古代的文字记载和诗人们的描写，都反映了老百姓对泉水的热爱。如今，这座城市仍然充满了生机，每年都有很多人来这里参观。",items:[
+  {t:"mc",q:"古代的文字和诗反映了什么？",o:["老百姓对泉水的热爱","济南没有泉水","游客不喜欢济南"],a:0,ex:"都反映了老百姓对泉水的热爱。"},
+  {t:"mc",q:"如今济南怎么样？",o:["已经没有泉水了","仍然充满了生机","只有诗人们住在那里"],a:1,ex:"如今，这座城市仍然充满了生机。"}]}
+];
+var L="ABCDEFG",ALL=[],start=Date.now(),done=false,timerId;
+function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e}
+function build(){
+ var quiz=document.getElementById("quiz");quiz.innerHTML="";ALL=[];var n=0;
+ SECTIONS.forEach(function(s){
+  var sec=el("section");var h=el("h2",null,s.title+" ");h.appendChild(el("small",null,"("+s.hint+")"));sec.appendChild(h);
+  if(s.passage)sec.appendChild(el("div","passage",s.passage));
+  s.items.forEach(function(it,i){
+   n++;var box=el("div","item");box.appendChild(el("div","q",(i+1)+". "+it.q));
+   var rec={it:it,box:box,sel:null,input:null};
+   if(it.t==="mc"){var o=el("div","opts");it.o.forEach(function(txt,j){var b=el("button","opt",L[j]+". "+txt);b.type="button";
+     b.onclick=function(){if(done)return;rec.sel=j;[].forEach.call(o.children,function(c){c.classList.remove("sel")});b.classList.add("sel");prog()};o.appendChild(b)});box.appendChild(o)}
+   else{var inp=el("input","txt");inp.type="text";inp.setAttribute("autocomplete","off");inp.setAttribute("autocapitalize","off");inp.setAttribute("spellcheck","false");inp.placeholder="写汉字…";inp.oninput=prog;rec.input=inp;box.appendChild(inp)}
+   var fb=el("div","fb");box.appendChild(fb);rec.fb=fb;sec.appendChild(box);ALL.push(rec)});
+  quiz.appendChild(sec)});
+ prog();
+}
+function norm(s){return String(s||"").replace(/[\s\u3000]+/g,"")}
+function isCorrect(rec){var it=rec.it;if(it.t==="mc")return rec.sel===it.a;var v=norm(rec.input.value);return it.a.some(function(a){return norm(a)===v})}
+function answered(rec){return rec.it.t==="mc"?rec.sel!==null:norm(rec.input.value)!==""}
+function prog(){var a=ALL.filter(answered).length;document.getElementById("prog").textContent="已答 "+a+" / "+ALL.length}
+function fmt(ms){var s=Math.round(ms/1000);return Math.floor(s/60)+":"+("0"+s%60).slice(-2)}
+function tick(){document.getElementById("clock").textContent=fmt(Date.now()-start)}
+function check(){
+ if(done)return;done=true;clearInterval(timerId);var score=0;
+ ALL.forEach(function(rec){var ok=isCorrect(rec),it=rec.it;rec.box.classList.add(ok?"ok":"bad");
+  var ans=it.t==="mc"?L[it.a]+". "+it.o[it.a]:it.a[0];
+  rec.fb.textContent=ok?"✔ 对了！":"✘ Correct answer: "+ans+" — "+it.ex;if(ok)score++});
+ document.getElementById("quiz").classList.add("locked");
+ var t=fmt(Date.now()-start),pct=Math.round(score/ALL.length*100);
+ var msg=pct===100?"太棒了！🎉":pct>=80?"很好！👍":pct>=60?"不错，继续加油！💪":"加油！Let's review the red ones. 📚";
+ var r=document.getElementById("result");r.style.display="block";r.innerHTML="";
+ r.appendChild(el("div",null,"得分 Score: "+score+" / "+ALL.length+" ("+pct+"%)"));
+ r.appendChild(el("div",null,"用时 Time: "+t));r.appendChild(el("div",null,msg));
+ r.scrollIntoView&&r.scrollIntoView({behavior:"smooth"});
+ return {score:score,total:ALL.length,time:t};
+}
+function reset(){done=false;document.getElementById("quiz").classList.remove("locked");document.getElementById("result").style.display="none";start=Date.now();clearInterval(timerId);timerId=setInterval(tick,1000);tick();build();window.scrollTo&&window.scrollTo(0,0)}
+document.getElementById("check").onclick=check;
+document.getElementById("reset").onclick=reset;
+build();timerId=setInterval(tick,1000);tick();
+</script>
+</body>
+</html>
