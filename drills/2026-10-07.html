@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alexa 中文练习 – 7 Oct 2026 (Day 6)</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f4f7fb;color:#222;font-family:-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",Arial,sans-serif;font-size:20px;line-height:1.6}
+.wrap{max-width:760px;margin:0 auto;padding:16px}
+h1{font-size:1.4em;margin:.3em 0 0}
+.sub{color:#666;font-size:.8em;margin-bottom:1em}
+#timer{position:sticky;top:0;background:#fff;border-radius:12px;padding:8px 14px;box-shadow:0 2px 6px rgba(0,0,0,.08);font-size:.85em;z-index:5;display:flex;justify-content:space-between}
+section{background:#fff;border-radius:16px;padding:14px 16px;margin:16px 0;box-shadow:0 2px 6px rgba(0,0,0,.06)}
+h2{font-size:1.1em;margin:.2em 0 .5em}
+h2 small{font-weight:normal;color:#777;font-size:.7em}
+.item{padding:10px 8px;margin:8px 0;border-radius:12px;border:2px solid transparent}
+.q{margin-bottom:6px}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opt{font-size:1em;padding:10px 16px;border-radius:12px;border:2px solid #c9d4e3;background:#f8fbff;cursor:pointer;min-width:64px;font-family:inherit}
+.opt.sel{background:#3b82f6;color:#fff;border-color:#3b82f6}
+input.txt{font-size:1.1em;padding:8px 12px;border:2px solid #c9d4e3;border-radius:12px;width:10em;max-width:100%;font-family:inherit}
+.passage{background:#fffbea;border-left:5px solid #f5c542;padding:10px 14px;border-radius:8px;font-size:1.05em}
+.item.ok{border-color:#22c55e;background:#effdf3}
+.item.bad{border-color:#ef4444;background:#fef1f1}
+.fb{margin-top:6px;font-size:.85em;display:none}
+.item.ok .fb,.item.bad .fb{display:block}
+.item.ok .fb{color:#15803d}.item.bad .fb{color:#b91c1c}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
+.big{font-size:1.1em;padding:14px 24px;border:none;border-radius:14px;background:#16a34a;color:#fff;cursor:pointer;font-family:inherit}
+.big.sec{background:#64748b}
+#result{display:none;font-size:1.2em;text-align:center;background:#fff;border-radius:16px;padding:16px;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.locked .opt,.locked input.txt{pointer-events:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Alexa 中文练习 🌟 Day 6</h1>
+<div class="sub">7 Oct 2026 · HSK标准教程 5(上) · Lesson 3 人生有选择，一切可改变 · about 12 minutes</div>
+<div id="timer"><span>⏱ <span id="clock">0:00</span></span><span id="prog"></span></div>
+<div id="quiz"></div>
+<div class="btns"><button class="big" id="check">✅ Check answers</button><button class="big sec" id="reset">↺ Try again</button></div>
+<div id="result"></div>
+</div>
+<script>
+var SECTIONS=[
+ {title:"一、默写 Dictation",hint:"type the characters",items:[
+  {t:"text",q:"fānchuán — sailing boat",a:["帆船"],ex:"帆船 fānchuán — 一艘帆船"},
+  {t:"text",q:"hángxíng — to sail / navigate",a:["航行"],ex:"航行 hángxíng — 在海上航行"},
+  {t:"text",q:"cízhí — to quit a job",a:["辞职"],ex:"辞职 cízhí — 他辞职了"},
+  {t:"text",q:"jiàshǐ — to drive / pilot",a:["驾驶"],ex:"驾驶 jiàshǐ — 驾驶帆船"},
+  {t:"text",q:"lúnliú — to take turns",a:["轮流"],ex:"轮流 lúnliú — 大家轮流做饭"},
+  {t:"text",q:"hǎixiān — seafood",a:["海鲜"],ex:"海鲜 hǎixiān — 吃一顿海鲜"},
+  {t:"text",q:"bàngwǎn — dusk / evening",a:["傍晚"],ex:"傍晚 bàngwǎn — 傍晚的时候"}]},
+ {title:"二、拼音 Pinyin & tones",hint:"tap the correct pinyin",items:[
+  {t:"mc",q:"艘 (measure word for boats)",o:["sǒu","sōu","shōu"],a:1,ex:"艘 sōu — 1st tone, s- not sh-: 一艘船. Same sound as 搜 sōu (search)"},
+  {t:"mc",q:"撞 (to bump against)",o:["zhuāng","chuàng","zhuàng"],a:2,ex:"撞 zhuàng — 4th tone. 装 zhuāng (1st) = to pack; 创 chuàng = create"},
+  {t:"mc",q:"钓 (to fish with a hook)",o:["diào","diāo","dào"],a:0,ex:"钓 diào — 4th tone: 钓鱼. 雕 diāo (1st) = carve"},
+  {t:"mc",q:"包括 (to include)",o:["bāoguā","bāokuò","bàokuò"],a:1,ex:"包括 bāokuò — 1st + 4th tone. 括 is kuò, not guā (刮 guā = scrape)"},
+  {t:"mc",q:"漏 (to leak)",o:["lóu","lǒu","lòu"],a:2,ex:"漏 lòu — 4th tone: 船漏水了. 楼 lóu (2nd) = building"}]},
+ {title:"三、认字 Character recognition",hint:"tap the correct character",items:[
+  {t:"mc",q:"léi — thunder (打＿)",o:["雪","雷","雾"],a:1,ex:"雷 — 雨 on top + 田 below. 雪 xuě = snow (雨 + 彐); 雾 wù = fog (雨 + 务)"},
+  {t:"mc",q:"diào — to fish (＿鱼)",o:["约","钩","钓"],a:2,ex:"钓 — 钅 (metal, the hook) + 勺. 钩 gōu = a hook (钅 + 勾); 约 yuē = arrange (纟 silk radical)"},
+  {t:"mc",q:"fēng — crazy (他们＿了！)",o:["疯","风","枫"],a:0,ex:"疯 — 疒 (illness radical) + 风. 风 fēng = wind; 枫 fēng = maple (木 tree radical)"},
+  {t:"mc",q:"sōu — measure word for boats (一＿帆船)",o:["搜","艘","嫂"],a:1,ex:"艘 — 舟 (boat radical) on the left. 搜 sōu = search (扌 hand); 嫂 sǎo = sister-in-law (女)"}]},
+ {title:"四、完成句子 Sentence building",hint:"1–3, 5, 6: tap the right word; 4: type one character",items:[
+  {t:"mc",q:"爸爸和妈妈＿＿＿驾驶帆船，每人开四个小时。",o:["各自","轮流","包括"],a:1,ex:"轮流 = take turns: 轮流驾驶 / 轮流做饭。各自 = each on their own, which doesn't fit sharing one boat."},
+  {t:"mc",q:"船上的生活很简单：白天干活儿，＿＿＿的时候钓鱼。",o:["时刻","陆地","傍晚"],a:2,ex:"傍晚的时候 = at dusk / in the early evening."},
+  {t:"mc",q:"我们全家，＿＿＿爸爸、妈妈和我，都喜欢去海边旅行。",o:["包括","轮流","盼望"],a:0,ex:"包括 = including: 包括爸爸、妈妈和我。"},
+  {t:"text",q:"雾太大了，一艘小船不小心＿上了岩石。(zhuàng)",a:["撞"],ex:"撞上了岩石 = crashed into the rocks. 撞 zhuàng (扌 hand radical)"},
+  {t:"mc",q:"他们用全部积蓄买了一艘二手帆船，＿＿＿实现了环游世界的梦想。",o:["反而","至今","从而"],a:2,ex:"从而 = thereby (method → result): 买了帆船，从而实现了梦想。(L5 grammar)"},
+  {t:"mc",q:"在海上航行，我们要＿＿＿注意天气的变化。",o:["各自","时刻","二手"],a:1,ex:"时刻 = at every moment / constantly: 时刻注意 = always pay attention."}]},
+ {title:"五、阅读 Reading",hint:"read, then tap the answer",passage:"有一对夫妻，丈夫是工程师，妻子是医生。他们一直盼望着有一天能驾驶帆船环游世界。为了实现这个梦想，他们存了十年的积蓄，买了一艘二手帆船。很多朋友都说他们疯了：放着舒适的生活不过，偏要去海上吃苦。可是他们还是辞了职，带着两个孩子出发了。在海上，一家人分工合作：大人们轮流驾驶，爸爸还负责修船，妈妈负责做饭，孩子们负责钓鱼。傍晚的时候，他们常常一边吃海鲜，一边看美丽的日落。当然，航行并不总是顺利的。有一次，他们遇到了打雷下雨，船还漏了水，大家都非常害怕。但是他们没有放弃，反而变得更加勇敢了。一年以后，当他们重新回到陆地上时，孩子们说：“这是我们一生中最难忘的时刻。”",items:[
+  {t:"mc",q:"这对夫妻买帆船是为了什么？",o:["为了在海上做生意","为了实现驾驶帆船环游世界的梦想","为了让孩子学钓鱼"],a:1,ex:"他们一直盼望着有一天能驾驶帆船环游世界。为了实现这个梦想……买了一艘二手帆船。"},
+  {t:"mc",q:"朋友们为什么说他们“疯了”？",o:["因为他们放弃舒适的生活去海上吃苦","因为他们不会驾驶帆船","因为他们没有积蓄"],a:0,ex:"放着舒适的生活不过，偏要去海上吃苦。"},
+  {t:"mc",q:"在船上，孩子们负责什么？",o:["做饭","修船","钓鱼"],a:2,ex:"爸爸还负责修船，妈妈负责做饭，孩子们负责钓鱼。"},
+  {t:"mc",q:"遇到打雷下雨以后，这一家人怎么样了？",o:["马上回到了陆地上","没有放弃，反而变得更勇敢了","决定卖掉帆船"],a:1,ex:"但是他们没有放弃，反而变得更加勇敢了。"},
+  {t:"mc",q:"这段话最想告诉我们什么？",o:["人生有选择，勇敢追求梦想可以改变生活","在海上航行太危险，不应该去","二手帆船的质量不好"],a:0,ex:"This is the theme of Lesson 3: 人生有选择，一切可改变。"}]}
+];
+var L="ABCDEFG",ALL=[],start=Date.now(),done=false,timerId;
+function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e}
+function build(){
+ var quiz=document.getElementById("quiz");quiz.innerHTML="";ALL=[];var n=0;
+ SECTIONS.forEach(function(s){
+  var sec=el("section");var h=el("h2",null,s.title+" ");h.appendChild(el("small",null,"("+s.hint+")"));sec.appendChild(h);
+  if(s.passage)sec.appendChild(el("div","passage",s.passage));
+  s.items.forEach(function(it,i){
+   n++;var box=el("div","item");box.appendChild(el("div","q",(i+1)+". "+it.q));
+   var rec={it:it,box:box,sel:null,input:null};
+   if(it.t==="mc"){var o=el("div","opts");it.o.forEach(function(txt,j){var b=el("button","opt",L[j]+". "+txt);b.type="button";
+     b.onclick=function(){if(done)return;rec.sel=j;[].forEach.call(o.children,function(c){c.classList.remove("sel")});b.classList.add("sel");prog()};o.appendChild(b)});box.appendChild(o)}
+   else{var inp=el("input","txt");inp.type="text";inp.setAttribute("autocomplete","off");inp.setAttribute("autocapitalize","off");inp.setAttribute("spellcheck","false");inp.placeholder="写汉字…";inp.oninput=prog;rec.input=inp;box.appendChild(inp)}
+   var fb=el("div","fb");box.appendChild(fb);rec.fb=fb;sec.appendChild(box);ALL.push(rec)});
+  quiz.appendChild(sec)});
+ prog();
+}
+function norm(s){return String(s||"").replace(/[\s\u3000]+/g,"")}
+function isCorrect(rec){var it=rec.it;if(it.t==="mc")return rec.sel===it.a;var v=norm(rec.input.value);return it.a.some(function(a){return norm(a)===v})}
+function answered(rec){return rec.it.t==="mc"?rec.sel!==null:norm(rec.input.value)!==""}
+function prog(){var a=ALL.filter(answered).length;document.getElementById("prog").textContent="已答 "+a+" / "+ALL.length}
+function fmt(ms){var s=Math.round(ms/1000);return Math.floor(s/60)+":"+("0"+s%60).slice(-2)}
+function tick(){document.getElementById("clock").textContent=fmt(Date.now()-start)}
+function check(){
+ if(done)return;done=true;clearInterval(timerId);var score=0;
+ ALL.forEach(function(rec){var ok=isCorrect(rec),it=rec.it;rec.box.classList.add(ok?"ok":"bad");
+  var ans=it.t==="mc"?L[it.a]+". "+it.o[it.a]:it.a[0];
+  rec.fb.textContent=ok?"✔ 对了！":"✘ Correct answer: "+ans+" — "+it.ex;if(ok)score++});
+ document.getElementById("quiz").classList.add("locked");
+ var t=fmt(Date.now()-start),pct=Math.round(score/ALL.length*100);
+ var msg=pct===100?"太棒了！🎉":pct>=80?"很好！👍":pct>=60?"不错，继续加油！💪":"加油！Let's review the red ones. 📚";
+ var r=document.getElementById("result");r.style.display="block";r.innerHTML="";
+ r.appendChild(el("div",null,"得分 Score: "+score+" / "+ALL.length+" ("+pct+"%)"));
+ r.appendChild(el("div",null,"用时 Time: "+t));r.appendChild(el("div",null,msg));
+ r.scrollIntoView&&r.scrollIntoView({behavior:"smooth"});
+ return {score:score,total:ALL.length,time:t};
+}
+function reset(){done=false;document.getElementById("quiz").classList.remove("locked");document.getElementById("result").style.display="none";start=Date.now();clearInterval(timerId);timerId=setInterval(tick,1000);tick();build();window.scrollTo&&window.scrollTo(0,0)}
+document.getElementById("check").onclick=check;
+document.getElementById("reset").onclick=reset;
+build();timerId=setInterval(tick,1000);tick();
+</script>
+</body>
+</html>
