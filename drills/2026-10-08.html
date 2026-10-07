@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alexa 中文练习 – 8 Oct 2026 (Day 7)</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f4f7fb;color:#222;font-family:-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",Arial,sans-serif;font-size:20px;line-height:1.6}
+.wrap{max-width:760px;margin:0 auto;padding:16px}
+h1{font-size:1.4em;margin:.3em 0 0}
+.sub{color:#666;font-size:.8em;margin-bottom:1em}
+#timer{position:sticky;top:0;background:#fff;border-radius:12px;padding:8px 14px;box-shadow:0 2px 6px rgba(0,0,0,.08);font-size:.85em;z-index:5;display:flex;justify-content:space-between}
+section{background:#fff;border-radius:16px;padding:14px 16px;margin:16px 0;box-shadow:0 2px 6px rgba(0,0,0,.06)}
+h2{font-size:1.1em;margin:.2em 0 .5em}
+h2 small{font-weight:normal;color:#777;font-size:.7em}
+.item{padding:10px 8px;margin:8px 0;border-radius:12px;border:2px solid transparent}
+.q{margin-bottom:6px}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opt{font-size:1em;padding:10px 16px;border-radius:12px;border:2px solid #c9d4e3;background:#f8fbff;cursor:pointer;min-width:64px;font-family:inherit}
+.opt.sel{background:#3b82f6;color:#fff;border-color:#3b82f6}
+input.txt{font-size:1.1em;padding:8px 12px;border:2px solid #c9d4e3;border-radius:12px;width:10em;max-width:100%;font-family:inherit}
+.passage{background:#fffbea;border-left:5px solid #f5c542;padding:10px 14px;border-radius:8px;font-size:1.05em}
+.item.ok{border-color:#22c55e;background:#effdf3}
+.item.bad{border-color:#ef4444;background:#fef1f1}
+.fb{margin-top:6px;font-size:.85em;display:none}
+.item.ok .fb,.item.bad .fb{display:block}
+.item.ok .fb{color:#15803d}.item.bad .fb{color:#b91c1c}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
+.big{font-size:1.1em;padding:14px 24px;border:none;border-radius:14px;background:#16a34a;color:#fff;cursor:pointer;font-family:inherit}
+.big.sec{background:#64748b}
+#result{display:none;font-size:1.2em;text-align:center;background:#fff;border-radius:16px;padding:16px;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.locked .opt,.locked input.txt{pointer-events:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Alexa 中文练习 🌟 Day 7</h1>
+<div class="sub">8 Oct 2026 · HSK标准教程 5(上) · Lesson 3 last words + Lessons 3–5 review · about 12 minutes</div>
+<div id="timer"><span>⏱ <span id="clock">0:00</span></span><span id="prog"></span></div>
+<div id="quiz"></div>
+<div class="btns"><button class="big" id="check">✅ Check answers</button><button class="big sec" id="reset">↺ Try again</button></div>
+<div id="result"></div>
+</div>
+<script>
+var SECTIONS=[
+ {title:"一、默写 Dictation",hint:"type the characters",items:[
+  {t:"text",q:"èrshǒu — second-hand",a:["二手"],ex:"二手 èrshǒu — 一艘二手帆船 / 二手车"},
+  {t:"text",q:"lùdì — land (not sea)",a:["陆地"],ex:"陆地 lùdì — 回到陆地上. 陆 has the 阝 radical"},
+  {t:"text",q:"gèzì — each / respective",a:["各自"],ex:"各自 gèzì — 下课后大家各自回家"},
+  {t:"text",q:"gàn huór — to work / do (physical) work",a:["干活儿","干活"],ex:"干活儿 gàn huór — 白天在船上干活儿"},
+  {t:"text",q:"xiàoshùn — filial, good to one's parents (L4 review)",a:["孝顺"],ex:"孝顺 xiàoshùn — 子路很孝顺父母"},
+  {t:"text",q:"zhēnzhū — pearl (L5 review)",a:["珍珠"],ex:"珍珠 zhēnzhū — 珍珠泉"},
+  {t:"text",q:"shànliáng — kind-hearted (L5 review)",a:["善良"],ex:"善良 shànliáng — 一个善良的年轻人"}]},
+ {title:"二、拼音 Pinyin & tones",hint:"tap the correct pinyin",items:[
+  {t:"mc",q:"顿 (measure word for meals: 一顿饭)",o:["dùn","dūn","tùn"],a:0,ex:"顿 dùn — 4th tone: 吃一顿饭. 吨 dūn (1st) = ton"},
+  {t:"mc",q:"着火 (to catch fire)",o:["zhe huǒ","zhuó huǒ","zháo huǒ"],a:2,ex:"着 has several readings: zháo in 着火 / 睡着; zhe in 看着; zhuó in 穿着 (chuānzhuó, clothing)"},
+  {t:"mc",q:"勿 (don't — 请勿吸烟)",o:["wú","wù","mù"],a:1,ex:"勿 wù — 4th tone. 无 wú (2nd) = without / none"},
+  {t:"mc",q:"不行 in 累得不行 (extremely tired)",o:["búxíng","bùháng","bùxíng"],a:2,ex:"不 only changes to bú before a 4th tone (不对 búduì). 行 xíng is 2nd tone, so 不行 stays bùxíng. (行 háng = row / bank)"},
+  {t:"mc",q:"结实 (sturdy, strong — L4 review)",o:["jiēshi","jiéshí","jiéshi"],a:0,ex:"结实 jiēshi — 结 is 1st tone here (not jié as in 结果), and 实 is neutral tone"}]},
+ {title:"三、认字 Character recognition",hint:"tap the correct character",items:[
+  {t:"mc",q:"lù — land (＿地)",o:["路","陆","鹿"],a:1,ex:"陆 — 阝 (left-side 'hill' radical) relates to land. 路 lù = road (足 foot radical); 鹿 lù = deer"},
+  {t:"mc",q:"dùn — 吃一＿饭",o:["顿","顺","吨"],a:0,ex:"顿 = 屯 + 页. 顺 shùn = smooth (川 + 页, as in 孝顺); 吨 dūn = ton (口 radical)"},
+  {t:"mc",q:"wù — 请＿吸烟 (no smoking)",o:["物","勿","匆"],a:1,ex:"勿 wù = don't. 物 wù = thing (牛 + 勿, as in 食物); 匆 cōng = hurried (勿 with an extra dot inside)"},
+  {t:"mc",q:"gè — ＿自 (each)",o:["名","各","客"],a:1,ex:"各 gè = each. 名 míng = name; 客 kè = guest (宀 roof on top of 各)"}]},
+ {title:"四、完成句子 Sentence building",hint:"1, 2, 5, 6: tap the right word; 3, 4: type characters",items:[
+  {t:"mc",q:"这辆自行车是我在网上买的＿＿＿车，只花了两百块。",o:["二手","陆地","天然"],a:0,ex:"二手车 = a second-hand bike/car."},
+  {t:"mc",q:"下课以后，同学们＿＿＿回家了。",o:["轮流","各自","包括"],a:1,ex:"各自回家 = each went home on their own. 轮流 = take turns, which doesn't fit here."},
+  {t:"text",q:"厨房＿＿了！快打119！(zháo huǒ)",a:["着火"],ex:"着火了 = it's on fire! 着 zháo + 火 huǒ"},
+  {t:"text",q:"图书馆里写着：“请＿大声说话。”(wù)",a:["勿"],ex:"请勿… = please do not… (formal, on signs): 请勿吸烟 / 请勿大声说话"},
+  {t:"mc",q:"下了一场雨，天气不但没有变凉快，＿＿＿更热了。",o:["从而","反而","而且"],a:1,ex:"不但没有…，反而… = not only didn't…, but on the contrary… (L4 grammar). 而且 only follows a positive 不但…"},
+  {t:"mc",q:"这个美丽的传说从古代一直流传＿＿＿。",o:["至今","如今","时刻"],a:0,ex:"流传至今 = handed down to this day (L4 grammar 至今). 如今 = nowadays, and it starts a clause instead of following a verb."}]},
+ {title:"五、阅读 Reading",hint:"read, then tap the answer",passage:"小林大学毕业以后，没有留在城市工作，反而回到了老家的小镇。他用自己的积蓄买了一辆二手卡车，帮镇上的农民把水果运到城里去卖。刚开始的时候，他每天天不亮就起床干活儿，有时候忙得一整天只吃一顿饭，累得不行。有一天傍晚，他在路上看到一户人家的厨房着火了。他马上停下车，和邻居们一起把火扑灭了，还把一位晕倒的老人送到了医院。老人的家人非常感激，到处打听他的名字。从那以后，镇上的人都很信任他，愿意把水果交给他卖，小林的生意也越来越好。如今，小林已经有了自己的公司。他常说：“城市和老家各自都有各自的好。选择回来，我从来没有后悔过。”",items:[
+  {t:"mc",q:"小林大学毕业以后做了什么？",o:["留在城市找工作","回老家帮农民运水果去城里卖","去国外读书"],a:1,ex:"没有留在城市工作，反而回到了老家的小镇……帮镇上的农民把水果运到城里去卖。"},
+  {t:"mc",q:"“累得不行”是什么意思？",o:["一点儿也不累","累了，所以不干活儿了","非常非常累"],a:2,ex:"…得不行 = extremely … (L4 word 不行). 累得不行 = exhausted."},
+  {t:"mc",q:"那天傍晚发生了什么事？",o:["小林的卡车坏了","一户人家的厨房着火了","小林在路上晕倒了"],a:1,ex:"他在路上看到一户人家的厨房着火了。It was an old man who fainted, not 小林."},
+  {t:"mc",q:"镇上的人为什么越来越信任小林？",o:["因为他帮大家救火、救人","因为他的卡车很新","因为他卖的水果很便宜"],a:0,ex:"He helped put out the fire and took the old man to hospital — 从那以后，镇上的人都很信任他。His truck was 二手 (second-hand), not new."},
+  {t:"mc",q:"小林对自己的选择是什么态度？",o:["很后悔","还没想好","一点儿也不后悔"],a:2,ex:"选择回来，我从来没有后悔过。"}]}
+];
+var L="ABCDEFG",ALL=[],start=Date.now(),done=false,timerId;
+function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e}
+function build(){
+ var quiz=document.getElementById("quiz");quiz.innerHTML="";ALL=[];var n=0;
+ SECTIONS.forEach(function(s){
+  var sec=el("section");var h=el("h2",null,s.title+" ");h.appendChild(el("small",null,"("+s.hint+")"));sec.appendChild(h);
+  if(s.passage)sec.appendChild(el("div","passage",s.passage));
+  s.items.forEach(function(it,i){
+   n++;var box=el("div","item");box.appendChild(el("div","q",(i+1)+". "+it.q));
+   var rec={it:it,box:box,sel:null,input:null};
+   if(it.t==="mc"){var o=el("div","opts");it.o.forEach(function(txt,j){var b=el("button","opt",L[j]+". "+txt);b.type="button";
+     b.onclick=function(){if(done)return;rec.sel=j;[].forEach.call(o.children,function(c){c.classList.remove("sel")});b.classList.add("sel");prog()};o.appendChild(b)});box.appendChild(o)}
+   else{var inp=el("input","txt");inp.type="text";inp.setAttribute("autocomplete","off");inp.setAttribute("autocapitalize","off");inp.setAttribute("spellcheck","false");inp.placeholder="写汉字…";inp.oninput=prog;rec.input=inp;box.appendChild(inp)}
+   var fb=el("div","fb");box.appendChild(fb);rec.fb=fb;sec.appendChild(box);ALL.push(rec)});
+  quiz.appendChild(sec)});
+ prog();
+}
+function norm(s){return String(s||"").replace(/[\s\u3000]+/g,"")}
+function isCorrect(rec){var it=rec.it;if(it.t==="mc")return rec.sel===it.a;var v=norm(rec.input.value);return it.a.some(function(a){return norm(a)===v})}
+function answered(rec){return rec.it.t==="mc"?rec.sel!==null:norm(rec.input.value)!==""}
+function prog(){var a=ALL.filter(answered).length;document.getElementById("prog").textContent="已答 "+a+" / "+ALL.length}
+function fmt(ms){var s=Math.round(ms/1000);return Math.floor(s/60)+":"+("0"+s%60).slice(-2)}
+function tick(){document.getElementById("clock").textContent=fmt(Date.now()-start)}
+function check(){
+ if(done)return;done=true;clearInterval(timerId);var score=0;
+ ALL.forEach(function(rec){var ok=isCorrect(rec),it=rec.it;rec.box.classList.add(ok?"ok":"bad");
+  var ans=it.t==="mc"?L[it.a]+". "+it.o[it.a]:it.a[0];
+  rec.fb.textContent=ok?"✔ 对了！":"✘ Correct answer: "+ans+" — "+it.ex;if(ok)score++});
+ document.getElementById("quiz").classList.add("locked");
+ var t=fmt(Date.now()-start),pct=Math.round(score/ALL.length*100);
+ var msg=pct===100?"太棒了！🎉":pct>=80?"很好！👍":pct>=60?"不错，继续加油！💪":"加油！Let's review the red ones. 📚";
+ var r=document.getElementById("result");r.style.display="block";r.innerHTML="";
+ r.appendChild(el("div",null,"得分 Score: "+score+" / "+ALL.length+" ("+pct+"%)"));
+ r.appendChild(el("div",null,"用时 Time: "+t));r.appendChild(el("div",null,msg));
+ r.scrollIntoView&&r.scrollIntoView({behavior:"smooth"});
+ return {score:score,total:ALL.length,time:t};
+}
+function reset(){done=false;document.getElementById("quiz").classList.remove("locked");document.getElementById("result").style.display="none";start=Date.now();clearInterval(timerId);timerId=setInterval(tick,1000);tick();build();window.scrollTo&&window.scrollTo(0,0)}
+document.getElementById("check").onclick=check;
+document.getElementById("reset").onclick=reset;
+build();timerId=setInterval(tick,1000);tick();
+</script>
+</body>
+</html>
