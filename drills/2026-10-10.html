@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alexa 中文练习 – 10 Oct 2026 (Day 8)</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f4f7fb;color:#222;font-family:-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",Arial,sans-serif;font-size:20px;line-height:1.6}
+.wrap{max-width:760px;margin:0 auto;padding:16px}
+h1{font-size:1.4em;margin:.3em 0 0}
+.sub{color:#666;font-size:.8em;margin-bottom:1em}
+#timer{position:sticky;top:0;background:#fff;border-radius:12px;padding:8px 14px;box-shadow:0 2px 6px rgba(0,0,0,.08);font-size:.85em;z-index:5;display:flex;justify-content:space-between}
+section{background:#fff;border-radius:16px;padding:14px 16px;margin:16px 0;box-shadow:0 2px 6px rgba(0,0,0,.06)}
+h2{font-size:1.1em;margin:.2em 0 .5em}
+h2 small{font-weight:normal;color:#777;font-size:.7em}
+.item{padding:10px 8px;margin:8px 0;border-radius:12px;border:2px solid transparent}
+.q{margin-bottom:6px}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opt{font-size:1em;padding:10px 16px;border-radius:12px;border:2px solid #c9d4e3;background:#f8fbff;cursor:pointer;min-width:64px;font-family:inherit}
+.opt.sel{background:#3b82f6;color:#fff;border-color:#3b82f6}
+input.txt{font-size:1.1em;padding:8px 12px;border:2px solid #c9d4e3;border-radius:12px;width:10em;max-width:100%;font-family:inherit}
+.passage{background:#fffbea;border-left:5px solid #f5c542;padding:10px 14px;border-radius:8px;font-size:1.05em}
+.item.ok{border-color:#22c55e;background:#effdf3}
+.item.bad{border-color:#ef4444;background:#fef1f1}
+.fb{margin-top:6px;font-size:.85em;display:none}
+.item.ok .fb,.item.bad .fb{display:block}
+.item.ok .fb{color:#15803d}.item.bad .fb{color:#b91c1c}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
+.big{font-size:1.1em;padding:14px 24px;border:none;border-radius:14px;background:#16a34a;color:#fff;cursor:pointer;font-family:inherit}
+.big.sec{background:#64748b}
+#result{display:none;font-size:1.2em;text-align:center;background:#fff;border-radius:16px;padding:16px;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.locked .opt,.locked input.txt{pointer-events:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Alexa 中文练习 🌟 Day 8</h1>
+<div class="sub">10 Oct 2026 · HSK标准教程 5(上) · Lessons 3–5 spaced review · about 12 minutes</div>
+<div id="timer"><span>⏱ <span id="clock">0:00</span></span><span id="prog"></span></div>
+<div id="quiz"></div>
+<div class="btns"><button class="big" id="check">✅ Check answers</button><button class="big sec" id="reset">↺ Try again</button></div>
+<div id="result"></div>
+</div>
+<script>
+var SECTIONS=[
+ {title:"一、默写 Dictation",hint:"type the characters",items:[
+  {t:"text",q:"yōujiǔ — long-standing / age-old",a:["悠久"],ex:"悠久 yōujiǔ — 历史悠久"},
+  {t:"text",q:"chuánshuō — legend",a:["传说"],ex:"传说 chuánshuō — 流传着一个传说"},
+  {t:"text",q:"gǎnjī — grateful",a:["感激"],ex:"感激 gǎnjī — 非常感激你的帮助"},
+  {t:"text",q:"fēnbù — be distributed / spread out",a:["分布"],ex:"分布 fēnbù — 泉水分布在城里"},
+  {t:"text",q:"miáoxiě — to describe",a:["描写"],ex:"描写 miáoxiě — 描写春天的景色"},
+  {t:"text",q:"yōuměi — graceful / beautiful",a:["优美"],ex:"优美 yōuměi — 优美的风景"},
+  {t:"text",q:"wěiqu — feel wronged / unfairly treated",a:["委屈"],ex:"委屈 wěiqu — 受了委屈"},
+  {t:"text",q:"qínfèn — diligent / hardworking",a:["勤奋"],ex:"勤奋 qínfèn — 他学习很勤奋"}]},
+ {title:"二、拼音 Pinyin & tones",hint:"tap the correct pinyin",items:[
+  {t:"mc",q:"晕 (to faint)",o:["yún","yūn","yùn"],a:1,ex:"晕 yūn (1st tone) — 晕倒. 云 is yún (2nd)"},
+  {t:"mc",q:"抢 (to snatch)",o:["qiāng","qiǎng","qiàng"],a:1,ex:"抢 qiǎng (3rd tone). 枪 qiāng (1st) = gun"},
+  {t:"mc",q:"斜 (slanting)",o:["xié","xiě","xià"],a:0,ex:"斜 xié (2nd tone). 写 is xiě (3rd)"},
+  {t:"mc",q:"挡 (to block)",o:["dāng","dǎng","dàng"],a:1,ex:"挡 dǎng (3rd tone) — 挡住去路"},
+  {t:"mc",q:"从而 (thus / thereby)",o:["cóngér","cóng'ér","cóngr"],a:1,ex:"从而 cóng'ér — the apostrophe marks the syllable break before ér"}]},
+ {title:"三、认字 Character recognition",hint:"tap the correct character",items:[
+  {t:"mc",q:"qiǎng — to snatch (＿东西)",o:["枪","抢","仓"],a:1,ex:"抢 — 扌 hand radical: you snatch with your hand. 枪 qiāng = gun"},
+  {t:"mc",q:"mái — to bury",o:["理","埋","里"],a:1,ex:"埋 — 土 earth radical. 理 lǐ = reason (王 radical)"},
+  {t:"mc",q:"zàn — ＿美 (to praise)",o:["赞","暂","攒"],a:0,ex:"赞美 zànměi. 赞 has 贝 (money/value). 暂 zàn = temporary; 攒 zǎn = save up"},
+  {t:"mc",q:"fú — to support with the hand (＿老人)",o:["扶","批","扑"],a:0,ex:"扶 fú — 扌 + 夫. 批 pī = criticize; 扑 pū = pounce"}]},
+ {title:"四、完成句子 Sentence building",hint:"1–3: tap; 4–5: type 从而 or 至今; 6: tap",items:[
+  {t:"mc",q:"济南的泉水＿＿＿在城市的各个地方。",o:["充满","分布","赞美"],a:1,ex:"分布 = be distributed: 泉水分布在城市的各个地方。"},
+  {t:"mc",q:"他不但没有放弃，＿＿＿更加努力了。",o:["从而","反而","至今"],a:1,ex:"不但没有…，反而… = not only didn't…, but on the contrary… (L4)"},
+  {t:"mc",q:"古代诗人写了很多诗＿＿＿济南的泉水。",o:["描写","记载","打听"],a:0,ex:"描写 = describe (in writing). 记载 = record historically; 打听 = inquire"},
+  {t:"text",q:"他每天坚持练习，＿＿＿提高了中文水平。(cóng'ér)",a:["从而"],ex:"从而 = thus (method → result): …，从而提高了…"},
+  {t:"text",q:"这个美丽的传说一直流传＿＿＿。(zhìjīn)",a:["至今"],ex:"流传至今 = handed down until now (L4 grammar)"},
+  {t:"mc",q:"子路很＿＿＿父母，从很远的地方背米回家。",o:["勤奋","孝顺","诚恳"],a:1,ex:"孝顺 = filial / good to one's parents. 勤奋 = diligent (at work/study); 诚恳 = sincere"}]},
+ {title:"五、阅读 Reading",hint:"read, then tap the answer",passage:"济南是一座历史悠久的城市。城里分布着很多天然的泉水，人们因此叫它“泉城”。古代的诗人常常写诗赞美这些优美的泉水，文字里充满了对大自然的热爱。老百姓中还流传着一个传说：一个善良的年轻人把一把玉壶埋在地下，从而形成了泉水。如今，泉水仍然是济南最独特的风景。很多游客来到这里，站在泉水旁边，感激这座城市带给他们的美好时光。从古至今，泉水一直是济南人生活中不可缺少的一部分。",items:[
+  {t:"mc",q:"人们为什么叫济南“泉城”？",o:["因为济南历史悠久","因为城里有很多天然的泉水","因为很多诗人住在那里"],a:1,ex:"城里分布着很多天然的泉水，人们因此叫它“泉城”。"},
+  {t:"mc",q:"根据传说，泉水是怎么形成的？",o:["龙王送来的","老百姓挖出来的","年轻人把玉壶埋在地下"],a:2,ex:"一个善良的年轻人把一把玉壶埋在地下，从而形成了泉水。"},
+  {t:"mc",q:"“从古至今”是什么意思？",o:["只在古代","从古代一直到现在","从现在开始"],a:1,ex:"从古至今 = from ancient times until now (至今 = until now)."},
+  {t:"mc",q:"文章说泉水对济南人怎么样？",o:["已经不重要了","只对游客重要","一直是生活中不可缺少的一部分"],a:2,ex:"从古至今，泉水一直是济南人生活中不可缺少的一部分。"},
+  {t:"mc",q:"下面哪个词最适合形容济南的泉水风景？",o:["委屈","独特","勤奋"],a:1,ex:"如今，泉水仍然是济南最独特的风景。独特 = unique."}]}
+];
+var L="ABCDEFG",ALL=[],start=Date.now(),done=false,timerId;
+function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e}
+function build(){
+ var quiz=document.getElementById("quiz");quiz.innerHTML="";ALL=[];var n=0;
+ SECTIONS.forEach(function(s){
+  var sec=el("section");var h=el("h2",null,s.title+" ");h.appendChild(el("small",null,"("+s.hint+")"));sec.appendChild(h);
+  if(s.passage)sec.appendChild(el("div","passage",s.passage));
+  s.items.forEach(function(it,i){
+   n++;var box=el("div","item");box.appendChild(el("div","q",(i+1)+". "+it.q));
+   var rec={it:it,box:box,sel:null,input:null};
+   if(it.t==="mc"){var o=el("div","opts");it.o.forEach(function(txt,j){var b=el("button","opt",L[j]+". "+txt);b.type="button";
+     b.onclick=function(){if(done)return;rec.sel=j;[].forEach.call(o.children,function(c){c.classList.remove("sel")});b.classList.add("sel");prog()};o.appendChild(b)});box.appendChild(o)}
+   else{var inp=el("input","txt");inp.type="text";inp.setAttribute("autocomplete","off");inp.setAttribute("autocapitalize","off");inp.setAttribute("spellcheck","false");inp.placeholder="写汉字…";inp.oninput=prog;rec.input=inp;box.appendChild(inp)}
+   var fb=el("div","fb");box.appendChild(fb);rec.fb=fb;sec.appendChild(box);ALL.push(rec)});
+  quiz.appendChild(sec)});
+ prog();
+}
+function norm(s){return String(s||"").replace(/[\s\u3000]+/g,"")}
+function isCorrect(rec){var it=rec.it;if(it.t==="mc")return rec.sel===it.a;var v=norm(rec.input.value);return it.a.some(function(a){return norm(a)===v})}
+function answered(rec){return rec.it.t==="mc"?rec.sel!==null:norm(rec.input.value)!==""}
+function prog(){var a=ALL.filter(answered).length;document.getElementById("prog").textContent="已答 "+a+" / "+ALL.length}
+function fmt(ms){var s=Math.round(ms/1000);return Math.floor(s/60)+":"+("0"+s%60).slice(-2)}
+function tick(){document.getElementById("clock").textContent=fmt(Date.now()-start)}
+function check(){
+ if(done)return;done=true;clearInterval(timerId);var score=0;
+ ALL.forEach(function(rec){var ok=isCorrect(rec),it=rec.it;rec.box.classList.add(ok?"ok":"bad");
+  var ans=it.t==="mc"?L[it.a]+". "+it.o[it.a]:it.a[0];
+  rec.fb.textContent=ok?"✔ 对了！":"✘ Correct answer: "+ans+" — "+it.ex;if(ok)score++});
+ document.getElementById("quiz").classList.add("locked");
+ var t=fmt(Date.now()-start),pct=Math.round(score/ALL.length*100);
+ var msg=pct===100?"太棒了！🎉":pct>=80?"很好！👍":pct>=60?"不错，继续加油！💪":"加油！Let's review the red ones. 📚";
+ var r=document.getElementById("result");r.style.display="block";r.innerHTML="";
+ r.appendChild(el("div",null,"得分 Score: "+score+" / "+ALL.length+" ("+pct+"%)"));
+ r.appendChild(el("div",null,"用时 Time: "+t));r.appendChild(el("div",null,msg));
+ r.scrollIntoView&&r.scrollIntoView({behavior:"smooth"});
+ return {score:score,total:ALL.length,time:t};
+}
+function reset(){done=false;document.getElementById("quiz").classList.remove("locked");document.getElementById("result").style.display="none";start=Date.now();clearInterval(timerId);timerId=setInterval(tick,1000);tick();build();window.scrollTo&&window.scrollTo(0,0)}
+document.getElementById("check").onclick=check;
+document.getElementById("reset").onclick=reset;
+build();timerId=setInterval(tick,1000);tick();
+</script>
+</body>
+</html>
