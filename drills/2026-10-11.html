@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alexa 中文练习 – 11 Oct 2026 (Day 9)</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f4f7fb;color:#222;font-family:-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",Arial,sans-serif;font-size:20px;line-height:1.6}
+.wrap{max-width:760px;margin:0 auto;padding:16px}
+h1{font-size:1.4em;margin:.3em 0 0}
+.sub{color:#666;font-size:.8em;margin-bottom:1em}
+#timer{position:sticky;top:0;background:#fff;border-radius:12px;padding:8px 14px;box-shadow:0 2px 6px rgba(0,0,0,.08);font-size:.85em;z-index:5;display:flex;justify-content:space-between}
+section{background:#fff;border-radius:16px;padding:14px 16px;margin:16px 0;box-shadow:0 2px 6px rgba(0,0,0,.06)}
+h2{font-size:1.1em;margin:.2em 0 .5em}
+h2 small{font-weight:normal;color:#777;font-size:.7em}
+.item{padding:10px 8px;margin:8px 0;border-radius:12px;border:2px solid transparent}
+.q{margin-bottom:6px}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opt{font-size:1em;padding:10px 16px;border-radius:12px;border:2px solid #c9d4e3;background:#f8fbff;cursor:pointer;min-width:64px;font-family:inherit}
+.opt.sel{background:#3b82f6;color:#fff;border-color:#3b82f6}
+input.txt{font-size:1.1em;padding:8px 12px;border:2px solid #c9d4e3;border-radius:12px;width:10em;max-width:100%;font-family:inherit}
+.passage{background:#fffbea;border-left:5px solid #f5c542;padding:10px 14px;border-radius:8px;font-size:1.05em}
+.item.ok{border-color:#22c55e;background:#effdf3}
+.item.bad{border-color:#ef4444;background:#fef1f1}
+.fb{margin-top:6px;font-size:.85em;display:none}
+.item.ok .fb,.item.bad .fb{display:block}
+.item.ok .fb{color:#15803d}.item.bad .fb{color:#b91c1c}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
+.big{font-size:1.1em;padding:14px 24px;border:none;border-radius:14px;background:#16a34a;color:#fff;cursor:pointer;font-family:inherit}
+.big.sec{background:#64748b}
+#result{display:none;font-size:1.2em;text-align:center;background:#fff;border-radius:16px;padding:16px;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.locked .opt,.locked input.txt{pointer-events:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Alexa 中文练习 🌟 Day 9</h1>
+<div class="sub">11 Oct 2026 · HSK标准教程 5(上) · Lessons 3–4 spaced review · about 12 minutes</div>
+<div id="timer"><span>⏱ <span id="clock">0:00</span></span><span id="prog"></span></div>
+<div id="quiz"></div>
+<div class="btns"><button class="big" id="check">✅ Check answers</button><button class="big sec" id="reset">↺ Try again</button></div>
+<div id="result"></div>
+</div>
+<script>
+var SECTIONS=[
+ {title:"一、默写 Dictation",hint:"type the characters",items:[
+  {t:"text",q:"jīxù — savings / to save up",a:["积蓄"],ex:"积蓄 jīxù — 他把积蓄拿出来买了二手帆船"},
+  {t:"text",q:"pànwàng — look forward to",a:["盼望"],ex:"盼望 pànwàng — 盼望着放假"},
+  {t:"text",q:"cízhí — quit a job",a:["辞职"],ex:"辞职 cízhí — 他决定辞职去航行"},
+  {t:"text",q:"shūshì — comfortable",a:["舒适"],ex:"舒适 shūshì — 舒适的生活"},
+  {t:"text",q:"dǎting — inquire / ask around",a:["打听"],ex:"打听 dǎting — 打听消息"},
+  {t:"text",q:"chéngkěn — sincere",a:["诚恳"],ex:"诚恳 chéngkěn — 诚恳的态度"},
+  {t:"text",q:"běnlǐng — ability / skill",a:["本领"],ex:"本领 běnlǐng — 学本领"},
+  {t:"text",q:"cánkuì — ashamed",a:["惭愧"],ex:"惭愧 cánkuì — 感到惭愧"}]},
+ {title:"二、拼音 Pinyin & tones",hint:"tap the correct pinyin",items:[
+  {t:"mc",q:"撞 (to bump into / collide)",o:["zhuàng","chuàng","zhuāng"],a:0,ex:"撞 zhuàng (4th tone) — 撞到石头"},
+  {t:"mc",q:"艘 (measure word for boats)",o:["sōu","sǒu","sòu"],a:0,ex:"艘 sōu (1st tone) — 一艘帆船"},
+  {t:"mc",q:"钓 (to fish with a hook)",o:["diào","diǎo","tiào"],a:0,ex:"钓 diào (4th tone). 跳 is tiào"},
+  {t:"mc",q:"勿 (don't / must not)",o:["wù","wú","wǔ"],a:0,ex:"勿 wù (4th tone) — 请勿吸烟"},
+  {t:"mc",q:"滑 (slippery / to slip)",o:["huá","huà","huā"],a:0,ex:"滑 huá (2nd tone) — 路很滑"}]},
+ {title:"三、认字 Character recognition",hint:"tap the correct character",items:[
+  {t:"mc",q:"lòu — to leak (＿水)",o:["漏","满","涌"],a:0,ex:"漏 lòu — 氵 water radical. 船漏水了"},
+  {t:"mc",q:"léi — thunder",o:["雪","雷","零"],a:1,ex:"雷 léi — 雨 radical on top. 打雷"},
+  {t:"mc",q:"shuǎi — to swing / throw off",o:["甩","用","角"],a:0,ex:"甩 shuǎi — 甩开手. Not 用 yòng"},
+  {t:"mc",q:"jiēshi — sturdy / solid (结＿)",o:["实","宝","卖"],a:0,ex:"结实 jiēshi — 身体很结实. 实 has 宀 + 头-like bottom"},
+  {t:"mc",q:"zhèn — town (小＿)",o:["镇","针","真"],a:0,ex:"镇 zhèn — 钅 metal radical. 小镇"}]},
+ {title:"四、完成句子 Sentence building",hint:"1–3: tap; 4–5: type 从而 / 反而 / 至今; 6: tap",items:[
+  {t:"mc",q:"父亲去世后，子路感到很＿＿＿，因为没能多照顾他。",o:["满足","惭愧","团圆"],a:1,ex:"惭愧 = ashamed. 满足 = satisfied; 团圆 = reunite"},
+  {t:"mc",q:"他＿＿＿了很多朋友，才知道子路住在哪个镇。",o:["打听","驾驶","轮流"],a:0,ex:"打听 = inquire. 驾驶 = drive; 轮流 = take turns"},
+  {t:"mc",q:"子路不但没有放弃，＿＿＿更加努力地背米回家。",o:["从而","反而","至今"],a:1,ex:"不但没有…，反而… = not only didn't…, but on the contrary… (L4)"},
+  {t:"text",q:"他每天练习写汉字，＿＿＿提高了中文水平。(cóng'ér)",a:["从而"],ex:"从而 = thus (method → result)"},
+  {t:"text",q:"这个美德从古＿＿＿一直被人们赞美。(zhìjīn)",a:["至今"],ex:"从古至今 / 流传至今 = until now (L4)"},
+  {t:"mc",q:"孝顺父母是一种重要的＿＿＿。",o:["物质","美德","战争"],a:1,ex:"美德 = virtue. 物质 = material things; 战争 = war"}]},
+ {title:"五、阅读 Reading",hint:"read, then tap the answer",passage:"春秋时期，有一个叫子路的年轻人。他家很穷，但他对父母非常孝顺。有一次，父母想吃米饭，子路就去很远的地方背米。路上又滑又难走，他不但没有抱怨，反而更加认真地保护好米。父母去世以后，子路感到很惭愧，总觉得自己做得不够。后来他成了孔子的学生，学习了很多本领，成为了一个有成就的人才。从古至今，人们一直把子路当作孝顺的榜样。这个故事告诉我们：真正的美德不在于物质有多丰富，而在于你是否诚恳地对待家人。",items:[
+  {t:"mc",q:"子路为什么去很远的地方背米？",o:["因为他想锻炼身体","因为父母想吃米饭，家里又穷","因为孔子让他去"],a:1,ex:"他家很穷，父母想吃米饭，所以他去很远的地方背米。"},
+  {t:"mc",q:"路上又滑又难走时，子路怎么样？",o:["放弃了","不但没有抱怨，反而更加认真","请别人帮忙"],a:1,ex:"他不但没有抱怨，反而更加认真地保护好米。"},
+  {t:"mc",q:"父母去世后，子路有什么感受？",o:["满足","惭愧","高兴"],a:1,ex:"子路感到很惭愧，总觉得自己做得不够。"},
+  {t:"mc",q:"从古至今，人们把子路当作什么？",o:["有钱的榜样","孝顺的榜样","战争的英雄"],a:1,ex:"人们一直把子路当作孝顺的榜样。"},
+  {t:"mc",q:"根据文章，真正的美德在于什么？",o:["物质有多丰富","是否诚恳地对待家人","有没有很多本领"],a:1,ex:"真正的美德不在于物质有多丰富，而在于你是否诚恳地对待家人。"}]}
+];
+var L="ABCDEFG",ALL=[],start=Date.now(),done=false,timerId;
+function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e}
+function build(){
+ var quiz=document.getElementById("quiz");quiz.innerHTML="";ALL=[];var n=0;
+ SECTIONS.forEach(function(s){
+  var sec=el("section");var h=el("h2",null,s.title+" ");h.appendChild(el("small",null,"("+s.hint+")"));sec.appendChild(h);
+  if(s.passage)sec.appendChild(el("div","passage",s.passage));
+  s.items.forEach(function(it,i){
+   n++;var box=el("div","item");box.appendChild(el("div","q",(i+1)+". "+it.q));
+   var rec={it:it,box:box,sel:null,input:null};
+   if(it.t==="mc"){var o=el("div","opts");it.o.forEach(function(txt,j){var b=el("button","opt",L[j]+". "+txt);b.type="button";
+     b.onclick=function(){if(done)return;rec.sel=j;[].forEach.call(o.children,function(c){c.classList.remove("sel")});b.classList.add("sel");prog()};o.appendChild(b)});box.appendChild(o)}
+   else{var inp=el("input","txt");inp.type="text";inp.setAttribute("autocomplete","off");inp.setAttribute("autocapitalize","off");inp.setAttribute("spellcheck","false");inp.placeholder="写汉字…";inp.oninput=prog;rec.input=inp;box.appendChild(inp)}
+   var fb=el("div","fb");box.appendChild(fb);rec.fb=fb;sec.appendChild(box);ALL.push(rec)});
+  quiz.appendChild(sec)});
+ prog();
+}
+function norm(s){return String(s||"").replace(/[\s\u3000]+/g,"")}
+function isCorrect(rec){var it=rec.it;if(it.t==="mc")return rec.sel===it.a;var v=norm(rec.input.value);return it.a.some(function(a){return norm(a)===v})}
+function answered(rec){return rec.it.t==="mc"?rec.sel!==null:norm(rec.input.value)!==""}
+function prog(){var a=ALL.filter(answered).length;document.getElementById("prog").textContent="已答 "+a+" / "+ALL.length}
+function fmt(ms){var s=Math.round(ms/1000);return Math.floor(s/60)+":"+("0"+s%60).slice(-2)}
+function tick(){document.getElementById("clock").textContent=fmt(Date.now()-start)}
+function check(){
+ if(done)return;done=true;clearInterval(timerId);var score=0;
+ ALL.forEach(function(rec){var ok=isCorrect(rec),it=rec.it;rec.box.classList.add(ok?"ok":"bad");
+  var ans=it.t==="mc"?L[it.a]+". "+it.o[it.a]:it.a[0];
+  rec.fb.textContent=ok?"✔ 对了！":"✘ Correct answer: "+ans+" — "+it.ex;if(ok)score++});
+ document.getElementById("quiz").classList.add("locked");
+ var t=fmt(Date.now()-start),pct=Math.round(score/ALL.length*100);
+ var msg=pct===100?"太棒了！🎉":pct>=80?"很好！👍":pct>=60?"不错，继续加油！💪":"加油！Let's review the red ones. 📚";
+ var r=document.getElementById("result");r.style.display="block";r.innerHTML="";
+ r.appendChild(el("div",null,"得分 Score: "+score+" / "+ALL.length+" ("+pct+"%)"));
+ r.appendChild(el("div",null,"用时 Time: "+t));r.appendChild(el("div",null,msg));
+ r.scrollIntoView&&r.scrollIntoView({behavior:"smooth"});
+ return {score:score,total:ALL.length,time:t};
+}
+function reset(){done=false;document.getElementById("quiz").classList.remove("locked");document.getElementById("result").style.display="none";start=Date.now();clearInterval(timerId);timerId=setInterval(tick,1000);tick();build();window.scrollTo&&window.scrollTo(0,0)}
+document.getElementById("check").onclick=check;
+document.getElementById("reset").onclick=reset;
+build();timerId=setInterval(tick,1000);tick();
+</script>
+</body>
+</html>
