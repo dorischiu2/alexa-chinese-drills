@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Alexa 中文练习 – 31 Oct 2026 (HSK 5 list, 15 min)</title>
+<!-- Daily-drill template: include Web Speech zh-CN 🔊 buttons (speakBtn/speakZh) on every Chinese word. See /workspace/alexa-chinese/README.md -->
 <style>
 *{box-sizing:border-box}
 body{margin:0;background:#f4f7fb;color:#222;font-family:-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",Arial,sans-serif;font-size:20px;line-height:1.6}
@@ -15,12 +16,16 @@ section{background:#fff;border-radius:16px;padding:14px 16px;margin:16px 0;box-s
 h2{font-size:1.1em;margin:.2em 0 .5em}
 h2 small{font-weight:normal;color:#777;font-size:.7em}
 .item{padding:10px 8px;margin:8px 0;border-radius:12px;border:2px solid transparent}
-.q{margin-bottom:6px}
+.q{margin-bottom:6px;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.q .qw{font-weight:600}
+.q .py{color:#64748b;font-size:.85em;font-weight:normal}
 .opts{display:flex;flex-wrap:wrap;gap:8px}
+.optwrap{display:inline-flex;align-items:center;gap:4px}
 .opt{font-size:1em;padding:10px 16px;border-radius:12px;border:2px solid #c9d4e3;background:#f8fbff;cursor:pointer;min-width:64px;font-family:inherit}
 .opt.sel{background:#3b82f6;color:#fff;border-color:#3b82f6}
 input.txt{font-size:1.1em;padding:8px 12px;border:2px solid #c9d4e3;border-radius:12px;width:10em;max-width:100%;font-family:inherit}
 .passage{background:#fffbea;border-left:5px solid #f5c542;padding:10px 14px;border-radius:8px;font-size:1.05em}
+.pass-head{display:flex;align-items:center;gap:8px;margin-bottom:8px}
 .item.ok{border-color:#22c55e;background:#effdf3}
 .item.bad{border-color:#ef4444;background:#fef1f1}
 .fb{margin-top:6px;font-size:.85em;display:none}
@@ -31,42 +36,107 @@ input.txt{font-size:1.1em;padding:8px 12px;border:2px solid #c9d4e3;border-radiu
 .big.sec{background:#64748b}
 #result{display:none;font-size:1.2em;text-align:center;background:#fff;border-radius:16px;padding:16px;box-shadow:0 2px 6px rgba(0,0,0,.08)}
 .locked .opt,.locked input.txt{pointer-events:none}
+.say{flex-shrink:0;width:40px;height:40px;border-radius:50%;border:2px solid #93c5fd;background:#eff6ff;color:#1d4ed8;font-size:1.05em;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;padding:0;font-family:inherit;line-height:1;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.say:disabled{opacity:.45;cursor:default}
+.say.sm{width:32px;height:32px;font-size:.9em;border-width:1.5px}
+.say:active:not(:disabled){background:#dbeafe}
+.tip{font-size:.75em;color:#64748b;margin:.4em 0 0}
 </style>
 </head>
 <body>
 <div class="wrap">
 <h1>Alexa 中文练习 🌟 New HSK 5</h1>
-<div class="sub">31 Oct 2026 · New HSK 5 word list (recognition &amp; meaning) · about 15 minutes · 43 questions</div>
+<div class="sub">31 Oct 2026 · New HSK 5 word list (recognition &amp; meaning + Putonghua 🔊) · about 15 minutes · 43 questions<br>Tap 🔊 next to a word to hear it. Answers stay hidden until Check.</div>
 <div id="timer"><span>⏱ <span id="clock">0:00</span></span><span id="prog"></span></div>
 <div id="quiz"></div>
 <div class="btns"><button class="big" id="check">✅ Check answers</button><button class="big sec" id="reset">↺ Try again</button></div>
 <div id="result"></div>
 </div>
 <script>
-var SECTIONS=[
- {title:"一、字→义 Character → meaning",hint:"tap the English meaning",items:[{t:"mc",q:"爱护",o:["to cherish / take good care of", "to hate", "to install", "to complain"],a:0,ex:"爱护 àihù — to cherish, take good care of"},{t:"mc",q:"安慰",o:["to install", "to comfort / console", "to avoid", "seatbelt"],a:1,ex:"安慰 ānwèi — to comfort, console"},{t:"mc",q:"安装",o:["to wrap", "to report", "to install / set up", "to stay up late"],a:2,ex:"安装 ānzhuāng — to install, set up"},{t:"mc",q:"熬夜",o:["to stay up late", "midnight", "to sleep early", "evening"],a:0,ex:"熬夜 áoyè — to stay up late"},{t:"mc",q:"把握",o:["package", "to grasp / certainty", "background", "to complain"],a:1,ex:"把握 bǎwò — to grasp; certainty (有把握)"},{t:"mc",q:"抱怨",o:["to praise", "to report to police", "to complain", "to comfort"],a:2,ex:"抱怨 bàoyuàn — to complain"},{t:"mc",q:"背景",o:["blanket", "behind", "background", "midnight"],a:2,ex:"背景 bèijǐng — background"},{t:"mc",q:"避免",o:["to avoid", "necessary", "convenient", "to include"],a:0,ex:"避免 bìmiǎn — to avoid"},{t:"mc",q:"表达",o:["expression (face)", "to express", "surface", "title"],a:1,ex:"表达 biǎodá — to express"},{t:"mc",q:"彻底",o:["thorough / complete", "to exceed", "noisy", "garage"],a:0,ex:"彻底 chèdǐ — thorough, complete"}]},
- {title:"二、义→字 Meaning → character",hint:"tap the correct word",items:[{t:"mc",q:"seatbelt",o:["安全带", "保险", "包裹", "保质期"],a:0,ex:"安全带 ānquándài — seatbelt"},{t:"mc",q:"shelf life / expiration date",o:["保险", "保质期", "报道", "报到"],a:1,ex:"保质期 bǎozhìqī — shelf life"},{t:"mc",q:"to report to the police",o:["报道", "报告", "报警", "抱怨"],a:2,ex:"报警 bàojǐng — report to the police"},{t:"mc",q:"torrential rain / rainstorm",o:["暴雨", "半夜", "傍晚", "薄"],a:0,ex:"暴雨 bàoyǔ — rainstorm"},{t:"mc",q:"convenience store",o:["便利", "便利店", "博物馆", "病房"],a:1,ex:"便利店 biànlìdiàn — convenience store"},{t:"mc",q:"museum",o:["病房", "博物馆", "标题", "标志"],a:1,ex:"博物馆 bówùguǎn — museum"},{t:"mc",q:"to participate",o:["参考", "参与", "采取", "采访"],a:1,ex:"参与 cānyù — to participate"},{t:"mc",q:"common knowledge",o:["常识", "尝试", "长期", "场所"],a:0,ex:"常识 chángshí — common knowledge"}]},
- {title:"三、拼音→字 Pinyin → character",hint:"tap the correct characters",items:[{t:"mc",q:"āiyā — oh my",o:["哎呀", "爱护", "安慰", "唉"],a:0,ex:"哎呀 āiyā — oh my, ah"},{t:"mc",q:"bàngwǎn — dusk / evening (L3 review)",o:["半夜", "傍晚", "包裹", "宝贵"],a:1,ex:"傍晚 bàngwǎn — dusk (textbook L3)"},{t:"mc",q:"bāoguǒ — parcel / package",o:["包含", "包括", "包裹", "包装"],a:2,ex:"包裹 bāoguǒ — parcel; to wrap"},{t:"mc",q:"bǎoguì — precious / valuable",o:["宝贵", "保留", "保险", "宝贝"],a:0,ex:"宝贵 bǎoguì — precious, valuable"},{t:"mc",q:"bàodào — news report (报道)",o:["报到", "报道", "报告", "报警"],a:1,ex:"报道 bàodào — news report; 报到 = check in"},{t:"mc",q:"bèizi — quilt / blanket",o:["背后", "背景", "被子", "背"],a:2,ex:"被子 bèizi — quilt, blanket"},{t:"mc",q:"bìjìng — after all",o:["毕竟", "必然", "必要", "避免"],a:0,ex:"毕竟 bìjìng — after all"},{t:"mc",q:"biǎoqíng — (facial) expression",o:["表达", "表明", "表情", "表面"],a:2,ex:"表情 biǎoqíng — expression"}]},
- {title:"四、形近字 Look-alikes",hint:"tap the word that matches the meaning",items:[{t:"mc",q:"to wrap / package (not 'include')",o:["包括", "包装", "包含", "宝"],a:1,ex:"包装 bāozhuāng — package; 包括 = include (L3)"},{t:"mc",q:"to check in / report for duty (not 'news report')",o:["报道", "报告", "报到", "报警"],a:2,ex:"报到 bàodào — check in; 报道 = news report"},{t:"mc",q:"behind / at the back (not 'background')",o:["背景", "背后", "被子", "背"],a:1,ex:"背后 bèihòu — behind; 背景 = background"},{t:"mc",q:"symbol / to mark (not 'title')",o:["标题", "标志", "表达", "表面"],a:1,ex:"标志 biāozhì — symbol/sign; 标题 = title"},{t:"mc",q:"to show / indicate (not 'express')",o:["表达", "表明", "表情", "表面"],a:1,ex:"表明 biǎomíng — to show, indicate"},{t:"mc",q:"gap / disparity (not 'difference')",o:["差别", "差距", "叉子", "拆"],a:1,ex:"差距 chājù — gap; 差别 = difference"}]},
- {title:"五、默写 Dictation",hint:"type the characters",items:[{t:"text",q:"ài hù — to cherish",a:["爱护"],ex:"爱护 àihù"},{t:"text",q:"áo yè — stay up late",a:["熬夜"],ex:"熬夜 áoyè"},{t:"text",q:"bào yuàn — to complain",a:["抱怨"],ex:"抱怨 bàoyuàn"},{t:"text",q:"bì miǎn — to avoid",a:["避免"],ex:"避免 bìmiǎn"},{t:"text",q:"chè dǐ — thorough",a:["彻底"],ex:"彻底 chèdǐ"},{t:"text",q:"bāo kuò — to include (L3 review)",a:["包括"],ex:"包括 bāokuò — textbook L3"}]},
- {title:"六、阅读 Reading",hint:"read, then tap the answer",passage:"小李最近总是熬夜，身体不太好。朋友安慰她，让她好好爱护自己的健康。周末她去博物馆参观，路上遇到暴雨，只好先到便利店躲一躲。她打开手机，看到一条报道：本市将安装更多的安全带检查设备，从而避免车祸。小李觉得这些措施很有必要。毕竟安全最重要。回家后她把湿衣服挂好，盖上被子休息，决心以后尽量不要抱怨生活，要把握每一天。",items:[{t:"mc",q:"朋友为什么安慰小李？",o:["因为她抱怨工作", "因为她总是熬夜，身体不好", "因为她丢了包裹"],a:1,ex:"小李最近总是熬夜，身体不太好。朋友安慰她…"},{t:"mc",q:"路上遇到暴雨时，小李先去了哪里？",o:["博物馆", "便利店", "病房"],a:1,ex:"只好先到便利店躲一躲"},{t:"mc",q:"报道里说要安装什么，从而避免车祸？",o:["更多安全带检查设备", "更多便利店", "更多博物馆"],a:0,ex:"安装更多的安全带检查设备，从而避免车祸"},{t:"mc",q:"“毕竟安全最重要”中，“毕竟”的意思是？",o:["necessary", "after all", "to avoid"],a:1,ex:"毕竟 bìjìng — after all"},{t:"mc",q:"小李回家后盖上了什么休息？",o:["背景", "被子", "包裹"],a:1,ex:"盖上被子休息"}]}
-];
+var SECTIONS=[{"title": "一、字→义 Character → meaning", "hint": "tap the English meaning · 🔊 hear Putonghua", "items": [{"t": "mc", "q": "爱护", "say": "爱护", "py": "àihù", "o": ["to cherish / take good care of", "to hate", "to install", "to complain"], "a": 0, "ex": "爱护 àihù — to cherish, take good care of"}, {"t": "mc", "q": "安慰", "say": "安慰", "py": "ānwèi", "o": ["to install", "to comfort / console", "to avoid", "seatbelt"], "a": 1, "ex": "安慰 ānwèi — to comfort, console"}, {"t": "mc", "q": "安装", "say": "安装", "py": "ānzhuāng", "o": ["to wrap", "to report", "to install / set up", "to stay up late"], "a": 2, "ex": "安装 ānzhuāng — to install, set up"}, {"t": "mc", "q": "熬夜", "say": "熬夜", "py": "áoyè", "o": ["to stay up late", "midnight", "to sleep early", "evening"], "a": 0, "ex": "熬夜 áoyè — to stay up late"}, {"t": "mc", "q": "把握", "say": "把握", "py": "bǎwò", "o": ["package", "to grasp / certainty", "background", "to complain"], "a": 1, "ex": "把握 bǎwò — to grasp; certainty (有把握)"}, {"t": "mc", "q": "抱怨", "say": "抱怨", "py": "bàoyuàn", "o": ["to praise", "to report to police", "to complain", "to comfort"], "a": 2, "ex": "抱怨 bàoyuàn — to complain"}, {"t": "mc", "q": "背景", "say": "背景", "py": "bèijǐng", "o": ["blanket", "behind", "background", "midnight"], "a": 2, "ex": "背景 bèijǐng — background"}, {"t": "mc", "q": "避免", "say": "避免", "py": "bìmiǎn", "o": ["to avoid", "necessary", "convenient", "to include"], "a": 0, "ex": "避免 bìmiǎn — to avoid"}, {"t": "mc", "q": "表达", "say": "表达", "py": "biǎodá", "o": ["expression (face)", "to express", "surface", "title"], "a": 1, "ex": "表达 biǎodá — to express"}, {"t": "mc", "q": "彻底", "say": "彻底", "py": "chèdǐ", "o": ["thorough / complete", "to exceed", "noisy", "garage"], "a": 0, "ex": "彻底 chèdǐ — thorough, complete"}]}, {"title": "二、义→字 Meaning → character", "hint": "tap the correct word · 🔊 on Chinese options", "items": [{"t": "mc", "q": "seatbelt", "o": ["安全带", "保险", "包裹", "保质期"], "a": 0, "ex": "安全带 ānquándài — seatbelt"}, {"t": "mc", "q": "shelf life / expiration date", "o": ["保险", "保质期", "报道", "报到"], "a": 1, "ex": "保质期 bǎozhìqī — shelf life"}, {"t": "mc", "q": "to report to the police", "o": ["报道", "报告", "报警", "抱怨"], "a": 2, "ex": "报警 bàojǐng — report to the police"}, {"t": "mc", "q": "torrential rain / rainstorm", "o": ["暴雨", "半夜", "傍晚", "薄"], "a": 0, "ex": "暴雨 bàoyǔ — rainstorm"}, {"t": "mc", "q": "convenience store", "o": ["便利", "便利店", "博物馆", "病房"], "a": 1, "ex": "便利店 biànlìdiàn — convenience store"}, {"t": "mc", "q": "museum", "o": ["病房", "博物馆", "标题", "标志"], "a": 1, "ex": "博物馆 bówùguǎn — museum"}, {"t": "mc", "q": "to participate", "o": ["参考", "参与", "采取", "采访"], "a": 1, "ex": "参与 cānyù — to participate"}, {"t": "mc", "q": "common knowledge", "o": ["常识", "尝试", "长期", "场所"], "a": 0, "ex": "常识 chángshí — common knowledge"}]}, {"title": "三、拼音→字 Pinyin → character", "hint": "tap the correct characters · 🔊 hear each option", "items": [{"t": "mc", "q": "āiyā — oh my", "o": ["哎呀", "爱护", "安慰", "唉"], "a": 0, "ex": "哎呀 āiyā — oh my, ah"}, {"t": "mc", "q": "bàngwǎn — dusk / evening (L3 review)", "o": ["半夜", "傍晚", "包裹", "宝贵"], "a": 1, "ex": "傍晚 bàngwǎn — dusk (textbook L3)"}, {"t": "mc", "q": "bāoguǒ — parcel / package", "o": ["包含", "包括", "包裹", "包装"], "a": 2, "ex": "包裹 bāoguǒ — parcel; to wrap"}, {"t": "mc", "q": "bǎoguì — precious / valuable", "o": ["宝贵", "保留", "保险", "宝贝"], "a": 0, "ex": "宝贵 bǎoguì — precious, valuable"}, {"t": "mc", "q": "bàodào — news report (报道)", "o": ["报到", "报道", "报告", "报警"], "a": 1, "ex": "报道 bàodào — news report; 报到 = check in"}, {"t": "mc", "q": "bèizi — quilt / blanket", "o": ["背后", "背景", "被子", "背"], "a": 2, "ex": "被子 bèizi — quilt, blanket"}, {"t": "mc", "q": "bìjìng — after all", "o": ["毕竟", "必然", "必要", "避免"], "a": 0, "ex": "毕竟 bìjìng — after all"}, {"t": "mc", "q": "biǎoqíng — (facial) expression", "o": ["表达", "表明", "表情", "表面"], "a": 2, "ex": "表情 biǎoqíng — expression"}]}, {"title": "四、形近字 Look-alikes", "hint": "tap the matching word · 🔊 hear options", "items": [{"t": "mc", "q": "to wrap / package (not 'include')", "o": ["包括", "包装", "包含", "宝"], "a": 1, "ex": "包装 bāozhuāng — package; 包括 = include (L3)"}, {"t": "mc", "q": "to check in / report for duty (not 'news report')", "o": ["报道", "报告", "报到", "报警"], "a": 2, "ex": "报到 bàodào — check in; 报道 = news report"}, {"t": "mc", "q": "behind / at the back (not 'background')", "o": ["背景", "背后", "被子", "背"], "a": 1, "ex": "背后 bèihòu — behind; 背景 = background"}, {"t": "mc", "q": "symbol / to mark (not 'title')", "o": ["标题", "标志", "表达", "表面"], "a": 1, "ex": "标志 biāozhì — symbol/sign; 标题 = title"}, {"t": "mc", "q": "to show / indicate (not 'express')", "o": ["表达", "表明", "表情", "表面"], "a": 1, "ex": "表明 biǎomíng — to show, indicate"}, {"t": "mc", "q": "gap / disparity (not 'difference')", "o": ["差别", "差距", "叉子", "拆"], "a": 1, "ex": "差距 chājù — gap; 差别 = difference"}]}, {"title": "五、默写 Dictation", "hint": "type the characters · 🔊 listen then write (does not show the characters)", "items": [{"t": "text", "q": "ài hù — to cherish", "say": "爱护", "a": ["爱护"], "ex": "爱护 àihù"}, {"t": "text", "q": "áo yè — stay up late", "say": "熬夜", "a": ["熬夜"], "ex": "熬夜 áoyè"}, {"t": "text", "q": "bào yuàn — to complain", "say": "抱怨", "a": ["抱怨"], "ex": "抱怨 bàoyuàn"}, {"t": "text", "q": "bì miǎn — to avoid", "say": "避免", "a": ["避免"], "ex": "避免 bìmiǎn"}, {"t": "text", "q": "chè dǐ — thorough", "say": "彻底", "a": ["彻底"], "ex": "彻底 chèdǐ"}, {"t": "text", "q": "bāo kuò — to include (L3 review)", "say": "包括", "a": ["包括"], "ex": "包括 bāokuò — textbook L3"}]}, {"title": "六、阅读 Reading", "hint": "read or 🔊 listen to the passage, then tap", "passage": "小李最近总是熬夜，身体不太好。朋友安慰她，让她好好爱护自己的健康。周末她去博物馆参观，路上遇到暴雨，只好先到便利店躲一躲。她打开手机，看到一条报道：本市将安装更多的安全带检查设备，从而避免车祸。小李觉得这些措施很有必要。毕竟安全最重要。回家后她把湿衣服挂好，盖上被子休息，决心以后尽量不要抱怨生活，要把握每一天。", "items": [{"t": "mc", "q": "朋友为什么安慰小李？", "o": ["因为她抱怨工作", "因为她总是熬夜，身体不好", "因为她丢了包裹"], "a": 1, "ex": "小李最近总是熬夜，身体不太好。朋友安慰她…"}, {"t": "mc", "q": "路上遇到暴雨时，小李先去了哪里？", "o": ["博物馆", "便利店", "病房"], "a": 1, "ex": "只好先到便利店躲一躲"}, {"t": "mc", "q": "报道里说要安装什么，从而避免车祸？", "o": ["更多安全带检查设备", "更多便利店", "更多博物馆"], "a": 0, "ex": "安装更多的安全带检查设备，从而避免车祸"}, {"t": "mc", "q": "“毕竟安全最重要”中，“毕竟”的意思是？", "o": ["necessary", "after all", "to avoid"], "a": 1, "ex": "毕竟 bìjìng — after all"}, {"t": "mc", "q": "小李回家后盖上了什么休息？", "o": ["背景", "被子", "包裹"], "a": 1, "ex": "盖上被子休息"}]}];
 
-var L="ABCDEFG",ALL=[],start=Date.now(),done=false,timerId;
+/* TEMPLATE NOTE for daily routine: every drill must include speakBtn / speakZh
+   (Web Speech API zh-CN) next to Chinese words — see README.md */
+var L="ABCDEFG",ALL=[],start=Date.now(),done=false,timerId,zhVoice=null,speaking=false;
+function pickZhVoice(){
+  if(!window.speechSynthesis)return null;
+  var vs=speechSynthesis.getVoices()||[];
+  var pref=vs.filter(function(v){return /^zh(-|_|$)/i.test(v.lang)||/Chinese|中文|普通话|国语/i.test(v.name);});
+  var cn=pref.filter(function(v){return /CN|China|普通话|Chinese\s*\(China\)/i.test(v.lang+" "+v.name);});
+  return cn[0]||pref[0]||null;
+}
+function refreshVoice(){zhVoice=pickZhVoice();}
+if(window.speechSynthesis){
+  refreshVoice();
+  speechSynthesis.onvoiceschanged=refreshVoice;
+}
+function hasHan(s){return /[\u4e00-\u9fff]/.test(s||"");}
+function speakZh(text,btn){
+  if(!text||!window.speechSynthesis)return;
+  try{speechSynthesis.cancel();}catch(e){}
+  var u=new SpeechSynthesisUtterance(String(text));
+  u.lang="zh-CN";u.rate=0.9;u.pitch=1;
+  if(!zhVoice)refreshVoice();
+  if(zhVoice)u.voice=zhVoice;
+  speaking=true;
+  if(btn)btn.disabled=true;
+  var unlock=function(){speaking=false;if(btn)btn.disabled=false;};
+  u.onend=unlock;u.onerror=unlock;
+  // safety unlock (some mobile browsers skip onend)
+  setTimeout(unlock, Math.max(1800, String(text).length*420));
+  speechSynthesis.speak(u);
+}
+function speakBtn(text, small){
+  var b=el("button", small?"say sm":"say");
+  b.type="button";b.setAttribute("aria-label","Pronounce");b.textContent="🔊";
+  b.onclick=function(ev){if(ev&&ev.stopPropagation)ev.stopPropagation();if(ev&&ev.preventDefault)ev.preventDefault();speakZh(text,b);return false;};
+  return b;
+}
 function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e}
 function build(){
- var quiz=document.getElementById("quiz");quiz.innerHTML="";ALL=[];var n=0;
+ var quiz=document.getElementById("quiz");quiz.innerHTML="";ALL=[];
  SECTIONS.forEach(function(s){
   var sec=el("section");var h=el("h2",null,s.title+" ");h.appendChild(el("small",null,"("+s.hint+")"));sec.appendChild(h);
-  if(s.passage)sec.appendChild(el("div","passage",s.passage));
+  if(s.passage){
+    var ph=el("div","pass-head");ph.appendChild(el("strong",null,"短文"));ph.appendChild(speakBtn(s.passage,false));
+    ph.appendChild(el("span","tip","tap 🔊 to hear the whole passage"));
+    sec.appendChild(ph);
+    sec.appendChild(el("div","passage",s.passage));
+  }
   s.items.forEach(function(it,i){
-   n++;var box=el("div","item");box.appendChild(el("div","q",(i+1)+". "+it.q));
+   var box=el("div","item");
+   var qrow=el("div","q");
+   qrow.appendChild(el("span",null,(i+1)+". "));
+   var qw=el("span","qw",it.q);qrow.appendChild(qw);
+   if(it.py){qrow.appendChild(el("span","py","("+it.py+")"));}
+   // Speak: explicit say, or Chinese question text
+   var sayText=it.say||(hasHan(it.q)?it.q:null);
+   if(sayText)qrow.appendChild(speakBtn(sayText,false));
+   box.appendChild(qrow);
    var rec={it:it,box:box,sel:null,input:null};
-   if(it.t==="mc"){var o=el("div","opts");it.o.forEach(function(txt,j){var b=el("button","opt",L[j]+". "+txt);b.type="button";
-     b.onclick=function(){if(done)return;rec.sel=j;[].forEach.call(o.children,function(c){c.classList.remove("sel")});b.classList.add("sel");prog()};o.appendChild(b)});box.appendChild(o)}
-   else{var inp=el("input","txt");inp.type="text";inp.setAttribute("autocomplete","off");inp.setAttribute("autocapitalize","off");inp.setAttribute("spellcheck","false");inp.placeholder="写汉字…";inp.oninput=prog;rec.input=inp;box.appendChild(inp)}
-   var fb=el("div","fb");box.appendChild(fb);rec.fb=fb;sec.appendChild(box);ALL.push(rec)});
-  quiz.appendChild(sec)});
+   if(it.t==="mc"){
+     var o=el("div","opts");
+     it.o.forEach(function(txt,j){
+       var wrap=el("span","optwrap");
+       var b=el("button","opt",L[j]+". "+txt);b.type="button";
+       b.onclick=function(){if(done)return;rec.sel=j;[].forEach.call(o.querySelectorAll(".opt"),function(c){c.classList.remove("sel")});b.classList.add("sel");prog()};
+       wrap.appendChild(b);
+       if(hasHan(txt))wrap.appendChild(speakBtn(txt,true));
+       o.appendChild(wrap);
+     });
+     box.appendChild(o);
+   } else {
+     var row=el("div","optwrap");
+     var inp=el("input","txt");inp.type="text";inp.setAttribute("autocomplete","off");inp.setAttribute("autocapitalize","off");inp.setAttribute("spellcheck","false");inp.placeholder="写汉字…";inp.oninput=prog;rec.input=inp;
+     row.appendChild(inp);
+     // Listen-and-write: speak target without showing characters
+     if(it.say){var lb=speakBtn(it.say,false);lb.title="Listen (does not show the answer)";row.appendChild(lb);row.appendChild(el("span","tip","听发音"));}
+     box.appendChild(row);
+   }
+   var fb=el("div","fb");box.appendChild(fb);rec.fb=fb;sec.appendChild(box);ALL.push(rec);
+  });
+  quiz.appendChild(sec);
+ });
  prog();
 }
 function norm(s){return String(s||"").replace(/[\s\u3000]+/g,"")}
@@ -86,10 +156,11 @@ function check(){
  var r=document.getElementById("result");r.style.display="block";r.innerHTML="";
  r.appendChild(el("div",null,"得分 Score: "+score+" / "+ALL.length+" ("+pct+"%)"));
  r.appendChild(el("div",null,"用时 Time: "+t));r.appendChild(el("div",null,msg));
- r.scrollIntoView&&r.scrollIntoView({behavior:"smooth"});
+ try{r.scrollIntoView({behavior:"smooth"});}catch(e){}
  return {score:score,total:ALL.length,time:t};
 }
-function reset(){done=false;document.getElementById("quiz").classList.remove("locked");document.getElementById("result").style.display="none";start=Date.now();clearInterval(timerId);timerId=setInterval(tick,1000);tick();build();window.scrollTo&&window.scrollTo(0,0)}
+function reset(){done=false;try{speechSynthesis&&speechSynthesis.cancel();}catch(e){}
+ document.getElementById("quiz").classList.remove("locked");document.getElementById("result").style.display="none";start=Date.now();clearInterval(timerId);timerId=setInterval(tick,1000);tick();build();try{window.scrollTo(0,0);}catch(e){}}
 document.getElementById("check").onclick=check;
 document.getElementById("reset").onclick=reset;
 build();timerId=setInterval(tick,1000);tick();
