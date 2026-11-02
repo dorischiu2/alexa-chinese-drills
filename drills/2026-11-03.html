@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alexa 中文练习 – 3 Nov 2026 (HSK 5 · chunk 4)</title>
+<!-- Daily-drill template: each target word = 字 + pinyin + 🔊 + 例句(CN) + English translation; Web Speech zh-CN. See README.md -->
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f4f7fb;color:#222;font-family:-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",Arial,sans-serif;font-size:20px;line-height:1.6}
+.wrap{max-width:760px;margin:0 auto;padding:16px}
+h1{font-size:1.4em;margin:.3em 0 0}
+.sub{color:#666;font-size:.8em;margin-bottom:1em}
+#timer{position:sticky;top:0;background:#fff;border-radius:12px;padding:8px 14px;box-shadow:0 2px 6px rgba(0,0,0,.08);font-size:.85em;z-index:5;display:flex;justify-content:space-between}
+section{background:#fff;border-radius:16px;padding:14px 16px;margin:16px 0;box-shadow:0 2px 6px rgba(0,0,0,.06)}
+h2{font-size:1.1em;margin:.2em 0 .5em}
+h2 small{font-weight:normal;color:#777;font-size:.7em}
+.item{padding:10px 8px;margin:8px 0;border-radius:12px;border:2px solid transparent}
+.q{margin-bottom:6px;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.q .qw{font-weight:600;font-size:1.15em}
+.q .py{color:#64748b;font-size:.85em;font-weight:normal}
+.exbox{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:10px 12px;margin:6px 0 10px;width:100%}
+.ex-cn{font-size:1.05em;margin-bottom:4px}
+.ex-en{color:#475569;font-size:.88em}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.optwrap{display:inline-flex;align-items:center;gap:4px}
+.opt{font-size:1em;padding:10px 16px;border-radius:12px;border:2px solid #c9d4e3;background:#f8fbff;cursor:pointer;min-width:64px;font-family:inherit}
+.opt.sel{background:#3b82f6;color:#fff;border-color:#3b82f6}
+input.txt{font-size:1.1em;padding:8px 12px;border:2px solid #c9d4e3;border-radius:12px;width:10em;max-width:100%;font-family:inherit}
+.passage{background:#fffbea;border-left:5px solid #f5c542;padding:10px 14px;border-radius:8px;font-size:1.05em}
+.pass-head{display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap}
+.item.ok{border-color:#22c55e;background:#effdf3}
+.item.bad{border-color:#ef4444;background:#fef1f1}
+.fb{margin-top:6px;font-size:.85em;display:none}
+.item.ok .fb,.item.bad .fb{display:block}
+.item.ok .fb{color:#15803d}.item.bad .fb{color:#b91c1c}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
+.big{font-size:1.1em;padding:14px 24px;border:none;border-radius:14px;background:#16a34a;color:#fff;cursor:pointer;font-family:inherit}
+.big.sec{background:#64748b}
+#result{display:none;font-size:1.2em;text-align:center;background:#fff;border-radius:16px;padding:16px;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.locked .opt,.locked input.txt{pointer-events:none}
+.say{flex-shrink:0;width:40px;height:40px;border-radius:50%;border:2px solid #93c5fd;background:#eff6ff;color:#1d4ed8;font-size:1.05em;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;padding:0;font-family:inherit;line-height:1;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.say:disabled{opacity:.45;cursor:default}
+.say.sm{width:32px;height:32px;font-size:.9em;border-width:1.5px}
+.say:active:not(:disabled){background:#dbeafe}
+.tip{font-size:.75em;color:#64748b;margin:.4em 0 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Alexa 中文练习 🌟 New HSK 5</h1>
+<div class="sub">3 Nov 2026 · Day 32 · New HSK 5 chunk 4 (超–成长) · pinyin + 🔊 Putonghua · about 15 minutes · 47 questions<br>
+Each word has a short Chinese example and English translation. Tap 🔊 to hear. Answers stay hidden until Check.</div>
+<div id="timer"><span>⏱ <span id="clock">0:00</span></span><span id="prog"></span></div>
+<div id="quiz"></div>
+<div class="btns"><button class="big" id="check">✅ Check answers</button><button class="big sec" id="reset">↺ Try again</button></div>
+<div id="result"></div>
+</div>
+<script>
+var SECTIONS=[{"title": "一、看例句选意思 Meaning in context", "hint": "read the sentence, tap the English meaning · 🔊", "items": [{"t": "mc", "q": "超出", "o": ["to exceed / go beyond", "to quarrel", "to stir-fry", "to sink"], "a": 0, "ex": "超出 chāochū — to exceed, go beyond · 他的成绩已经超出了大家的期望。 / His results have already gone beyond everyone's expectations.", "py": "chāochū", "sent": "他的成绩已经超出了大家的期望。", "sent_en": "His results have already gone beyond everyone's expectations.", "say": "超出"}, {"t": "mc", "q": "超级", "o": ["ordinary", "super / ultra", "long-term", "silent"], "a": 1, "ex": "超级 chāojí — super, ultra · 这是一家超级市场，东西很全。 / This is a supermarket; it has almost everything.", "py": "chāojí", "sent": "这是一家超级市场，东西很全。", "sent_en": "This is a supermarket; it has almost everything.", "say": "超级"}, {"t": "mc", "q": "超速", "o": ["to park", "to exceed the speed limit", "to praise", "to admit"], "a": 1, "ex": "超速 chāosù — to speed, exceed the speed limit · 开车不要超速，很危险。 / Don't speed when driving; it's dangerous.", "py": "chāosù", "sent": "开车不要超速，很危险。", "sent_en": "Don't speed when driving; it's dangerous.", "say": "超速"}, {"t": "mc", "q": "车祸", "o": ["garage", "car accident", "vehicle owner", "carriage"], "a": 1, "ex": "车祸 chēhuò — car accident · 路上发生了一起严重的车祸。 / A serious car accident happened on the road.", "py": "chēhuò", "sent": "路上发生了一起严重的车祸。", "sent_en": "A serious car accident happened on the road.", "say": "车祸"}, {"t": "mc", "q": "车库", "o": ["garage", "carriage", "urban area", "cost"], "a": 0, "ex": "车库 chēkù — garage · 他把车停进了车库。 / He parked the car in the garage.", "py": "chēkù", "sent": "他把车停进了车库。", "sent_en": "He parked the car in the garage.", "say": "车库"}, {"t": "mc", "q": "沉默", "o": ["to praise", "to keep silent", "to establish", "to grow up"], "a": 1, "ex": "沉默 chénmò — to keep silent · 会上大家都很沉默，没有人发言。 / Everyone stayed silent at the meeting; nobody spoke.", "py": "chénmò", "sent": "会上大家都很沉默，没有人发言。", "sent_en": "Everyone stayed silent at the meeting; nobody spoke.", "say": "沉默"}, {"t": "mc", "q": "称赞", "o": ["to weigh", "to admit", "to praise / commend", "to bear"], "a": 2, "ex": "称赞 chēngzàn — to praise, commend · 老师称赞她写得很好。 / The teacher praised her for writing well.", "py": "chēngzàn", "sent": "老师称赞她写得很好。", "sent_en": "The teacher praised her for writing well.", "say": "称赞"}, {"t": "mc", "q": "成本", "o": ["result", "cost", "member", "procedure"], "a": 1, "ex": "成本 chéngběn — cost · 降低成本可以帮助公司多赚钱。 / Lowering costs can help the company make more money.", "py": "chéngběn", "sent": "降低成本可以帮助公司多赚钱。", "sent_en": "Lowering costs can help the company make more money.", "say": "成本"}, {"t": "mc", "q": "承担", "o": ["to establish", "to bear / undertake", "to call", "to sink"], "a": 1, "ex": "承担 chéngdān — to bear, undertake · 作为队长，他愿意承担责任。 / As team captain, he is willing to take responsibility.", "py": "chéngdān", "sent": "作为队长，他愿意承担责任。", "sent_en": "As team captain, he is willing to take responsibility.", "say": "承担"}, {"t": "mc", "q": "成熟", "o": ["to mature / ripe", "to exceed", "to quarrel", "to face"], "a": 0, "ex": "成熟 chéngshú — to mature; mature / ripe · 这些水果已经成熟了，可以吃。 / These fruits are already ripe and ready to eat.", "py": "chéngshú", "sent": "这些水果已经成熟了，可以吃。", "sent_en": "These fruits are already ripe and ready to eat.", "say": "成熟"}]}, {"title": "二、根据意思选词 Choose the word", "hint": "use the example sentence · tap Chinese · 🔊 on options", "items": [{"t": "mc", "q": "to face; towards", "o": ["朝", "吵", "炒", "沉"], "a": 0, "ex": "朝 cháo — to face; towards · 窗户朝南，屋里很亮。 / The window faces south, so the room is bright.", "sent": "窗户朝南，屋里很亮。", "sent_en": "The window faces south, so the room is bright."}, {"t": "mc", "q": "noisy; to quarrel", "o": ["炒", "超", "吵", "称"], "a": 2, "ex": "吵 chǎo — noisy; to quarrel · 别在图书馆里吵，会影响别人。 / Don't make noise in the library; it will bother others.", "sent": "别在图书馆里吵，会影响别人。", "sent_en": "Don't make noise in the library; it will bother others."}, {"t": "mc", "q": "to stir-fry", "o": ["炒", "吵", "超", "沉"], "a": 0, "ex": "炒 chǎo — to stir-fry · 妈妈正在炒蔬菜。 / Mum is stir-frying vegetables.", "sent": "妈妈正在炒蔬菜。", "sent_en": "Mum is stir-frying vegetables."}, {"t": "mc", "q": "vehicle (cars etc.)", "o": ["车厢", "车辆", "车主", "车库"], "a": 1, "ex": "车辆 chēliàng — vehicle · 这条路上的车辆太多了。 / There are too many vehicles on this road.", "sent": "这条路上的车辆太多了。", "sent_en": "There are too many vehicles on this road."}, {"t": "mc", "q": "carriage / compartment (of a train)", "o": ["车祸", "车辆", "车厢", "车主"], "a": 2, "ex": "车厢 chēxiāng — carriage, compartment · 请不要站在车厢门口。 / Please don't stand in the doorway of the carriage.", "sent": "请不要站在车厢门口。", "sent_en": "Please don't stand in the doorway of the carriage."}, {"t": "mc", "q": "vehicle owner", "o": ["车主", "成员", "成人", "乘务员"], "a": 0, "ex": "车主 chēzhǔ — vehicle owner · 车主把车修好了。 / The vehicle owner had the car repaired.", "sent": "车主把车修好了。", "sent_en": "The vehicle owner had the car repaired."}, {"t": "mc", "q": "degree; level / extent", "o": ["成分", "程度", "成果", "程序"], "a": 1, "ex": "程度 chéngdù — degree, level, extent · 他的汉语水平已经达到了很高的程度。 / His Chinese has reached a very high level.", "sent": "他的汉语水平已经达到了很高的程度。", "sent_en": "His Chinese has reached a very high level."}, {"t": "mc", "q": "ingredient; component", "o": ["成本", "成果", "成分", "成员"], "a": 2, "ex": "成分 chéngfèn — ingredient, component · 请看看这种药的成分。 / Please look at the ingredients of this medicine.", "sent": "请看看这种药的成分。", "sent_en": "Please look at the ingredients of this medicine."}]}, {"title": "三、填空 Fill the blank", "hint": "read EN translation, tap the missing word · 🔊", "items": [{"t": "mc", "q": "这次实验的____很令人满意。", "o": ["成本", "成果", "成分", "程度"], "a": 1, "ex": "成果 chéngguǒ — achievement, result (of work) · 这次实验的成果很令人满意。 / The results of this experiment are very satisfying.", "sent_en": "The results of this experiment are very satisfying.", "py_hint": "chéngguǒ"}, {"t": "mc", "q": "这家公司是去年____的。", "o": ["成立", "承认", "成长", "成熟"], "a": 0, "ex": "成立 chénglì — to establish, set up · 这家公司是去年成立的。 / This company was established last year.", "sent_en": "This company was established last year.", "py_hint": "chénglì"}, {"t": "mc", "q": "他已经____了，可以自己做决定。", "o": ["成熟", "成年", "承认", "承受"], "a": 1, "ex": "成年 chéngnián — to become an adult · 他已经成年了，可以自己做决定。 / He is already an adult and can make his own decisions.", "sent_en": "He is already an adult and can make his own decisions.", "py_hint": "chéngnián"}, {"t": "mc", "q": "我们住在城市的____。", "o": ["车厢", "城区", "车库", "场所"], "a": 1, "ex": "城区 chéngqū — urban area · 我们住在城市的城区。 / We live in the urban area of the city.", "sent_en": "We live in the urban area of the city.", "py_hint": "chéngqū"}, {"t": "mc", "q": "他终于____了自己的错误。", "o": ["称赞", "承认", "承担", "称为"], "a": 1, "ex": "承认 chéngrèn — to admit, acknowledge · 他终于承认了自己的错误。 / He finally admitted his mistake.", "sent_en": "He finally admitted his mistake.", "py_hint": "chéngrèn"}, {"t": "mc", "q": "这座桥能____很大的重量。", "o": ["承受", "超速", "超出", "沉默"], "a": 0, "ex": "承受 chéngshòu — to bear, endure · 这座桥能承受很大的重量。 / This bridge can bear a very heavy weight.", "sent_en": "This bridge can bear a very heavy weight.", "py_hint": "chéngshòu"}, {"t": "mc", "q": "飞机上的____很有礼貌。", "o": ["车主", "成员", "乘务员", "成人"], "a": 2, "ex": "乘务员 chéngwùyuán — attendant, crew member · 飞机上的乘务员很有礼貌。 / The flight attendant on the plane is very polite.", "sent_en": "The flight attendant on the plane is very polite.", "py_hint": "chéngwùyuán"}]}, {"title": "四、易混词 Look-alikes in sentences", "hint": "tap the word that fits · 🔊", "items": [{"t": "mc", "q": "他的努力____了老师的期望。", "o": ["超级", "超出", "超速", "彻底"], "a": 1, "ex": "超出 chāochū — to exceed, go beyond · 他的努力超出了老师的期望。 / His hard work exceeded the teacher's expectations.", "sent_en": "His hard work exceeded the teacher's expectations."}, {"t": "mc", "q": "别人叫他小明，他也____自己是小明。", "o": ["称", "称赞", "称为", "承认"], "a": 0, "ex": "称 chēng — to call, to address as · 别人叫他小明，他也称自己是小明。 / Others call him Xiao Ming, and he also calls himself Xiao Ming.", "sent_en": "Others call him Xiao Ming, and he also calls himself Xiao Ming."}, {"t": "mc", "q": "这种水果____苹果，其实是梨。", "o": ["称赞", "称为", "称", "承认"], "a": 1, "ex": "称为 chēngwéi — to be called, known as · 这种水果称为苹果，其实是梨。 / This fruit is called an apple, but it is actually a pear.", "sent_en": "This fruit is called an apple, but it is actually a pear."}, {"t": "mc", "q": "请把这些苹果____一下，看看有多重。", "o": ["称赞", "称", "沉", "炒"], "a": 1, "ex": "称 chēng — to weigh · 请把这些苹果称一下，看看有多重。 / Please weigh these apples and see how heavy they are.", "sent_en": "Please weigh these apples and see how heavy they are."}, {"t": "mc", "q": "石头很快就____到水底了。", "o": ["沉", "超", "朝", "吵"], "a": 0, "ex": "沉 chén — to sink; deep/heavy · 石头很快就沉到水底了。 / The stone quickly sank to the bottom of the water.", "sent_en": "The stone quickly sank to the bottom of the water."}, {"t": "mc", "q": "她决定____改变自己的坏习惯。", "o": ["彻底", "超级", "成熟", "沉默"], "a": 0, "ex": "彻底 chèdǐ — thorough, complete · 她决定彻底改变自己的坏习惯。 / She decided to thoroughly change her bad habits. (light review)", "sent_en": "She decided to thoroughly change her bad habits. (light review)"}, {"t": "mc", "q": "公共____请保持安静。", "o": ["场所", "车库", "城区", "车厢"], "a": 0, "ex": "场所 chǎngsuǒ — place, venue · 公共场所请保持安静。 / Please keep quiet in public places. (review)", "sent_en": "Please keep quiet in public places. (review)"}]}, {"title": "五、默写 Dictation in context", "hint": "🔊 listen, read the sentence, type the characters", "items": [{"t": "text", "q": "chéngjiù — achievement; to achieve", "say": "成就", "sent": "取得这样的____不容易。", "sent_en": "Getting this kind of achievement isn't easy.", "a": ["成就"], "ex": "成就 chéngjiù — achievement; to achieve · 取得这样的成就不容易。 / Getting this kind of achievement isn't easy."}, {"t": "text", "q": "chéngrén — adult", "say": "成人", "sent": "这部电影只适合____观看。", "sent_en": "This film is only suitable for adults.", "a": ["成人"], "ex": "成人 chéngrén — adult · 这部电影只适合成人观看。 / This film is only suitable for adults."}, {"t": "text", "q": "chéngxù — procedure; program (computer)", "say": "程序", "sent": "请按照____一步一步做。", "sent_en": "Please follow the procedure step by step.", "a": ["程序"], "ex": "程序 chéngxù — procedure; program · 请按照程序一步一步做。 / Please follow the procedure step by step."}, {"t": "text", "q": "chéngyuán — member", "say": "成员", "sent": "她是这个俱乐部的新____。", "sent_en": "She is a new member of this club.", "a": ["成员"], "ex": "成员 chéngyuán — member · 她是这个俱乐部的新成员。 / She is a new member of this club."}, {"t": "text", "q": "chéngzhǎng — to grow up", "say": "成长", "sent": "孩子们在爱中____。", "sent_en": "Children grow up in love.", "a": ["成长"], "ex": "成长 chéngzhǎng — to grow up · 孩子们在爱中成长。 / Children grow up in love."}, {"t": "text", "q": "chāo — to exceed, surpass", "say": "超", "sent": "他的速度____过了其他人。", "sent_en": "His speed surpassed everyone else's.", "a": ["超"], "ex": "超 chāo — to exceed, surpass · 他的速度超过了其他人。 / His speed surpassed everyone else's."}]}, {"title": "六、声调 Tones", "hint": "tap the correct pinyin · 🔊", "items": [{"t": "mc", "q": "称赞", "o": ["chèngzàn", "chēngzàn", "chēngzān", "chéngzàn"], "a": 1, "ex": "称赞 chēngzàn — to praise (1st + 4th).", "say": "称赞"}, {"t": "mc", "q": "沉默", "o": ["chénmò", "chēnmò", "chénmó", "chènmò"], "a": 0, "ex": "沉默 chénmò — to keep silent (2nd + 4th).", "say": "沉默"}, {"t": "mc", "q": "承受", "o": ["chéngshǒu", "chéngshòu", "chèngshòu", "chéngshōu"], "a": 1, "ex": "承受 chéngshòu — to bear, endure (2nd + 4th).", "say": "承受"}, {"t": "mc", "q": "吵 / 炒", "o": ["chǎo / chǎo (same tones)", "chāo / chǎo", "chǎo / chào", "cháo / chǎo"], "a": 0, "ex": "吵 and 炒 are both chǎo (3rd tone) — meaning differs: noisy/quarrel vs stir-fry.", "say": "吵炒"}]}, {"title": "七、阅读 Reading", "hint": "🔊 listen to the passage, then tap", "passage": "小李是一名乘务员。去年，她所在的公司成立了一个新项目组，成员都来自城区。大家希望这个项目能超出原来的计划，取得更多成果。开始时成本很高，压力很大，有人很沉默。小李没有抱怨，她愿意承担责任，也承认自己还有不足。经过长期努力，项目慢慢成熟了。老板称赞了每一位成员，说他们的成长让他很高兴。有一天，路上发生了一起车祸，车辆堵了很久。车主和乘务员都保持冷静。小李说：“只要我们彻底做好准备，就能承受困难。”", "items": [{"t": "mc", "q": "小李是做什么工作的？", "o": ["车主", "乘务员", "老师"], "a": 1, "ex": "小李是一名乘务员。 / Xiao Li is a crew attendant."}, {"t": "mc", "q": "公司去年做了什么？", "o": ["成立了一个新项目组", "买了很多车辆", "建了一个车库"], "a": 0, "ex": "她所在的公司成立了一个新项目组。 / The company set up a new project team."}, {"t": "mc", "q": "开始时大家遇到了什么困难？", "o": ["成本高，压力大", "水果不成熟", "车厢太吵"], "a": 0, "ex": "开始时成本很高，压力很大。 / At first costs were high and pressure was heavy."}, {"t": "mc", "q": "老板为什么称赞成员？", "o": ["因为他们超速了", "因为他们的成长让他高兴", "因为他们炒菜好吃"], "a": 1, "ex": "老板称赞了每一位成员，说他们的成长让他很高兴。"}, {"t": "mc", "q": "“彻底做好准备”里的“彻底”意思是？", "o": ["a little bit", "thoroughly / completely", "silently"], "a": 1, "ex": "彻底 chèdǐ — thorough, complete."}]}];
+
+/* TEMPLATE: every target word needs 字+拼音+🔊 + 例句 CN + EN translation. See README.md */
+var L="ABCDEFG",ALL=[],start=Date.now(),done=false,timerId,zhVoice=null;
+function pickZhVoice(){
+  if(!window.speechSynthesis)return null;
+  var vs=speechSynthesis.getVoices()||[];
+  var pref=vs.filter(function(v){return /^zh(-|_|$)/i.test(v.lang)||/Chinese|中文|普通话|国语/i.test(v.name);});
+  var cn=pref.filter(function(v){return /CN|China|普通话|Chinese\s*\(China\)/i.test(v.lang+" "+v.name);});
+  return cn[0]||pref[0]||null;
+}
+function refreshVoice(){zhVoice=pickZhVoice();}
+if(window.speechSynthesis){refreshVoice();speechSynthesis.onvoiceschanged=refreshVoice;}
+function hasHan(s){return /[\u4e00-\u9fff]/.test(s||"");}
+function speakZh(text,btn){
+  if(!text||!window.speechSynthesis)return;
+  try{speechSynthesis.cancel();}catch(e){}
+  var u=new SpeechSynthesisUtterance(String(text));
+  u.lang="zh-CN";u.rate=0.9;u.pitch=1;
+  if(!zhVoice)refreshVoice();
+  if(zhVoice)u.voice=zhVoice;
+  if(btn)btn.disabled=true;
+  var unlock=function(){if(btn)btn.disabled=false;};
+  u.onend=unlock;u.onerror=unlock;
+  setTimeout(unlock, Math.max(1800, String(text).length*420));
+  speechSynthesis.speak(u);
+}
+function speakBtn(text, small){
+  var b=el("button", small?"say sm":"say");
+  b.type="button";b.setAttribute("aria-label","Pronounce");b.textContent="🔊";
+  b.onclick=function(ev){if(ev&&ev.stopPropagation)ev.stopPropagation();if(ev&&ev.preventDefault)ev.preventDefault();speakZh(text,b);return false;};
+  return b;
+}
+function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e}
+function addExample(box, it){
+  if(!it.sent && !it.sent_en) return;
+  var ex=el("div","exbox");
+  if(it.sent){
+    var row=el("div","ex-cn");
+    row.appendChild(document.createTextNode("例句："+it.sent+" "));
+    if(hasHan(it.sent)) row.appendChild(speakBtn(it.sent.replace(/____/g, it.say||it.q||""), true));
+    ex.appendChild(row);
+  }
+  if(it.sent_en) ex.appendChild(el("div","ex-en","EN: "+it.sent_en));
+  box.appendChild(ex);
+}
+function build(){
+ var quiz=document.getElementById("quiz");quiz.innerHTML="";ALL=[];
+ SECTIONS.forEach(function(s){
+  var sec=el("section");var h=el("h2",null,s.title+" ");h.appendChild(el("small",null,"("+s.hint+")"));sec.appendChild(h);
+  if(s.passage){
+    var ph=el("div","pass-head");ph.appendChild(el("strong",null,"短文"));ph.appendChild(speakBtn(s.passage,false));
+    ph.appendChild(el("span","tip","tap 🔊 to hear the whole passage"));
+    sec.appendChild(ph);
+    sec.appendChild(el("div","passage",s.passage));
+  }
+  s.items.forEach(function(it,i){
+   var box=el("div","item");
+   var qrow=el("div","q");
+   qrow.appendChild(el("span",null,(i+1)+". "));
+   var qw=el("span","qw",it.q);qrow.appendChild(qw);
+   if(it.py) qrow.appendChild(el("span","py","("+it.py+")"));
+   if(it.py_hint) qrow.appendChild(el("span","py","拼音提示: "+it.py_hint));
+   var sayText=it.say||(hasHan(it.q)&&!/____/.test(it.q)?it.q:null);
+   if(sayText && !/____/.test(String(it.q))) qrow.appendChild(speakBtn(sayText,false));
+   box.appendChild(qrow);
+   addExample(box, it);
+   var rec={it:it,box:box,sel:null,input:null};
+   if(it.t==="mc"){
+     var o=el("div","opts");
+     it.o.forEach(function(txt,j){
+       var wrap=el("span","optwrap");
+       var b=el("button","opt",L[j]+". "+txt);b.type="button";
+       b.onclick=function(){if(done)return;rec.sel=j;[].forEach.call(o.querySelectorAll(".opt"),function(c){c.classList.remove("sel")});b.classList.add("sel");prog()};
+       wrap.appendChild(b);
+       if(hasHan(txt) && String(txt).length<=8) wrap.appendChild(speakBtn(txt,true));
+       o.appendChild(wrap);
+     });
+     box.appendChild(o);
+   } else {
+     var row=el("div","optwrap");
+     var inp=el("input","txt");inp.type="text";inp.setAttribute("autocomplete","off");inp.setAttribute("autocapitalize","off");inp.setAttribute("spellcheck","false");inp.placeholder="写汉字…";inp.oninput=prog;rec.input=inp;
+     row.appendChild(inp);
+     if(it.say){var lb=speakBtn(it.say,false);lb.title="Listen (does not show the answer)";row.appendChild(lb);row.appendChild(el("span","tip","听发音"));}
+     box.appendChild(row);
+   }
+   var fb=el("div","fb");box.appendChild(fb);rec.fb=fb;sec.appendChild(box);ALL.push(rec);
+  });
+  quiz.appendChild(sec);
+ });
+ prog();
+}
+function norm(s){return String(s||"").replace(/[\s\u3000]+/g,"")}
+function isCorrect(rec){var it=rec.it;if(it.t==="mc")return rec.sel===it.a;var v=norm(rec.input.value);return it.a.some(function(a){return norm(a)===v})}
+function answered(rec){return rec.it.t==="mc"?rec.sel!==null:norm(rec.input.value)!==""}
+function prog(){var a=ALL.filter(answered).length;document.getElementById("prog").textContent="已答 "+a+" / "+ALL.length}
+function fmt(ms){var s=Math.round(ms/1000);return Math.floor(s/60)+":"+("0"+s%60).slice(-2)}
+function tick(){document.getElementById("clock").textContent=fmt(Date.now()-start)}
+function check(){
+ if(done)return;done=true;clearInterval(timerId);var score=0;
+ ALL.forEach(function(rec){var ok=isCorrect(rec),it=rec.it;rec.box.classList.add(ok?"ok":"bad");
+  var ans=it.t==="mc"?L[it.a]+". "+it.o[it.a]:it.a[0];
+  rec.fb.textContent=ok?"✔ 对了！":"✘ Correct answer: "+ans+" — "+it.ex;if(ok)score++});
+ document.getElementById("quiz").classList.add("locked");
+ var t=fmt(Date.now()-start),pct=Math.round(score/ALL.length*100);
+ var msg=pct===100?"太棒了！🎉":pct>=80?"很好！👍":pct>=60?"不错，继续加油！💪":"加油！Let's review the red ones. 📚";
+ var r=document.getElementById("result");r.style.display="block";r.innerHTML="";
+ r.appendChild(el("div",null,"得分 Score: "+score+" / "+ALL.length+" ("+pct+"%)"));
+ r.appendChild(el("div",null,"用时 Time: "+t));r.appendChild(el("div",null,msg));
+ try{r.scrollIntoView({behavior:"smooth"});}catch(e){}
+ return {score:score,total:ALL.length,time:t};
+}
+function reset(){done=false;try{speechSynthesis&&speechSynthesis.cancel();}catch(e){}
+ document.getElementById("quiz").classList.remove("locked");document.getElementById("result").style.display="none";start=Date.now();clearInterval(timerId);timerId=setInterval(tick,1000);tick();build();try{window.scrollTo(0,0);}catch(e){}}
+document.getElementById("check").onclick=check;
+document.getElementById("reset").onclick=reset;
+build();timerId=setInterval(tick,1000);tick();
+
+</script>
+</body>
+</html>
