@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alexa 中文练习 – 5 Nov 2026 (HSK 5 · chunk 6)</title>
+<!-- Daily-drill template: each target word = 字 + pinyin + 🔊 + 例句(CN) + English translation; Web Speech zh-CN. See README.md -->
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f4f7fb;color:#222;font-family:-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",Arial,sans-serif;font-size:20px;line-height:1.6}
+.wrap{max-width:760px;margin:0 auto;padding:16px}
+h1{font-size:1.4em;margin:.3em 0 0}
+.sub{color:#666;font-size:.8em;margin-bottom:1em}
+#timer{position:sticky;top:0;background:#fff;border-radius:12px;padding:8px 14px;box-shadow:0 2px 6px rgba(0,0,0,.08);font-size:.85em;z-index:5;display:flex;justify-content:space-between}
+section{background:#fff;border-radius:16px;padding:14px 16px;margin:16px 0;box-shadow:0 2px 6px rgba(0,0,0,.06)}
+h2{font-size:1.1em;margin:.2em 0 .5em}
+h2 small{font-weight:normal;color:#777;font-size:.7em}
+.item{padding:10px 8px;margin:8px 0;border-radius:12px;border:2px solid transparent}
+.q{margin-bottom:6px;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.q .qw{font-weight:600;font-size:1.15em}
+.q .py{color:#64748b;font-size:.85em;font-weight:normal}
+.exbox{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:10px 12px;margin:6px 0 10px;width:100%}
+.ex-cn{font-size:1.05em;margin-bottom:4px}
+.ex-en{color:#475569;font-size:.88em}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.optwrap{display:inline-flex;align-items:center;gap:4px}
+.opt{font-size:1em;padding:10px 16px;border-radius:12px;border:2px solid #c9d4e3;background:#f8fbff;cursor:pointer;min-width:64px;font-family:inherit}
+.opt.sel{background:#3b82f6;color:#fff;border-color:#3b82f6}
+input.txt{font-size:1.1em;padding:8px 12px;border:2px solid #c9d4e3;border-radius:12px;width:10em;max-width:100%;font-family:inherit}
+.passage{background:#fffbea;border-left:5px solid #f5c542;padding:10px 14px;border-radius:8px;font-size:1.05em}
+.pass-head{display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap}
+.item.ok{border-color:#22c55e;background:#effdf3}
+.item.bad{border-color:#ef4444;background:#fef1f1}
+.fb{margin-top:6px;font-size:.85em;display:none}
+.item.ok .fb,.item.bad .fb{display:block}
+.item.ok .fb{color:#15803d}.item.bad .fb{color:#b91c1c}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
+.big{font-size:1.1em;padding:14px 24px;border:none;border-radius:14px;background:#16a34a;color:#fff;cursor:pointer;font-family:inherit}
+.big.sec{background:#64748b}
+#result{display:none;font-size:1.2em;text-align:center;background:#fff;border-radius:16px;padding:16px;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.locked .opt,.locked input.txt{pointer-events:none}
+.say{flex-shrink:0;width:40px;height:40px;border-radius:50%;border:2px solid #93c5fd;background:#eff6ff;color:#1d4ed8;font-size:1.05em;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;padding:0;font-family:inherit;line-height:1;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.say:disabled{opacity:.45;cursor:default}
+.say.sm{width:32px;height:32px;font-size:.9em;border-width:1.5px}
+.say:active:not(:disabled){background:#dbeafe}
+.tip{font-size:.75em;color:#64748b;margin:.4em 0 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Alexa 中文练习 🌟 New HSK 5</h1>
+<div class="sub">5 Nov 2026 · Day 34 · New HSK 5 chunk 6 (创作–大众) · pinyin + 🔊 Putonghua · about 15 minutes · 47 questions<br>
+Each word has a short Chinese example and English translation. Tap 🔊 to hear. Answers stay hidden until Check.</div>
+<div id="timer"><span>⏱ <span id="clock">0:00</span></span><span id="prog"></span></div>
+<div id="quiz"></div>
+<div class="btns"><button class="big" id="check">✅ Check answers</button><button class="big sec" id="reset">↺ Try again</button></div>
+<div id="result"></div>
+</div>
+<script>
+var SECTIONS=[{"title":"一、看例句选意思 Meaning in context","hint":"read the sentence, tap the English meaning · 🔊","items":[{"t":"mc","q":"创作","py":"chuàngzuò","say":"创作","o":["to create; creation","to resign","vocabulary","to stimulate"],"a":0,"sent":"她喜欢创作短篇小说。","sent_en":"She likes to create short stories.","ex":"创作 chuàngzuò — to create; creation · 她喜欢创作短篇小说。 / She likes to create short stories."},{"t":"mc","q":"词汇","py":"cíhuì","say":"词汇","o":["deposit","vocabulary","measure","conference"],"a":1,"sent":"学中文要多记词汇。","sent_en":"To learn Chinese you need to remember more vocabulary.","ex":"词汇 cíhuì — vocabulary · 学中文要多记词汇。 / To learn Chinese you need to remember more vocabulary."},{"t":"mc","q":"辞职","py":"cízhí","say":"辞职","o":["to dress up","to interrupt","to resign from a job","to pack"],"a":2,"sent":"他决定辞职去创业。","sent_en":"He decided to resign and start a business.","ex":"辞职 cízhí — to resign from a job · 他决定辞职去创业。 / He decided to resign and start a business."},{"t":"mc","q":"刺激","py":"cìjī","say":"刺激","o":["formerly","to stimulate; stimulus","never","thus"],"a":1,"sent":"咖啡可以刺激大脑。","sent_en":"Coffee can stimulate the brain.","ex":"刺激 cìjī — to stimulate; stimulus · 咖啡可以刺激大脑。 / Coffee can stimulate the brain."},{"t":"mc","q":"从前","py":"cóngqián","say":"从前","o":["formerly, before","after this","at this moment","before this"],"a":0,"sent":"从前这里是一片森林。","sent_en":"Formerly this place was a forest.","ex":"从前 cóngqián — formerly, before · 从前这里是一片森林。 / Formerly this place was a forest."},{"t":"mc","q":"从事","py":"cóngshì","say":"从事","o":["to promote sales","to urge","to engage in, to pursue","to deposit"],"a":2,"sent":"她从事教育工作很多年了。","sent_en":"She has engaged in education work for many years.","ex":"从事 cóngshì — to engage in, to pursue · 她从事教育工作很多年了。 / She has engaged in education work for many years."},{"t":"mc","q":"措施","py":"cuòshī","say":"措施","o":["elephant","brain","measure, step","mansion"],"a":2,"sent":"政府采取了新的安全措施。","sent_en":"The government took new safety measures.","ex":"措施 cuòshī — measure, step · 政府采取了新的安全措施。 / The government took new safety measures."},{"t":"mc","q":"达成","py":"dáchéng","say":"达成","o":["to interrupt","to reach, to accomplish","to break","to ask about"],"a":1,"sent":"双方终于达成了协议。","sent_en":"The two sides finally reached an agreement.","ex":"达成 dáchéng — to reach, to accomplish · 双方终于达成了协议。 / The two sides finally reached an agreement."},{"t":"mc","q":"打扮","py":"dǎban","say":"打扮","o":["to dress up","to pack","to deposit money","to exist"],"a":0,"sent":"过年时大家都会打扮得很漂亮。","sent_en":"At Chinese New Year everyone dresses up beautifully.","ex":"打扮 dǎban — to dress up · 过年时大家都会打扮得很漂亮。 / At Chinese New Year everyone dresses up beautifully."},{"t":"mc","q":"大象","py":"dàxiàng","say":"大象","o":["rice","brain","elephant","building"],"a":2,"sent":"动物园里有一头大象。","sent_en":"There is an elephant in the zoo.","ex":"大象 dàxiàng — elephant · 动物园里有一头大象。 / There is an elephant in the zoo."}]},{"title":"二、根据意思选词 Choose the word","hint":"use the example sentence · tap Chinese · 🔊 on options","items":[{"t":"mc","q":"after this","o":["此前","此时","此后","从前"],"a":2,"ex":"此后 cǐhòu — after this · 此后他再也没回过家乡。 / After this he never returned to his hometown.","sent":"此后他再也没回过家乡。","sent_en":"After this he never returned to his hometown."},{"t":"mc","q":"never","o":["从前","从不","从而","从事"],"a":1,"ex":"从不 cóngbù — never · 他从不抽烟。 / He never smokes.","sent":"他从不抽烟。","sent_en":"He never smokes."},{"t":"mc","q":"thus, thereby","o":["从而","从前","此后","此时"],"a":0,"ex":"从而 cóng'ér — thus, thereby · 她努力学习，从而提高了成绩。 / She studied hard, thereby improving her grades.","sent":"她努力学习，从而提高了成绩。","sent_en":"She studied hard, thereby improving her grades."},{"t":"mc","q":"to promote, to advance","o":["促使","促销","促进","催"],"a":2,"ex":"促进 cùjìn — to promote, to advance · 运动可以促进身体健康。 / Exercise can promote physical health.","sent":"运动可以促进身体健康。","sent_en":"Exercise can promote physical health."},{"t":"mc","q":"to urge, to hurry","o":["催","存放","存款","措施"],"a":0,"ex":"催 cuī — to urge, to hurry · 妈妈催我快点起床。 / Mum urged me to get up quickly.","sent":"妈妈催我快点起床。","sent_en":"Mum urged me to get up quickly."},{"t":"mc","q":"to deposit, to store","o":["存款","存在","存放","达成"],"a":2,"ex":"存放 cúnfàng — to deposit, to store · 请把行李存放在服务台。 / Please store your luggage at the service desk.","sent":"请把行李存放在服务台。","sent_en":"Please store your luggage at the service desk."},{"t":"mc","q":"to pack; to take out (food)","o":["打扮","打包","打断","打破"],"a":1,"ex":"打包 dǎbāo — to pack, to take out · 剩下的菜我们打包带走。 / We'll pack the leftover dishes to take away.","sent":"剩下的菜我们打包带走。","sent_en":"We'll pack the leftover dishes to take away."},{"t":"mc","q":"to ask about; to inquire","o":["打断","打破","打听","大胆"],"a":2,"ex":"打听 dǎting — to ask about · 我想打听一下附近有没有书店。 / I'd like to ask whether there is a bookstore nearby.","sent":"我想打听一下附近有没有书店。","sent_en":"I'd like to ask whether there is a bookstore nearby."}]},{"title":"三、填空 Fill the blank","hint":"read EN translation, tap the missing word · 🔊","items":[{"t":"mc","q":"____他在北京工作过三年。","o":["此后","此前","此时","从前"],"a":1,"py_hint":"cǐqián","ex":"此前 cǐqián — before this · 此前他在北京工作过三年。 / Before this he had worked in Beijing for three years.","sent_en":"Before this he had worked in Beijing for three years."},{"t":"mc","q":"____外面正在下大雨。","o":["此后","此前","此时","从前"],"a":2,"py_hint":"cǐshí","ex":"此时 cǐshí — at this moment · 此时外面正在下大雨。 / At this moment it is raining heavily outside.","sent_en":"At this moment it is raining heavily outside."},{"t":"mc","q":"老师的话____他更加努力。","o":["促进","促使","促销","催"],"a":1,"py_hint":"cùshǐ","ex":"促使 cùshǐ — to urge, to prompt · 老师的话促使他更加努力。 / The teacher's words prompted him to work harder.","sent_en":"The teacher's words prompted him to work harder."},{"t":"mc","q":"商场正在____打折。","o":["促进","促使","促销","从事"],"a":2,"py_hint":"cùxiāo","ex":"促销 cùxiāo — to promote (sales) · 商场正在促销打折。 / The mall is holding a sales promotion with discounts.","sent_en":"The mall is holding a sales promotion with discounts."},{"t":"mc","q":"他每个月都去银行____。","o":["存放","存款","存在","达成"],"a":1,"py_hint":"cúnkuǎn","ex":"存款 cúnkuǎn — to deposit money; deposit · 他每个月都去银行存款。 / He goes to the bank every month to deposit money.","sent_en":"He goes to the bank every month to deposit money."},{"t":"mc","q":"这个问题仍然____。","o":["存放","存款","存在","措施"],"a":2,"py_hint":"cúnzài","ex":"存在 cúnzài — to exist · 这个问题仍然存在。 / This problem still exists.","sent_en":"This problem still exists."},{"t":"mc","q":"请不要____我说话。","o":["打扮","打包","打断","打破"],"a":2,"py_hint":"dǎduàn","ex":"打断 dǎduàn — to interrupt · 请不要打断我说话。 / Please don't interrupt me while I'm speaking.","sent_en":"Please don't interrupt me while I'm speaking."}]},{"title":"四、易混词 Look-alikes in sentences","hint":"tap the word that fits · 🔊","items":[{"t":"mc","q":"____他再也没开过车。","o":["此前","此后","此时","从前"],"a":1,"ex":"此后 cǐhòu — after this · 此后他再也没开过车。 / After this he never drove again.","sent_en":"After this he never drove again."},{"t":"mc","q":"新政策____了经济发展。","o":["促进","促使","促销","催"],"a":0,"ex":"促进 cùjìn — to promote, to advance · 新政策促进了经济发展。 / The new policy promoted economic development.","sent_en":"The new policy promoted economic development."},{"t":"mc","q":"贵重物品请____在保险箱里。","o":["存款","存在","存放","达成"],"a":2,"ex":"存放 cúnfàng — to deposit, to store · 贵重物品请存放在保险箱里。 / Please store valuables in the safe.","sent_en":"Please store valuables in the safe."},{"t":"mc","q":"他一不小心____了花瓶。","o":["打断","打破","打听","打包"],"a":1,"ex":"打破 dǎpò — to break · 他一不小心打破了花瓶。 / He accidentally broke the vase.","sent_en":"He accidentally broke the vase."},{"t":"mc","q":"她做事很____，从不害怕。","o":["大多","大力","大胆","大会"],"a":2,"ex":"大胆 dàdǎn — bold, daring · 她做事很大胆，从不害怕。 / She acts boldly and is never afraid.","sent_en":"She acts boldly and is never afraid."},{"t":"mc","q":"这位____每天早上在公园锻炼。","o":["大妈","大爷","大众","大事"],"a":0,"ex":"大妈 dàmā — aunt, middle-aged woman · 这位大妈每天早上在公园锻炼。 / This auntie exercises in the park every morning.","sent_en":"This auntie exercises in the park every morning."},{"t":"mc","q":"科学家不断____，发明新技术。 (review)","o":["创造","创新","创作","辞职"],"a":1,"ex":"创新 chuàngxīn — to innovate; innovation · 科学家不断创新，发明新技术。 / Scientists keep innovating and inventing new technology. (light review)","sent_en":"Scientists keep innovating and inventing new technology. (light review)"}]},{"title":"五、默写 Dictation in context","hint":"🔊 listen, read the sentence, type the characters","items":[{"t":"text","q":"dàhuì — general meeting, conference","say":"大会","sent":"明天公司将召开一次重要____。","sent_en":"Tomorrow the company will hold an important conference.","a":["大会"],"ex":"大会 dàhuì — general meeting, conference · 明天公司将召开一次重要大会。 / Tomorrow the company will hold an important conference."},{"t":"text","q":"dàmǐ — rice","say":"大米","sent":"南方人喜欢吃____。","sent_en":"People in the south like to eat rice.","a":["大米"],"ex":"大米 dàmǐ — rice · 南方人喜欢吃大米。 / People in the south like to eat rice."},{"t":"text","q":"dànǎo — brain","say":"大脑","sent":"充足的睡眠对____很好。","sent_en":"Enough sleep is good for the brain.","a":["大脑"],"ex":"大脑 dànǎo — brain · 充足的睡眠对大脑很好。 / Enough sleep is good for the brain."},{"t":"text","q":"dàpī — large batch","say":"大批","sent":"工厂收到了____订单。","sent_en":"The factory received a large batch of orders.","a":["大批"],"ex":"大批 dàpī — large batch · 工厂收到了大批订单。 / The factory received a large batch of orders."},{"t":"text","q":"dàshà — mansion, building","say":"大厦","sent":"市中心有一座很高的玻璃____。","sent_en":"There is a very tall glass building in the city centre.","a":["大厦"],"ex":"大厦 dàshà — mansion, building · 市中心有一座很高的玻璃大厦。 / There is a very tall glass building in the city centre."},{"t":"text","q":"dàxíng — large-scale","say":"大型","sent":"周末有一场____音乐会。","sent_en":"There is a large-scale concert this weekend.","a":["大型"],"ex":"大型 dàxíng — large-scale · 周末有一场大型音乐会。 / There is a large-scale concert this weekend."}]},{"title":"六、声调 Tones","hint":"tap the correct pinyin · 🔊","items":[{"t":"mc","q":"刺激","o":["cījī","cìjī","cíjī","cǐjī"],"a":1,"ex":"刺激 cìjī — to stimulate (4th + 1st).","say":"刺激"},{"t":"mc","q":"从不","o":["cóngbù","cōngbù","cǒngbù","còngbù"],"a":0,"ex":"从不 cóngbù — never (2nd + 4th).","say":"从不"},{"t":"mc","q":"大胆","o":["dàdān","dàdǎn","dādǎn","dàdàn"],"a":1,"ex":"大胆 dàdǎn — bold (4th + 3rd).","say":"大胆"},{"t":"mc","q":"创造 (review)","o":["chuángzào","chuàngzào","chuāngzào","chuànzào"],"a":1,"ex":"创造 chuàngzào — to create (4th + 4th).","say":"创造"}]},{"title":"七、阅读 Reading","hint":"🔊 listen to the passage, then tap","passage":"小华从前从事销售工作。此前他从不迟到，工作也很认真。此后他辞职了，开始创作儿童故事，希望通过创新打动大众。此时他住在市中心的一座大厦里，每天用大脑想新情节。周末商场促销，大妈和大爷都来买东西；他也去打包一些大米。为了促进健康，他大力锻炼，大胆尝试新运动。公司召开大会，双方达成协议，采取新措施存放产品。大多同事觉得这是件大事：销售额已大于去年。小华说：“只要存在梦想，就能创造更好的未来。”","items":[{"t":"mc","q":"小华从前从事什么工作？","o":["教育工作","销售工作","银行工作"],"a":1,"ex":"小华从前从事销售工作。 / Xiao Hua formerly engaged in sales work."},{"t":"mc","q":"此后小华做了什么？","o":["去银行存款","辞职并开始创作","打断会议"],"a":1,"ex":"此后他辞职了，开始创作儿童故事。 / After this he resigned and began creating children's stories."},{"t":"mc","q":"周末谁来商场买东西？","o":["大妈和大爷","大象","大批学生"],"a":0,"ex":"大妈和大爷都来买东西。 / Aunties and uncles all came to shop."},{"t":"mc","q":"销售额和去年比怎么样？","o":["小于去年","等于去年","大于去年"],"a":2,"ex":"销售额已大于去年。 / Sales figures are already greater than last year's."},{"t":"mc","q":"“创新”在文中的意思最接近？","o":["to innovate","to resign","to interrupt"],"a":0,"ex":"创新 chuàngxīn — to innovate; innovation."}]}];
+
+/* TEMPLATE: every target word needs 字+拼音+🔊 + 例句 CN + EN translation. See README.md */
+var L="ABCDEFG",ALL=[],start=Date.now(),done=false,timerId,zhVoice=null;
+function pickZhVoice(){
+  if(!window.speechSynthesis)return null;
+  var vs=speechSynthesis.getVoices()||[];
+  var pref=vs.filter(function(v){return /^zh(-|_|$)/i.test(v.lang)||/Chinese|中文|普通话|国语/i.test(v.name);});
+  var cn=pref.filter(function(v){return /CN|China|普通话|Chinese\s*\(China\)/i.test(v.lang+" "+v.name);});
+  return cn[0]||pref[0]||null;
+}
+function refreshVoice(){zhVoice=pickZhVoice();}
+if(window.speechSynthesis){refreshVoice();speechSynthesis.onvoiceschanged=refreshVoice;}
+function hasHan(s){return /[\u4e00-\u9fff]/.test(s||"");}
+function speakZh(text,btn){
+  if(!text||!window.speechSynthesis)return;
+  try{speechSynthesis.cancel();}catch(e){}
+  var u=new SpeechSynthesisUtterance(String(text));
+  u.lang="zh-CN";u.rate=0.9;u.pitch=1;
+  if(!zhVoice)refreshVoice();
+  if(zhVoice)u.voice=zhVoice;
+  if(btn)btn.disabled=true;
+  var unlock=function(){if(btn)btn.disabled=false;};
+  u.onend=unlock;u.onerror=unlock;
+  setTimeout(unlock, Math.max(1800, String(text).length*420));
+  speechSynthesis.speak(u);
+}
+function speakBtn(text, small){
+  var b=el("button", small?"say sm":"say");
+  b.type="button";b.setAttribute("aria-label","Pronounce");b.textContent="🔊";
+  b.onclick=function(ev){if(ev&&ev.stopPropagation)ev.stopPropagation();if(ev&&ev.preventDefault)ev.preventDefault();speakZh(text,b);return false;};
+  return b;
+}
+function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e}
+function addExample(box, it){
+  if(!it.sent && !it.sent_en) return;
+  var ex=el("div","exbox");
+  if(it.sent){
+    var row=el("div","ex-cn");
+    row.appendChild(document.createTextNode("例句："+it.sent+" "));
+    if(hasHan(it.sent)) row.appendChild(speakBtn(it.sent.replace(/____/g, it.say||it.q||""), true));
+    ex.appendChild(row);
+  }
+  if(it.sent_en) ex.appendChild(el("div","ex-en","EN: "+it.sent_en));
+  box.appendChild(ex);
+}
+function build(){
+ var quiz=document.getElementById("quiz");quiz.innerHTML="";ALL=[];
+ SECTIONS.forEach(function(s){
+  var sec=el("section");var h=el("h2",null,s.title+" ");h.appendChild(el("small",null,"("+s.hint+")"));sec.appendChild(h);
+  if(s.passage){
+    var ph=el("div","pass-head");ph.appendChild(el("strong",null,"短文"));ph.appendChild(speakBtn(s.passage,false));
+    ph.appendChild(el("span","tip","tap 🔊 to hear the whole passage"));
+    sec.appendChild(ph);
+    sec.appendChild(el("div","passage",s.passage));
+  }
+  s.items.forEach(function(it,i){
+   var box=el("div","item");
+   var qrow=el("div","q");
+   qrow.appendChild(el("span",null,(i+1)+". "));
+   var qw=el("span","qw",it.q);qrow.appendChild(qw);
+   if(it.py) qrow.appendChild(el("span","py","("+it.py+")"));
+   if(it.py_hint) qrow.appendChild(el("span","py","拼音提示: "+it.py_hint));
+   var sayText=it.say||(hasHan(it.q)&&!/____/.test(it.q)?it.q:null);
+   if(sayText && !/____/.test(String(it.q))) qrow.appendChild(speakBtn(sayText,false));
+   box.appendChild(qrow);
+   addExample(box, it);
+   var rec={it:it,box:box,sel:null,input:null};
+   if(it.t==="mc"){
+     var o=el("div","opts");
+     it.o.forEach(function(txt,j){
+       var wrap=el("span","optwrap");
+       var b=el("button","opt",L[j]+". "+txt);b.type="button";
+       b.onclick=function(){if(done)return;rec.sel=j;[].forEach.call(o.querySelectorAll(".opt"),function(c){c.classList.remove("sel")});b.classList.add("sel");prog()};
+       wrap.appendChild(b);
+       if(hasHan(txt) && String(txt).length<=8) wrap.appendChild(speakBtn(txt,true));
+       o.appendChild(wrap);
+     });
+     box.appendChild(o);
+   } else {
+     var row=el("div","optwrap");
+     var inp=el("input","txt");inp.type="text";inp.setAttribute("autocomplete","off");inp.setAttribute("autocapitalize","off");inp.setAttribute("spellcheck","false");inp.placeholder="写汉字…";inp.oninput=prog;rec.input=inp;
+     row.appendChild(inp);
+     if(it.say){var lb=speakBtn(it.say,false);lb.title="Listen (does not show the answer)";row.appendChild(lb);row.appendChild(el("span","tip","听发音"));}
+     box.appendChild(row);
+   }
+   var fb=el("div","fb");box.appendChild(fb);rec.fb=fb;sec.appendChild(box);ALL.push(rec);
+  });
+  quiz.appendChild(sec);
+ });
+ prog();
+}
+function norm(s){return String(s||"").replace(/[\s\u3000]+/g,"")}
+function isCorrect(rec){var it=rec.it;if(it.t==="mc")return rec.sel===it.a;var v=norm(rec.input.value);return it.a.some(function(a){return norm(a)===v})}
+function answered(rec){return rec.it.t==="mc"?rec.sel!==null:norm(rec.input.value)!==""}
+function prog(){var a=ALL.filter(answered).length;document.getElementById("prog").textContent="已答 "+a+" / "+ALL.length}
+function fmt(ms){var s=Math.round(ms/1000);return Math.floor(s/60)+":"+("0"+s%60).slice(-2)}
+function tick(){document.getElementById("clock").textContent=fmt(Date.now()-start)}
+function check(){
+ if(done)return;done=true;clearInterval(timerId);var score=0;
+ ALL.forEach(function(rec){var ok=isCorrect(rec),it=rec.it;rec.box.classList.add(ok?"ok":"bad");
+  var ans=it.t==="mc"?L[it.a]+". "+it.o[it.a]:it.a[0];
+  rec.fb.textContent=ok?"✔ 对了！":"✘ Correct answer: "+ans+" — "+it.ex;if(ok)score++});
+ document.getElementById("quiz").classList.add("locked");
+ var t=fmt(Date.now()-start),pct=Math.round(score/ALL.length*100);
+ var msg=pct===100?"太棒了！🎉":pct>=80?"很好！👍":pct>=60?"不错，继续加油！💪":"加油！Let's review the red ones. 📚";
+ var r=document.getElementById("result");r.style.display="block";r.innerHTML="";
+ r.appendChild(el("div",null,"得分 Score: "+score+" / "+ALL.length+" ("+pct+"%)"));
+ r.appendChild(el("div",null,"用时 Time: "+t));r.appendChild(el("div",null,msg));
+ try{r.scrollIntoView({behavior:"smooth"});}catch(e){}
+ return {score:score,total:ALL.length,time:t};
+}
+function reset(){done=false;try{speechSynthesis&&speechSynthesis.cancel();}catch(e){}
+ document.getElementById("quiz").classList.remove("locked");document.getElementById("result").style.display="none";start=Date.now();clearInterval(timerId);timerId=setInterval(tick,1000);tick();build();try{window.scrollTo(0,0);}catch(e){}}
+document.getElementById("check").onclick=check;
+document.getElementById("reset").onclick=reset;
+build();timerId=setInterval(tick,1000);tick();
+
+</script>
+</body>
+</html>
