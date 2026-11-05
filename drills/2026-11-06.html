@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alexa 中文练习 – 6 Nov 2026 (HSK 5 · chunk 7)</title>
+<!-- Daily-drill template: each target word = 字 + pinyin + 🔊 + 例句(CN) + English translation; Web Speech zh-CN. See README.md -->
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f4f7fb;color:#222;font-family:-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",Arial,sans-serif;font-size:20px;line-height:1.6}
+.wrap{max-width:760px;margin:0 auto;padding:16px}
+h1{font-size:1.4em;margin:.3em 0 0}
+.sub{color:#666;font-size:.8em;margin-bottom:1em}
+#timer{position:sticky;top:0;background:#fff;border-radius:12px;padding:8px 14px;box-shadow:0 2px 6px rgba(0,0,0,.08);font-size:.85em;z-index:5;display:flex;justify-content:space-between}
+section{background:#fff;border-radius:16px;padding:14px 16px;margin:16px 0;box-shadow:0 2px 6px rgba(0,0,0,.06)}
+h2{font-size:1.1em;margin:.2em 0 .5em}
+h2 small{font-weight:normal;color:#777;font-size:.7em}
+.item{padding:10px 8px;margin:8px 0;border-radius:12px;border:2px solid transparent}
+.q{margin-bottom:6px;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.q .qw{font-weight:600;font-size:1.15em}
+.q .py{color:#64748b;font-size:.85em;font-weight:normal}
+.exbox{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:10px 12px;margin:6px 0 10px;width:100%}
+.ex-cn{font-size:1.05em;margin-bottom:4px}
+.ex-en{color:#475569;font-size:.88em}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.optwrap{display:inline-flex;align-items:center;gap:4px}
+.opt{font-size:1em;padding:10px 16px;border-radius:12px;border:2px solid #c9d4e3;background:#f8fbff;cursor:pointer;min-width:64px;font-family:inherit}
+.opt.sel{background:#3b82f6;color:#fff;border-color:#3b82f6}
+input.txt{font-size:1.1em;padding:8px 12px;border:2px solid #c9d4e3;border-radius:12px;width:10em;max-width:100%;font-family:inherit}
+.passage{background:#fffbea;border-left:5px solid #f5c542;padding:10px 14px;border-radius:8px;font-size:1.05em}
+.pass-head{display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap}
+.item.ok{border-color:#22c55e;background:#effdf3}
+.item.bad{border-color:#ef4444;background:#fef1f1}
+.fb{margin-top:6px;font-size:.85em;display:none}
+.item.ok .fb,.item.bad .fb{display:block}
+.item.ok .fb{color:#15803d}.item.bad .fb{color:#b91c1c}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
+.big{font-size:1.1em;padding:14px 24px;border:none;border-radius:14px;background:#16a34a;color:#fff;cursor:pointer;font-family:inherit}
+.big.sec{background:#64748b}
+#result{display:none;font-size:1.2em;text-align:center;background:#fff;border-radius:16px;padding:16px;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.locked .opt,.locked input.txt{pointer-events:none}
+.say{flex-shrink:0;width:40px;height:40px;border-radius:50%;border:2px solid #93c5fd;background:#eff6ff;color:#1d4ed8;font-size:1.05em;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;padding:0;font-family:inherit;line-height:1;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.say:disabled{opacity:.45;cursor:default}
+.say.sm{width:32px;height:32px;font-size:.9em;border-width:1.5px}
+.say:active:not(:disabled){background:#dbeafe}
+.tip{font-size:.75em;color:#64748b;margin:.4em 0 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Alexa 中文练习 🌟 New HSK 5</h1>
+<div class="sub">6 Nov 2026 · Day 35 · New HSK 5 chunk 7 (代–点心) · pinyin + 🔊 Putonghua · about 15 minutes · 45 questions<br>
+Each word has a short Chinese example and English translation. Tap 🔊 to hear. Answers stay hidden until Check.</div>
+<div id="timer"><span>⏱ <span id="clock">0:00</span></span><span id="prog"></span></div>
+<div id="quiz"></div>
+<div class="btns"><button class="big" id="check">✅ Check answers</button><button class="big sec" id="reset">↺ Try again</button></div>
+<div id="result"></div>
+</div>
+<script>
+var SECTIONS=[{"title":"一、看例句选意思 Meaning in context","hint":"read the sentence, tap the English meaning · 🔊","items":[{"t":"mc","q":"代表","py":"dàibiǎo","say":"代表","o":["to replace","representative; to represent","to wait","to fall"],"a":1,"sent":"她代表学校参加比赛。","sent_en":"She represents the school in the competition.","ex":"代表 dàibiǎo — representative; to represent · 她代表学校参加比赛。 / She represents the school in the competition."},{"t":"mc","q":"带动","py":"dàidòng","say":"带动","o":["to drive; to bring along","to block","to register","to lower one's head"],"a":0,"sent":"新技术带动了经济发展。","sent_en":"New technology has driven economic development.","ex":"带动 dàidòng — to drive; to bring along · 新技术带动了经济发展。 / New technology has driven economic development."},{"t":"mc","q":"代替","py":"dàitì","say":"代替","o":["to arrive","to treat as","to replace","to expire"],"a":2,"sent":"今天老师生病了，我来代替他上课。","sent_en":"The teacher is ill today, so I'm replacing him for class.","ex":"代替 dàitì — to replace · 今天老师生病了，我来代替他上课。 / The teacher is ill today, so I'm replacing him for class."},{"t":"mc","q":"待遇","py":"dàiyù","say":"待遇","o":["geography","treatment; pay and benefits","snack","enemy"],"a":1,"sent":"这家公司的待遇很好。","sent_en":"This company's pay and benefits are very good.","ex":"待遇 dàiyù — treatment; pay and benefits · 这家公司的待遇很好。 / This company's pay and benefits are very good."},{"t":"mc","q":"单独","py":"dāndú","say":"单独","o":["unit","single; singular","alone; separately","timid"],"a":2,"sent":"他喜欢单独旅行。","sent_en":"He likes to travel alone.","ex":"单独 dāndú — alone; separately · 他喜欢单独旅行。 / He likes to travel alone."},{"t":"mc","q":"担任","py":"dānrèn","say":"担任","o":["to hold the position of","to cause; to lead to","to log in","to pass; to hand over"],"a":0,"sent":"她担任班级的班长。","sent_en":"She holds the position of class monitor.","ex":"担任 dānrèn — to hold the position of · 她担任班级的班长。 / She holds the position of class monitor."},{"t":"mc","q":"胆小","py":"dǎnxiǎo","say":"胆小","o":["light; bland","timid; cowardly","local","current"],"a":1,"sent":"弟弟很胆小，晚上不敢一个人睡觉。","sent_en":"Little brother is very timid and dare not sleep alone at night.","ex":"胆小 dǎnxiǎo — timid; cowardly · 弟弟很胆小，晚上不敢一个人睡觉。 / Little brother is very timid and dare not sleep alone at night."},{"t":"mc","q":"当地","py":"dāngdì","say":"当地","o":["that year","among","local area","to block"],"a":2,"sent":"我们想尝尝当地的特色菜。","sent_en":"We want to try the local specialty dishes.","ex":"当地 dāngdì — local area · 我们想尝尝当地的特色菜。 / We want to try the local specialty dishes."},{"t":"mc","q":"导演","py":"dǎoyǎn","say":"导演","o":["to cause; to lead to","director; to direct","to arrive","reason; principle"],"a":1,"sent":"这部电影的导演很有名。","sent_en":"The director of this film is very famous.","ex":"导演 dǎoyǎn — director; to direct · 这部电影的导演很有名。 / The director of this film is very famous."},{"t":"mc","q":"导致","py":"dǎozhì","say":"导致","o":["director; to direct","to fall; to collapse","to cause; to lead to","to treat as"],"a":2,"sent":"粗心导致了这次事故。","sent_en":"Carelessness caused this accident.","ex":"导致 dǎozhì — to cause; to lead to · 粗心导致了这次事故。 / Carelessness caused this accident."}]},{"title":"二、根据意思选词 Choose the word","hint":"use the example sentence · tap Chinese · 🔊 on options","items":[{"t":"mc","q":"to arrive","o":["到达","到期","道理","倒"],"a":0,"ex":"到达 dàodá — to arrive · 飞机准时到达了香港。 / The plane arrived in Hong Kong on time.","sent":"飞机准时到达了香港。","sent_en":"The plane arrived in Hong Kong on time."},{"t":"mc","q":"reason; principle","o":["到达","到期","道理","灯光"],"a":2,"ex":"道理 dàolǐ — reason; principle · 他说的很有道理。 / What he said makes a lot of sense.","sent":"他说的很有道理。","sent_en":"What he said makes a lot of sense."},{"t":"mc","q":"to expire","o":["到达","到期","登记","登录"],"a":1,"ex":"到期 dàoqī — to expire · 我的护照下个月到期。 / My passport expires next month.","sent":"我的护照下个月到期。","sent_en":"My passport expires next month."},{"t":"mc","q":"to register; to record","o":["登录","登记","等待","等候"],"a":1,"ex":"登记 dēngjì — to register; to record · 入住酒店时需要登记。 / You need to register when checking into a hotel.","sent":"入住酒店时需要登记。","sent_en":"You need to register when checking into a hotel."},{"t":"mc","q":"to log in","o":["登记","登","登录","等待"],"a":2,"ex":"登录 dēnglù — to log in · 请先登录你的邮箱。 / Please log in to your email first.","sent":"请先登录你的邮箱。","sent_en":"Please log in to your email first."},{"t":"mc","q":"indeed; certainly","o":["低头","敌人","的确","递"],"a":2,"ex":"的确 díquè — indeed; certainly · 这部电影的确很精彩。 / This film is indeed wonderful.","sent":"这部电影的确很精彩。","sent_en":"This film is indeed wonderful."},{"t":"mc","q":"enemy","o":["地理","敌人","地位","地震"],"a":1,"ex":"敌人 dírén — enemy · 士兵勇敢地面对敌人。 / The soldiers bravely faced the enemy.","sent":"士兵勇敢地面对敌人。","sent_en":"The soldiers bravely faced the enemy."}]},{"title":"三、填空 Fill the blank","hint":"read EN translation, tap the missing word · 🔊","items":[{"t":"mc","q":"____最重要的任务是保护环境。","o":["当年","当前","当中","当地"],"a":1,"py_hint":"dāngqián","ex":"当前 dāngqián — current; present · 当前最重要的任务是保护环境。 / The most important task at present is to protect the environment.","sent_en":"The most important task at present is to protect the environment."},{"t":"mc","q":"这些学生____有三个人来自香港。","o":["当前","当地","当中","当年"],"a":2,"py_hint":"dāngzhōng","ex":"当中 dāngzhōng — among; in the middle · 这些学生当中有三个人来自香港。 / Among these students, three are from Hong Kong.","sent_en":"Among these students, three are from Hong Kong."},{"t":"mc","q":"请不要____路，让救护车先过。","o":["挡","当","倒","登"],"a":0,"py_hint":"dǎng","ex":"挡 dǎng — to block · 请不要挡路，让救护车先过。 / Please don't block the road; let the ambulance go first.","sent_en":"Please don't block the road; let the ambulance go first."},{"t":"mc","q":"别把玩笑____真的。","o":["当作","当成","代替","带动"],"a":1,"py_hint":"dàngchéng","ex":"当成 dàngchéng — to treat as; to regard as · 别把玩笑当成真的。 / Don't treat the joke as if it were true.","sent_en":"Don't treat the joke as if it were true."},{"t":"mc","q":"大风过后，那棵树____了。","o":["挡","登","倒","递"],"a":2,"py_hint":"dǎo","ex":"倒 dǎo — to fall; to collapse · 大风过后，那棵树倒了。 / After the strong wind, that tree fell down.","sent_en":"After the strong wind, that tree fell down."},{"t":"mc","q":"请____一会儿，老师马上就来。","o":["等待","登记","登录","等于"],"a":0,"py_hint":"děngdài","ex":"等待 děngdài — to wait · 请等待一会儿，老师马上就来。 / Please wait a moment; the teacher will be here soon.","sent_en":"Please wait a moment; the teacher will be here soon."}]},{"title":"四、易混词 Look-alikes in sentences","hint":"tap the word that fits · 🔊","items":[{"t":"mc","q":"他把老师____自己的朋友。","o":["代替","当作","带动","担任"],"a":1,"ex":"当作 dàngzuò — to treat as; to regard as · 他把老师当作自己的朋友。 / He treats the teacher as his own friend.","sent_en":"He treats the teacher as his own friend."},{"t":"mc","q":"旅客在门口____进站。","o":["等待","等候","等于","低头"],"a":1,"ex":"等候 děnghòu — to wait · 旅客在门口等候进站。 / Passengers are waiting at the entrance to enter the station.","sent_en":"Passengers are waiting at the entrance to enter the station."},{"t":"mc","q":"忘记密码就无法____网站。","o":["登记","登录","登","灯光"],"a":1,"ex":"登录 dēnglù — to log in · 忘记密码就无法登录网站。 / If you forget the password you cannot log in to the website.","sent_en":"If you forget the password you cannot log in to the website."},{"t":"mc","q":"这个____只有一个房间。","o":["单独","单一","单元","单"],"a":2,"ex":"单元 dānyuán — unit · 这个单元只有一个房间。 / This unit has only one room.","sent_en":"This unit has only one room."},{"t":"mc","q":"这种茶味道很____，不加糖也好喝。","o":["单","淡","挡","倒"],"a":1,"ex":"淡 dàn — light; weak; bland · 这种茶味道很淡，不加糖也好喝。 / This tea tastes light and is nice even without sugar.","sent_en":"This tea tastes light and is nice even without sugar."},{"t":"mc","q":"____我们一起去旅行，真开心。","o":["当前","当地","当年","当中"],"a":2,"ex":"当年 dāngnián — that year; those days · 当年我们一起去旅行，真开心。 / Back in those days we travelled together — it was so happy.","sent_en":"Back in those days we travelled together — it was so happy."},{"t":"mc","q":"科学家不断____，发明新技术。 (review)","o":["创造","创新","代表","代替"],"a":1,"ex":"创新 chuàngxīn — to innovate; innovation · 科学家不断创新，发明新技术。 / Scientists keep innovating and inventing new technology. (light review)","sent_en":"Scientists keep innovating and inventing new technology. (light review)"}]},{"title":"五、默写 Dictation in context","hint":"🔊 listen, read the sentence, type the characters","items":[{"t":"text","q":"dìlǐ — geography","say":"地理","sent":"我对世界____很感兴趣。","sent_en":"I am very interested in world geography.","a":["地理"],"ex":"地理 dìlǐ — geography · 我对世界地理很感兴趣。 / I am very interested in world geography."},{"t":"text","q":"dìqū — region; area","say":"地区","sent":"这个____冬天很冷。","sent_en":"Winters in this region are very cold.","a":["地区"],"ex":"地区 dìqū — region; area · 这个地区冬天很冷。 / Winters in this region are very cold."},{"t":"text","q":"dìwèi — status; position","say":"地位","sent":"她在公司里有很高的____。","sent_en":"She has a high status in the company.","a":["地位"],"ex":"地位 dìwèi — status; position · 她在公司里有很高的地位。 / She has a high status in the company."},{"t":"text","q":"dìzhèn — earthquake","say":"地震","sent":"昨晚发生了轻微的____。","sent_en":"A slight earthquake happened last night.","a":["地震"],"ex":"地震 dìzhèn — earthquake · 昨晚发生了轻微的地震。 / A slight earthquake happened last night."},{"t":"text","q":"diǎnxin — snack; dessert","say":"点心","sent":"下午茶我们吃了一些____。","sent_en":"For afternoon tea we had some snacks.","a":["点心"],"ex":"点心 diǎnxin — snack; dessert · 下午茶我们吃了一些点心。 / For afternoon tea we had some snacks."},{"t":"text","q":"dītóu — to lower one's head","say":"低头","sent":"他做错事后只好____认错。","sent_en":"After doing wrong he had to lower his head and admit it.","a":["低头"],"ex":"低头 dītóu — to lower one's head · 他做错事后只好低头认错。 / After doing wrong he had to lower his head and admit it."}]},{"title":"六、声调 Tones","hint":"tap the correct pinyin · 🔊","items":[{"t":"mc","q":"导致","o":["dǎozhí","dǎozhì","dàozhì","dāozhì"],"a":1,"ex":"导致 dǎozhì — to cause; to lead to (3rd + 4th).","say":"导致"},{"t":"mc","q":"待遇","py":"dàiyù","o":["dāiyù","dǎiyù","dàiyù","dàiyú"],"a":2,"ex":"待遇 dàiyù — treatment; benefits (4th + 4th).","say":"待遇"},{"t":"mc","q":"点心","o":["diǎnxīn","diǎnxín","diǎnxin","diànxin"],"a":2,"ex":"点心 diǎnxin — snack; dessert (3rd + neutral).","say":"点心"},{"t":"mc","q":"大众 (review)","o":["dàzhōng","dàzhòng","dázhòng","dàzhǒng"],"a":1,"ex":"大众 dàzhòng — the public; the masses (4th + 4th).","say":"大众"}]},{"title":"七、阅读 Reading","hint":"🔊 listen to the passage, then tap","passage":"小美当年在当地一所学校担任语文老师，待遇不错。她喜欢单独备课，也常代表学校参加活动。有一次，粗心导致投影仪倒了，她只好低头道歉，请同事代替她上课。当前她改行做电影，和导演一起工作，灯光、地面和地下场景都要检查。到达片场后先登记，再登录电脑看剧本。等候开拍时大家吃点心；一加一等于二，道理很简单。片中有敌人追赶的情节，也有地震场面。她说创新能带动大众喜爱，创造更好的作品。周末她去地理课当老师，递给学生地图，介绍各地区的地位。护照快到期了，她得早点办手续，别挡在门口等人。","items":[{"t":"mc","q":"小美当年担任什么工作？","o":["电影导演","语文老师","酒店登记员"],"a":1,"ex":"小美当年在当地一所学校担任语文老师。 / Xiaomei held the position of Chinese teacher at a local school back then."},{"t":"mc","q":"投影仪出了什么事？","o":["到期了","被挡了","倒了"],"a":2,"ex":"粗心导致投影仪倒了。 / Carelessness caused the projector to fall."},{"t":"mc","q":"到达片场后她先做什么？","o":["先登记再登录电脑","先吃点心","先低头认错"],"a":0,"ex":"到达片场后先登记，再登录电脑看剧本。 / After arriving on set she registers first, then logs in to the computer to read the script."},{"t":"mc","q":"等候开拍时大家吃什么？","o":["大米","点心","地理书"],"a":1,"ex":"等候开拍时大家吃点心。 / While waiting for filming to start everyone ate snacks."},{"t":"mc","q":"文中“带动大众”最接近的意思是？","o":["to replace the public","to drive / bring along the public","to treat the public as enemies"],"a":1,"ex":"带动 dàidòng — to drive; to bring along · 创新能带动大众喜爱。 / Innovation can drive the public's love (for the works)."}]}];
+
+/* TEMPLATE: every target word needs 字+拼音+🔊 + 例句 CN + EN translation. See README.md */
+var L="ABCDEFG",ALL=[],start=Date.now(),done=false,timerId,zhVoice=null;
+function pickZhVoice(){
+  if(!window.speechSynthesis)return null;
+  var vs=speechSynthesis.getVoices()||[];
+  var pref=vs.filter(function(v){return /^zh(-|_|$)/i.test(v.lang)||/Chinese|中文|普通话|国语/i.test(v.name);});
+  var cn=pref.filter(function(v){return /CN|China|普通话|Chinese\s*\(China\)/i.test(v.lang+" "+v.name);});
+  return cn[0]||pref[0]||null;
+}
+function refreshVoice(){zhVoice=pickZhVoice();}
+if(window.speechSynthesis){refreshVoice();speechSynthesis.onvoiceschanged=refreshVoice;}
+function hasHan(s){return /[\u4e00-\u9fff]/.test(s||"");}
+function speakZh(text,btn){
+  if(!text||!window.speechSynthesis)return;
+  try{speechSynthesis.cancel();}catch(e){}
+  var u=new SpeechSynthesisUtterance(String(text));
+  u.lang="zh-CN";u.rate=0.9;u.pitch=1;
+  if(!zhVoice)refreshVoice();
+  if(zhVoice)u.voice=zhVoice;
+  if(btn)btn.disabled=true;
+  var unlock=function(){if(btn)btn.disabled=false;};
+  u.onend=unlock;u.onerror=unlock;
+  setTimeout(unlock, Math.max(1800, String(text).length*420));
+  speechSynthesis.speak(u);
+}
+function speakBtn(text, small){
+  var b=el("button", small?"say sm":"say");
+  b.type="button";b.setAttribute("aria-label","Pronounce");b.textContent="🔊";
+  b.onclick=function(ev){if(ev&&ev.stopPropagation)ev.stopPropagation();if(ev&&ev.preventDefault)ev.preventDefault();speakZh(text,b);return false;};
+  return b;
+}
+function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e}
+function addExample(box, it){
+  if(!it.sent && !it.sent_en) return;
+  var ex=el("div","exbox");
+  if(it.sent){
+    var row=el("div","ex-cn");
+    row.appendChild(document.createTextNode("例句："+it.sent+" "));
+    if(hasHan(it.sent)) row.appendChild(speakBtn(it.sent.replace(/____/g, it.say||it.q||""), true));
+    ex.appendChild(row);
+  }
+  if(it.sent_en) ex.appendChild(el("div","ex-en","EN: "+it.sent_en));
+  box.appendChild(ex);
+}
+function build(){
+ var quiz=document.getElementById("quiz");quiz.innerHTML="";ALL=[];
+ SECTIONS.forEach(function(s){
+  var sec=el("section");var h=el("h2",null,s.title+" ");h.appendChild(el("small",null,"("+s.hint+")"));sec.appendChild(h);
+  if(s.passage){
+    var ph=el("div","pass-head");ph.appendChild(el("strong",null,"短文"));ph.appendChild(speakBtn(s.passage,false));
+    ph.appendChild(el("span","tip","tap 🔊 to hear the whole passage"));
+    sec.appendChild(ph);
+    sec.appendChild(el("div","passage",s.passage));
+  }
+  s.items.forEach(function(it,i){
+   var box=el("div","item");
+   var qrow=el("div","q");
+   qrow.appendChild(el("span",null,(i+1)+". "));
+   var qw=el("span","qw",it.q);qrow.appendChild(qw);
+   if(it.py) qrow.appendChild(el("span","py","("+it.py+")"));
+   if(it.py_hint) qrow.appendChild(el("span","py","拼音提示: "+it.py_hint));
+   var sayText=it.say||(hasHan(it.q)&&!/____/.test(it.q)?it.q:null);
+   if(sayText && !/____/.test(String(it.q))) qrow.appendChild(speakBtn(sayText,false));
+   box.appendChild(qrow);
+   addExample(box, it);
+   var rec={it:it,box:box,sel:null,input:null};
+   if(it.t==="mc"){
+     var o=el("div","opts");
+     it.o.forEach(function(txt,j){
+       var wrap=el("span","optwrap");
+       var b=el("button","opt",L[j]+". "+txt);b.type="button";
+       b.onclick=function(){if(done)return;rec.sel=j;[].forEach.call(o.querySelectorAll(".opt"),function(c){c.classList.remove("sel")});b.classList.add("sel");prog()};
+       wrap.appendChild(b);
+       if(hasHan(txt) && String(txt).length<=8) wrap.appendChild(speakBtn(txt,true));
+       o.appendChild(wrap);
+     });
+     box.appendChild(o);
+   } else {
+     var row=el("div","optwrap");
+     var inp=el("input","txt");inp.type="text";inp.setAttribute("autocomplete","off");inp.setAttribute("autocapitalize","off");inp.setAttribute("spellcheck","false");inp.placeholder="写汉字…";inp.oninput=prog;rec.input=inp;
+     row.appendChild(inp);
+     if(it.say){var lb=speakBtn(it.say,false);lb.title="Listen (does not show the answer)";row.appendChild(lb);row.appendChild(el("span","tip","听发音"));}
+     box.appendChild(row);
+   }
+   var fb=el("div","fb");box.appendChild(fb);rec.fb=fb;sec.appendChild(box);ALL.push(rec);
+  });
+  quiz.appendChild(sec);
+ });
+ prog();
+}
+function norm(s){return String(s||"").replace(/[\s\u3000]+/g,"")}
+function isCorrect(rec){var it=rec.it;if(it.t==="mc")return rec.sel===it.a;var v=norm(rec.input.value);return it.a.some(function(a){return norm(a)===v})}
+function answered(rec){return rec.it.t==="mc"?rec.sel!==null:norm(rec.input.value)!==""}
+function prog(){var a=ALL.filter(answered).length;document.getElementById("prog").textContent="已答 "+a+" / "+ALL.length}
+function fmt(ms){var s=Math.round(ms/1000);return Math.floor(s/60)+":"+("0"+s%60).slice(-2)}
+function tick(){document.getElementById("clock").textContent=fmt(Date.now()-start)}
+function check(){
+ if(done)return;done=true;clearInterval(timerId);var score=0;
+ ALL.forEach(function(rec){var ok=isCorrect(rec),it=rec.it;rec.box.classList.add(ok?"ok":"bad");
+  var ans=it.t==="mc"?L[it.a]+". "+it.o[it.a]:it.a[0];
+  rec.fb.textContent=ok?"✔ 对了！":"✘ Correct answer: "+ans+" — "+it.ex;if(ok)score++});
+ document.getElementById("quiz").classList.add("locked");
+ var t=fmt(Date.now()-start),pct=Math.round(score/ALL.length*100);
+ var msg=pct===100?"太棒了！🎉":pct>=80?"很好！👍":pct>=60?"不错，继续加油！💪":"加油！Let's review the red ones. 📚";
+ var r=document.getElementById("result");r.style.display="block";r.innerHTML="";
+ r.appendChild(el("div",null,"得分 Score: "+score+" / "+ALL.length+" ("+pct+"%)"));
+ r.appendChild(el("div",null,"用时 Time: "+t));r.appendChild(el("div",null,msg));
+ try{r.scrollIntoView({behavior:"smooth"});}catch(e){}
+ return {score:score,total:ALL.length,time:t};
+}
+function reset(){done=false;try{speechSynthesis&&speechSynthesis.cancel();}catch(e){}
+ document.getElementById("quiz").classList.remove("locked");document.getElementById("result").style.display="none";start=Date.now();clearInterval(timerId);timerId=setInterval(tick,1000);tick();build();try{window.scrollTo(0,0);}catch(e){}}
+document.getElementById("check").onclick=check;
+document.getElementById("reset").onclick=reset;
+build();timerId=setInterval(tick,1000);tick();
+
+</script>
+</body>
+</html>
