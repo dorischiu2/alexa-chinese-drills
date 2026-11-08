@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alexa 中文练习 – 9 Nov 2026 (HSK 5 · chunk 10)</title>
+<!-- Daily-drill template: each target word = 字 + pinyin + 🔊 + 例句(CN) + English translation; Web Speech zh-CN. See README.md -->
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f4f7fb;color:#222;font-family:-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",Arial,sans-serif;font-size:20px;line-height:1.6}
+.wrap{max-width:760px;margin:0 auto;padding:16px}
+h1{font-size:1.4em;margin:.3em 0 0}
+.sub{color:#666;font-size:.8em;margin-bottom:1em}
+#timer{position:sticky;top:0;background:#fff;border-radius:12px;padding:8px 14px;box-shadow:0 2px 6px rgba(0,0,0,.08);font-size:.85em;z-index:5;display:flex;justify-content:space-between}
+section{background:#fff;border-radius:16px;padding:14px 16px;margin:16px 0;box-shadow:0 2px 6px rgba(0,0,0,.06)}
+h2{font-size:1.1em;margin:.2em 0 .5em}
+h2 small{font-weight:normal;color:#777;font-size:.7em}
+.item{padding:10px 8px;margin:8px 0;border-radius:12px;border:2px solid transparent}
+.q{margin-bottom:6px;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.q .qw{font-weight:600;font-size:1.15em}
+.q .py{color:#64748b;font-size:.85em;font-weight:normal}
+.exbox{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:10px 12px;margin:6px 0 10px;width:100%}
+.ex-cn{font-size:1.05em;margin-bottom:4px}
+.ex-en{color:#475569;font-size:.88em}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.optwrap{display:inline-flex;align-items:center;gap:4px}
+.opt{font-size:1em;padding:10px 16px;border-radius:12px;border:2px solid #c9d4e3;background:#f8fbff;cursor:pointer;min-width:64px;font-family:inherit}
+.opt.sel{background:#3b82f6;color:#fff;border-color:#3b82f6}
+input.txt{font-size:1.1em;padding:8px 12px;border:2px solid #c9d4e3;border-radius:12px;width:10em;max-width:100%;font-family:inherit}
+.passage{background:#fffbea;border-left:5px solid #f5c542;padding:10px 14px;border-radius:8px;font-size:1.05em}
+.pass-head{display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap}
+.item.ok{border-color:#22c55e;background:#effdf3}
+.item.bad{border-color:#ef4444;background:#fef1f1}
+.fb{margin-top:6px;font-size:.85em;display:none}
+.item.ok .fb,.item.bad .fb{display:block}
+.item.ok .fb{color:#15803d}.item.bad .fb{color:#b91c1c}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
+.big{font-size:1.1em;padding:14px 24px;border:none;border-radius:14px;background:#16a34a;color:#fff;cursor:pointer;font-family:inherit}
+.big.sec{background:#64748b}
+#result{display:none;font-size:1.2em;text-align:center;background:#fff;border-radius:16px;padding:16px;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.locked .opt,.locked input.txt{pointer-events:none}
+.say{flex-shrink:0;width:40px;height:40px;border-radius:50%;border:2px solid #93c5fd;background:#eff6ff;color:#1d4ed8;font-size:1.05em;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;padding:0;font-family:inherit;line-height:1;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.say:disabled{opacity:.45;cursor:default}
+.say.sm{width:32px;height:32px;font-size:.9em;border-width:1.5px}
+.say:active:not(:disabled){background:#dbeafe}
+.tip{font-size:.75em;color:#64748b;margin:.4em 0 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Alexa 中文练习 🌟 New HSK 5</h1>
+<div class="sub">9 Nov 2026 · Day 38 · New HSK 5 chunk 10 (扶–更换) · pinyin + 🔊 Putonghua · about 15 minutes · 45 questions<br>
+Each word has a short Chinese example and English translation. Tap 🔊 to hear. Answers stay hidden until Check.</div>
+<div id="timer"><span>⏱ <span id="clock">0:00</span></span><span id="prog"></span></div>
+<div id="quiz"></div>
+<div class="btns"><button class="big" id="check">✅ Check answers</button><button class="big sec" id="reset">↺ Try again</button></div>
+<div id="result"></div>
+</div>
+<script>
+var SECTIONS=[{"title":"一、看例句选意思 Meaning in context","hint":"read the sentence, tap the English meaning · 🔊","items":[{"t":"mc","q":"扶","py":"fú","say":"扶","o":["to support with hand","blessing, good fortune","lid, cover; to cover","to replace, to change"],"a":0,"sent":"他扶着老人过马路。","sent_en":"He supported the elderly person with his hand as they crossed the road.","ex":"扶 fú — to support with hand · 他扶着老人过马路。 / He supported the elderly person with his hand as they crossed the road."},{"t":"mc","q":"福","py":"fú","say":"福","o":["to support with hand","blessing, good fortune","clothing, apparel","to duplicate, to copy"],"a":1,"sent":"过年时，门上贴着一个大大的“福”字。","sent_en":"At New Year, a big character for “blessing” is pasted on the door.","ex":"福 fú — blessing, good fortune · 过年时，门上贴着一个大大的“福”字。 / At New Year, a big character for “blessing” is pasted on the door."},{"t":"mc","q":"服装","py":"fúzhuāng","say":"服装","o":["lyrics","clothing, apparel","song","personality, individuality"],"a":1,"sent":"这家商店出售各式各样的服装。","sent_en":"This shop sells all kinds of clothing.","ex":"服装 fúzhuāng — clothing, apparel · 这家商店出售各式各样的服装。 / This shop sells all kinds of clothing."},{"t":"mc","q":"副","py":"fù","say":"副","o":["rich, wealthy","to pay, to give","measure word for pairs, sets","root; measure word for long, thin objects"],"a":2,"sent":"她买了一副眼镜。","sent_en":"She bought a pair of glasses.","ex":"副 fù — measure word for pairs, sets · 她买了一副眼镜。 / She bought a pair of glasses."},{"t":"mc","q":"富","py":"fù","say":"富","o":["rich, wealthy","to pay, to give","to bear; burden","to duplicate, to copy"],"a":0,"sent":"他的家庭很富，但生活一直很简单。","sent_en":"His family is very rich, but their life has always been simple.","ex":"富 fù — rich, wealthy · 他的家庭很富，但生活一直很简单。 / His family is very rich, but their life has always been simple."},{"t":"mc","q":"付出","py":"fùchū","say":"付出","o":["to bear; burden","to pay, to give","to replace, to change","to reform, to change"],"a":1,"sent":"想取得成功，就要付出努力。","sent_en":"If you want to succeed, you must give effort.","ex":"付出 fùchū — to pay, to give · 想取得成功，就要付出努力。 / If you want to succeed, you must give effort."},{"t":"mc","q":"负担","py":"fùdān","say":"负担","o":["to pay, to give","blessing, good fortune","to bear; burden","to possess; rich, wealthy"],"a":2,"sent":"高昂的学费成了这个家庭的负担。","sent_en":"The high school fees became a burden for this family.","ex":"负担 fùdān — to bear; burden · 高昂的学费成了这个家庭的负担。 / The high school fees became a burden for this family."},{"t":"mc","q":"妇女","py":"fùnǚ","say":"妇女","o":["husband and wife","woman","individual, personal","clothing, apparel"],"a":1,"sent":"许多妇女在不同的岗位上工作。","sent_en":"Many women work in different positions.","ex":"妇女 fùnǚ — woman · 许多妇女在不同的岗位上工作。 / Many women work in different positions."},{"t":"mc","q":"富有","py":"fùyǒu","say":"富有","o":["to support with hand","to duplicate, to copy","to possess; rich, wealthy","to reform, to change"],"a":2,"sent":"她不但有钱，还富有同情心。","sent_en":"She is not only wealthy, but also possesses compassion.","ex":"富有 fùyǒu — to possess; rich, wealthy · 她不但有钱，还富有同情心。 / She is not only wealthy, but also possesses compassion."},{"t":"mc","q":"复制","py":"fùzhì","say":"复制","o":["to replace, to change","to reform, to change","to improve","to duplicate, to copy"],"a":3,"sent":"请把这份文件复制一份发给我。","sent_en":"Please make a copy of this document and send it to me.","ex":"复制 fùzhì — to duplicate, to copy · 请把这份文件复制一份发给我。 / Please make a copy of this document and send it to me."}]},{"title":"二、根据意思选词 Choose the word","hint":"use the example sentence · tap Chinese · 🔊 on options","items":[{"t":"mc","q":"some other day","o":["改正","改天","概括","刚好"],"a":1,"ex":"改天 gǎitiān — some other day · 我今天有事，我们改天再聊吧。 / I'm busy today; let's talk some other day.","sent":"我今天有事，我们改天再聊吧。","sent_en":"I'm busy today; let's talk some other day."},{"t":"mc","q":"lid, cover; to cover","o":["搞","隔","盖","根"],"a":2,"ex":"盖 gài — lid, cover; to cover · 请把锅盖盖上，别让汤凉了。 / Please put the lid on the pot so the soup doesn't go cold.","sent":"请把锅盖盖上，别让汤凉了。","sent_en":"Please put the lid on the pot so the soup doesn't go cold."},{"t":"mc","q":"to summarize; general","o":["概念","概括","改正","告别"],"a":1,"ex":"概括 gàikuò — to summarize; general · 请用一句话概括这篇文章的大意。 / Please summarize the main idea of this article in one sentence.","sent":"请用一句话概括这篇文章的大意。","sent_en":"Please summarize the main idea of this article in one sentence."},{"t":"mc","q":"concept, idea","o":["概括","改正","概念","根本"],"a":2,"ex":"概念 gàiniàn — concept, idea · 老师解释了一个新的科学概念。 / The teacher explained a new scientific concept.","sent":"老师解释了一个新的科学概念。","sent_en":"The teacher explained a new scientific concept."},{"t":"mc","q":"to dare to","o":["刚好","敢于","格外","改革"],"a":1,"ex":"敢于 gǎnyú — to dare to · 她敢于提出自己不同的看法。 / She dares to put forward a different opinion.","sent":"她敢于提出自己不同的看法。","sent_en":"She dares to put forward a different opinion."},{"t":"mc","q":"just right, exactly; coincidentally","o":["敢于","高大","格外","刚好"],"a":3,"ex":"刚好 gānghǎo — just right, exactly; coincidentally · 这双鞋的大小刚好合适。 / The size of these shoes is just right.","sent":"这双鞋的大小刚好合适。","sent_en":"The size of these shoes is just right."},{"t":"mc","q":"tall, lofty","o":["高档","高级","高大","高效"],"a":2,"ex":"高大 gāodà — tall, lofty · 那位高大的运动员走进了球场。 / That tall athlete walked into the stadium.","sent":"那位高大的运动员走进了球场。","sent_en":"That tall athlete walked into the stadium."}]},{"title":"三、填空 Fill the blank","hint":"read EN translation, tap the missing word · 🔊","items":[{"t":"mc","q":"这家餐厅的装修十分____。","o":["高大","高档","高效","根本"],"a":1,"py_hint":"gāodàng","ex":"高档 gāodàng — high-end, upscale · 这家餐厅的装修十分高档。 / This restaurant's decoration is very upscale.","sent_en":"This restaurant's decoration is very upscale."},{"t":"mc","q":"这架飞机飞行的____超过一万米。","o":["高级","高科技","高效","高度"],"a":3,"py_hint":"gāodù","ex":"高度 gāodù — height; high · 这架飞机飞行的高度超过一万米。 / The flying height of this plane exceeds ten thousand metres.","sent_en":"The flying height of this plane exceeds ten thousand metres."},{"t":"mc","q":"周末我们想____一个生日会。","o":["搞","盖","隔","根"],"a":0,"py_hint":"gǎo","ex":"搞 gǎo — to do, to make · 周末我们想搞一个生日会。 / We want to put on a birthday party at the weekend.","sent_en":"We want to put on a birthday party at the weekend."},{"t":"mc","q":"离开家乡前，他向朋友们____。","o":["歌曲","歌词","告别","概括"],"a":2,"py_hint":"gàobié","ex":"告别 gàobié — to bid farewell, to say goodbye · 离开家乡前，他向朋友们告别。 / Before leaving his hometown, he said goodbye to his friends.","sent_en":"Before leaving his hometown, he said goodbye to his friends."},{"t":"mc","q":"两座房子中间____着一条小路。","o":["盖","搞","根","隔"],"a":3,"py_hint":"gé","ex":"隔 gé — to separate, to partition · 两座房子中间隔着一条小路。 / A small path separates the two houses.","sent_en":"A small path separates the two houses."},{"t":"mc","q":"今天的天气____好。","o":["刚好","敢于","格外","根本"],"a":2,"py_hint":"géwài","ex":"格外 géwài — especially, particularly · 今天的天气格外好。 / The weather is especially nice today.","sent_en":"The weather is especially nice today."}]},{"title":"四、易混词 Look-alikes in sentences","hint":"tap the word that fits · 🔊","items":[{"t":"mc","q":"工程师想____这个机器的设计。","o":["改进","改善","改正","改革"],"a":0,"ex":"改进 gǎijìn — to improve (a method/product/skill) · 工程师想改进这个机器的设计。 / The engineer wants to improve this machine's design.","sent_en":"The engineer wants to improve this machine's design."},{"t":"mc","q":"新公园____了附近居民的生活。","o":["改进","改善","改正","改革"],"a":1,"ex":"改善 gǎishàn — to improve (a situation/conditions/life) · 新公园改善了附近居民的生活。 / The new park improved the lives of nearby residents.","sent_en":"The new park improved the lives of nearby residents."},{"t":"mc","q":"新方法让工作变得更加____。","o":["高级","高科技","高效","高度"],"a":2,"ex":"高效 gāoxiào — efficient, high-efficiency · 新方法让工作变得更加高效。 / The new method made the work more efficient.","sent_en":"The new method made the work more efficient."},{"t":"mc","q":"每个人都有自己的____，不要盲目模仿别人。","o":["个人","个性","各自","个别"],"a":1,"ex":"个性 gèxìng — personality, individuality · 每个人都有自己的个性，不要盲目模仿别人。 / Everyone has their own personality; don't blindly copy others.","sent_en":"Everyone has their own personality; don't blindly copy others."},{"t":"mc","q":"考试结束后，同学们____回家了。","o":["个人","个性","各自","个别"],"a":2,"ex":"各自 gèzì — each, respective · 考试结束后，同学们各自回家了。 / After the exam, the classmates each went home.","sent_en":"After the exam, the classmates each went home."},{"t":"mc","q":"请把这首歌的____写下来。","o":["歌曲","歌词","告别","搞"],"a":1,"ex":"歌词 gēcí — lyrics · 请把这首歌的歌词写下来。 / Please write down the lyrics of this song.","sent_en":"Please write down the lyrics of this song."},{"t":"mc","q":"那对____一起在公园里散步。(review)","o":["妇女","个人","服装","夫妇"],"a":3,"ex":"夫妇 fūfù — husband and wife · 那对夫妇一起在公园里散步。 / That husband and wife are walking together in the park. (review from chunk 9)","sent_en":"That husband and wife are walking together in the park."}]},{"title":"五、默写 Dictation in context","hint":"🔊 listen, read the sentence, type the characters","items":[{"t":"text","q":"fùchū — to pay, to give","say":"付出","sent":"她为这次比赛____了很多时间。","sent_en":"She gave a lot of time to this competition.","a":["付出"],"ex":"付出 fùchū — to pay, to give · 她为这次比赛付出了很多时间。 / She gave a lot of time to this competition."},{"t":"text","q":"fùdān — to bear; burden","say":"负担","sent":"他不想再____这么多责任。","sent_en":"He doesn't want to bear so much responsibility any more.","a":["负担"],"ex":"负担 fùdān — to bear; burden · 他不想再负担这么多责任。 / He doesn't want to bear so much responsibility any more."},{"t":"text","q":"gǎigé — to reform, to change","say":"改革","sent":"公司决定____管理制度。","sent_en":"The company decided to reform the management system.","a":["改革"],"ex":"改革 gǎigé — to reform, to change · 公司决定改革管理制度。 / The company decided to reform the management system."},{"t":"text","q":"gèháng-gèyè — all trades and professions","say":"各行各业","sent":"____的人们都在努力工作。","sent_en":"People from all trades and professions are working hard.","a":["各行各业"],"ex":"各行各业 gèháng-gèyè — all trades and professions · 各行各业的人们都在努力工作。 / People from all trades and professions are working hard."},{"t":"text","q":"gēnběn — foundation, root; fundamental; simply","say":"根本","sent":"这件事我____不知道。","sent_en":"I simply don't know about this matter.","a":["根本"],"ex":"根本 gēnběn — foundation, root; fundamental; simply · 这件事我根本不知道。 / I simply don't know about this matter."},{"t":"text","q":"gēnghuàn — to replace, to change","say":"更换","sent":"商店____了橱窗里的旧服装。","sent_en":"The shop replaced the old clothing in the display window.","a":["更换"],"ex":"更换 gēnghuàn — to replace, to change · 商店更换了橱窗里的旧服装。 / The shop replaced the old clothing in the display window."}]},{"title":"六、声调 Tones","hint":"tap the correct pinyin · 🔊","items":[{"t":"mc","q":"付出","o":["fúchū","fùchū","fǔchū","fùchù"],"a":1,"ex":"付出 fùchū — to pay, to give (4th + 1st).","say":"付出"},{"t":"mc","q":"负担","o":["fúdān","fǔdàn","fùdān","fùdàn"],"a":2,"ex":"负担 fùdān — to bear; burden (4th + 1st).","say":"负担"},{"t":"mc","q":"改革","o":["gāigé","gǎigé","gàigé","gǎigē"],"a":1,"ex":"改革 gǎigé — to reform, to change (3rd + 2nd).","say":"改革"},{"t":"mc","q":"刚好","o":["gǎnghǎo","gànghǎo","gánghǎo","gānghǎo"],"a":3,"ex":"刚好 gānghǎo — just right, exactly; coincidentally (1st + 3rd).","say":"刚好"}]},{"title":"七、阅读 Reading","hint":"🔊 listen to the passage, then tap","passage":"为了改善学习条件，学校进行了一场改革。老师们付出了很多时间，改进教学方法，还改正了过去的一些习惯。教室里换上了高档桌椅，又用上了高科技设备，学习变得更加高效。一位高大的老师概括说：“这个概念其实很简单——每个人都要敢于尝试。个人的努力很重要，但我们根本不能只顾自己。”同学们各自准备材料，有人复制资料，有人更换电脑。活动结束的时候，大家唱了一首歌曲，歌词讲的是幸福。一对夫妇刚好路过，显得格外高兴，跟大家告别。只有个别同学还想再听一遍。","items":[{"t":"mc","q":"学校进行改革是为了什么？","o":["增加学生的负担","改善学习条件","更换所有服装"],"a":1,"ex":"为了改善学习条件，学校进行了一场改革。 / In order to improve learning conditions, the school carried out a reform."},{"t":"mc","q":"老师们做了哪些事情？","o":["付出时间，改进教学方法，改正旧习惯","只顾自己，不愿付出","复制试题，然后告别学校"],"a":0,"ex":"老师们付出了很多时间，改进教学方法，还改正了过去的一些习惯。 / The teachers gave a lot of time, improved teaching methods, and also corrected some old habits."},{"t":"mc","q":"教室里有什么变化？","o":["隔开所有桌椅，不再唱歌","盖上窗户，不让阳光进来","换上高档桌椅，用上高科技设备，学习更高效"],"a":2,"ex":"教室里换上了高档桌椅，又用上了高科技设备，学习变得更加高效。 / The classroom got high-end desks and chairs and high-tech equipment, and learning became more efficient."},{"t":"mc","q":"老师概括的概念是什么？","o":["个人的努力不重要","每个人要敢于尝试；个人要努力，但根本不能只顾自己","只有个别同学需要学习高科技"],"a":1,"ex":"每个人都要敢于尝试。个人的努力很重要，但我们根本不能只顾自己。 / Everyone should dare to try. Personal effort matters, but we simply cannot think only of ourselves."},{"t":"mc","q":"活动结束时发生了什么？","o":["大家唱了一首关于幸福的歌曲，一对夫妇刚好路过并告别","同学们拒绝更换电脑","老师让所有妇女搬走高档桌椅"],"a":0,"ex":"大家唱了一首歌曲，歌词讲的是幸福。一对夫妇刚好路过，显得格外高兴，跟大家告别。 / Everyone sang a song whose lyrics were about happiness. A husband and wife happened to pass by, looked especially happy, and said goodbye."}]}];
+
+/* TEMPLATE: every target word needs 字+拼音+🔊 + 例句 CN + EN translation. See README.md */
+var L="ABCDEFG",ALL=[],start=Date.now(),done=false,timerId,zhVoice=null;
+function pickZhVoice(){
+  if(!window.speechSynthesis)return null;
+  var vs=speechSynthesis.getVoices()||[];
+  var pref=vs.filter(function(v){return /^zh(-|_|$)/i.test(v.lang)||/Chinese|中文|普通话|国语/i.test(v.name);});
+  var cn=pref.filter(function(v){return /CN|China|普通话|Chinese\s*\(China\)/i.test(v.lang+" "+v.name);});
+  return cn[0]||pref[0]||null;
+}
+function refreshVoice(){zhVoice=pickZhVoice();}
+if(window.speechSynthesis){refreshVoice();speechSynthesis.onvoiceschanged=refreshVoice;}
+function hasHan(s){return /[\u4e00-\u9fff]/.test(s||"");}
+function speakZh(text,btn){
+  if(!text||!window.speechSynthesis)return;
+  try{speechSynthesis.cancel();}catch(e){}
+  var u=new SpeechSynthesisUtterance(String(text));
+  u.lang="zh-CN";u.rate=0.9;u.pitch=1;
+  if(!zhVoice)refreshVoice();
+  if(zhVoice)u.voice=zhVoice;
+  if(btn)btn.disabled=true;
+  var unlock=function(){if(btn)btn.disabled=false;};
+  u.onend=unlock;u.onerror=unlock;
+  setTimeout(unlock, Math.max(1800, String(text).length*420));
+  speechSynthesis.speak(u);
+}
+function speakBtn(text, small){
+  var b=el("button", small?"say sm":"say");
+  b.type="button";b.setAttribute("aria-label","Pronounce");b.textContent="🔊";
+  b.onclick=function(ev){if(ev&&ev.stopPropagation)ev.stopPropagation();if(ev&&ev.preventDefault)ev.preventDefault();speakZh(text,b);return false;};
+  return b;
+}
+function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e}
+function addExample(box, it){
+  if(!it.sent && !it.sent_en) return;
+  var ex=el("div","exbox");
+  if(it.sent){
+    var row=el("div","ex-cn");
+    row.appendChild(document.createTextNode("例句："+it.sent+" "));
+    if(hasHan(it.sent)) row.appendChild(speakBtn(it.sent.replace(/____/g, it.say||it.q||""), true));
+    ex.appendChild(row);
+  }
+  if(it.sent_en) ex.appendChild(el("div","ex-en","EN: "+it.sent_en));
+  box.appendChild(ex);
+}
+function build(){
+ var quiz=document.getElementById("quiz");quiz.innerHTML="";ALL=[];
+ SECTIONS.forEach(function(s){
+  var sec=el("section");var h=el("h2",null,s.title+" ");h.appendChild(el("small",null,"("+s.hint+")"));sec.appendChild(h);
+  if(s.passage){
+    var ph=el("div","pass-head");ph.appendChild(el("strong",null,"短文"));ph.appendChild(speakBtn(s.passage,false));
+    ph.appendChild(el("span","tip","tap 🔊 to hear the whole passage"));
+    sec.appendChild(ph);
+    sec.appendChild(el("div","passage",s.passage));
+  }
+  s.items.forEach(function(it,i){
+   var box=el("div","item");
+   var qrow=el("div","q");
+   qrow.appendChild(el("span",null,(i+1)+". "));
+   var qw=el("span","qw",it.q);qrow.appendChild(qw);
+   if(it.py) qrow.appendChild(el("span","py","("+it.py+")"));
+   if(it.py_hint) qrow.appendChild(el("span","py","拼音提示: "+it.py_hint));
+   var sayText=it.say||(hasHan(it.q)&&!/____/.test(it.q)?it.q:null);
+   if(sayText && !/____/.test(String(it.q))) qrow.appendChild(speakBtn(sayText,false));
+   box.appendChild(qrow);
+   addExample(box, it);
+   var rec={it:it,box:box,sel:null,input:null};
+   if(it.t==="mc"){
+     var o=el("div","opts");
+     it.o.forEach(function(txt,j){
+       var wrap=el("span","optwrap");
+       var b=el("button","opt",L[j]+". "+txt);b.type="button";
+       b.onclick=function(){if(done)return;rec.sel=j;[].forEach.call(o.querySelectorAll(".opt"),function(c){c.classList.remove("sel")});b.classList.add("sel");prog()};
+       wrap.appendChild(b);
+       if(hasHan(txt) && String(txt).length<=8) wrap.appendChild(speakBtn(txt,true));
+       o.appendChild(wrap);
+     });
+     box.appendChild(o);
+   } else {
+     var row=el("div","optwrap");
+     var inp=el("input","txt");inp.type="text";inp.setAttribute("autocomplete","off");inp.setAttribute("autocapitalize","off");inp.setAttribute("spellcheck","false");inp.placeholder="写汉字…";inp.oninput=prog;rec.input=inp;
+     row.appendChild(inp);
+     if(it.say){var lb=speakBtn(it.say,false);lb.title="Listen (does not show the answer)";row.appendChild(lb);row.appendChild(el("span","tip","听发音"));}
+     box.appendChild(row);
+   }
+   var fb=el("div","fb");box.appendChild(fb);rec.fb=fb;sec.appendChild(box);ALL.push(rec);
+  });
+  quiz.appendChild(sec);
+ });
+ prog();
+}
+function norm(s){return String(s||"").replace(/[\s\u3000]+/g,"")}
+function isCorrect(rec){var it=rec.it;if(it.t==="mc")return rec.sel===it.a;var v=norm(rec.input.value);return it.a.some(function(a){return norm(a)===v})}
+function answered(rec){return rec.it.t==="mc"?rec.sel!==null:norm(rec.input.value)!==""}
+function prog(){var a=ALL.filter(answered).length;document.getElementById("prog").textContent="已答 "+a+" / "+ALL.length}
+function fmt(ms){var s=Math.round(ms/1000);return Math.floor(s/60)+":"+("0"+s%60).slice(-2)}
+function tick(){document.getElementById("clock").textContent=fmt(Date.now()-start)}
+function check(){
+ if(done)return;done=true;clearInterval(timerId);var score=0;
+ ALL.forEach(function(rec){var ok=isCorrect(rec),it=rec.it;rec.box.classList.add(ok?"ok":"bad");
+  var ans=it.t==="mc"?L[it.a]+". "+it.o[it.a]:it.a[0];
+  rec.fb.textContent=ok?"✔ 对了！":"✘ Correct answer: "+ans+" — "+it.ex;if(ok)score++});
+ document.getElementById("quiz").classList.add("locked");
+ var t=fmt(Date.now()-start),pct=Math.round(score/ALL.length*100);
+ var msg=pct===100?"太棒了！🎉":pct>=80?"很好！👍":pct>=60?"不错，继续加油！💪":"加油！Let's review the red ones. 📚";
+ var r=document.getElementById("result");r.style.display="block";r.innerHTML="";
+ r.appendChild(el("div",null,"得分 Score: "+score+" / "+ALL.length+" ("+pct+"%)"));
+ r.appendChild(el("div",null,"用时 Time: "+t));r.appendChild(el("div",null,msg));
+ try{r.scrollIntoView({behavior:"smooth"});}catch(e){}
+ return {score:score,total:ALL.length,time:t};
+}
+function reset(){done=false;try{speechSynthesis&&speechSynthesis.cancel();}catch(e){}
+ document.getElementById("quiz").classList.remove("locked");document.getElementById("result").style.display="none";start=Date.now();clearInterval(timerId);timerId=setInterval(tick,1000);tick();build();try{window.scrollTo(0,0);}catch(e){}}
+document.getElementById("check").onclick=check;
+document.getElementById("reset").onclick=reset;
+build();timerId=setInterval(tick,1000);tick();
+
+</script>
+</body>
+</html>
