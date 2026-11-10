@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Alexa 中文练习 – 11 Nov 2026 (HSK 5 · Day 1 · new cycle)</title>
+<!-- Daily-drill template: each target word = 字 + pinyin + 🔊 + 例句(CN) + English translation; Web Speech zh-CN. See README.md -->
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f4f7fb;color:#222;font-family:-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",Arial,sans-serif;font-size:20px;line-height:1.6}
+.wrap{max-width:760px;margin:0 auto;padding:16px}
+h1{font-size:1.4em;margin:.3em 0 0}
+.sub{color:#666;font-size:.8em;margin-bottom:1em}
+#timer{position:sticky;top:0;background:#fff;border-radius:12px;padding:8px 14px;box-shadow:0 2px 6px rgba(0,0,0,.08);font-size:.85em;z-index:5;display:flex;justify-content:space-between}
+section{background:#fff;border-radius:16px;padding:14px 16px;margin:16px 0;box-shadow:0 2px 6px rgba(0,0,0,.06)}
+h2{font-size:1.1em;margin:.2em 0 .5em}
+h2 small{font-weight:normal;color:#777;font-size:.7em}
+.item{padding:10px 8px;margin:8px 0;border-radius:12px;border:2px solid transparent}
+.q{margin-bottom:6px;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.q .qw{font-weight:600;font-size:1.15em}
+.q .py{color:#64748b;font-size:.85em;font-weight:normal}
+.exbox{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:10px 12px;margin:6px 0 10px;width:100%}
+.ex-cn{font-size:1.05em;margin-bottom:4px}
+.ex-en{color:#475569;font-size:.88em}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.optwrap{display:inline-flex;align-items:center;gap:4px}
+.opt{font-size:1em;padding:10px 16px;border-radius:12px;border:2px solid #c9d4e3;background:#f8fbff;cursor:pointer;min-width:64px;font-family:inherit}
+.opt.sel{background:#3b82f6;color:#fff;border-color:#3b82f6}
+input.txt{font-size:1.1em;padding:8px 12px;border:2px solid #c9d4e3;border-radius:12px;width:10em;max-width:100%;font-family:inherit}
+.passage{background:#fffbea;border-left:5px solid #f5c542;padding:10px 14px;border-radius:8px;font-size:1.05em}
+.pass-head{display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap}
+.item.ok{border-color:#22c55e;background:#effdf3}
+.item.bad{border-color:#ef4444;background:#fef1f1}
+.fb{margin-top:6px;font-size:.85em;display:none}
+.item.ok .fb,.item.bad .fb{display:block}
+.item.ok .fb{color:#15803d}.item.bad .fb{color:#b91c1c}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
+.big{font-size:1.1em;padding:14px 24px;border:none;border-radius:14px;background:#16a34a;color:#fff;cursor:pointer;font-family:inherit}
+.big.sec{background:#64748b}
+#result{display:none;font-size:1.2em;text-align:center;background:#fff;border-radius:16px;padding:16px;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.locked .opt,.locked input.txt{pointer-events:none}
+.say{flex-shrink:0;width:40px;height:40px;border-radius:50%;border:2px solid #93c5fd;background:#eff6ff;color:#1d4ed8;font-size:1.05em;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;padding:0;font-family:inherit;line-height:1;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.say:disabled{opacity:.45;cursor:default}
+.say.sm{width:32px;height:32px;font-size:.9em;border-width:1.5px}
+.say:active:not(:disabled){background:#dbeafe}
+.tip{font-size:.75em;color:#64748b;margin:.4em 0 0}
+</style>
+<!-- PWA-HEAD -->
+<meta name="theme-color" content="#3b82f6">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="中文练习">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<link rel="manifest" href="../manifest.webmanifest">
+<!-- /PWA-HEAD -->
+</head>
+<body>
+<!-- PWA-BAR -->
+<style>
+.pwa-bar{display:flex;align-items:center;gap:8px;background:#eef3f9;border-bottom:1px solid #dbe4ef;padding:6px 10px;padding-top:max(6px,env(safe-area-inset-top));font-family:-apple-system,"PingFang SC","Microsoft YaHei",Arial,sans-serif}
+.pwa-bar a{display:inline-flex;align-items:center;gap:6px;color:#1d4ed8;text-decoration:none;font-size:16px;font-weight:600;padding:8px 10px;border-radius:10px;min-height:44px;box-sizing:border-box}
+.pwa-bar a:active{background:#dbeafe}
+</style>
+<nav class="pwa-bar" aria-label="App navigation"><a href="../index.html">← 练习首页</a></nav>
+<!-- /PWA-BAR -->
+
+<div class="wrap">
+<h1>Alexa 中文练习 🌟 New HSK 5</h1>
+<div class="sub">11 Nov 2026 · Day 1 of a new cycle · New HSK 5 chunk 1 (哎–本) · pinyin + 🔊 Putonghua · about 15 minutes · 45 questions<br>
+Each word has a short Chinese example and English translation. Tap 🔊 to hear. Answers stay hidden until Check.</div>
+<div id="timer"><span>⏱ <span id="clock">0:00</span></span><span id="prog"></span></div>
+<div id="quiz"></div>
+<div class="btns"><button class="big" id="check">✅ Check answers</button><button class="big sec" id="reset">↺ Try again</button></div>
+<div id="result"></div>
+</div>
+<script>
+var SECTIONS=[{"title":"一、看例句选意思 Meaning in context","hint":"read the sentence, tap the English meaning · 🔊","items":[{"t":"mc","q":"爱护","py":"àihù","say":"爱护","o":["to cherish, to take good care of","to comfort, to console","to install, to set up","to complain"],"a":0,"sent":"我们要爱护公共财物。","sent_en":"We should take good care of public property.","ex":"爱护 àihù — to cherish, to take good care of · 我们要爱护公共财物。 / We should take good care of public property."},{"t":"mc","q":"安慰","py":"ānwèi","say":"安慰","o":["to install, to set up","to comfort, to console","seatbelt","peaceful, calm"],"a":1,"sent":"朋友失败了，我连忙安慰她。","sent_en":"My friend failed, and I quickly comforted her.","ex":"安慰 ānwèi — to comfort, to console · 朋友失败了，我连忙安慰她。 / My friend failed, and I quickly comforted her."},{"t":"mc","q":"安装","py":"ānzhuāng","say":"安装","o":["to wrap; parcel, package","to stay up late","to install, to set up","packaging"],"a":2,"sent":"师傅正在家里安装新空调。","sent_en":"The technician is installing a new air conditioner at home.","ex":"安装 ānzhuāng — to install, to set up · 师傅正在家里安装新空调。 / The technician is installing a new air conditioner at home."},{"t":"mc","q":"熬夜","py":"áoyè","say":"熬夜","o":["midnight","evening, dusk","to stay up late","to grasp; certainty"],"a":2,"sent":"为了准备考试，她连续熬夜三天。","sent_en":"To prepare for the exam, she stayed up late for three days in a row.","ex":"熬夜 áoyè — to stay up late · 为了准备考试，她连续熬夜三天。 / To prepare for the exam, she stayed up late for three days in a row."},{"t":"mc","q":"把握","py":"bǎwò","say":"把握","o":["to complain","to protect","to grasp, to hold; certainty","to report to the police"],"a":2,"sent":"这次机会很难得，你一定要把握住。","sent_en":"This opportunity is rare; you must grasp it.","ex":"把握 bǎwò — to grasp, to hold; certainty · 这次机会很难得，你一定要把握住。 / This opportunity is rare; you must grasp it."},{"t":"mc","q":"安全带","py":"ānquándài","say":"安全带","o":["security guard","insurance","shelf life, expiration date","seatbelt"],"a":3,"sent":"开车时请系好安全带。","sent_en":"Please fasten your seatbelt when driving.","ex":"安全带 ānquándài — seatbelt · 开车时请系好安全带。 / Please fasten your seatbelt when driving."},{"t":"mc","q":"保质期","py":"bǎozhìqī","say":"保质期","o":["shelf life, expiration date","insurance","news report","parcel, package"],"a":0,"sent":"牛奶快到保质期了，要尽快喝完。","sent_en":"The milk is almost at its expiration date; drink it soon.","ex":"保质期 bǎozhìqī — shelf life, expiration date · 牛奶快到保质期了，要尽快喝完。 / The milk is almost at its expiration date; drink it soon."},{"t":"mc","q":"报警","py":"bàojǐng","say":"报警","o":["to report news","to report for duty, to check in","to report to the police","to report; a report"],"a":2,"sent":"发现有人偷东西，她马上报警。","sent_en":"When she found someone stealing, she reported it to the police at once.","ex":"报警 bàojǐng — to report to the police · 发现有人偷东西，她马上报警。 / When she found someone stealing, she reported it to the police at once."},{"t":"mc","q":"暴雨","py":"bàoyǔ","say":"暴雨","o":["midnight","evening, dusk","thin","torrential rain, rainstorm"],"a":3,"sent":"昨天这场暴雨让很多道路被水淹了。","sent_en":"Yesterday’s rainstorm flooded many roads.","ex":"暴雨 bàoyǔ — torrential rain, rainstorm · 昨天这场暴雨让很多道路被水淹了。 / Yesterday’s rainstorm flooded many roads."},{"t":"mc","q":"抱怨","py":"bàoyuàn","say":"抱怨","o":["to comfort, to console","to cherish, to take good care of","to complain","to keep, to maintain"],"a":2,"sent":"他总是抱怨工作太累，却不愿意休息。","sent_en":"He always complains that work is too tiring, yet he is unwilling to rest.","ex":"抱怨 bàoyuàn — to complain · 他总是抱怨工作太累，却不愿意休息。 / He always complains that work is too tiring, yet he is unwilling to rest."}]},{"title":"二、根据意思选词 Choose the word","hint":"use the example sentence · tap Chinese · 🔊 on options","items":[{"t":"mc","q":"background","o":["背后","背景","被子","把握"],"a":1,"ex":"背景 bèijǐng — background · 这部电影的历史背景很复杂。 / The historical background of this film is very complicated.","sent":"这部电影的历史背景很复杂。","sent_en":"The historical background of this film is very complicated."},{"t":"mc","q":"parcel, package","o":["包装","包含","包裹","包括"],"a":2,"ex":"包裹 bāoguǒ — to wrap; parcel, package · 我去邮局取一个包裹。 / I’m going to the post office to pick up a parcel.","sent":"我去邮局取一个包裹。","sent_en":"I’m going to the post office to pick up a parcel."},{"t":"mc","q":"to contain","o":["包括","包含","包装","包裹"],"a":1,"ex":"包含 bāohán — to contain · 这个价格已经包含了税。 / This price already contains the tax.","sent":"这个价格已经包含了税。","sent_en":"This price already contains the tax."},{"t":"mc","q":"security guard","o":["保险","保存","保安","宝贝"],"a":2,"ex":"保安 bǎo'ān — security guard · 小区门口站着两名保安。 / Two security guards are standing at the entrance of the housing estate.","sent":"小区门口站着两名保安。","sent_en":"Two security guards are standing at the entrance of the housing estate."},{"t":"mc","q":"treasure, baby","o":["宝贵","宝贝","宝","保"],"a":1,"ex":"宝贝 bǎobèi — treasure, baby · 妈妈笑着对孩子说：“我的宝贝。” / Mum smiled and said to the child, “My baby.”","sent":"妈妈笑着对孩子说：“我的宝贝。”","sent_en":"Mum smiled and said to the child, “My baby.”"},{"t":"mc","q":"insurance; safe, secure","o":["保险","保安","保质期","保存"],"a":0,"ex":"保险 bǎoxiǎn — insurance; safe, secure · 出国旅行最好买一份保险。 / When travelling abroad, it’s best to buy an insurance policy.","sent":"出国旅行最好买一份保险。","sent_en":"When travelling abroad, it’s best to buy an insurance policy."},{"t":"mc","q":"evening, dusk (L3 review)","o":["半夜","傍晚","熬夜","暗"],"a":1,"ex":"傍晚 bàngwǎn — evening, dusk · 我们打算傍晚去海边散步。 / We plan to take a walk by the sea in the evening. (also in textbook Lesson 3)","sent":"我们打算傍晚去海边散步。","sent_en":"We plan to take a walk by the sea in the evening."}]},{"title":"三、填空 Fill the blank","hint":"read EN translation, tap the missing word · 🔊","items":[{"t":"mc","q":"请____安静，不要大声说话。","o":["保存","保持","保留","保险"],"a":1,"py_hint":"bǎochí","ex":"保持 bǎochí — to keep, to maintain · 请保持安静，不要大声说话。 / Please keep quiet; don’t speak loudly.","sent_en":"Please keep quiet; don’t speak loudly."},{"t":"mc","q":"这些老照片很有意义，我一直____着。","o":["保持","保存","抱怨","安装"],"a":1,"py_hint":"bǎocún","ex":"保存 bǎocún — to preserve, to save · 这些老照片很有意义，我一直保存着。 / These old photos are very meaningful; I have been preserving them all along.","sent_en":"These old photos are very meaningful; I have been preserving them all along."},{"t":"mc","q":"时间是最____的财富。","o":["宝贝","宝贵","薄","白"],"a":1,"py_hint":"bǎoguì","ex":"宝贵 bǎoguì — precious, valuable · 时间是最宝贵的财富。 / Time is the most precious wealth.","sent_en":"Time is the most precious wealth."},{"t":"mc","q":"他____了自己的意见，没有马上同意。","o":["保留","保持","保存","保险"],"a":0,"py_hint":"bǎoliú","ex":"保留 bǎoliú — to retain, to keep · 他保留了自己的意见，没有马上同意。 / He reserved his opinion and did not agree at once.","sent_en":"He reserved his opinion and did not agree at once."},{"t":"mc","q":"新学期第一天，同学们都到学校____。","o":["报道","报到","报告","报警"],"a":1,"py_hint":"bàodào","ex":"报到 bàodào — to report for duty, to check in · 新学期第一天，同学们都到学校报到。 / On the first day of the new term, the students all went to school to check in.","sent_en":"On the first day of the new term, the students all went to school to check in."},{"t":"mc","q":"礼物的____非常精美。","o":["包裹","包装","包含","包括"],"a":1,"py_hint":"bāozhuāng","ex":"包装 bāozhuāng — to pack, to package; packaging · 礼物的包装非常精美。 / The packaging of the gift is very exquisite.","sent_en":"The packaging of the gift is very exquisite."}]},{"title":"四、易混词 Look-alikes in sentences","hint":"tap the word that fits · 🔊","items":[{"t":"mc","q":"这次旅行的费用____机票和酒店。(L3 review: 包括)","o":["包含","包括","包装","包裹"],"a":1,"ex":"包括 bāokuò — to include · 这次旅行的费用包括机票和酒店。 / The cost of this trip includes the plane tickets and the hotel. (also in textbook Lesson 3)","sent_en":"The cost of this trip includes the plane tickets and the hotel."},{"t":"mc","q":"电视台正在____这场暴雨的情况。","o":["报到","报道","报告","报警"],"a":1,"ex":"报道 bàodào — to report news; news report · 电视台正在报道这场暴雨的情况。 / The TV station is reporting on this rainstorm.","sent_en":"The TV station is reporting on this rainstorm."},{"t":"mc","q":"不要在别人____说坏话。","o":["背","背后","背景","被子"],"a":1,"ex":"背后 bèihòu — behind, at the back · 不要在别人背后说坏话。 / Don’t speak ill of others behind their backs.","sent_en":"Don’t speak ill of others behind their backs."},{"t":"mc","q":"房间里太____了，请把灯打开。","o":["安","暗","白","薄"],"a":1,"ex":"暗 àn — dark · 房间里太暗了，请把灯打开。 / The room is too dark; please turn on the light.","sent_en":"The room is too dark; please turn on the light."},{"t":"mc","q":"这件衣服太____了，冬天穿着会冷。","o":["白","薄","宝","保"],"a":1,"ex":"薄 báo — thin · 这件衣服太薄了，冬天穿着会冷。 / This piece of clothing is too thin; you’ll be cold wearing it in winter.","sent_en":"This piece of clothing is too thin; you’ll be cold wearing it in winter."},{"t":"mc","q":"他____想帮忙，结果却添了麻烦。","o":["本","白","保","宝"],"a":0,"ex":"本 běn — originally; this, current · 他本想帮忙，结果却添了麻烦。 / He originally meant to help, but ended up making more trouble.","sent_en":"He originally meant to help, but ended up making more trouble."},{"t":"mc","q":"她十分____放假，可以去看奶奶。(L3 review)","o":["盼望","抱怨","安慰","把握"],"a":0,"ex":"盼望 pànwàng — to look forward to · 她十分盼望放假，可以去看奶奶。 / She looks forward very much to the holiday so she can visit Grandma. (review from textbook Lesson 3)","sent_en":"She looks forward very much to the holiday so she can visit Grandma."}]},{"title":"五、默写 Dictation in context","hint":"🔊 listen, read the sentence, type the characters","items":[{"t":"text","q":"bèizi — blanket, quilt","say":"被子","sent":"晚上比较冷，多盖一床____吧。","sent_en":"It’s rather cold at night; put on an extra quilt.","a":["被子"],"ex":"被子 bèizi — blanket, quilt · 晚上比较冷，多盖一床被子吧。 / It’s rather cold at night; put on an extra quilt."},{"t":"text","q":"bànyè — midnight","say":"半夜","sent":"他昨天____才回家。","sent_en":"He didn’t get home until midnight yesterday.","a":["半夜"],"ex":"半夜 bànyè — midnight · 他昨天半夜才回家。 / He didn’t get home until midnight yesterday."},{"t":"text","q":"bàogào — to report; report","say":"报告","sent":"请把这份____在明天之前交给老师。","sent_en":"Please hand this report to the teacher before tomorrow.","a":["报告"],"ex":"报告 bàogào — to report; report · 请把这份报告在明天之前交给老师。 / Please hand this report to the teacher before tomorrow."},{"t":"text","q":"āiyā — oh my, ah","say":"哎呀","sent":"____，我把钥匙忘在家里了！","sent_en":"Oh no, I left my keys at home!","a":["哎呀"],"ex":"哎呀 āiyā — oh my, ah · 哎呀，我把钥匙忘在家里了！ / Oh no, I left my keys at home!"},{"t":"text","q":"bái — white; in vain","say":"白","sent":"妈妈穿了一件____衬衫。","sent_en":"Mum wore a white shirt.","a":["白"],"ex":"白 bái — white; in vain, for nothing · 妈妈穿了一件白衬衫。 / Mum wore a white shirt."},{"t":"text","q":"ài — alas, oh","say":"唉","sent":"____，这次又没考好。","sent_en":"Alas, I didn’t do well on the exam again.","a":["唉"],"ex":"唉 ài — alas, oh · 唉，这次又没考好。 / Alas, I didn’t do well on the exam again."}]},{"title":"六、声调 Tones","hint":"tap the correct pinyin · 🔊","items":[{"t":"mc","q":"安慰","o":["ānwèi","ànwèi","ānwéi","ǎnwèi"],"a":0,"ex":"安慰 ānwèi — to comfort, to console (1st + 4th).","say":"安慰"},{"t":"mc","q":"熬夜","o":["āoyè","áoyè","ǎoyè","àoyè"],"a":1,"ex":"熬夜 áoyè — to stay up late (2nd + 4th).","say":"熬夜"},{"t":"mc","q":"把握","o":["bāwò","báwò","bǎwò","bàwò"],"a":2,"ex":"把握 bǎwò — to grasp, to hold; certainty (3rd + 4th).","say":"把握"},{"t":"mc","q":"傍晚","o":["bāngwǎn","bángwǎn","bǎngwǎn","bàngwǎn"],"a":3,"ex":"傍晚 bàngwǎn — evening, dusk (4th + 3rd).","say":"傍晚"}]},{"title":"七、阅读 Reading","hint":"🔊 listen to the passage, then tap","passage":"傍晚，天渐渐暗了。妈妈给小明盖好被子，安慰他说：“别怕，只是一场暴雨。”可是到了半夜，雨越下越大。有人赶紧报警，小区的保安也出来查看。小明没有抱怨，一直保持冷静。第二天早上，新闻报道了这场暴雨。小区决定安装新的排水设备，工人已经来报到。一份报告包含了不少建议，也包括开车时要系好安全带。大家要爱护公共设施，把握时间，尽快把问题解决。小明本想熬夜把包裹里的书看完，可妈妈说：“这些书很宝贵，但身体更宝贵，不要白白浪费健康。把照片保存好就行了。”","items":[{"t":"mc","q":"傍晚的时候发生了什么？","o":["小明去邮局取包裹，然后报警","天渐渐暗了，妈妈给小明盖好被子并安慰他","工人已经来报到，开始安装设备"],"a":1,"ex":"傍晚，天渐渐暗了。妈妈给小明盖好被子，安慰他说：“别怕，只是一场暴雨。” / In the evening it gradually grew dark. Mum tucked Xiao Ming in with a quilt and comforted him, saying, “Don’t be afraid, it’s only a rainstorm.”"},{"t":"mc","q":"半夜雨越下越大以后，人们做了什么？小明怎么样？","o":["有人报警，保安出来查看；小明没有抱怨，一直保持冷静","小明开始抱怨，并熬夜看完了书","大家把照片保存好，然后去买保险"],"a":0,"ex":"有人赶紧报警，小区的保安也出来查看。小明没有抱怨，一直保持冷静。 / Someone quickly reported it to the police, and the estate’s security guards also came out to check. Xiao Ming did not complain and kept calm the whole time."},{"t":"mc","q":"第二天早上，新闻和小区分别做了什么？","o":["新闻安慰大家，小区决定关闭大门","工人抱怨设备太薄，拒绝报到","新闻报道了这场暴雨；小区决定安装新的排水设备，工人已经来报到"],"a":2,"ex":"新闻报道了这场暴雨。小区决定安装新的排水设备，工人已经来报到。 / The news reported on the rainstorm. The estate decided to install new drainage equipment, and the workers had already checked in."},{"t":"mc","q":"那份报告包含了什么？大家还应该怎样做？","o":["包含了不少建议，也包括开车时要系好安全带；大家要爱护公共设施，把握时间","只包含保险的保质期，不包括其他建议","只要求大家在背后讨论问题"],"a":0,"ex":"一份报告包含了不少建议，也包括开车时要系好安全带。大家要爱护公共设施，把握时间，尽快把问题解决。 / A report contained quite a few suggestions, and also included fastening one’s seatbelt when driving. Everyone should take good care of public facilities, grasp the time, and solve the problem as soon as possible."},{"t":"mc","q":"小明本想做什么？妈妈为什么不同意？","o":["他本想白天去报到，妈妈觉得太暗了","他本想熬夜把包裹里的书看完，但妈妈说身体更宝贵，不要白白浪费健康","他本想报警，妈妈说应该先保存照片"],"a":1,"ex":"小明本想熬夜把包裹里的书看完，可妈妈说：“这些书很宝贵，但身体更宝贵，不要白白浪费健康。” / Xiao Ming had originally wanted to stay up late and finish the books in the parcel, but Mum said the books were precious, yet health was even more precious, and he shouldn’t waste it in vain."}]}];
+
+/* TEMPLATE: every target word needs 字+拼音+🔊 + 例句 CN + EN translation. See README.md */
+var L="ABCDEFG",ALL=[],start=Date.now(),done=false,timerId,zhVoice=null;
+function pickZhVoice(){
+  if(!window.speechSynthesis)return null;
+  var vs=speechSynthesis.getVoices()||[];
+  var pref=vs.filter(function(v){return /^zh(-|_|$)/i.test(v.lang)||/Chinese|中文|普通话|国语/i.test(v.name);});
+  var cn=pref.filter(function(v){return /CN|China|普通话|Chinese\s*\(China\)/i.test(v.lang+" "+v.name);});
+  return cn[0]||pref[0]||null;
+}
+function refreshVoice(){zhVoice=pickZhVoice();}
+if(window.speechSynthesis){refreshVoice();speechSynthesis.onvoiceschanged=refreshVoice;}
+function hasHan(s){return /[\u4e00-\u9fff]/.test(s||"");}
+function speakZh(text,btn){
+  if(!text||!window.speechSynthesis)return;
+  try{speechSynthesis.cancel();}catch(e){}
+  var u=new SpeechSynthesisUtterance(String(text));
+  u.lang="zh-CN";u.rate=0.9;u.pitch=1;
+  if(!zhVoice)refreshVoice();
+  if(zhVoice)u.voice=zhVoice;
+  if(btn)btn.disabled=true;
+  var unlock=function(){if(btn)btn.disabled=false;};
+  u.onend=unlock;u.onerror=unlock;
+  setTimeout(unlock, Math.max(1800, String(text).length*420));
+  speechSynthesis.speak(u);
+}
+function speakBtn(text, small){
+  var b=el("button", small?"say sm":"say");
+  b.type="button";b.setAttribute("aria-label","Pronounce");b.textContent="🔊";
+  b.onclick=function(ev){if(ev&&ev.stopPropagation)ev.stopPropagation();if(ev&&ev.preventDefault)ev.preventDefault();speakZh(text,b);return false;};
+  return b;
+}
+function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e}
+function addExample(box, it){
+  if(!it.sent && !it.sent_en) return;
+  var ex=el("div","exbox");
+  if(it.sent){
+    var row=el("div","ex-cn");
+    row.appendChild(document.createTextNode("例句："+it.sent+" "));
+    if(hasHan(it.sent)) row.appendChild(speakBtn(it.sent.replace(/____/g, it.say||it.q||""), true));
+    ex.appendChild(row);
+  }
+  if(it.sent_en) ex.appendChild(el("div","ex-en","EN: "+it.sent_en));
+  box.appendChild(ex);
+}
+function build(){
+ var quiz=document.getElementById("quiz");quiz.innerHTML="";ALL=[];
+ SECTIONS.forEach(function(s){
+  var sec=el("section");var h=el("h2",null,s.title+" ");h.appendChild(el("small",null,"("+s.hint+")"));sec.appendChild(h);
+  if(s.passage){
+    var ph=el("div","pass-head");ph.appendChild(el("strong",null,"短文"));ph.appendChild(speakBtn(s.passage,false));
+    ph.appendChild(el("span","tip","tap 🔊 to hear the whole passage"));
+    sec.appendChild(ph);
+    sec.appendChild(el("div","passage",s.passage));
+  }
+  s.items.forEach(function(it,i){
+   var box=el("div","item");
+   var qrow=el("div","q");
+   qrow.appendChild(el("span",null,(i+1)+". "));
+   var qw=el("span","qw",it.q);qrow.appendChild(qw);
+   if(it.py) qrow.appendChild(el("span","py","("+it.py+")"));
+   if(it.py_hint) qrow.appendChild(el("span","py","拼音提示: "+it.py_hint));
+   var sayText=it.say||(hasHan(it.q)&&!/____/.test(it.q)?it.q:null);
+   if(sayText && !/____/.test(String(it.q))) qrow.appendChild(speakBtn(sayText,false));
+   box.appendChild(qrow);
+   addExample(box, it);
+   var rec={it:it,box:box,sel:null,input:null};
+   if(it.t==="mc"){
+     var o=el("div","opts");
+     it.o.forEach(function(txt,j){
+       var wrap=el("span","optwrap");
+       var b=el("button","opt",L[j]+". "+txt);b.type="button";
+       b.onclick=function(){if(done)return;rec.sel=j;[].forEach.call(o.querySelectorAll(".opt"),function(c){c.classList.remove("sel")});b.classList.add("sel");prog()};
+       wrap.appendChild(b);
+       if(hasHan(txt) && String(txt).length<=8) wrap.appendChild(speakBtn(txt,true));
+       o.appendChild(wrap);
+     });
+     box.appendChild(o);
+   } else {
+     var row=el("div","optwrap");
+     var inp=el("input","txt");inp.type="text";inp.setAttribute("autocomplete","off");inp.setAttribute("autocapitalize","off");inp.setAttribute("spellcheck","false");inp.placeholder="写汉字…";inp.oninput=prog;rec.input=inp;
+     row.appendChild(inp);
+     if(it.say){var lb=speakBtn(it.say,false);lb.title="Listen (does not show the answer)";row.appendChild(lb);row.appendChild(el("span","tip","听发音"));}
+     box.appendChild(row);
+   }
+   var fb=el("div","fb");box.appendChild(fb);rec.fb=fb;sec.appendChild(box);ALL.push(rec);
+  });
+  quiz.appendChild(sec);
+ });
+ prog();
+}
+function norm(s){return String(s||"").replace(/[\s\u3000]+/g,"")}
+function isCorrect(rec){var it=rec.it;if(it.t==="mc")return rec.sel===it.a;var v=norm(rec.input.value);return it.a.some(function(a){return norm(a)===v})}
+function answered(rec){return rec.it.t==="mc"?rec.sel!==null:norm(rec.input.value)!==""}
+function prog(){var a=ALL.filter(answered).length;document.getElementById("prog").textContent="已答 "+a+" / "+ALL.length}
+function fmt(ms){var s=Math.round(ms/1000);return Math.floor(s/60)+":"+("0"+s%60).slice(-2)}
+function tick(){document.getElementById("clock").textContent=fmt(Date.now()-start)}
+function check(){
+ if(done)return;done=true;clearInterval(timerId);var score=0;
+ ALL.forEach(function(rec){var ok=isCorrect(rec),it=rec.it;rec.box.classList.add(ok?"ok":"bad");
+  var ans=it.t==="mc"?L[it.a]+". "+it.o[it.a]:it.a[0];
+  rec.fb.textContent=ok?"✔ 对了！":"✘ Correct answer: "+ans+" — "+it.ex;if(ok)score++});
+ document.getElementById("quiz").classList.add("locked");
+ var t=fmt(Date.now()-start),pct=Math.round(score/ALL.length*100);
+ var msg=pct===100?"太棒了！🎉":pct>=80?"很好！👍":pct>=60?"不错，继续加油！💪":"加油！Let's review the red ones. 📚";
+ var r=document.getElementById("result");r.style.display="block";r.innerHTML="";
+ r.appendChild(el("div",null,"得分 Score: "+score+" / "+ALL.length+" ("+pct+"%)"));
+ r.appendChild(el("div",null,"用时 Time: "+t));r.appendChild(el("div",null,msg));
+ try{r.scrollIntoView({behavior:"smooth"});}catch(e){}
+ return {score:score,total:ALL.length,time:t};
+}
+function reset(){done=false;try{speechSynthesis&&speechSynthesis.cancel();}catch(e){}
+ document.getElementById("quiz").classList.remove("locked");document.getElementById("result").style.display="none";start=Date.now();clearInterval(timerId);timerId=setInterval(tick,1000);tick();build();try{window.scrollTo(0,0);}catch(e){}}
+document.getElementById("check").onclick=check;
+document.getElementById("reset").onclick=reset;
+build();timerId=setInterval(tick,1000);tick();
+
+</script>
+<!-- PWA-SCRIPT -->
+<script>
+(function(){
+  var KEY="alexa-chinese-scores";
+  function drillId(){
+    var m=(location.pathname||"").match(/([^/]+)\.html$/i);
+    return m?decodeURIComponent(m[1]):null;
+  }
+  function save(){
+    var r=document.getElementById("result");
+    if(!r)return;
+    var text=r.textContent||"";
+    var m=text.match(/Score:\s*(\d+)\s*\/\s*(\d+)/i)||text.match(/得分[^0-9]*(\d+)\s*\/\s*(\d+)/);
+    if(!m)return;
+    var id=drillId();
+    if(!id)return;
+    var score=+m[1], total=+m[2];
+    if(!(total>0) || !(score>=0) || score>total)return;
+    try{
+      var all={};
+      try{all=JSON.parse(localStorage.getItem(KEY)||"{}")||{};}catch(e){all={};}
+      if(typeof all!=="object"||Array.isArray(all)) all={};
+      all[id]={score:score,total:total,at:new Date().toISOString()};
+      localStorage.setItem(KEY,JSON.stringify(all));
+    }catch(e){}
+  }
+  var btn=document.getElementById("check");
+  if(btn) btn.addEventListener("click", function(){ try{save();}catch(e){} });
+  if("serviceWorker" in navigator){
+    var sw=new URL("../sw.js", location.href);
+    var scope=new URL("../", location.href);
+    navigator.serviceWorker.register(sw.href, {scope: scope.href}).catch(function(){});
+  }
+})();
+</script>
+<!-- /PWA-SCRIPT -->
+</body>
+</html>
