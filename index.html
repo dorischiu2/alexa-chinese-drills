@@ -223,7 +223,7 @@ noscript .list a, #catalog a{
 </div>
 <script>
 (function(){
-  var SCORE_KEY="alexa-chinese-scores";
+  var SCORE_KEY="alexa-chinese-scores-v2";
   var TIP_KEY="alexa-chinese-install-tip-dismissed";
 
   function hkToday(){
@@ -346,6 +346,11 @@ noscript .list a, #catalog a{
     list.innerHTML="";
     var past=isToday ? drills.filter(function(d){ return d!==heroDrill; }) : drills;
     // If today isn't published, all drills including latest still appear in the list
+    past.sort(function(a,b){
+      var da=a.date||a.id||"", db=b.date||b.id||"";
+      if(da!==db) return da<db?-1:1;
+      return (a.id||"").localeCompare(b.id||"");
+    });
     past.forEach(function(d){
       var a=document.createElement("a");
       a.className="card";
