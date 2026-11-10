@@ -1,8 +1,138 @@
 <!DOCTYPE html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Alexa 中文练习</title>
-<style>body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",Arial,sans-serif;font-size:20px;background:#f4f7fb;margin:0}.w{max-width:700px;margin:0 auto;padding:16px}a{display:block;background:#fff;border-radius:14px;padding:14px 18px;margin:10px 0;text-decoration:none;color:#1d4ed8;box-shadow:0 2px 6px rgba(0,0,0,.06)}</style>
-</head><body><div class="w"><h1>Alexa 中文练习 🌟</h1><p>HSK 5 daily drills — tap a day to start.</p>
+<meta name="description" content="Daily HSK 5 Chinese drills — install to your home screen and practice offline.">
+<meta name="theme-color" content="#3b82f6">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="中文练习">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",Arial,sans-serif;
+  font-size:20px;line-height:1.55;color:#1e293b;background:#f4f7fb;
+  padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom);
+  min-height:100dvh;
+}
+.w{max-width:700px;margin:0 auto;padding:20px 16px 40px}
+header.app{display:flex;align-items:center;gap:14px;margin:4px 0 18px}
+header.app img{width:56px;height:56px;border-radius:16px;box-shadow:0 4px 12px rgba(37,99,135,.2)}
+header.app h1{font-size:1.35em;margin:0;letter-spacing:-.02em}
+header.app p{margin:2px 0 0;color:#64748b;font-size:.78em}
+
+#install-tip{
+  display:none;position:relative;background:#eff6ff;border:1px solid #bfdbfe;border-radius:16px;
+  padding:14px 44px 14px 16px;margin:0 0 16px;color:#1e3a8a;font-size:.88em;
+  box-shadow:0 2px 6px rgba(0,0,0,.04);
+}
+#install-tip.show{display:block}
+#install-tip strong{display:block;margin-bottom:4px;font-size:1.02em}
+#install-tip p{margin:0;color:#1e40af}
+#install-tip .dismiss{
+  position:absolute;top:8px;right:8px;width:36px;height:36px;border:0;border-radius:10px;
+  background:transparent;color:#1d4ed8;font-size:22px;cursor:pointer;line-height:1;
+}
+#install-tip .dismiss:active{background:#dbeafe}
+
+.hero{
+  background:linear-gradient(160deg,#3b95d6 0%,#2a9a96 100%);
+  color:#fff;border-radius:22px;padding:22px 20px 20px;margin:0 0 18px;
+  box-shadow:0 8px 24px rgba(37,99,135,.22);
+}
+.hero .kicker{font-size:.78em;opacity:.9;letter-spacing:.04em}
+.hero h2{font-size:1.45em;margin:6px 0 4px;font-weight:700}
+.hero .meta{font-size:.92em;opacity:.95;margin:0 0 16px}
+.hero .note{font-size:.85em;opacity:.9;margin:0 0 14px}
+a.cta,button.cta{
+  display:block;width:100%;text-align:center;text-decoration:none;
+  background:#fff;color:#0f766e;font-weight:700;font-size:1.05em;
+  padding:16px 18px;border-radius:16px;border:0;cursor:pointer;
+  font-family:inherit;min-height:52px;box-shadow:0 2px 0 rgba(0,0,0,.06);
+}
+a.cta:active,button.cta:active{transform:translateY(1px)}
+a.cta small{display:block;font-weight:600;font-size:.72em;color:#0f766e;opacity:.8;margin-top:2px}
+
+.progress{
+  background:#fff;border-radius:16px;padding:14px 16px;margin:0 0 18px;
+  box-shadow:0 2px 6px rgba(0,0,0,.06);
+}
+.progress .row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
+.progress .lbl{font-weight:650;font-size:.95em}
+.progress .nums{color:#64748b;font-size:.85em}
+.bar{height:10px;background:#e2e8f0;border-radius:99px;overflow:hidden}
+.bar > span{display:block;height:100%;background:linear-gradient(90deg,#3b82f6,#14b8a6);border-radius:99px;width:0;transition:width .4s ease}
+
+h3.list-title{font-size:1.02em;margin:8px 0 10px;color:#334155}
+.list{display:flex;flex-direction:column;gap:10px}
+a.card{
+  display:flex;align-items:flex-start;gap:12px;background:#fff;border-radius:16px;
+  padding:14px 16px;text-decoration:none;color:inherit;
+  box-shadow:0 2px 6px rgba(0,0,0,.06);min-height:64px;
+}
+a.card:active{background:#f8fafc}
+.badge{
+  flex-shrink:0;width:44px;height:44px;border-radius:12px;background:#eff6ff;color:#1d4ed8;
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.78em;
+}
+a.card.done .badge{background:#ecfdf3;color:#15803d}
+.card .body{flex:1;min-width:0}
+.card .date{color:#64748b;font-size:.78em;margin:0}
+.card .topic{font-weight:650;margin:2px 0 0;color:#0f172a}
+.card .score{flex-shrink:0;color:#15803d;font-size:.8em;font-weight:650;margin-top:4px;white-space:nowrap}
+.err{color:#b91c1c;font-size:.85em;padding:8px 0}
+
+noscript .list a, #catalog a{
+  display:block;background:#fff;border-radius:14px;padding:14px 18px;margin:10px 0;
+  text-decoration:none;color:#1d4ed8;box-shadow:0 2px 6px rgba(0,0,0,.06);
+}
+#catalog{display:none}
+</style>
+</head>
+<body>
+<div class="w">
+<header class="app">
+  <img src="icons/icon-192.png" width="56" height="56" alt="">
+  <div>
+    <h1>Alexa 中文练习</h1>
+    <p>HSK 5 daily drills</p>
+  </div>
+</header>
+
+<div id="install-tip" role="note">
+  <button type="button" class="dismiss" id="install-dismiss" aria-label="关闭">×</button>
+  <strong>把练习装到主屏幕</strong>
+  <p id="install-steps"></p>
+</div>
+
+<section class="hero" id="hero">
+  <div class="kicker" id="hero-kicker">今日练习</div>
+  <h2 id="hero-title">正在加载…</h2>
+  <p class="meta" id="hero-meta"></p>
+  <p class="note" id="hero-note" hidden></p>
+  <a class="cta" id="hero-cta" href="#">开始今日练习<small>Start today’s drill</small></a>
+</section>
+
+<section class="progress" id="progress-wrap" hidden>
+  <div class="row">
+    <div class="lbl">本机进度</div>
+    <div class="nums" id="progress-nums"></div>
+  </div>
+  <div class="bar" aria-hidden="true"><span id="progress-bar"></span></div>
+</section>
+
+<h3 class="list-title">以往练习</h3>
+<div class="list" id="list"></div>
+<p class="err" id="load-error" hidden>无法加载练习列表。请检查网络后重试。</p>
+
+<nav id="catalog" hidden>
 <!-- DRILLS -->
 <a href="drills/2026-11-10.html">Day 39 · 10 Nov 2026 · 更新–规则</a>
 <a href="drills/2026-11-09.html">Day 38 · 9 Nov 2026 · 付出与改革</a>
@@ -44,4 +174,242 @@
 <a href="drills/2026-10-04.html">Day 3 · 4 Oct 2026 · 济南泉水 geology</a>
 <a href="drills/2026-10-03.html">Day 2 · 3 Oct 2026 · Lesson 5 济南的泉水 (+ L3/L4 review)</a>
 <a href="drills/2026-10-02.html">Day 1 · 2 Oct 2026 · 济南的泉水</a>
-</div></body></html>
+</nav>
+<noscript>
+  <p>请打开 JavaScript 以使用完整应用。练习列表：</p>
+  <div class="list">
+<a href="drills/2026-11-10.html">Day 39 · 10 Nov 2026 · 更新–规则</a>
+<a href="drills/2026-11-09.html">Day 38 · 9 Nov 2026 · 付出与改革</a>
+<a href="drills/2026-11-08.html">Day 37 · 8 Nov 2026 · HSK 5 chunk 9 (发起–夫妇)</a>
+<a href="drills/2026-11-07.html">Day 36 · 7 Nov 2026 · HSK5 chunk 8 (点赞–发明)</a>
+<a href="drills/2026-11-06.html">Day 35 · 6 Nov 2026 · HSK5 chunk 7 代–点心</a>
+<a href="drills/2026-11-05.html">Day 34 · 5 Nov 2026 · HSK5 chunk 6 (创作–大众)</a>
+<a href="drills/2026-11-04.html">Day 33 · 4 Nov 2026 · HSK5 chunk 5 橙子–创造</a>
+<a href="drills/2026-11-03.html">Day 32 · 3 Nov 2026 · HSK5 chunk 4 超–成长</a>
+<a href="drills/2026-11-02.html">Day 31 · 2 Nov 2026 · HSK 5 chunk 3 (病情–场所)</a>
+<a href="drills/2026-11-01.html">Day 30 · 1 Nov 2026 · New HSK 5 chunk 2</a>
+<a href="drills/2026-10-31-hsk5.html">Day 29b · 31 Oct 2026 · New HSK 5 list (15 min, recognition)</a>
+<a href="drills/2026-10-31.html">Day 29 · 31 Oct 2026 · L4 子路背米 spaced review</a>
+<a href="drills/2026-10-30.html">Day 28 · 30 Oct 2026 · Lesson 3 人生有选择 (spaced review)</a>
+<a href="drills/2026-10-29.html">Day 27 · 29 Oct 2026 · L5 Jinan springs (spaced review)</a>
+<a href="drills/2026-10-28.html">Day 26 · 28 Oct 2026 · L4 子路背米 spaced review</a>
+<a href="drills/2026-10-27.html">Day 25 · 27 Oct 2026 · L3 人生有选择</a>
+<a href="drills/2026-10-26.html">Day 24 · 26 Oct 2026 · L5 济南的泉水 spaced review</a>
+<a href="drills/2026-10-25.html">Day 23 · 25 Oct 2026 · L4 子路背米 spaced review</a>
+<a href="drills/2026-10-24.html">Day 22 · 24 Oct 2026 · L3 人生有选择 spaced review</a>
+<a href="drills/2026-10-23.html">Day 21 · 23 Oct 2026 · L5 济南的泉水 (spaced review)</a>
+<a href="drills/2026-10-22.html">Day 20 · 22 Oct 2026 · L4 子路背米 spaced review</a>
+<a href="drills/2026-10-21.html">Day 19 · 21 Oct 2026 · L3 人生有选择 (spaced review)</a>
+<a href="drills/2026-10-20.html">Day 18 · 20 Oct 2026 · L5 济南的泉水</a>
+<a href="drills/2026-10-19.html">Day 17 · 19 Oct 2026 · L4 子路背米 (+ L5 review)</a>
+<a href="drills/2026-10-18.html">Day 16 · 18 Oct 2026 · L3 人生有选择 (+ L4 review)</a>
+<a href="drills/2026-10-17.html">Day 15 · 17 Oct 2026 · L5 济南的泉水 review</a>
+<a href="drills/2026-10-16.html">Day 14 · 16 Oct 2026 · L4 子路背米 (+ L5 review)</a>
+<a href="drills/2026-10-15.html">Day 13 · 15 Oct 2026 · L3–L4 spaced review</a>
+<a href="drills/2026-10-14.html">Day 12 · 14 Oct 2026 · L5 济南的泉水 review</a>
+<a href="drills/2026-10-13.html">Day 11 · 13 Oct 2026 · L4 子路 + L3 spaced review</a>
+<a href="drills/2026-10-12.html">Day 10 · 12 Oct 2026 · L5泉水 + L3–L4 review</a>
+<a href="drills/2026-10-11.html">Day 9 · 11 Oct 2026 · L3–L4 子路复习</a>
+<a href="drills/2026-10-10.html">Day 8 · 10 Oct 2026 · L3–L5 spaced review</a>
+<a href="drills/2026-10-08.html">Day 7 · 8 Oct 2026 · L3 last words + L3–5 review</a>
+<a href="drills/2026-10-07.html">Day 6 · 7 Oct 2026 · Lesson 3 人生有选择，一切可改变</a>
+<a href="drills/2026-10-06.html">Day 5 · 6 Oct 2026 · Lesson 4 子路背米 review (+ L3 preview)</a>
+<a href="drills/2026-10-05.html">Day 4 · 5 Oct 2026 · Lesson 4 子路背米 (+ L5 review)</a>
+<a href="drills/2026-10-04.html">Day 3 · 4 Oct 2026 · 济南泉水 geology</a>
+<a href="drills/2026-10-03.html">Day 2 · 3 Oct 2026 · Lesson 5 济南的泉水 (+ L3/L4 review)</a>
+<a href="drills/2026-10-02.html">Day 1 · 2 Oct 2026 · 济南的泉水</a>
+  </div>
+</noscript>
+</div>
+<script>
+(function(){
+  var SCORE_KEY="alexa-chinese-scores";
+  var TIP_KEY="alexa-chinese-install-tip-dismissed";
+
+  function hkToday(){
+    return new Intl.DateTimeFormat("en-CA",{timeZone:"Asia/Hong_Kong",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
+  }
+  function formatHkDate(iso){
+    try{
+      var d=new Date(iso+"T12:00:00+08:00");
+      return new Intl.DateTimeFormat("zh-CN",{timeZone:"Asia/Hong_Kong",year:"numeric",month:"long",day:"numeric",weekday:"short"}).format(d);
+    }catch(e){return iso;}
+  }
+  function readScores(){
+    try{
+      var all=JSON.parse(localStorage.getItem(SCORE_KEY)||"{}")||{};
+      if(typeof all!=="object"||Array.isArray(all)) return {};
+      return all;
+    }catch(e){return {};}
+  }
+  function catalogFromDom(){
+    var nodes=document.querySelectorAll("#catalog a");
+    var out=[], seen={};
+    Array.prototype.forEach.call(nodes,function(a){
+      var href=a.getAttribute("href")||"";
+      var m=href.match(/drills\/([^/]+)\.html$/);
+      if(!m||seen[m[1]]) return;
+      seen[m[1]]=true;
+      var stem=m[1], label=(a.textContent||"").trim();
+      var dateM=stem.match(/^(\d{4}-\d{2}-\d{2})/);
+      var parts=label.split("·").map(function(s){return s.trim();});
+      var day=null, topic=label;
+      if(parts[0]&&/^Day\s+/i.test(parts[0])){
+        day=parts[0].replace(/^Day\s+/i,"").trim();
+        topic=parts.length>=3?parts.slice(2).join(" · "):(parts[parts.length-1]||label);
+      }
+      out.push({id:stem,date:dateM?dateM[1]:stem,href:href,day:day,topic:topic,label:label});
+    });
+    return out;
+  }
+  function isStandalone(){
+    return window.matchMedia("(display-mode: standalone)").matches
+      || window.matchMedia("(display-mode: fullscreen)").matches
+      || window.navigator.standalone===true;
+  }
+  function showInstallTip(){
+    if(isStandalone()) return;
+    try{ if(localStorage.getItem(TIP_KEY)==="1") return; }catch(e){}
+    var ua=navigator.userAgent||"";
+    var isIOS=/iPad|iPhone|iPod/.test(ua) || (navigator.platform==="MacIntel" && navigator.maxTouchPoints>1);
+    var isAndroid=/Android/i.test(ua);
+    var iosOther=/CriOS|FxiOS|EdgiOS|OPiOS|DuckDuckGo/i.test(ua);
+    var el=document.getElementById("install-tip");
+    var steps=document.getElementById("install-steps");
+    if(isIOS && iosOther){
+      steps.textContent="请用 Safari 打开本页，再点分享（方框上箭头）→ 添加到主屏幕。";
+    }else if(isIOS){
+      steps.textContent="在 Safari 点底部分享按钮（方框上箭头）→ 添加到主屏幕 / Add to Home Screen。";
+    }else if(isAndroid){
+      steps.textContent="在 Chrome 菜单里选择“安装应用”或“添加到主屏幕” / Install app or Add to Home Screen。";
+    }else{
+      steps.textContent="iPhone / iPad：用 Safari 打开，点分享（方框上箭头）→ 添加到主屏幕。Android：在 Chrome 选择“安装应用”或“添加到主屏幕”。";
+    }
+    el.classList.add("show");
+  }
+
+  function pickToday(drills, today){
+    for(var i=0;i<drills.length;i++){
+      if(drills[i].date===today) return drills[i];
+    }
+    return null;
+  }
+  function dayLabel(d){
+    return d.day ? ("Day "+d.day) : "";
+  }
+
+  function render(drills){
+    var scores=readScores();
+    var today=hkToday();
+    var chosen=pickToday(drills, today);
+    var latest=drills[0]||null;
+    var isToday=!!chosen;
+    var heroDrill=chosen||latest;
+
+    var kicker=document.getElementById("hero-kicker");
+    var title=document.getElementById("hero-title");
+    var meta=document.getElementById("hero-meta");
+    var note=document.getElementById("hero-note");
+    var cta=document.getElementById("hero-cta");
+
+    if(!heroDrill){
+      title.textContent="还没有练习";
+      meta.textContent="";
+      cta.style.display="none";
+    }else if(isToday){
+      kicker.textContent="今日练习";
+      title.textContent=formatHkDate(heroDrill.date);
+      meta.textContent=[dayLabel(heroDrill), heroDrill.topic].filter(Boolean).join(" · ");
+      note.hidden=true;
+      cta.href=heroDrill.href;
+      cta.innerHTML="开始今日练习<small>Start today’s drill</small>";
+      try{ fetch(heroDrill.href).catch(function(){}); }catch(e){}
+    }else{
+      kicker.textContent="今日练习还没发布";
+      title.textContent=formatHkDate(today);
+      meta.textContent="";
+      note.hidden=false;
+      note.textContent="最新练习："+formatHkDate(heroDrill.date)+(heroDrill.day?" · Day "+heroDrill.day:"")+(heroDrill.topic?" · "+heroDrill.topic:"");
+      cta.href=heroDrill.href;
+      cta.innerHTML="打开最新练习<small>Open the latest drill</small>";
+    }
+
+    var done=0;
+    drills.forEach(function(d){ if(scores[d.id] && scores[d.id].total>0) done++; });
+    var wrap=document.getElementById("progress-wrap");
+    wrap.hidden=false;
+    document.getElementById("progress-nums").textContent=done+" / "+drills.length+" 已完成";
+    document.getElementById("progress-bar").style.width=(drills.length?Math.round(done/drills.length*100):0)+"%";
+    wrap.setAttribute("aria-label","本机已完成 "+done+" 篇，共 "+drills.length+" 篇");
+
+    var list=document.getElementById("list");
+    list.innerHTML="";
+    var past=isToday ? drills.filter(function(d){ return d!==heroDrill; }) : drills;
+    // If today isn't published, all drills including latest still appear in the list
+    past.forEach(function(d){
+      var a=document.createElement("a");
+      a.className="card";
+      a.href=d.href;
+      var sc=scores[d.id];
+      if(sc && sc.total>0) a.classList.add("done");
+      var badge=document.createElement("div");
+      badge.className="badge";
+      badge.textContent=(sc && sc.total>0) ? "✓" : (d.day || "练");
+      var body=document.createElement("div");
+      body.className="body";
+      var dt=document.createElement("p");
+      dt.className="date";
+      dt.textContent=formatHkDate(d.date)+(d.day?" · Day "+d.day:"");
+      var topic=document.createElement("p");
+      topic.className="topic";
+      topic.textContent=d.topic||d.label;
+      body.appendChild(dt);body.appendChild(topic);
+      a.appendChild(badge);a.appendChild(body);
+      if(sc && sc.total>0){
+        var sm=document.createElement("div");
+        sm.className="score";
+        sm.textContent=sc.score+" / "+sc.total;
+        a.appendChild(sm);
+      }
+      list.appendChild(a);
+    });
+  }
+
+  function loadDrills(){
+    return fetch("drills.json", {cache:"no-store"}).then(function(res){
+      if(!res.ok) throw new Error("bad status");
+      return res.json();
+    }).then(function(data){
+      if(!Array.isArray(data) || !data.length) throw new Error("empty");
+      return data;
+    }).catch(function(){
+      return catalogFromDom();
+    });
+  }
+
+  document.getElementById("install-dismiss").addEventListener("click", function(){
+    document.getElementById("install-tip").classList.remove("show");
+    try{ localStorage.setItem(TIP_KEY,"1"); }catch(e){}
+  });
+
+  showInstallTip();
+
+  if("serviceWorker" in navigator){
+    navigator.serviceWorker.register("./sw.js", {scope:"./"}).catch(function(){});
+  }
+
+  loadDrills().then(function(drills){
+    if(!drills || !drills.length){
+      document.getElementById("load-error").hidden=false;
+      document.getElementById("hero-title").textContent="无法加载练习";
+      return;
+    }
+    render(drills);
+  }).catch(function(){
+    document.getElementById("load-error").hidden=false;
+    document.getElementById("hero-title").textContent="无法加载练习";
+  });
+})();
+</script>
+</body>
+</html>
