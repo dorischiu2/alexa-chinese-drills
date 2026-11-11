@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Alexa 中文练习 – 12 Nov 2026 (HSK 5 · Day 2 · new cycle)</title>
+<!-- Daily-drill template: each target word = 字 + pinyin + 🔊 + 例句(CN) + English translation; Web Speech zh-CN. See README.md -->
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f4f7fb;color:#222;font-family:-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",Arial,sans-serif;font-size:20px;line-height:1.6}
+.wrap{max-width:760px;margin:0 auto;padding:16px}
+h1{font-size:1.4em;margin:.3em 0 0}
+.sub{color:#666;font-size:.8em;margin-bottom:1em}
+#timer{position:sticky;top:0;background:#fff;border-radius:12px;padding:8px 14px;box-shadow:0 2px 6px rgba(0,0,0,.08);font-size:.85em;z-index:5;display:flex;justify-content:space-between}
+section{background:#fff;border-radius:16px;padding:14px 16px;margin:16px 0;box-shadow:0 2px 6px rgba(0,0,0,.06)}
+h2{font-size:1.1em;margin:.2em 0 .5em}
+h2 small{font-weight:normal;color:#777;font-size:.7em}
+.item{padding:10px 8px;margin:8px 0;border-radius:12px;border:2px solid transparent}
+.q{margin-bottom:6px;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.q .qw{font-weight:600;font-size:1.15em}
+.q .py{color:#64748b;font-size:.85em;font-weight:normal}
+.exbox{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:10px 12px;margin:6px 0 10px;width:100%}
+.ex-cn{font-size:1.05em;margin-bottom:4px}
+.ex-en{color:#475569;font-size:.88em}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.optwrap{display:inline-flex;align-items:center;gap:4px}
+.opt{font-size:1em;padding:10px 16px;border-radius:12px;border:2px solid #c9d4e3;background:#f8fbff;cursor:pointer;min-width:64px;font-family:inherit}
+.opt.sel{background:#3b82f6;color:#fff;border-color:#3b82f6}
+input.txt{font-size:1.1em;padding:8px 12px;border:2px solid #c9d4e3;border-radius:12px;width:10em;max-width:100%;font-family:inherit}
+.passage{background:#fffbea;border-left:5px solid #f5c542;padding:10px 14px;border-radius:8px;font-size:1.05em}
+.pass-head{display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap}
+.item.ok{border-color:#22c55e;background:#effdf3}
+.item.bad{border-color:#ef4444;background:#fef1f1}
+.fb{margin-top:6px;font-size:.85em;display:none}
+.item.ok .fb,.item.bad .fb{display:block}
+.item.ok .fb{color:#15803d}.item.bad .fb{color:#b91c1c}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
+.big{font-size:1.1em;padding:14px 24px;border:none;border-radius:14px;background:#16a34a;color:#fff;cursor:pointer;font-family:inherit}
+.big.sec{background:#64748b}
+#result{display:none;font-size:1.2em;text-align:center;background:#fff;border-radius:16px;padding:16px;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.locked .opt,.locked input.txt{pointer-events:none}
+.say{flex-shrink:0;width:40px;height:40px;border-radius:50%;border:2px solid #93c5fd;background:#eff6ff;color:#1d4ed8;font-size:1.05em;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;padding:0;font-family:inherit;line-height:1;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.say:disabled{opacity:.45;cursor:default}
+.say.sm{width:32px;height:32px;font-size:.9em;border-width:1.5px}
+.say:active:not(:disabled){background:#dbeafe}
+.tip{font-size:.75em;color:#64748b;margin:.4em 0 0}
+</style>
+<!-- PWA-HEAD -->
+<meta name="theme-color" content="#3b82f6">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="中文练习">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<link rel="manifest" href="../manifest.webmanifest">
+<!-- /PWA-HEAD -->
+</head>
+<body>
+<!-- PWA-BAR -->
+<style>
+.pwa-bar{display:flex;align-items:center;gap:8px;background:#eef3f9;border-bottom:1px solid #dbe4ef;padding:6px 10px;padding-top:max(6px,env(safe-area-inset-top));font-family:-apple-system,"PingFang SC","Microsoft YaHei",Arial,sans-serif}
+.pwa-bar a{display:inline-flex;align-items:center;gap:6px;color:#1d4ed8;text-decoration:none;font-size:16px;font-weight:600;padding:8px 10px;border-radius:10px;min-height:44px;box-sizing:border-box}
+.pwa-bar a:active{background:#dbeafe}
+</style>
+<nav class="pwa-bar" aria-label="App navigation"><a href="../index.html">← 练习首页</a></nav>
+<!-- /PWA-BAR -->
+
+<div class="wrap">
+<h1>Alexa 中文练习 🌟 New HSK 5</h1>
+<div class="sub">12 Nov 2026 · Day 2 of a new cycle · New HSK 5 chunk 2 (本地–不然) · pinyin + 🔊 Putonghua · about 15 minutes · 45 questions<br>
+Each word has a short Chinese example and English translation. Tap 🔊 to hear. Answers stay hidden until Check.</div>
+<div id="timer"><span>⏱ <span id="clock">0:00</span></span><span id="prog"></span></div>
+<div id="quiz"></div>
+<div class="btns"><button class="big" id="check">✅ Check answers</button><button class="big sec" id="reset">↺ Try again</button></div>
+<div id="result"></div>
+</div>
+<script>
+var SECTIONS=[{"title":"一、看例句选意思 Meaning in context","hint":"read the sentence, tap the English meaning · 🔊","items":[{"t":"mc","q":"本地","py":"běndì","say":"本地","o":["local area","skill, ability","oneself, I","essence, nature"],"a":0,"sent":"他是本地人，对这里的街道很熟悉。","sent_en":"He is a local and knows the streets here very well.","ex":"本地 běndì — local area · 他是本地人，对这里的街道很熟悉。 / He is a local and knows the streets here very well."},{"t":"mc","q":"本质","py":"běnzhì","say":"本质","o":["score","proportion, ratio","essence, nature","metaphor, analogy"],"a":2,"sent":"我们要看清问题的本质，不能只看表面。","sent_en":"We must see the essence of the problem, not only the surface.","ex":"本质 běnzhì — essence, nature · 我们要看清问题的本质，不能只看表面。 / We must see the essence of the problem, not only the surface."},{"t":"mc","q":"彼此","py":"bǐcǐ","say":"彼此","o":["after all","each other, one another","to avoid","certainly, necessarily"],"a":1,"sent":"同学之间应该彼此尊重、互相帮助。","sent_en":"Classmates should respect each other and help one another.","ex":"彼此 bǐcǐ — each other, one another · 同学之间应该彼此尊重、互相帮助。 / Classmates should respect each other and help one another."},{"t":"mc","q":"毕竟","py":"bìjìng","say":"毕竟","o":["inevitable","essential","after all","necessary"],"a":2,"sent":"他毕竟还是个孩子，不要对他要求太高。","sent_en":"He is a child after all; don’t demand too much of him.","ex":"毕竟 bìjìng — after all · 他毕竟还是个孩子，不要对他要求太高。 / He is a child after all; don’t demand too much of him."},{"t":"mc","q":"避免","py":"bìmiǎn","say":"避免","o":["to express","to change, to fluctuate","to dial","to avoid"],"a":3,"sent":"出门早一点，可以避免迟到。","sent_en":"Leaving a bit earlier can help you avoid being late.","ex":"避免 bìmiǎn — to avoid · 出门早一点，可以避免迟到。 / Leaving a bit earlier can help you avoid being late."},{"t":"mc","q":"闭幕式","py":"bìmùshì","say":"闭幕式","o":["convenience store","closing ceremony","museum","sickroom, ward"],"a":1,"sent":"奥运会闭幕式将在今晚举行。","sent_en":"The Olympic closing ceremony will be held tonight.","ex":"闭幕式 bìmùshì — closing ceremony · 奥运会闭幕式将在今晚举行。 / The Olympic closing ceremony will be held tonight."},{"t":"mc","q":"便利","py":"biànlì","say":"便利","o":["to change, to fluctuate","convenient; to facilitate","title, heading","symbol, sign"],"a":1,"sent":"手机支付让日常生活更加便利。","sent_en":"Mobile payment makes daily life more convenient.","ex":"便利 biànlì — convenient; to facilitate · 手机支付让日常生活更加便利。 / Mobile payment makes daily life more convenient."},{"t":"mc","q":"表达","py":"biǎodá","say":"表达","o":["to express","to show, to indicate","surface","facial expression"],"a":0,"sent":"他不善于表达自己的感情。","sent_en":"He is not good at expressing his feelings.","ex":"表达 biǎodá — to express · 他不善于表达自己的感情。 / He is not good at expressing his feelings."},{"t":"mc","q":"拨打","py":"bōdǎ","say":"拨打","o":["to supplement, to replenish","to leave, to part ways","to dial","to walk"],"a":2,"sent":"遇到危险时，请立刻拨打急救电话。","sent_en":"When you are in danger, please dial the emergency number at once.","ex":"拨打 bōdǎ — to dial · 遇到危险时，请立刻拨打急救电话。 / When you are in danger, please dial the emergency number at once."},{"t":"mc","q":"博物馆","py":"bówùguǎn","say":"博物馆","o":["convenience store","sickroom, ward","glass","museum"],"a":3,"sent":"周末我们一起去博物馆看展览吧。","sent_en":"Let’s go to the museum together this weekend to see the exhibition.","ex":"博物馆 bówùguǎn — museum · 周末我们一起去博物馆看展览吧。 / Let’s go to the museum together this weekend to see the exhibition."}]},{"title":"二、根据意思选词 Choose the word","hint":"use the example sentence · tap Chinese · 🔊 on options","items":[{"t":"mc","q":"skill, ability (L4 review)","o":["本地","本领","本人","本质"],"a":1,"ex":"本领 běnlǐng — skill, ability · 他有修理电脑的本领。 / He has the skill to repair computers. (also in textbook Lesson 4)","sent":"他有修理电脑的本领。","sent_en":"He has the skill to repair computers."},{"t":"mc","q":"oneself, I","o":["本人","彼此","本地","本领"],"a":0,"ex":"本人 běnrén — oneself, I · 这件事必须由本人亲自来办理。 / This matter must be handled by the person himself or herself.","sent":"这件事必须由本人亲自来办理。","sent_en":"This matter must be handled by the person himself or herself."},{"t":"mc","q":"score (in a match)","o":["比例","比喻","比分","彼此"],"a":2,"ex":"比分 bǐfēn — score · 比赛结束时，比分是三比二。 / When the match ended, the score was 3–2.","sent":"比赛结束时，比分是三比二。","sent_en":"When the match ended, the score was 3–2."},{"t":"mc","q":"proportion, ratio","o":["比分","比例","比喻","标题"],"a":1,"ex":"比例 bǐlì — proportion, ratio · 这个班男女生的比例差不多。 / The ratio of boys to girls in this class is about the same.","sent":"这个班男女生的比例差不多。","sent_en":"The ratio of boys to girls in this class is about the same."},{"t":"mc","q":"to compare to; metaphor, analogy","o":["比分","比例","标志","比喻"],"a":3,"ex":"比喻 bǐyù — to compare to; metaphor, analogy · 老师用“时间就是金钱”这个比喻来说明时间很宝贵。 / The teacher used the metaphor “time is money” to show that time is precious.","sent":"老师用“时间就是金钱”这个比喻来说明时间很宝贵。","sent_en":"The teacher used the metaphor “time is money” to show that time is precious."},{"t":"mc","q":"convenience store","o":["便利","便利店","博物馆","病房"],"a":1,"ex":"便利店 biànlìdiàn — convenience store · 我家楼下就有一家便利店，买东西很方便。 / There is a convenience store downstairs from my home, so shopping is convenient.","sent":"我家楼下就有一家便利店，买东西很方便。","sent_en":"There is a convenience store downstairs from my home, so shopping is convenient."},{"t":"mc","q":"title, heading","o":["标题","标志","表达","表情"],"a":0,"ex":"标题 biāotí — title, heading · 请先看文章的标题，再开始阅读。 / Please look at the article’s title first, then start reading.","sent":"请先看文章的标题，再开始阅读。","sent_en":"Please look at the article’s title first, then start reading."}]},{"title":"三、填空 Fill the blank","hint":"read EN translation, tap the missing word · 🔊","items":[{"t":"mc","q":"这块石头的____很光滑。(L5 review: 表面)","o":["表明","表面","表达","表情"],"a":1,"py_hint":"biǎomiàn","ex":"表面 biǎomiàn — surface · 这块石头的表面很光滑。 / The surface of this stone is very smooth. (also in textbook Lesson 5)","sent_en":"The surface of this stone is very smooth."},{"t":"mc","q":"调查结果____这项计划是可行的。","o":["表面","表明","标题","标志"],"a":1,"py_hint":"biǎomíng","ex":"表明 biǎomíng — to show, to indicate · 调查结果表明这项计划是可行的。 / The results of the investigation show that this plan is feasible.","sent_en":"The results of the investigation show that this plan is feasible."},{"t":"mc","q":"空气和水都是人类____的东西。","o":["必要","必需","必然","必"],"a":1,"py_hint":"bìxū","ex":"必需 bìxū — must have, essential · 空气和水都是人类必需的东西。 / Air and water are things that human beings must have.","sent_en":"Air and water are things that human beings must have."},{"t":"mc","q":"在做出决定之前，有____先听一听大家的意见。","o":["必需","必要","必然","便"],"a":1,"py_hint":"bìyào","ex":"必要 bìyào — necessary · 在做出决定之前，有必要先听一听大家的意见。 / Before making a decision, it is necessary to listen to everyone’s opinions first.","sent_en":"Before making a decision, it is necessary to listen to everyone’s opinions first."},{"t":"mc","q":"他一听到铃声，____立刻站了起来。","o":["必","便","别","饼"],"a":1,"py_hint":"biàn","ex":"便 biàn — then, in that case · 他一听到铃声，便立刻站了起来。 / As soon as he heard the bell, he then stood up at once.","sent_en":"As soon as he heard the bell, he then stood up at once."},{"t":"mc","q":"他准备得很充分，这次考试____能取得好成绩。","o":["必","便","别","饼"],"a":0,"py_hint":"bì","ex":"必 bì — certainly, necessarily · 他准备得很充分，这次考试必能取得好成绩。 / He prepared very thoroughly, so he will certainly get a good result on this exam.","sent_en":"He prepared very thoroughly, so he will certainly get a good result on this exam."}]},{"title":"四、易混词 Look-alikes in sentences","hint":"tap the word that fits · 🔊","items":[{"t":"mc","q":"只要努力，成功____会到来，只是需要时间。","o":["必需","必要","必然","必"],"a":2,"ex":"必然 bìrán — inevitable; inevitability · 只要努力，成功必然会到来，只是需要时间。 / If you work hard, success will inevitably come; it just takes time.","sent_en":"If you work hard, success will inevitably come; it just takes time."},{"t":"mc","q":"她的____看起来有些紧张。","o":["表达","表面","表明","表情"],"a":3,"ex":"表情 biǎoqíng — expression · 她的表情看起来有些紧张。 / Her expression looks a bit nervous.","sent_en":"Her expression looks a bit nervous."},{"t":"mc","q":"只是擦破了一点皮，____，不用去医院。","o":["不得了","不要紧","不幸","不利"],"a":1,"ex":"不要紧 búyàojǐn — not serious, not matter · 只是擦破了一点皮，不要紧，不用去医院。 / It’s just a scratch; it’s not serious, and there’s no need to go to the hospital.","sent_en":"It’s just a scratch; it’s not serious, and there’s no need to go to the hospital."},{"t":"mc","q":"厨房着火了，真是____！","o":["不要紧","不得了","不符","不良"],"a":1,"ex":"不得了 bùdéliǎo — terrible, serious · 厨房着火了，真是不得了！ / The kitchen has caught fire — this is terrible!","sent_en":"The kitchen has caught fire — this is terrible!"},{"t":"mc","q":"他的说法与事实____。","o":["不符","不良","不然","不利"],"a":0,"ex":"不符 bùfú — not in accordance with · 他的说法与事实不符。 / His statement does not accord with the facts.","sent_en":"His statement does not accord with the facts."},{"t":"mc","q":"火车站上，朋友们依依不舍地____了。","o":["便","别","必","饼"],"a":1,"ex":"别 bié — to leave, to part ways · 火车站上，朋友们依依不舍地别了。 / At the railway station, the friends reluctantly parted.","sent_en":"At the railway station, the friends reluctantly parted."},{"t":"mc","q":"快点出发，____我们就迟到了。","o":["不然","不符","不良","不利"],"a":0,"ex":"不然 bùrán — otherwise; or else · 快点出发，不然我们就迟到了。 / Hurry up and set off, otherwise we’ll be late.","sent_en":"Hurry up and set off, otherwise we’ll be late."}]},{"title":"五、默写 Dictation in context","hint":"🔊 listen, read the sentence, type the characters","items":[{"t":"text","q":"bōli — glass","say":"玻璃","sent":"小心！这块____很容易碎。","sent_en":"Be careful! This piece of glass breaks easily.","a":["玻璃"],"ex":"玻璃 bōli — glass · 小心！这块玻璃很容易碎。 / Be careful! This piece of glass breaks easily."},{"t":"text","q":"bǐng — cake, biscuit","say":"饼","sent":"早餐我吃了一个肉____。","sent_en":"I ate a meat pie for breakfast.","a":["饼"],"ex":"饼 bǐng — cake, biscuit · 早餐我吃了一个肉饼。 / I ate a meat pie for breakfast."},{"t":"text","q":"biāozhì — symbol, sign","say":"标志","sent":"这个绿色的____代表安全出口。","sent_en":"This green sign represents the emergency exit.","a":["标志"],"ex":"标志 biāozhì — symbol, sign; to mark · 这个绿色的标志代表安全出口。 / This green sign represents the emergency exit."},{"t":"text","q":"bìngqíng — illness condition","say":"病情","sent":"医生说爷爷的____已经稳定了。","sent_en":"The doctor said Grandpa’s condition has already stabilised.","a":["病情"],"ex":"病情 bìngqíng — illness condition · 医生说爷爷的病情已经稳定了。 / The doctor said Grandpa’s condition has already stabilised."},{"t":"text","q":"bǔchōng — to supplement, to replenish","say":"补充","sent":"请再____一些例子，让意思更清楚。","sent_en":"Please add a few more examples to make the meaning clearer.","a":["补充"],"ex":"补充 bǔchōng — to supplement, to replenish · 请再补充一些例子，让意思更清楚。 / Please add a few more examples to make the meaning clearer."},{"t":"text","q":"bìngfáng — sickroom, ward","say":"病房","sent":"护士把病人送进了____。","sent_en":"The nurse took the patient into the ward.","a":["病房"],"ex":"病房 bìngfáng — sickroom, ward · 护士把病人送进了病房。 / The nurse took the patient into the ward."}]},{"title":"六、声调 Tones","hint":"tap the correct pinyin · 🔊","items":[{"t":"mc","q":"本领","o":["bēnlǐng","bénlǐng","běnlǐng","bènlǐng"],"a":2,"ex":"本领 běnlǐng — skill, ability (3rd + 3rd; official citation form).","say":"本领"},{"t":"mc","q":"彼此","o":["bīcǐ","bícǐ","bǐcǐ","bìcǐ"],"a":2,"ex":"彼此 bǐcǐ — each other, one another (3rd + 3rd; official citation form).","say":"彼此"},{"t":"mc","q":"避免","o":["bīmiǎn","bímiǎn","bǐmiǎn","bìmiǎn"],"a":3,"ex":"避免 bìmiǎn — to avoid (4th + 3rd).","say":"避免"},{"t":"mc","q":"表面","o":["biāomiàn","biáomiàn","biǎomiàn","biàomiàn"],"a":2,"ex":"表面 biǎomiàn — surface (3rd + 4th).","say":"表面"}]},{"title":"七、阅读 Reading","hint":"🔊 listen to the passage, then tap","passage":"周六上午，同学们彼此约好，一起去本地的博物馆参观。Alexa本人对历史很感兴趣，觉得这是提高本领的好机会。路上，他们在便利店买了几个饼，又补充了一瓶水。馆门口有一个清楚的标志，标题写着“古代与今天”。讲解员先表明参观规则：玻璃展柜的表面很光滑，但本质易碎，所以大家一定要小心，避免拥挤，不然就可能损坏展品。这些措施是完全必要的。她还用“时间像流水”这个比喻，提醒大家合理安排时间。参观快结束时，一个小朋友滑倒了。有的同学表情紧张，工作人员连忙说：“不要紧，只是擦破一点皮，不必去病房。”后来病情没有什么变动，大家便放心了。工作人员还拨打了孩子家长的电话。下午举行了简短的闭幕式。同学们纷纷表达自己的感想。有人说，不良的参观习惯对文物不利；如果说明与事实不符，要及时提问。毕竟，保护文物是大家的责任。幸运的是，今天没有发生什么不幸的事，也没有什么不得了的问题。","items":[{"t":"mc","q":"同学们周六上午做了什么？Alexa为什么觉得这是好机会？","o":["他们去便利店上班，因为饼卖得很好","他们彼此约好去本地的博物馆；Alexa觉得这是提高本领的好机会","他们去医院病房看望小朋友，并补充药品"],"a":1,"ex":"同学们彼此约好，一起去本地的博物馆参观。Alexa本人对历史很感兴趣，觉得这是提高本领的好机会。 / The classmates arranged with one another to visit the local museum. Alexa herself is very interested in history and felt this was a good chance to improve her skills."},{"t":"mc","q":"博物馆门口有什么？讲解员首先表明了什么？","o":["门口有清楚的标志，标题是“古代与今天”；讲解员表明了参观规则，提醒玻璃展柜本质易碎，要避免拥挤","门口只有比分牌，讲解员在谈闭幕式的比例","门口没有标志，讲解员让大家赶快离开"],"a":0,"ex":"馆门口有一个清楚的标志，标题写着“古代与今天”。讲解员先表明参观规则：玻璃展柜的表面很光滑，但本质易碎，所以大家一定要小心，避免拥挤。 / At the entrance there was a clear sign titled “Ancient Times and Today.” The guide first indicated the visiting rules: the glass cases look smooth on the surface but are fragile in nature, so everyone must be careful and avoid crowding."},{"t":"mc","q":"小朋友滑倒以后，工作人员怎么说？后来情况如何？","o":["工作人员说不得了，必须马上送进病房","工作人员说不要紧，只是擦破一点皮，不必去病房；后来病情没有变动，大家便放心了，还拨打了家长的电话","工作人员抱怨孩子有不良习惯，说这件事与事实不符"],"a":1,"ex":"工作人员连忙说：“不要紧，只是擦破一点皮，不必去病房。”后来病情没有什么变动，大家便放心了。工作人员还拨打了孩子家长的电话。 / The staff quickly said, “It’s not serious, it’s just a scratch, no need to go to the ward.” Later the child’s condition did not change, so everyone then felt at ease. The staff also dialled the child’s parents."},{"t":"mc","q":"下午举行了什么？同学们做了什么？","o":["举行了简短的闭幕式，同学们纷纷表达自己的感想","举行了运动会，大家在比比分和比例","举行了拨打比赛，看谁打得快"],"a":0,"ex":"下午举行了简短的闭幕式。同学们纷纷表达自己的感想。 / In the afternoon a short closing ceremony was held. The classmates one after another expressed their thoughts."},{"t":"mc","q":"有人为什么提醒要保护文物？今天总体情况怎样？","o":["因为不良的参观习惯对文物不利；如果说明与事实不符，要及时提问。毕竟保护文物是大家的责任。今天没有发生不幸的事，也没有不得了的问题","因为便利店的饼对身体不利，大家必需去病房","因为闭幕式的比分与比例不符，所以情况不得了"],"a":0,"ex":"有人说，不良的参观习惯对文物不利；如果说明与事实不符，要及时提问。毕竟，保护文物是大家的责任。幸运的是，今天没有发生什么不幸的事，也没有什么不得了的问题。 / Someone said bad visiting habits are unfavorable to cultural relics; if the explanation does not match the facts, one should ask in time. After all, protecting cultural relics is everyone’s responsibility. Fortunately, nothing unfortunate happened today, and there was no serious problem."}]}];
+
+/* TEMPLATE: every target word needs 字+拼音+🔊 + 例句 CN + EN translation. See README.md */
+var L="ABCDEFG",ALL=[],start=Date.now(),done=false,timerId,zhVoice=null;
+function pickZhVoice(){
+  if(!window.speechSynthesis)return null;
+  var vs=speechSynthesis.getVoices()||[];
+  var pref=vs.filter(function(v){return /^zh(-|_|$)/i.test(v.lang)||/Chinese|中文|普通话|国语/i.test(v.name);});
+  var cn=pref.filter(function(v){return /CN|China|普通话|Chinese\s*\(China\)/i.test(v.lang+" "+v.name);});
+  return cn[0]||pref[0]||null;
+}
+function refreshVoice(){zhVoice=pickZhVoice();}
+if(window.speechSynthesis){refreshVoice();speechSynthesis.onvoiceschanged=refreshVoice;}
+function hasHan(s){return /[\u4e00-\u9fff]/.test(s||"");}
+function speakZh(text,btn){
+  if(!text||!window.speechSynthesis)return;
+  try{speechSynthesis.cancel();}catch(e){}
+  var u=new SpeechSynthesisUtterance(String(text));
+  u.lang="zh-CN";u.rate=0.9;u.pitch=1;
+  if(!zhVoice)refreshVoice();
+  if(zhVoice)u.voice=zhVoice;
+  if(btn)btn.disabled=true;
+  var unlock=function(){if(btn)btn.disabled=false;};
+  u.onend=unlock;u.onerror=unlock;
+  setTimeout(unlock, Math.max(1800, String(text).length*420));
+  speechSynthesis.speak(u);
+}
+function speakBtn(text, small){
+  var b=el("button", small?"say sm":"say");
+  b.type="button";b.setAttribute("aria-label","Pronounce");b.textContent="🔊";
+  b.onclick=function(ev){if(ev&&ev.stopPropagation)ev.stopPropagation();if(ev&&ev.preventDefault)ev.preventDefault();speakZh(text,b);return false;};
+  return b;
+}
+function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e}
+function addExample(box, it){
+  if(!it.sent && !it.sent_en) return;
+  var ex=el("div","exbox");
+  if(it.sent){
+    var row=el("div","ex-cn");
+    row.appendChild(document.createTextNode("例句："+it.sent+" "));
+    if(hasHan(it.sent)) row.appendChild(speakBtn(it.sent.replace(/____/g, it.say||it.q||""), true));
+    ex.appendChild(row);
+  }
+  if(it.sent_en) ex.appendChild(el("div","ex-en","EN: "+it.sent_en));
+  box.appendChild(ex);
+}
+function build(){
+ var quiz=document.getElementById("quiz");quiz.innerHTML="";ALL=[];
+ SECTIONS.forEach(function(s){
+  var sec=el("section");var h=el("h2",null,s.title+" ");h.appendChild(el("small",null,"("+s.hint+")"));sec.appendChild(h);
+  if(s.passage){
+    var ph=el("div","pass-head");ph.appendChild(el("strong",null,"短文"));ph.appendChild(speakBtn(s.passage,false));
+    ph.appendChild(el("span","tip","tap 🔊 to hear the whole passage"));
+    sec.appendChild(ph);
+    sec.appendChild(el("div","passage",s.passage));
+  }
+  s.items.forEach(function(it,i){
+   var box=el("div","item");
+   var qrow=el("div","q");
+   qrow.appendChild(el("span",null,(i+1)+". "));
+   var qw=el("span","qw",it.q);qrow.appendChild(qw);
+   if(it.py) qrow.appendChild(el("span","py","("+it.py+")"));
+   if(it.py_hint) qrow.appendChild(el("span","py","拼音提示: "+it.py_hint));
+   var sayText=it.say||(hasHan(it.q)&&!/____/.test(it.q)?it.q:null);
+   if(sayText && !/____/.test(String(it.q))) qrow.appendChild(speakBtn(sayText,false));
+   box.appendChild(qrow);
+   addExample(box, it);
+   var rec={it:it,box:box,sel:null,input:null};
+   if(it.t==="mc"){
+     var o=el("div","opts");
+     it.o.forEach(function(txt,j){
+       var wrap=el("span","optwrap");
+       var b=el("button","opt",L[j]+". "+txt);b.type="button";
+       b.onclick=function(){if(done)return;rec.sel=j;[].forEach.call(o.querySelectorAll(".opt"),function(c){c.classList.remove("sel")});b.classList.add("sel");prog()};
+       wrap.appendChild(b);
+       if(hasHan(txt) && String(txt).length<=8) wrap.appendChild(speakBtn(txt,true));
+       o.appendChild(wrap);
+     });
+     box.appendChild(o);
+   } else {
+     var row=el("div","optwrap");
+     var inp=el("input","txt");inp.type="text";inp.setAttribute("autocomplete","off");inp.setAttribute("autocapitalize","off");inp.setAttribute("spellcheck","false");inp.placeholder="写汉字…";inp.oninput=prog;rec.input=inp;
+     row.appendChild(inp);
+     if(it.say){var lb=speakBtn(it.say,false);lb.title="Listen (does not show the answer)";row.appendChild(lb);row.appendChild(el("span","tip","听发音"));}
+     box.appendChild(row);
+   }
+   var fb=el("div","fb");box.appendChild(fb);rec.fb=fb;sec.appendChild(box);ALL.push(rec);
+  });
+  quiz.appendChild(sec);
+ });
+ prog();
+}
+function norm(s){return String(s||"").replace(/[\s\u3000]+/g,"")}
+function isCorrect(rec){var it=rec.it;if(it.t==="mc")return rec.sel===it.a;var v=norm(rec.input.value);return it.a.some(function(a){return norm(a)===v})}
+function answered(rec){return rec.it.t==="mc"?rec.sel!==null:norm(rec.input.value)!==""}
+function prog(){var a=ALL.filter(answered).length;document.getElementById("prog").textContent="已答 "+a+" / "+ALL.length}
+function fmt(ms){var s=Math.round(ms/1000);return Math.floor(s/60)+":"+("0"+s%60).slice(-2)}
+function tick(){document.getElementById("clock").textContent=fmt(Date.now()-start)}
+function check(){
+ if(done)return;done=true;clearInterval(timerId);var score=0;
+ ALL.forEach(function(rec){var ok=isCorrect(rec),it=rec.it;rec.box.classList.add(ok?"ok":"bad");
+  var ans=it.t==="mc"?L[it.a]+". "+it.o[it.a]:it.a[0];
+  rec.fb.textContent=ok?"✔ 对了！":"✘ Correct answer: "+ans+" — "+it.ex;if(ok)score++});
+ document.getElementById("quiz").classList.add("locked");
+ var t=fmt(Date.now()-start),pct=Math.round(score/ALL.length*100);
+ var msg=pct===100?"太棒了！🎉":pct>=80?"很好！👍":pct>=60?"不错，继续加油！💪":"加油！Let's review the red ones. 📚";
+ var r=document.getElementById("result");r.style.display="block";r.innerHTML="";
+ r.appendChild(el("div",null,"得分 Score: "+score+" / "+ALL.length+" ("+pct+"%)"));
+ r.appendChild(el("div",null,"用时 Time: "+t));r.appendChild(el("div",null,msg));
+ try{r.scrollIntoView({behavior:"smooth"});}catch(e){}
+ return {score:score,total:ALL.length,time:t};
+}
+function reset(){done=false;try{speechSynthesis&&speechSynthesis.cancel();}catch(e){}
+ document.getElementById("quiz").classList.remove("locked");document.getElementById("result").style.display="none";start=Date.now();clearInterval(timerId);timerId=setInterval(tick,1000);tick();build();try{window.scrollTo(0,0);}catch(e){}}
+document.getElementById("check").onclick=check;
+document.getElementById("reset").onclick=reset;
+build();timerId=setInterval(tick,1000);tick();
+
+</script>
+<!-- PWA-SCRIPT -->
+<script>
+(function(){
+  var KEY="alexa-chinese-scores";
+  function drillId(){
+    var m=(location.pathname||"").match(/([^/]+)\.html$/i);
+    return m?decodeURIComponent(m[1]):null;
+  }
+  function save(){
+    var r=document.getElementById("result");
+    if(!r)return;
+    var text=r.textContent||"";
+    var m=text.match(/Score:\s*(\d+)\s*\/\s*(\d+)/i)||text.match(/得分[^0-9]*(\d+)\s*\/\s*(\d+)/);
+    if(!m)return;
+    var id=drillId();
+    if(!id)return;
+    var score=+m[1], total=+m[2];
+    if(!(total>0) || !(score>=0) || score>total)return;
+    try{
+      var all={};
+      try{all=JSON.parse(localStorage.getItem(KEY)||"{}")||{};}catch(e){all={};}
+      if(typeof all!=="object"||Array.isArray(all)) all={};
+      all[id]={score:score,total:total,at:new Date().toISOString()};
+      localStorage.setItem(KEY,JSON.stringify(all));
+    }catch(e){}
+  }
+  var btn=document.getElementById("check");
+  if(btn) btn.addEventListener("click", function(){ try{save();}catch(e){} });
+  if("serviceWorker" in navigator){
+    var sw=new URL("../sw.js", location.href);
+    var scope=new URL("../", location.href);
+    navigator.serviceWorker.register(sw.href, {scope: scope.href}).catch(function(){});
+  }
+})();
+</script>
+<!-- /PWA-SCRIPT -->
+</body>
+</html>
