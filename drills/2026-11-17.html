@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Alexa 中文练习 – 17 Nov 2026 (HSK 5 · Day 7 · new cycle)</title>
+<!-- Daily-drill template: each target word = 字 + pinyin + 🔊 + 例句(CN) + English translation; Web Speech zh-CN. See README.md -->
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f4f7fb;color:#222;font-family:-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",Arial,sans-serif;font-size:20px;line-height:1.6}
+.wrap{max-width:760px;margin:0 auto;padding:16px}
+h1{font-size:1.4em;margin:.3em 0 0}
+.sub{color:#666;font-size:.8em;margin-bottom:1em}
+#timer{position:sticky;top:0;background:#fff;border-radius:12px;padding:8px 14px;box-shadow:0 2px 6px rgba(0,0,0,.08);font-size:.85em;z-index:5;display:flex;justify-content:space-between}
+section{background:#fff;border-radius:16px;padding:14px 16px;margin:16px 0;box-shadow:0 2px 6px rgba(0,0,0,.06)}
+h2{font-size:1.1em;margin:.2em 0 .5em}
+h2 small{font-weight:normal;color:#777;font-size:.7em}
+.item{padding:10px 8px;margin:8px 0;border-radius:12px;border:2px solid transparent}
+.q{margin-bottom:6px;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.q .qw{font-weight:600;font-size:1.15em}
+.q .py{color:#64748b;font-size:.85em;font-weight:normal}
+.exbox{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:10px 12px;margin:6px 0 10px;width:100%}
+.ex-cn{font-size:1.05em;margin-bottom:4px}
+.ex-en{color:#475569;font-size:.88em}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.optwrap{display:inline-flex;align-items:center;gap:4px}
+.opt{font-size:1em;padding:10px 16px;border-radius:12px;border:2px solid #c9d4e3;background:#f8fbff;cursor:pointer;min-width:64px;font-family:inherit}
+.opt.sel{background:#3b82f6;color:#fff;border-color:#3b82f6}
+input.txt{font-size:1.1em;padding:8px 12px;border:2px solid #c9d4e3;border-radius:12px;width:10em;max-width:100%;font-family:inherit}
+.passage{background:#fffbea;border-left:5px solid #f5c542;padding:10px 14px;border-radius:8px;font-size:1.05em}
+.pass-head{display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap}
+.item.ok{border-color:#22c55e;background:#effdf3}
+.item.bad{border-color:#ef4444;background:#fef1f1}
+.fb{margin-top:6px;font-size:.85em;display:none}
+.item.ok .fb,.item.bad .fb{display:block}
+.item.ok .fb{color:#15803d}.item.bad .fb{color:#b91c1c}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
+.big{font-size:1.1em;padding:14px 24px;border:none;border-radius:14px;background:#16a34a;color:#fff;cursor:pointer;font-family:inherit}
+.big.sec{background:#64748b}
+#result{display:none;font-size:1.2em;text-align:center;background:#fff;border-radius:16px;padding:16px;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.locked .opt,.locked input.txt{pointer-events:none}
+.say{flex-shrink:0;width:40px;height:40px;border-radius:50%;border:2px solid #93c5fd;background:#eff6ff;color:#1d4ed8;font-size:1.05em;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;padding:0;font-family:inherit;line-height:1;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.say:disabled{opacity:.45;cursor:default}
+.say.sm{width:32px;height:32px;font-size:.9em;border-width:1.5px}
+.say:active:not(:disabled){background:#dbeafe}
+.tip{font-size:.75em;color:#64748b;margin:.4em 0 0}
+</style>
+<!-- PWA-HEAD -->
+<meta name="theme-color" content="#3b82f6">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="中文练习">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<link rel="manifest" href="../manifest.webmanifest">
+<!-- /PWA-HEAD -->
+</head>
+<body>
+<!-- PWA-BAR -->
+<style>
+.pwa-bar{display:flex;align-items:center;gap:8px;background:#eef3f9;border-bottom:1px solid #dbe4ef;padding:6px 10px;padding-top:max(6px,env(safe-area-inset-top));font-family:-apple-system,"PingFang SC","Microsoft YaHei",Arial,sans-serif}
+.pwa-bar a{display:inline-flex;align-items:center;gap:6px;color:#1d4ed8;text-decoration:none;font-size:16px;font-weight:600;padding:8px 10px;border-radius:10px;min-height:44px;box-sizing:border-box}
+.pwa-bar a:active{background:#dbeafe}
+</style>
+<nav class="pwa-bar" aria-label="App navigation"><a href="../index.html">← 练习首页</a></nav>
+<!-- /PWA-BAR -->
+
+<div class="wrap">
+<h1>Alexa 中文练习 🌟 New HSK 5</h1>
+<div class="sub">17 Nov 2026 · Day 7 of a new cycle · New HSK 5 chunk 7 (单一–电器) · pinyin + 🔊 Putonghua · about 15 minutes · 45 questions<br>
+Each word has a short Chinese example and English translation. Tap 🔊 to hear. Answers stay hidden until Check.</div>
+<div id="timer"><span>⏱ <span id="clock">0:00</span></span><span id="prog"></span></div>
+<div id="quiz"></div>
+<div class="btns"><button class="big" id="check">✅ Check answers</button><button class="big sec" id="reset">↺ Try again</button></div>
+<div id="result"></div>
+</div>
+<script>
+var SECTIONS=[{"title":"一、看例句选意思 Meaning in context","hint":"read the sentence, tap the English meaning · 🔊","items":[{"t":"mc","q":"单一","py":"dānyī","say":"单一","o":["single, singular","unit","timid, cowardly","light, weak, bland"],"a":0,"sent":"这种产品的功能太单一，不能满足不同的需要。","sent_en":"This product's functions are too limited to meet different needs.","ex":"单一 dānyī — single, singular · 这种产品的功能太单一，不能满足不同的需要。 / This product's functions are too limited to meet different needs."},{"t":"mc","q":"胆小","py":"dǎnxiǎo","say":"胆小","o":["to block","timid, cowardly","local area","current, present"],"a":1,"sent":"他从小就很胆小，晚上不敢一个人走路。","sent_en":"He has been timid since he was little, and does not dare walk alone at night.","ex":"胆小 dǎnxiǎo — timid, cowardly · 他从小就很胆小，晚上不敢一个人走路。 / He has been timid since he was little, and does not dare walk alone at night."},{"t":"mc","q":"当地","py":"dāngdì","say":"当地","o":["that year, those days","among, in the middle","local area","to treat as"],"a":2,"sent":"我们向当地的人打听去车站的路。","sent_en":"We asked the local people the way to the station.","ex":"当地 dāngdì — local area · 我们向当地的人打听去车站的路。 / We asked the local people the way to the station. (当 is first tone here: dāng)"},{"t":"mc","q":"当前","py":"dāngqián","say":"当前","o":["to face; current, present","that year, those days","to arrive","to expire"],"a":0,"sent":"当前最重要的问题是保护环境。","sent_en":"The most important issue at present is protecting the environment.","ex":"当前 dāngqián — to face; current, present · 当前最重要的问题是保护环境。 / The most important issue at present is protecting the environment."},{"t":"mc","q":"挡","py":"dǎng","say":"挡","o":["to fall, to collapse","to treat as","to pass, to hand over","to block"],"a":3,"sent":"一棵大树挡在路中间，车子过不去。","sent_en":"A big tree was blocking the middle of the road, so the car could not get through.","ex":"挡 dǎng — to block · 一棵大树挡在路中间，车子过不去。 / A big tree was blocking the middle of the road, so the car could not get through. (also in textbook Lesson 5; 3rd tone, not the same as 当 dāng / dàng)"},{"t":"mc","q":"导演","py":"dǎoyǎn","say":"导演","o":["to cause, to lead to","director; to direct","to arrive","reason, principle"],"a":1,"sent":"这部电影的导演很有名，作品受到很多人喜爱。","sent_en":"The director of this film is very famous, and his works are loved by many people.","ex":"导演 dǎoyǎn — director; to direct · 这部电影的导演很有名，作品受到很多人喜爱。 / The director of this film is very famous, and his works are loved by many people."},{"t":"mc","q":"导致","py":"dǎozhì","say":"导致","o":["to arrive","to expire","to cause, to lead to","to register, to record"],"a":2,"sent":"下雨路滑，导致发生了一场车祸。","sent_en":"The rain made the road slippery, which led to a car accident.","ex":"导致 dǎozhì — to cause, to lead to · 下雨路滑，导致发生了一场车祸。 / The rain made the road slippery, which led to a car accident. (不要和「导演」弄混：导致 is a result, 导演 is a film director)"},{"t":"mc","q":"到达","py":"dàodá","say":"到达","o":["to arrive","to cause, to lead to","to wait","to log in"],"a":0,"sent":"火车晚点了，我们晚上八点才到达北京。","sent_en":"The train was late, and we did not arrive in Beijing until eight in the evening.","ex":"到达 dàodá — to arrive · 火车晚点了，我们晚上八点才到达北京。 / The train was late, and we did not arrive in Beijing until eight in the evening."},{"t":"mc","q":"的确","py":"díquè","say":"的确","o":["to lower one's head","to be equal to","enemy","indeed, certainly"],"a":3,"sent":"这道题的确不容易，需要再想一想。","sent_en":"This question is indeed not easy; it needs a bit more thought.","ex":"的确 díquè — indeed, certainly · 这道题的确不容易，需要再想一想。 / This question is indeed not easy; it needs a bit more thought."},{"t":"mc","q":"地区","py":"dìqū","say":"地区","o":["status, position","ground, floor","geography","region, area"],"a":3,"sent":"这个地区的春天来得很早，花开得也特别美。","sent_en":"Spring comes very early in this region, and the flowers are especially beautiful.","ex":"地区 dìqū — region, area · 这个地区的春天来得很早，花开得也特别美。 / Spring comes very early in this region, and the flowers are especially beautiful. (also in textbook Lesson 5; 地区 is a region, 地位 is status, 地理 is geography)"}]},{"title":"二、根据意思选词 Choose the word","hint":"read the English and the sentence, tap the Chinese word · 🔊","items":[{"t":"mc","q":"unit","py":"dānyuán","say":"单元","o":["单一","单元","胆小","淡"],"a":1,"ex":"单元 dānyuán — unit · 这个学期我们要学习五个单元的内容。 / This term we will study the content of five units.","sent":"这个学期我们要学习五个单元的内容。","sent_en":"This term we will study the content of five units."},{"t":"mc","q":"light, weak, bland","py":"dàn","say":"淡","o":["淡","挡","当","倒"],"a":0,"ex":"淡 dàn — light, weak, bland · 这碗汤的味道有点儿淡，可以再放一点盐。 / This bowl of soup tastes a little bland; you can add a bit more salt.","sent":"这碗汤的味道有点儿淡，可以再放一点盐。","sent_en":"This bowl of soup tastes a little bland; you can add a bit more salt."},{"t":"mc","q":"that year, those days","py":"dāngnián","say":"当年","o":["当地","当前","当中","当年"],"a":3,"ex":"当年 dāngnián — that year, those days · 当年他还是个小孩子，现在已经上大学了。 / In those days he was still a little child; now he is already at university. (当 is first tone here: dāng)","sent":"当年他还是个小孩子，现在已经上大学了。","sent_en":"In those days he was still a little child; now he is already at university."},{"t":"mc","q":"among, in the middle","py":"dāngzhōng","say":"当中","o":["当地","当中","当前","当年"],"a":1,"ex":"当中 dāngzhōng — among, in the middle · 这些同学当中，有三个人来自香港。 / Among these classmates, three come from Hong Kong.","sent":"这些同学当中，有三个人来自香港。","sent_en":"Among these classmates, three come from Hong Kong."},{"t":"mc","q":"reason, principle","py":"dàolǐ","say":"道理","o":["到达","到期","道理","导演"],"a":2,"ex":"道理 dàolǐ — reason, principle · 老师把这个道理讲得很清楚，大家都听懂了。 / The teacher explained this principle very clearly, and everyone understood.","sent":"老师把这个道理讲得很清楚，大家都听懂了。","sent_en":"The teacher explained this principle very clearly, and everyone understood."},{"t":"mc","q":"to expire","py":"dàoqī","say":"到期","o":["到达","到期","登记","登录"],"a":1,"ex":"到期 dàoqī — to expire · 我的护照下个月到期，得赶快去办理新的。 / My passport expires next month, so I must hurry to apply for a new one.","sent":"我的护照下个月到期，得赶快去办理新的。","sent_en":"My passport expires next month, so I must hurry to apply for a new one."},{"t":"mc","q":"light, lighting","py":"dēngguāng","say":"灯光","o":["灯光","登记","登录","等待"],"a":0,"ex":"灯光 dēngguāng — light · 舞台上的灯光很亮，演员们都看得清清楚楚。 / The lighting on the stage was very bright, and the actors could all be seen clearly.","sent":"舞台上的灯光很亮，演员们都看得清清楚楚。","sent_en":"The lighting on the stage was very bright, and the actors could all be seen clearly."}]},{"title":"三、填空 Fill the blank","hint":"choose the word that fits the sentence · 🔊","items":[{"t":"mc","q":"大家把他____自己的弟弟，对他特别关心。","o":["当成","挡","倒","登"],"a":0,"say":"当成","sent":"大家把他当成自己的弟弟，对他特别关心。","ex":"当成 dàngchéng — to treat as, to regard as · 大家把他当成自己的弟弟，对他特别关心。 / Everyone regarded him as their own younger brother and cared for him especially.","sent_en":"Everyone regarded him as their own younger brother and cared for him especially."},{"t":"mc","q":"椅子腿断了，他一下子____在地上。","o":["挡","当","倒","登"],"a":2,"say":"倒","sent":"椅子腿断了，他一下子倒在地上。","ex":"倒 dǎo — to fall, to collapse · 椅子腿断了，他一下子倒在地上。 / The chair leg broke, and he suddenly fell to the ground. (here 倒 is 3rd tone dǎo, ‘to fall’; dào is another reading, ‘to pour’ or ‘on the contrary’)","sent_en":"The chair leg broke, and he suddenly fell to the ground."},{"t":"mc","q":"我们一起____上山顶，看到了美丽的日出。","o":["递","登","挡","倒"],"a":1,"say":"登","sent":"我们一起登上山顶，看到了美丽的日出。","ex":"登 dēng — to ascend, to board, to register · 我们一起登上山顶，看到了美丽的日出。 / We climbed to the top of the mountain together and saw a beautiful sunrise.","sent_en":"We climbed to the top of the mountain together and saw a beautiful sunrise."},{"t":"mc","q":"入住酒店时，请先在前台____。","o":["登记","登录","等待","等候"],"a":0,"say":"登记","sent":"入住酒店时，请先在前台登记。","ex":"登记 dēngjì — to register, to record · 入住酒店时，请先在前台登记。 / When checking into the hotel, please register at the front desk first. (登记 is to register in person or on a form; 登录 is to log in to a system)","sent_en":"When checking into the hotel, please register at the front desk first."},{"t":"mc","q":"请输入用户名和密码，然后____邮箱。","o":["登记","登录","到达","到期"],"a":1,"say":"登录","sent":"请输入用户名和密码，然后登录邮箱。","ex":"登录 dēnglù — to log in · 请输入用户名和密码，然后登录邮箱。 / Please enter your user name and password, then log in to the mailbox.","sent_en":"Please enter your user name and password, then log in to the mailbox."},{"t":"mc","q":"请在门口____，老师马上就来。","o":["等于","低头","等待","到达"],"a":2,"say":"等待","sent":"请在门口等待，老师马上就来。","ex":"等待 děngdài — to wait · 请在门口等待，老师马上就来。 / Please wait at the door; the teacher will be here in a moment.","sent_en":"Please wait at the door; the teacher will be here in a moment."}]},{"title":"四、易混词 Look-alikes in sentences","hint":"choose the word that fits · 🔊","items":[{"t":"mc","q":"她把这次失败____一次学习的机会。","o":["挡","倒","当作","登"],"a":2,"say":"当作","sent":"她把这次失败当作一次学习的机会。","ex":"当作 dàngzuò — to treat as, to regard as, to consider as · 她把这次失败当作一次学习的机会。 / She treated this failure as a chance to learn. (当 is 4th tone dàng in 当作 / 当成, ‘to regard as’)","sent_en":"She treated this failure as a chance to learn."},{"t":"mc","q":"乘客们在站台____列车到来。","o":["等候","等于","低头","到达"],"a":0,"say":"等候","sent":"乘客们在站台等候列车到来。","ex":"等候 děnghòu — to wait · 乘客们在站台等候列车到来。 / The passengers waited on the platform for the train to arrive. (等候 and 等待 both mean ‘to wait’; 等候 is a little more formal)","sent_en":"The passengers waited on the platform for the train to arrive."},{"t":"mc","q":"他最喜欢的科目是____，因为可以了解世界各国的山川和城市。","o":["地理","地面","地区","地位"],"a":0,"say":"地理","sent":"他最喜欢的科目是地理，因为可以了解世界各国的山川和城市。","ex":"地理 dìlǐ — geography · 他最喜欢的科目是地理，因为可以了解世界各国的山川和城市。 / His favourite subject is geography, because he can learn about mountains, rivers and cities around the world.","sent_en":"His favourite subject is geography, because he can learn about mountains, rivers and cities around the world."},{"t":"mc","q":"经过多年努力，她在公司里有了很高的____。","o":["地理","地面","地区","地位"],"a":3,"say":"地位","sent":"经过多年努力，她在公司里有了很高的地位。","ex":"地位 dìwèi — status, position · 经过多年努力，她在公司里有了很高的地位。 / After years of hard work, she has a very high position in the company.","sent_en":"After years of hard work, she has a very high position in the company."},{"t":"mc","q":"地铁是在____行驶的，可以避免路上的交通堵塞。","o":["地面","地下","地区","地理"],"a":1,"say":"地下","sent":"地铁是在地下行驶的，可以避免路上的交通堵塞。","ex":"地下 dìxià — underground, basement · 地铁是在地下行驶的，可以避免路上的交通堵塞。 / The metro runs underground, which can help avoid traffic jams on the roads. (地下 is underground; 地面 is the ground or floor)","sent_en":"The metro runs underground, which can help avoid traffic jams on the roads."},{"t":"mc","q":"下午茶时，妈妈准备了几种好吃的____。","o":["点心","点赞","电池","电器"],"a":0,"say":"点心","sent":"下午茶时，妈妈准备了几种好吃的点心。","ex":"点心 diǎnxin — snack, dessert · 下午茶时，妈妈准备了几种好吃的点心。 / At teatime Mum prepared several kinds of tasty snacks. (心 is a neutral tone here: diǎnxin, not diǎnxīn)","sent_en":"At teatime Mum prepared several kinds of tasty snacks."},{"t":"mc","q":"冰箱、洗衣机都是常用的家用____。","o":["电池","电动","电器","点心"],"a":2,"say":"电器","sent":"冰箱、洗衣机都是常用的家用电器。","ex":"电器 diànqì — electrical appliance · 冰箱、洗衣机都是常用的家用电器。 / Fridges and washing machines are both commonly used household electrical appliances. (电器 are appliances; 电池 is a battery; 电动 means electrically powered)","sent_en":"Fridges and washing machines are both commonly used household electrical appliances."}]},{"title":"五、默写 Dictation in context","hint":"🔊 listen, read the sentence, type the characters","items":[{"t":"text","q":"děngyú — to be equal to","say":"等于","sent":"三乘以五____十五。","sent_en":"Three times five equals fifteen.","a":["等于"],"ex":"等于 děngyú — to be equal to · 三乘以五等于十五。 / Three times five equals fifteen."},{"t":"text","q":"dītóu — to lower one's head","say":"低头","sent":"听了批评，他只好____认错。","sent_en":"After hearing the criticism, he could only lower his head and admit his mistake.","a":["低头"],"ex":"低头 dītóu — to lower one's head · 听了批评，他只好低头认错。 / After hearing the criticism, he could only lower his head and admit his mistake."},{"t":"text","q":"dírén — enemy","say":"敌人","sent":"在故事里，英雄终于打败了____。","sent_en":"In the story, the hero finally defeated the enemy.","a":["敌人"],"ex":"敌人 dírén — enemy · 在故事里，英雄终于打败了敌人。 / In the story, the hero finally defeated the enemy."},{"t":"text","q":"dì — to pass, to hand over","say":"递","sent":"请把那本书____给我。","sent_en":"Please pass me that book.","a":["递"],"ex":"递 dì — to pass, to hand over · 请把那本书递给我。 / Please pass me that book."},{"t":"text","q":"dìzhèn — earthquake","say":"地震","sent":"昨晚这个城市发生了____，所幸没有人受伤。","sent_en":"An earthquake happened in this city last night; luckily nobody was hurt.","a":["地震"],"ex":"地震 dìzhèn — earthquake; to have an earthquake · 昨晚这个城市发生了地震，所幸没有人受伤。 / An earthquake happened in this city last night; luckily nobody was hurt."},{"t":"text","q":"diǎnzàn — to like, to give a thumbs-up","say":"点赞","sent":"这篇作文写得真好，同学们都给它____。","sent_en":"This composition is really well written, and the classmates all gave it a thumbs-up.","a":["点赞"],"ex":"点赞 diǎnzàn — to like, to give a thumbs-up · 这篇作文写得真好，同学们都给它点赞。 / This composition is really well written, and the classmates all gave it a thumbs-up."}]},{"title":"六、声调 Tones","hint":"tap the correct pinyin · 🔊","items":[{"t":"mc","q":"挡","o":["dāng","dáng","dǎng","dàng"],"a":2,"ex":"挡 dǎng — to block (3rd tone). Do not confuse with 当 dāng (1st, as in 当地、当年) or 当 dàng (4th, ‘to treat as’).","say":"挡"},{"t":"mc","q":"倒","o":["dāo","dáo","dǎo","dào"],"a":2,"ex":"倒 dǎo — to fall, to collapse (3rd tone). Another reading is dào (‘to pour’ or ‘on the contrary’), but today's list meaning is dǎo.","say":"倒"},{"t":"mc","q":"当年","o":["dāngnián","dángnián","dǎngnián","dàngnián"],"a":0,"ex":"当年 dāngnián — that year, those days (1st + 2nd). 当 is first tone here, not 4th-tone dàng.","say":"当年"},{"t":"mc","q":"的确","o":["dīquè","díquè","dǐquè","dìquè"],"a":1,"ex":"的确 díquè — indeed, certainly (2nd + 4th). Do not read the first syllable as dī, dǐ or dì.","say":"的确"}]},{"title":"七、阅读 Reading","hint":"🔊 listen to the passage, then tap","passage":"当年，Alexa住在当地一个安静的地区。当前，这个地区正在拍摄一部电影。导演没有把工作当成一个人的事，而是把大家当作一个团队。Alexa起初有点胆小，她不敢挡在镜头前，甚至想低头走开。可老师对她讲了一个道理：不要把困难当压力，一次尝试就能带来成长。电影当中有许多场面。有一幕是一棵大树突然倒了，导致路上的灯光全灭了，行人从地面上站起来，也有人从地下走出来。工作人员让大家先登记，再登录拍摄系统；通行证明天到期，所以必须按时到达。这项工作不是单一的表演，每个单元都有不同的任务。休息时茶的味道有些淡，桌上摆着点心。有人在等候导演，有人在等待通知。一位同学给影片点赞，还递给他一份地图，介绍这里的地理情况。忽然发生了地震，大家赶紧离开电器和电动车，检查电池还够不够用。敌人并没有出现，大家这才发现，危险的确已经过去。登上高处以后，他们觉得一个人的地位不在于名声，而在于敢不敢帮助别人。二加二等于四，这个简单的计算让Alexa笑了。","items":[{"t":"mc","q":"关于Alexa住的地方，哪一项正确？","o":["当年，Alexa住在当地一个安静的地区。当前，这个地区正在拍摄一部电影。","当年她住在大城市，当前已经搬到国外。","当地从来没有拍过电影，导演也没有来。"],"a":0,"ex":"当年，Alexa住在当地一个安静的地区。当前，这个地区正在拍摄一部电影。 / In those days, Alexa lived in a quiet local area. At present, a film is being shot in this region."},{"t":"mc","q":"Alexa起初为什么胆小？老师怎么说？","o":["她把工作当成一个人的事，所以不想帮忙。","Alexa起初有点胆小，她不敢挡在镜头前，甚至想低头走开。可老师对她讲了一个道理：不要把困难当压力，一次尝试就能带来成长。","她把导演当作敌人，所以立刻离开了。"],"a":1,"ex":"Alexa起初有点胆小，她不敢挡在镜头前，甚至想低头走开。可老师对她讲了一个道理：不要把困难当压力，一次尝试就能带来成长。 / At first Alexa was a little timid; she did not dare stand in front of the camera, and even wanted to lower her head and walk away. But the teacher explained a principle to her: do not treat difficulties as pressure; one attempt can already bring growth."},{"t":"mc","q":"电影当中出现了什么情况？工作人员怎么安排？","o":["电影当中一切顺利，灯光很亮，没有人需要登记。","树上的灯忽然亮了，大家从地下回到地面，通行证永远不会到期。","有一幕是一棵大树突然倒了，导致路上的灯光全灭了，行人从地面上站起来，也有人从地下走出来。工作人员让大家先登记，再登录拍摄系统；通行证明天到期，所以必须按时到达。"],"a":2,"ex":"有一幕是一棵大树突然倒了，导致路上的灯光全灭了，行人从地面上站起来，也有人从地下走出来。工作人员让大家先登记，再登录拍摄系统；通行证明天到期，所以必须按时到达。 / In one scene a big tree suddenly fell, causing all the lights on the road to go out; pedestrians stood up from the ground, and some people also came out from underground. The staff asked everyone to register first, then log in to the filming system; the passes would expire the next day, so they had to arrive on time."},{"t":"mc","q":"关于工作和休息时的情况，哪一项正确？","o":["这项工作不是单一的表演，每个单元都有不同的任务。休息时茶的味道有些淡，桌上摆着点心。有人在等候导演，有人在等待通知。一位同学给影片点赞，还递给他一份地图，介绍这里的地理情况。","工作只是单一的表演，没有分成单元，茶很浓，也没有点心。","没有人等候或等待，也没有人点赞。"],"a":0,"ex":"这项工作不是单一的表演，每个单元都有不同的任务。休息时茶的味道有些淡，桌上摆着点心。有人在等候导演，有人在等待通知。一位同学给影片点赞，还递给他一份地图，介绍这里的地理情况。 / This work was not a single performance; each unit had different tasks. During the break the tea tasted a little weak, and snacks were laid out on the table. Some people were waiting for the director, and some were waiting for a notice. A classmate gave the film a thumbs-up and also handed him a map introducing the geography of this place."},{"t":"mc","q":"地震之后发生了什么？大家明白了什么？","o":["敌人冲了进来，电器和电动车全部丢了，电池也不够用。","没有发生地震，大家继续拍戏，谁也不离开。","忽然发生了地震，大家赶紧离开电器和电动车，检查电池还够不够用。敌人并没有出现，大家这才发现，危险的确已经过去。登上高处以后，他们觉得一个人的地位不在于名声，而在于敢不敢帮助别人。"],"a":2,"ex":"忽然发生了地震，大家赶紧离开电器和电动车，检查电池还够不够用。敌人并没有出现，大家这才发现，危险的确已经过去。登上高处以后，他们觉得一个人的地位不在于名声，而在于敢不敢帮助别人。 / Suddenly an earthquake happened, and everyone quickly moved away from the electrical appliances and electric vehicles and checked whether the batteries were still sufficient. The enemy did not appear, and only then did everyone realise that the danger had indeed already passed. After climbing to higher ground, they felt that a person's standing does not lie in fame, but in whether they dare to help others."}]}];
+
+/* TEMPLATE: every target word needs 字+拼音+🔊 + 例句 CN + EN translation. See README.md */
+var L="ABCDEFG",ALL=[],start=Date.now(),done=false,timerId,zhVoice=null;
+function pickZhVoice(){
+  if(!window.speechSynthesis)return null;
+  var vs=speechSynthesis.getVoices()||[];
+  var pref=vs.filter(function(v){return /^zh(-|_|$)/i.test(v.lang)||/Chinese|中文|普通话|国语/i.test(v.name);});
+  var cn=pref.filter(function(v){return /CN|China|普通话|Chinese\s*\(China\)/i.test(v.lang+" "+v.name);});
+  return cn[0]||pref[0]||null;
+}
+function refreshVoice(){zhVoice=pickZhVoice();}
+if(window.speechSynthesis){refreshVoice();speechSynthesis.onvoiceschanged=refreshVoice;}
+function hasHan(s){return /[\u4e00-\u9fff]/.test(s||"");}
+function speakZh(text,btn){
+  if(!text||!window.speechSynthesis)return;
+  try{speechSynthesis.cancel();}catch(e){}
+  var u=new SpeechSynthesisUtterance(String(text));
+  u.lang="zh-CN";u.rate=0.9;u.pitch=1;
+  if(!zhVoice)refreshVoice();
+  if(zhVoice)u.voice=zhVoice;
+  if(btn)btn.disabled=true;
+  var unlock=function(){if(btn)btn.disabled=false;};
+  u.onend=unlock;u.onerror=unlock;
+  setTimeout(unlock, Math.max(1800, String(text).length*420));
+  speechSynthesis.speak(u);
+}
+function speakBtn(text, small){
+  var b=el("button", small?"say sm":"say");
+  b.type="button";b.setAttribute("aria-label","Pronounce");b.textContent="🔊";
+  b.onclick=function(ev){if(ev&&ev.stopPropagation)ev.stopPropagation();if(ev&&ev.preventDefault)ev.preventDefault();speakZh(text,b);return false;};
+  return b;
+}
+function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e}
+function addExample(box, it){
+  if(!it.sent && !it.sent_en) return;
+  var ex=el("div","exbox");
+  if(it.sent){
+    var row=el("div","ex-cn");
+    row.appendChild(document.createTextNode("例句："+it.sent+" "));
+    if(hasHan(it.sent)) row.appendChild(speakBtn(it.sent.replace(/____/g, it.say||it.q||""), true));
+    ex.appendChild(row);
+  }
+  if(it.sent_en) ex.appendChild(el("div","ex-en","EN: "+it.sent_en));
+  box.appendChild(ex);
+}
+function build(){
+ var quiz=document.getElementById("quiz");quiz.innerHTML="";ALL=[];
+ SECTIONS.forEach(function(s){
+  var sec=el("section");var h=el("h2",null,s.title+" ");h.appendChild(el("small",null,"("+s.hint+")"));sec.appendChild(h);
+  if(s.passage){
+    var ph=el("div","pass-head");ph.appendChild(el("strong",null,"短文"));ph.appendChild(speakBtn(s.passage,false));
+    ph.appendChild(el("span","tip","tap 🔊 to hear the whole passage"));
+    sec.appendChild(ph);
+    sec.appendChild(el("div","passage",s.passage));
+  }
+  s.items.forEach(function(it,i){
+   var box=el("div","item");
+   var qrow=el("div","q");
+   qrow.appendChild(el("span",null,(i+1)+". "));
+   var qw=el("span","qw",it.q);qrow.appendChild(qw);
+   if(it.py) qrow.appendChild(el("span","py","("+it.py+")"));
+   if(it.py_hint) qrow.appendChild(el("span","py","拼音提示: "+it.py_hint));
+   var sayText=it.say||(hasHan(it.q)&&!/____/.test(it.q)?it.q:null);
+   if(sayText && !/____/.test(String(it.q))) qrow.appendChild(speakBtn(sayText,false));
+   box.appendChild(qrow);
+   addExample(box, it);
+   var rec={it:it,box:box,sel:null,input:null};
+   if(it.t==="mc"){
+     var o=el("div","opts");
+     it.o.forEach(function(txt,j){
+       var wrap=el("span","optwrap");
+       var b=el("button","opt",L[j]+". "+txt);b.type="button";
+       b.onclick=function(){if(done)return;rec.sel=j;[].forEach.call(o.querySelectorAll(".opt"),function(c){c.classList.remove("sel")});b.classList.add("sel");prog()};
+       wrap.appendChild(b);
+       if(hasHan(txt) && String(txt).length<=8) wrap.appendChild(speakBtn(txt,true));
+       o.appendChild(wrap);
+     });
+     box.appendChild(o);
+   } else {
+     var row=el("div","optwrap");
+     var inp=el("input","txt");inp.type="text";inp.setAttribute("autocomplete","off");inp.setAttribute("autocapitalize","off");inp.setAttribute("spellcheck","false");inp.placeholder="写汉字…";inp.oninput=prog;rec.input=inp;
+     row.appendChild(inp);
+     if(it.say){var lb=speakBtn(it.say,false);lb.title="Listen (does not show the answer)";row.appendChild(lb);row.appendChild(el("span","tip","听发音"));}
+     box.appendChild(row);
+   }
+   var fb=el("div","fb");box.appendChild(fb);rec.fb=fb;sec.appendChild(box);ALL.push(rec);
+  });
+  quiz.appendChild(sec);
+ });
+ prog();
+}
+function norm(s){return String(s||"").replace(/[\s\u3000]+/g,"")}
+function isCorrect(rec){var it=rec.it;if(it.t==="mc")return rec.sel===it.a;var v=norm(rec.input.value);return it.a.some(function(a){return norm(a)===v})}
+function answered(rec){return rec.it.t==="mc"?rec.sel!==null:norm(rec.input.value)!==""}
+function prog(){var a=ALL.filter(answered).length;document.getElementById("prog").textContent="已答 "+a+" / "+ALL.length}
+function fmt(ms){var s=Math.round(ms/1000);return Math.floor(s/60)+":"+("0"+s%60).slice(-2)}
+function tick(){document.getElementById("clock").textContent=fmt(Date.now()-start)}
+function check(){
+ if(done)return;done=true;clearInterval(timerId);var score=0;
+ ALL.forEach(function(rec){var ok=isCorrect(rec),it=rec.it;rec.box.classList.add(ok?"ok":"bad");
+  var ans=it.t==="mc"?L[it.a]+". "+it.o[it.a]:it.a[0];
+  rec.fb.textContent=ok?"✔ 对了！":"✘ Correct answer: "+ans+" — "+it.ex;if(ok)score++});
+ document.getElementById("quiz").classList.add("locked");
+ var t=fmt(Date.now()-start),pct=Math.round(score/ALL.length*100);
+ var msg=pct===100?"太棒了！🎉":pct>=80?"很好！👍":pct>=60?"不错，继续加油！💪":"加油！Let's review the red ones. 📚";
+ var r=document.getElementById("result");r.style.display="block";r.innerHTML="";
+ r.appendChild(el("div",null,"得分 Score: "+score+" / "+ALL.length+" ("+pct+"%)"));
+ r.appendChild(el("div",null,"用时 Time: "+t));r.appendChild(el("div",null,msg));
+ try{r.scrollIntoView({behavior:"smooth"});}catch(e){}
+ return {score:score,total:ALL.length,time:t};
+}
+function reset(){done=false;try{speechSynthesis&&speechSynthesis.cancel();}catch(e){}
+ document.getElementById("quiz").classList.remove("locked");document.getElementById("result").style.display="none";start=Date.now();clearInterval(timerId);timerId=setInterval(tick,1000);tick();build();try{window.scrollTo(0,0);}catch(e){}}
+document.getElementById("check").onclick=check;
+document.getElementById("reset").onclick=reset;
+build();timerId=setInterval(tick,1000);tick();
+
+</script>
+<!-- PWA-SCRIPT -->
+<script>
+(function(){
+  var KEY="alexa-chinese-scores";
+  function drillId(){
+    var m=(location.pathname||"").match(/([^/]+)\.html$/i);
+    return m?decodeURIComponent(m[1]):null;
+  }
+  function save(){
+    var r=document.getElementById("result");
+    if(!r)return;
+    var text=r.textContent||"";
+    var m=text.match(/Score:\s*(\d+)\s*\/\s*(\d+)/i)||text.match(/得分[^0-9]*(\d+)\s*\/\s*(\d+)/);
+    if(!m)return;
+    var id=drillId();
+    if(!id)return;
+    var score=+m[1], total=+m[2];
+    if(!(total>0) || !(score>=0) || score>total)return;
+    try{
+      var all={};
+      try{all=JSON.parse(localStorage.getItem(KEY)||"{}")||{};}catch(e){all={};}
+      if(typeof all!=="object"||Array.isArray(all)) all={};
+      all[id]={score:score,total:total,at:new Date().toISOString()};
+      localStorage.setItem(KEY,JSON.stringify(all));
+    }catch(e){}
+  }
+  var btn=document.getElementById("check");
+  if(btn) btn.addEventListener("click", function(){ try{save();}catch(e){} });
+  if("serviceWorker" in navigator){
+    var sw=new URL("../sw.js", location.href);
+    var scope=new URL("../", location.href);
+    navigator.serviceWorker.register(sw.href, {scope: scope.href}).catch(function(){});
+  }
+})();
+</script>
+<!-- /PWA-SCRIPT -->
+</body>
+</html>
