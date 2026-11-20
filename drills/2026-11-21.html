@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Alexa 中文练习 – 21 Nov 2026 (HSK 5 · Day 11 · new cycle)</title>
+<!-- Daily-drill template: each target word = 字 + pinyin + 🔊 + 例句(CN) + English translation; Web Speech zh-CN. See README.md -->
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f4f7fb;color:#222;font-family:-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",Arial,sans-serif;font-size:20px;line-height:1.6}
+.wrap{max-width:760px;margin:0 auto;padding:16px}
+h1{font-size:1.4em;margin:.3em 0 0}
+.sub{color:#666;font-size:.8em;margin-bottom:1em}
+#timer{position:sticky;top:0;background:#fff;border-radius:12px;padding:8px 14px;box-shadow:0 2px 6px rgba(0,0,0,.08);font-size:.85em;z-index:5;display:flex;justify-content:space-between}
+section{background:#fff;border-radius:16px;padding:14px 16px;margin:16px 0;box-shadow:0 2px 6px rgba(0,0,0,.06)}
+h2{font-size:1.1em;margin:.2em 0 .5em}
+h2 small{font-weight:normal;color:#777;font-size:.7em}
+.item{padding:10px 8px;margin:8px 0;border-radius:12px;border:2px solid transparent}
+.q{margin-bottom:6px;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.q .qw{font-weight:600;font-size:1.15em}
+.q .py{color:#64748b;font-size:.85em;font-weight:normal}
+.exbox{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:10px 12px;margin:6px 0 10px;width:100%}
+.ex-cn{font-size:1.05em;margin-bottom:4px}
+.ex-en{color:#475569;font-size:.88em}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.optwrap{display:inline-flex;align-items:center;gap:4px}
+.opt{font-size:1em;padding:10px 16px;border-radius:12px;border:2px solid #c9d4e3;background:#f8fbff;cursor:pointer;min-width:64px;font-family:inherit}
+.opt.sel{background:#3b82f6;color:#fff;border-color:#3b82f6}
+input.txt{font-size:1.1em;padding:8px 12px;border:2px solid #c9d4e3;border-radius:12px;width:10em;max-width:100%;font-family:inherit}
+.passage{background:#fffbea;border-left:5px solid #f5c542;padding:10px 14px;border-radius:8px;font-size:1.05em}
+.pass-head{display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap}
+.item.ok{border-color:#22c55e;background:#effdf3}
+.item.bad{border-color:#ef4444;background:#fef1f1}
+.fb{margin-top:6px;font-size:.85em;display:none}
+.item.ok .fb,.item.bad .fb{display:block}
+.item.ok .fb{color:#15803d}.item.bad .fb{color:#b91c1c}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
+.big{font-size:1.1em;padding:14px 24px;border:none;border-radius:14px;background:#16a34a;color:#fff;cursor:pointer;font-family:inherit}
+.big.sec{background:#64748b}
+#result{display:none;font-size:1.2em;text-align:center;background:#fff;border-radius:16px;padding:16px;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.locked .opt,.locked input.txt{pointer-events:none}
+.say{flex-shrink:0;width:40px;height:40px;border-radius:50%;border:2px solid #93c5fd;background:#eff6ff;color:#1d4ed8;font-size:1.05em;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;padding:0;font-family:inherit;line-height:1;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.say:disabled{opacity:.45;cursor:default}
+.say.sm{width:32px;height:32px;font-size:.9em;border-width:1.5px}
+.say:active:not(:disabled){background:#dbeafe}
+.tip{font-size:.75em;color:#64748b;margin:.4em 0 0}
+</style>
+<!-- PWA-HEAD -->
+<meta name="theme-color" content="#3b82f6">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="中文练习">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<link rel="manifest" href="../manifest.webmanifest">
+<!-- /PWA-HEAD -->
+</head>
+<body>
+<!-- PWA-BAR -->
+<style>
+.pwa-bar{display:flex;align-items:center;gap:8px;background:#eef3f9;border-bottom:1px solid #dbe4ef;padding:6px 10px;padding-top:max(6px,env(safe-area-inset-top));font-family:-apple-system,"PingFang SC","Microsoft YaHei",Arial,sans-serif}
+.pwa-bar a{display:inline-flex;align-items:center;gap:6px;color:#1d4ed8;text-decoration:none;font-size:16px;font-weight:600;padding:8px 10px;border-radius:10px;min-height:44px;box-sizing:border-box}
+.pwa-bar a:active{background:#dbeafe}
+</style>
+<nav class="pwa-bar" aria-label="App navigation"><a href="../index.html">← 练习首页</a></nav>
+<!-- /PWA-BAR -->
+
+<div class="wrap">
+<h1>Alexa 中文练习 🌟 New HSK 5</h1>
+<div class="sub">21 Nov 2026 · Day 11 of a new cycle · New HSK 5 chunk 11 (个性–广场) · pinyin + 🔊 Putonghua · about 15 minutes · 45 questions<br>
+Each word has a short Chinese example and English translation. Tap 🔊 to hear. Answers stay hidden until Check.</div>
+<div id="timer"><span>⏱ <span id="clock">0:00</span></span><span id="prog"></span></div>
+<div id="quiz"></div>
+<div class="btns"><button class="big" id="check">✅ Check answers</button><button class="big sec" id="reset">↺ Try again</button></div>
+<div id="result"></div>
+</div>
+<script>
+var SECTIONS=[{"title":"一、看例句选意思 Meaning in context","hint":"read the sentence, tap the English meaning · 🔊","items":[{"t":"mc","q":"个性","py":"gèxìng","say":"个性","o":["each, respective","personality, individuality","champion","concept, idea"],"a":1,"sent":"她的个性很开朗，跟谁都能很快成为朋友。","sent_en":"She has a very cheerful personality, and can quickly become friends with anyone.","ex":"个性 gèxìng — personality, individuality · 她的个性很开朗，跟谁都能很快成为朋友。 / She has a very cheerful personality, and can quickly become friends with anyone. (个性 is a person's character; 各自 means each / respective)"},{"t":"mc","q":"各自","py":"gèzì","say":"各自","o":["personality, individuality","to share","each, respective","to communicate"],"a":2,"sent":"回到教室以后，同学们各自拿出书，开始复习今天的生词。","sent_en":"After returning to the classroom, the classmates each took out their books and began to review today's new words.","ex":"各自 gèzì — each, respective · 回到教室以后，同学们各自拿出书，开始复习今天的生词。 / After returning to the classroom, the classmates each took out their books and began to review today's new words. (also in textbook Lesson 3 人生有选择；各自 means each person does their own part; 个性 is personality)"},{"t":"mc","q":"根","py":"gēn","say":"根","o":["tool, instrument","square, plaza","foundation, root; fundamental; simply","root; measure word for long, thin objects"],"a":3,"sent":"这棵大树的根深深地长在土里，所以不容易被风吹倒。","sent_en":"The roots of this big tree grow deep in the soil, so it is not easily blown over by the wind.","ex":"根 gēn — root; measure word for long, thin objects · 这棵大树的根深深地长在土里，所以不容易被风吹倒。 / The roots of this big tree grow deep in the soil, so it is not easily blown over by the wind. (根 can also be a measure word, as in 一根绳子; 根本 means foundation / simply, not the physical root alone)"},{"t":"mc","q":"根本","py":"gēnběn","say":"根本","o":["root; measure word for long, thin objects","to update","foundation, root; fundamental; simply","to replace, to change"],"a":2,"sent":"这件事我根本不知道，你为什么要怪我？","sent_en":"I simply knew nothing about this matter; why do you want to blame me?","ex":"根本 gēnběn — foundation, root; fundamental; simply · 这件事我根本不知道，你为什么要怪我？ / I simply knew nothing about this matter; why do you want to blame me? (as an adverb, 根本不 / 根本没 means not at all / simply not; as a noun or adjective it means foundation / fundamental. 根 is the physical root, or a measure word)"},{"t":"mc","q":"更换","py":"gēnghuàn","say":"更换","o":["to update","to announce, to make public","to replace, to change","to fix, to fasten"],"a":2,"sent":"这台电脑已经用了五年，有些零件需要更换了。","sent_en":"This computer has already been used for five years, and some parts need to be replaced.","ex":"更换 gēnghuàn — to replace, to change · 这台电脑已经用了五年，有些零件需要更换了。 / This computer has already been used for five years, and some parts need to be replaced. (更换 is to replace one thing with another; 更新 is to update something and make it newer)"},{"t":"mc","q":"更新","py":"gēngxīn","say":"更新","o":["to update","to replace, to change","to contribute; contribution","to close"],"a":0,"sent":"请把手机上的软件更新到最新版本，否则有的功能不能用。","sent_en":"Please update the software on your phone to the latest version, otherwise some functions cannot be used.","ex":"更新 gēngxīn — to update · 请把手机上的软件更新到最新版本，否则有的功能不能用。 / Please update the software on your phone to the latest version, otherwise some functions cannot be used. (更新 is to update; 更换 is to replace a part or an item)"},{"t":"mc","q":"公布","py":"gōngbù","say":"公布","o":["to congratulate","to observe","to communicate","to announce, to make public"],"a":3,"sent":"学校今天下午会公布比赛的结果，大家都很关心谁是冠军。","sent_en":"The school will announce the results of the competition this afternoon, and everyone is very concerned about who the champion is.","ex":"公布 gōngbù — to announce, to make public · 学校今天下午会公布比赛的结果，大家都很关心谁是冠军。 / The school will announce the results of the competition this afternoon, and everyone is very concerned about who the champion is."},{"t":"mc","q":"工程","py":"gōngchéng","say":"工程","o":["engineer","project, engineering","industry","craft, technology"],"a":1,"sent":"这座桥的建设工程已经进行了两年，终于快要完成了。","sent_en":"The construction project for this bridge has already been going on for two years, and it is finally almost finished.","ex":"工程 gōngchéng — project, engineering · 这座桥的建设工程已经进行了两年，终于快要完成了。 / The construction project for this bridge has already been going on for two years, and it is finally almost finished. (工程 is the project; 工程师 is the engineer)"},{"t":"mc","q":"工程师","py":"gōngchéngshī","say":"工程师","o":["civil servant","project, engineering","engineer","tool, instrument"],"a":2,"sent":"他的爸爸是一名工程师，正在负责一项重要的工程。","sent_en":"His father is an engineer, and is currently in charge of an important project.","ex":"工程师 gōngchéngshī — engineer · 他的爸爸是一名工程师，正在负责一项重要的工程。 / His father is an engineer, and is currently in charge of an important project. (工程师 is the person; 工程 is the project)"},{"t":"mc","q":"工具","py":"gōngjù","say":"工具","o":["tool, instrument","function","apartment","industry"],"a":0,"sent":"做手工以前，请先把需要的工具准备好。","sent_en":"Before doing the handicraft, please first get the tools you need ready.","ex":"工具 gōngjù — tool, instrument · 做手工以前，请先把需要的工具准备好。 / Before doing the handicraft, please first get the tools you need ready."}]},{"title":"二、根据意思选词 Choose the word","hint":"read the English and the sentence, tap the Chinese word · 🔊","items":[{"t":"mc","q":"function","py":"gōngnéng","say":"功能","o":["功能","公平","工业","工艺"],"a":0,"sent":"这个应用程序有很多有用的功能，比如翻译和发音。","sent_en":"This app has many useful functions, such as translation and pronunciation.","ex":"功能 gōngnéng — function · 这个应用程序有很多有用的功能，比如翻译和发音。 / This app has many useful functions, such as translation and pronunciation."},{"t":"mc","q":"fair, just","py":"gōngpíng","say":"公平","o":["公布","公平","恭喜","贡献"],"a":1,"sent":"老师对待每一个学生都很公平，不会只表扬成绩好的同学。","sent_en":"The teacher is very fair to every student, and will not only praise the classmates with good grades.","ex":"公平 gōngpíng — fair, just · 老师对待每一个学生都很公平，不会只表扬成绩好的同学。 / The teacher is very fair to every student, and will not only praise the classmates with good grades."},{"t":"mc","q":"civil servant","py":"gōngwùyuán","say":"公务员","o":["工程师","工艺","公务员","公寓"],"a":2,"sent":"她大学毕业以后，通过考试成了一名公务员。","sent_en":"After graduating from university, she passed an exam and became a civil servant.","ex":"公务员 gōngwùyuán — civil servant · 她大学毕业以后，通过考试成了一名公务员。 / After graduating from university, she passed an exam and became a civil servant."},{"t":"mc","q":"to congratulate","py":"gōngxǐ","say":"恭喜","o":["贡献","共享","沟通","恭喜"],"a":3,"sent":"恭喜你在比赛中得了第一名，大家都很为你高兴。","sent_en":"Congratulations on winning first place in the competition; everyone is very happy for you.","ex":"恭喜 gōngxǐ — to congratulate · 恭喜你在比赛中得了第一名，大家都很为你高兴。 / Congratulations on winning first place in the competition; everyone is very happy for you."},{"t":"mc","q":"industry","py":"gōngyè","say":"工业","o":["工业","工艺","工程","工具"],"a":0,"sent":"这个城市的工业发展很快，新建了好几家工厂。","sent_en":"Industry in this city is developing very quickly, and several new factories have been built.","ex":"工业 gōngyè — industry · 这个城市的工业发展很快，新建了好几家工厂。 / Industry in this city is developing very quickly, and several new factories have been built. (工业 is industry; 工艺 is craft / workmanship)"},{"t":"mc","q":"craft, workmanship","py":"gōngyì","say":"工艺","o":["工业","工艺","工具","功能"],"a":1,"sent":"这些杯子的工艺非常精细，每一个花纹都是手工做的。","sent_en":"The craftsmanship of these cups is very fine; every pattern was made by hand.","ex":"工艺 gōngyì — craft, workmanship · 这些杯子的工艺非常精细，每一个花纹都是手工做的。 / The craftsmanship of these cups is very fine; every pattern was made by hand. (工艺 is craft / workmanship; 工业 is industry)"},{"t":"mc","q":"apartment","py":"gōngyù","say":"公寓","o":["广场","故乡","公寓","工程"],"a":2,"sent":"她在学校附近租了一套小公寓，走路十分钟就到教室。","sent_en":"She rented a small apartment near the school, and it takes only ten minutes on foot to reach the classroom.","ex":"公寓 gōngyù — apartment · 她在学校附近租了一套小公寓，走路十分钟就到教室。 / She rented a small apartment near the school, and it takes only ten minutes on foot to reach the classroom."}]},{"title":"三、填空 Fill the blank","hint":"choose the word that fits the sentence · 🔊","items":[{"t":"mc","q":"每位同学都为这次活动做出了自己的____。","o":["贡献","共享","沟通","构成"],"a":0,"say":"贡献","sent":"每位同学都为这次活动做出了自己的贡献。","sent_en":"Every classmate made their own contribution to this activity.","ex":"贡献 gòngxiàn — to contribute; contribution · 每位同学都为这次活动做出了自己的贡献。 / Every classmate made their own contribution to this activity."},{"t":"mc","q":"老师建立了一个网上文件夹，方便大家____学习资料。","o":["沟通","共享","贡献","更新"],"a":1,"say":"共享","sent":"老师建立了一个网上文件夹，方便大家共享学习资料。","sent_en":"The teacher set up an online folder, to make it convenient for everyone to share the study materials.","ex":"共享 gòngxiǎng — to share · 老师建立了一个网上文件夹，方便大家共享学习资料。 / The teacher set up an online folder, to make it convenient for everyone to share the study materials. (共享 is to share resources; 沟通 is to communicate)"},{"t":"mc","q":"遇到问题的时候，我们要及时和父母____，不要把事情藏在心里。","o":["观察","恭喜","沟通","关闭"],"a":2,"say":"沟通","sent":"遇到问题的时候，我们要及时和父母沟通，不要把事情藏在心里。","sent_en":"When we meet problems, we should communicate with our parents in time, and not hide things in our hearts.","ex":"沟通 gōutōng — to communicate · 遇到问题的时候，我们要及时和父母沟通，不要把事情藏在心里。 / When we meet problems, we should communicate with our parents in time, and not hide things in our hearts."},{"t":"mc","q":"这三部分____了一个完整的故事，读起来很有意思。","o":["固定","贡献","共享","构成"],"a":3,"say":"构成","sent":"这三部分构成了一个完整的故事，读起来很有意思。","sent_en":"These three parts constitute a complete story, which is very interesting to read.","ex":"构成 gòuchéng — to constitute; composition · 这三部分构成了一个完整的故事，读起来很有意思。 / These three parts constitute a complete story, which is very interesting to read."},{"t":"mc","q":"博物馆里收藏了许多____画，有的已经有几百年的历史了。","o":["怪","古","鼓","广"],"a":1,"say":"古","sent":"博物馆里收藏了许多古画，有的已经有几百年的历史了。","sent_en":"The museum has collected many ancient paintings, some of which already have a history of several hundred years.","ex":"古 gǔ — ancient · 博物馆里收藏了许多古画，有的已经有几百年的历史了。 / The museum has collected many ancient paintings, some of which already have a history of several hundred years. (古 is the short adjective ancient, often used in words like 古画 / 古桥; 古代 is ancient times; 古老 describes something old that has existed for a long time)"},{"t":"mc","q":"演出开始时，同学们用力敲响了那面大____。","o":["根","古","鼓","广"],"a":2,"say":"鼓","sent":"演出开始时，同学们用力敲响了那面大鼓。","sent_en":"When the performance began, the classmates struck that big drum hard.","ex":"鼓 gǔ — drum; to bulge, to swell, to encourage, to urge · 演出开始时，同学们用力敲响了那面大鼓。 / When the performance began, the classmates struck that big drum hard. (here 鼓 means a drum; 鼓掌 is to applaud)"}]},{"title":"四、易混词 Look-alikes in sentences","hint":"choose the word that fits · 🔊","items":[{"t":"mc","q":"子路生活在____，那时候人们出行主要靠走路。","o":["古代","古老","故乡","鼓掌"],"a":0,"say":"古代","sent":"子路生活在古代，那时候人们出行主要靠走路。","sent_en":"Zilu lived in ancient times, when people mainly travelled on foot.","ex":"古代 gǔdài — ancient times · 子路生活在古代，那时候人们出行主要靠走路。 / Zilu lived in ancient times, when people mainly travelled on foot. (also in textbook Lesson 4 子路背米; 古代 is a period of time; 古老 describes a thing that is very old; 故乡 is hometown)"},{"t":"mc","q":"这座____的桥已经有几百年的历史了，现在仍在使用。","o":["古代","古老","故乡","固定"],"a":1,"say":"古老","sent":"这座古老的桥已经有几百年的历史了，现在仍在使用。","sent_en":"This ancient bridge already has a history of several hundred years, and is still in use today.","ex":"古老 gǔlǎo — ancient · 这座古老的桥已经有几百年的历史了，现在仍在使用。 / This ancient bridge already has a history of several hundred years, and is still in use today. (古老 describes a thing that has existed for a long time; 古代 is ancient times)"},{"t":"mc","q":"演讲结束后，全场同学都站起来____。","o":["观察","关闭","挂号","鼓掌"],"a":3,"say":"鼓掌","sent":"演讲结束后，全场同学都站起来鼓掌。","sent_en":"After the speech ended, all the classmates in the hall stood up and applauded.","ex":"鼓掌 gǔzhǎng — to applaud · 演讲结束后，全场同学都站起来鼓掌。 / After the speech ended, all the classmates in the hall stood up and applauded. (鼓掌 is to clap one's hands; 鼓 by itself often means a drum)"},{"t":"mc","q":"请把这张地图____在墙上，免得被风吹下来。","o":["关闭","固定","更新","更换"],"a":1,"say":"固定","sent":"请把这张地图固定在墙上，免得被风吹下来。","sent_en":"Please fasten this map to the wall, so that it will not be blown down by the wind.","ex":"固定 gùdìng — to fix, to fasten · 请把这张地图固定在墙上，免得被风吹下来。 / Please fasten this map to the wall, so that it will not be blown down by the wind. (固定 is to fix / fasten, or fixed; 关闭 is to close / shut)"},{"t":"mc","q":"每年春节，他都要回到____，和家人一起过年。","o":["广场","公寓","故乡","工业"],"a":2,"say":"故乡","sent":"每年春节，他都要回到故乡，和家人一起过年。","sent_en":"Every Spring Festival, he goes back to his hometown and spends the New Year with his family.","ex":"故乡 gùxiāng — hometown · 每年春节，他都要回到故乡，和家人一起过年。 / Every Spring Festival, he goes back to his hometown and spends the New Year with his family."},{"t":"mc","q":"生病以后，她先到医院____，然后坐在大厅里等医生。","o":["关闭","观察","挂号","光临"],"a":2,"say":"挂号","sent":"生病以后，她先到医院挂号，然后坐在大厅里等医生。","sent_en":"After falling ill, she first registered at the hospital, and then sat in the hall waiting for the doctor.","ex":"挂号 guàhào — to register for medical appointment · 生病以后，她先到医院挂号，然后坐在大厅里等医生。 / After falling ill, she first registered at the hospital, and then sat in the hall waiting for the doctor."},{"t":"mc","q":"这次迟到不____他，因为路上突然堵车了。","o":["怪","关","改","鼓"],"a":0,"say":"怪","sent":"这次迟到不怪他，因为路上突然堵车了。","sent_en":"He is not to blame for being late this time, because there was a sudden traffic jam on the way.","ex":"怪 guài — strange; to blame; quite · 这次迟到不怪他，因为路上突然堵车了。 / He is not to blame for being late this time, because there was a sudden traffic jam on the way. (怪 can mean to blame, strange, or quite; here 不怪他 means not to blame him)"}]},{"title":"五、默写 Dictation in context","hint":"🔊 listen, read the sentence, type the characters","items":[{"t":"text","q":"guānbì — to close","say":"关闭","sent":"图书馆晚上九点____，请在这之前把书还回去。","sent_en":"The library closes at nine in the evening; please return the books before then.","a":["关闭"],"ex":"关闭 guānbì — to close · 图书馆晚上九点关闭，请在这之前把书还回去。 / The library closes at nine in the evening; please return the books before then."},{"t":"text","q":"guānchá — to observe","say":"观察","sent":"科学家需要长时间____这些动物的生活习惯。","sent_en":"Scientists need to observe these animals' living habits for a long time.","a":["观察"],"ex":"观察 guānchá — to observe · 科学家需要长时间观察这些动物的生活习惯。 / Scientists need to observe these animals' living habits for a long time."},{"t":"text","q":"guāndiǎn — viewpoint, opinion","say":"观点","sent":"在这个问题上，我的____和你不太一样，我们可以再讨论。","sent_en":"On this question, my viewpoint is not quite the same as yours; we can discuss it further.","a":["观点"],"ex":"观点 guāndiǎn — viewpoint, opinion · 在这个问题上，我的观点和你不太一样，我们可以再讨论。 / On this question, my viewpoint is not quite the same as yours; we can discuss it further. (观点 is a viewpoint on a specific issue; 观念 is a more general concept or way of thinking)"},{"t":"text","q":"guānniàn — concept, idea","say":"观念","sent":"随着社会的发展，人们的环保____也在慢慢改变。","sent_en":"As society develops, people's ideas about environmental protection are also slowly changing.","a":["观念"],"ex":"观念 guānniàn — concept, idea · 随着社会的发展，人们的环保观念也在慢慢改变。 / As society develops, people's ideas about environmental protection are also slowly changing. (观念 is a general concept or mindset; 观点 is a viewpoint on a specific issue)"},{"t":"text","q":"guànjūn — champion","say":"冠军","sent":"经过几轮比赛，她终于成为了本次运动会的____。","sent_en":"After several rounds of competition, she finally became the champion of this sports meeting.","a":["冠军"],"ex":"冠军 guànjūn — champion · 经过几轮比赛，她终于成为了本次运动会的冠军。 / After several rounds of competition, she finally became the champion of this sports meeting."},{"t":"text","q":"guānglín — to honor with one's presence","say":"光临","sent":"商店门口写着“欢迎____”，看见客人进来，店员立刻笑着打招呼。","sent_en":"The shop doorway said “Welcome”; when they saw customers coming in, the shop assistants immediately smiled and greeted them.","a":["光临"],"ex":"光临 guānglín — to honor with one's presence · 商店门口写着“欢迎光临”，看见客人进来，店员立刻笑着打招呼。 / The shop doorway said “Welcome”; when they saw customers coming in, the shop assistants immediately smiled and greeted them. (光临 is a polite verb meaning to honor us with your presence, often in 欢迎光临)"}]},{"title":"六、声调 Tones","hint":"tap the correct pinyin · 🔊","items":[{"t":"mc","q":"更新","o":["gèngxīn","gēngxīn","gēngxìn","gěngxīn"],"a":1,"say":"更新","sent":"请把手机上的软件更新到最新版本，否则有的功能不能用。","sent_en":"Please update the software on your phone to the latest version, otherwise some functions cannot be used.","ex":"更新 gēngxīn — to update (1st + 1st). 更 here is 1st-tone gēng (to change), not 4th-tone gèng (even more). 更换 is gēnghuàn (1st + 4th). · 请把手机上的软件更新到最新版本，否则有的功能不能用。 / Please update the software on your phone to the latest version, otherwise some functions cannot be used."},{"t":"mc","q":"构成","o":["gōuchéng","gǒuchéng","gòuchéng","gòuchēng"],"a":2,"say":"构成","sent":"这三部分构成了一个完整的故事，读起来很有意思。","sent_en":"These three parts constitute a complete story, which is very interesting to read.","ex":"构成 gòuchéng — to constitute; composition (4th + 2nd). The first syllable is 4th-tone gòu, not 1st-tone gōu (as in 沟通 gōutōng); the second is 2nd-tone chéng, not 1st-tone chēng. · 这三部分构成了一个完整的故事，读起来很有意思。 / These three parts constitute a complete story, which is very interesting to read."},{"t":"mc","q":"冠军","o":["guānjūn","guànjūn","guǎnjūn","guànjùn"],"a":1,"say":"冠军","sent":"经过几轮比赛，她终于成为了本次运动会的冠军。","sent_en":"After several rounds of competition, she finally became the champion of this sports meeting.","ex":"冠军 guànjūn — champion (4th + 1st). 冠 here is 4th-tone guàn, not 1st-tone guān (as in 衣冠 / hat); the second is 1st-tone jūn, not 4th-tone jùn. · 经过几轮比赛，她终于成为了本次运动会的冠军。 / After several rounds of competition, she finally became the champion of this sports meeting."},{"t":"mc","q":"广场","o":["guāngchǎng","guǎngcháng","guàngchǎng","guǎngchǎng"],"a":3,"say":"广场","sent":"这个星期六，同学们约定在广场门口见面。","sent_en":"This Saturday, the classmates agreed to meet at the entrance to the square.","ex":"广场 guǎngchǎng — square, plaza (3rd + 3rd). Both syllables are 3rd tone in the official pinyin. 广 is 3rd-tone guǎng, not 1st-tone guāng (as in 光临 / 光明 / 光线). In natural speech, the first 3rd tone is often spoken as a 2nd tone (tone sandhi), but the standard written form remains guǎngchǎng. · 这个星期六，同学们约定在广场门口见面。 / This Saturday, the classmates agreed to meet at the entrance to the square."}]},{"title":"七、阅读 Reading","hint":"🔊 listen to the passage, then tap","passage":"这个星期六，Alexa和同学们一起去了一个热闹的广场。这个广场非常广，可以同时举行好几项活动。广场上的光线很充足，大家觉得心里也跟着明亮起来，对未来充满了光明的希望。广场旁边有一座古老的房子，老师介绍说，这里保存着许多古物，还摆着一面大鼓。这些都是从古代传下来的。讲解结束后，同学们都鼓掌。一位工程师走上前来，公布了一项新工程。他介绍了新工具的功能和工业上的新工艺，并说软件需要定期更新，有的零件也要及时更换。这项工程需要大家的贡献，也希望市民能够共享这些成果。几位公务员在旁边回答问题，他们特别强调，机会一定要公平。活动开始以前，同学们各自做了准备。有的人个性比较安静，只是在一旁观察；有的人敢于提出自己的观点。老师说，不同的观念可以一起讨论，这样才能更好地沟通。广场上有几棵大树，它们构成了这里最美的风景。其中一棵树的根露出了地面。大家把海报固定在树上，又把旁边小店的门暂时关闭，以免被风吹开。中午，有同学觉得身体不舒服，先去医院挂号。医生说问题不怪她，只是有点累。回到广场时，商店门口写着“欢迎光临”。舞台上，一位同学打起了鼓，宣布本次比赛的冠军。最后，老师恭喜大家，还邀请他们去附近的公寓坐一坐，尝尝故乡的小吃。Alexa根本不想这么快离开，因为这里让她想起了课本里写过的古代故事。","items":[{"t":"mc","q":"关于广场和旁边那座房子，哪一项正确？","o":["这个星期六，Alexa和同学们一起去了一个热闹的广场。这个广场非常广，可以同时举行好几项活动。广场上的光线很充足，大家觉得心里也跟着明亮起来，对未来充满了光明的希望。广场旁边有一座古老的房子，老师介绍说，这里保存着许多古物，还摆着一面大鼓。这些都是从古代传下来的。讲解结束后，同学们都鼓掌。","同学们没有去广场，而且那天完全没有光线。","老师说那座房子是去年新建的，里面什么也没有。"],"a":0,"ex":"这个星期六，Alexa和同学们一起去了一个热闹的广场。这个广场非常广，可以同时举行好几项活动。广场上的光线很充足，大家觉得心里也跟着明亮起来，对未来充满了光明的希望。广场旁边有一座古老的房子，老师介绍说，这里保存着许多古物，还摆着一面大鼓。这些都是从古代传下来的。讲解结束后，同学们都鼓掌。 / This Saturday, Alexa and her classmates went together to a lively square. This square is very wide, and several activities can be held there at the same time. The light on the square was plentiful, and everyone felt their hearts brighten too, full of bright hope for the future. Beside the square was an old building. The teacher explained that many ancient objects were kept here, and that a large drum was also on display. These had all been passed down from ancient times. When the talk ended, the classmates all applauded."},{"t":"mc","q":"那位工程师公布了什么？公务员又强调了什么？","o":["工程师拒绝公布这项工程，也不允许市民共享成果。","一位工程师走上前来，公布了一项新工程。他介绍了新工具的功能和工业上的新工艺，并说软件需要定期更新，有的零件也要及时更换。这项工程需要大家的贡献，也希望市民能够共享这些成果。几位公务员在旁边回答问题，他们特别强调，机会一定要公平。","公务员强调这次机会只给少数人，不必公平。"],"a":1,"ex":"一位工程师走上前来，公布了一项新工程。他介绍了新工具的功能和工业上的新工艺，并说软件需要定期更新，有的零件也要及时更换。这项工程需要大家的贡献，也希望市民能够共享这些成果。几位公务员在旁边回答问题，他们特别强调，机会一定要公平。 / An engineer stepped forward and announced a new project. He introduced the functions of the new tools and the new techniques in industry, and said that the software needed to be updated regularly, and that some parts also had to be replaced in time. This project needed everyone's contribution, and he also hoped that the residents would be able to share these results. Several civil servants were answering questions nearby, and they especially stressed that opportunities must be fair."},{"t":"mc","q":"活动开始以前，同学们做了什么？树上又发生了什么？","o":["所有同学都很吵，没有人观察，也没有人提出观点。","大家把树砍倒了，并且一直开着小店的门。","活动开始以前，同学们各自做了准备。有的人个性比较安静，只是在一旁观察；有的人敢于提出自己的观点。老师说，不同的观念可以一起讨论，这样才能更好地沟通。广场上有几棵大树，它们构成了这里最美的风景。其中一棵树的根露出了地面。大家把海报固定在树上，又把旁边小店的门暂时关闭，以免被风吹开。"],"a":2,"ex":"活动开始以前，同学们各自做了准备。有的人个性比较安静，只是在一旁观察；有的人敢于提出自己的观点。老师说，不同的观念可以一起讨论，这样才能更好地沟通。广场上有几棵大树，它们构成了这里最美的风景。其中一棵树的根露出了地面。大家把海报固定在树上，又把旁边小店的门暂时关闭，以免被风吹开。 / Before the activity began, the classmates each made their own preparations. Some had quieter personalities and just observed from the side; others dared to put forward their own views. The teacher said that different ideas can be discussed together, and that only in this way can people communicate better. There were several big trees on the square, and they made up the most beautiful scenery here. The roots of one of the trees were showing above the ground. Everyone fastened the posters to the trees, and also temporarily closed the door of the little shop next to them, so that the wind would not blow it open."},{"t":"mc","q":"中午有同学去医院以后，发生了什么？","o":["医生说一定要怪她，而且商店不欢迎客人光临。","中午，有同学觉得身体不舒服，先去医院挂号。医生说问题不怪她，只是有点累。回到广场时，商店门口写着“欢迎光临”。","没有人去挂号，同学们一直留在医院到晚上。"],"a":1,"ex":"中午，有同学觉得身体不舒服，先去医院挂号。医生说问题不怪她，只是有点累。回到广场时，商店门口写着“欢迎光临”。 / At noon, a classmate felt unwell and first went to the hospital to register. The doctor said it was not her fault; she was just a little tired. When they returned to the square, the shop doorway said “Welcome”."},{"t":"mc","q":"比赛结束以后，老师和Alexa做了什么、想了什么？","o":["舞台上，一位同学打起了鼓，宣布本次比赛的冠军。最后，老师恭喜大家，还邀请他们去附近的公寓坐一坐，尝尝故乡的小吃。Alexa根本不想这么快离开，因为这里让她想起了课本里写过的古代故事。","老师没有恭喜大家，也没有邀请他们去公寓。","Alexa根本不想留在这里，立刻就走了。"],"a":0,"ex":"舞台上，一位同学打起了鼓，宣布本次比赛的冠军。最后，老师恭喜大家，还邀请他们去附近的公寓坐一坐，尝尝故乡的小吃。Alexa根本不想这么快离开，因为这里让她想起了课本里写过的古代故事。 / On the stage, a classmate started beating the drum and announced the champion of this competition. Finally, the teacher congratulated everyone, and also invited them to sit for a while in a nearby apartment and taste some hometown snacks. Alexa simply did not want to leave so soon, because this place reminded her of the ancient stories written in the textbook."}]}];
+
+/* TEMPLATE: every target word needs 字+拼音+🔊 + 例句 CN + EN translation. See README.md */
+var L="ABCDEFG",ALL=[],start=Date.now(),done=false,timerId,zhVoice=null;
+function pickZhVoice(){
+  if(!window.speechSynthesis)return null;
+  var vs=speechSynthesis.getVoices()||[];
+  var pref=vs.filter(function(v){return /^zh(-|_|$)/i.test(v.lang)||/Chinese|中文|普通话|国语/i.test(v.name);});
+  var cn=pref.filter(function(v){return /CN|China|普通话|Chinese\s*\(China\)/i.test(v.lang+" "+v.name);});
+  return cn[0]||pref[0]||null;
+}
+function refreshVoice(){zhVoice=pickZhVoice();}
+if(window.speechSynthesis){refreshVoice();speechSynthesis.onvoiceschanged=refreshVoice;}
+function hasHan(s){return /[\u4e00-\u9fff]/.test(s||"");}
+function speakZh(text,btn){
+  if(!text||!window.speechSynthesis)return;
+  try{speechSynthesis.cancel();}catch(e){}
+  var u=new SpeechSynthesisUtterance(String(text));
+  u.lang="zh-CN";u.rate=0.9;u.pitch=1;
+  if(!zhVoice)refreshVoice();
+  if(zhVoice)u.voice=zhVoice;
+  if(btn)btn.disabled=true;
+  var unlock=function(){if(btn)btn.disabled=false;};
+  u.onend=unlock;u.onerror=unlock;
+  setTimeout(unlock, Math.max(1800, String(text).length*420));
+  speechSynthesis.speak(u);
+}
+function speakBtn(text, small){
+  var b=el("button", small?"say sm":"say");
+  b.type="button";b.setAttribute("aria-label","Pronounce");b.textContent="🔊";
+  b.onclick=function(ev){if(ev&&ev.stopPropagation)ev.stopPropagation();if(ev&&ev.preventDefault)ev.preventDefault();speakZh(text,b);return false;};
+  return b;
+}
+function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e}
+function addExample(box, it){
+  if(!it.sent && !it.sent_en) return;
+  var ex=el("div","exbox");
+  if(it.sent){
+    var row=el("div","ex-cn");
+    row.appendChild(document.createTextNode("例句："+it.sent+" "));
+    if(hasHan(it.sent)) row.appendChild(speakBtn(it.sent.replace(/____/g, it.say||it.q||""), true));
+    ex.appendChild(row);
+  }
+  if(it.sent_en) ex.appendChild(el("div","ex-en","EN: "+it.sent_en));
+  box.appendChild(ex);
+}
+function build(){
+ var quiz=document.getElementById("quiz");quiz.innerHTML="";ALL=[];
+ SECTIONS.forEach(function(s){
+  var sec=el("section");var h=el("h2",null,s.title+" ");h.appendChild(el("small",null,"("+s.hint+")"));sec.appendChild(h);
+  if(s.passage){
+    var ph=el("div","pass-head");ph.appendChild(el("strong",null,"短文"));ph.appendChild(speakBtn(s.passage,false));
+    ph.appendChild(el("span","tip","tap 🔊 to hear the whole passage"));
+    sec.appendChild(ph);
+    sec.appendChild(el("div","passage",s.passage));
+  }
+  s.items.forEach(function(it,i){
+   var box=el("div","item");
+   var qrow=el("div","q");
+   qrow.appendChild(el("span",null,(i+1)+". "));
+   var qw=el("span","qw",it.q);qrow.appendChild(qw);
+   if(it.py) qrow.appendChild(el("span","py","("+it.py+")"));
+   if(it.py_hint) qrow.appendChild(el("span","py","拼音提示: "+it.py_hint));
+   var sayText=it.say||(hasHan(it.q)&&!/____/.test(it.q)?it.q:null);
+   if(sayText && !/____/.test(String(it.q))) qrow.appendChild(speakBtn(sayText,false));
+   box.appendChild(qrow);
+   addExample(box, it);
+   var rec={it:it,box:box,sel:null,input:null};
+   if(it.t==="mc"){
+     var o=el("div","opts");
+     it.o.forEach(function(txt,j){
+       var wrap=el("span","optwrap");
+       var b=el("button","opt",L[j]+". "+txt);b.type="button";
+       b.onclick=function(){if(done)return;rec.sel=j;[].forEach.call(o.querySelectorAll(".opt"),function(c){c.classList.remove("sel")});b.classList.add("sel");prog()};
+       wrap.appendChild(b);
+       if(hasHan(txt) && String(txt).length<=8) wrap.appendChild(speakBtn(txt,true));
+       o.appendChild(wrap);
+     });
+     box.appendChild(o);
+   } else {
+     var row=el("div","optwrap");
+     var inp=el("input","txt");inp.type="text";inp.setAttribute("autocomplete","off");inp.setAttribute("autocapitalize","off");inp.setAttribute("spellcheck","false");inp.placeholder="写汉字…";inp.oninput=prog;rec.input=inp;
+     row.appendChild(inp);
+     if(it.say){var lb=speakBtn(it.say,false);lb.title="Listen (does not show the answer)";row.appendChild(lb);row.appendChild(el("span","tip","听发音"));}
+     box.appendChild(row);
+   }
+   var fb=el("div","fb");box.appendChild(fb);rec.fb=fb;sec.appendChild(box);ALL.push(rec);
+  });
+  quiz.appendChild(sec);
+ });
+ prog();
+}
+function norm(s){return String(s||"").replace(/[\s\u3000]+/g,"")}
+function isCorrect(rec){var it=rec.it;if(it.t==="mc")return rec.sel===it.a;var v=norm(rec.input.value);return it.a.some(function(a){return norm(a)===v})}
+function answered(rec){return rec.it.t==="mc"?rec.sel!==null:norm(rec.input.value)!==""}
+function prog(){var a=ALL.filter(answered).length;document.getElementById("prog").textContent="已答 "+a+" / "+ALL.length}
+function fmt(ms){var s=Math.round(ms/1000);return Math.floor(s/60)+":"+("0"+s%60).slice(-2)}
+function tick(){document.getElementById("clock").textContent=fmt(Date.now()-start)}
+function check(){
+ if(done)return;done=true;clearInterval(timerId);var score=0;
+ ALL.forEach(function(rec){var ok=isCorrect(rec),it=rec.it;rec.box.classList.add(ok?"ok":"bad");
+  var ans=it.t==="mc"?L[it.a]+". "+it.o[it.a]:it.a[0];
+  rec.fb.textContent=ok?"✔ 对了！":"✘ Correct answer: "+ans+" — "+it.ex;if(ok)score++});
+ document.getElementById("quiz").classList.add("locked");
+ var t=fmt(Date.now()-start),pct=Math.round(score/ALL.length*100);
+ var msg=pct===100?"太棒了！🎉":pct>=80?"很好！👍":pct>=60?"不错，继续加油！💪":"加油！Let's review the red ones. 📚";
+ var r=document.getElementById("result");r.style.display="block";r.innerHTML="";
+ r.appendChild(el("div",null,"得分 Score: "+score+" / "+ALL.length+" ("+pct+"%)"));
+ r.appendChild(el("div",null,"用时 Time: "+t));r.appendChild(el("div",null,msg));
+ try{r.scrollIntoView({behavior:"smooth"});}catch(e){}
+ return {score:score,total:ALL.length,time:t};
+}
+function reset(){done=false;try{speechSynthesis&&speechSynthesis.cancel();}catch(e){}
+ document.getElementById("quiz").classList.remove("locked");document.getElementById("result").style.display="none";start=Date.now();clearInterval(timerId);timerId=setInterval(tick,1000);tick();build();try{window.scrollTo(0,0);}catch(e){}}
+document.getElementById("check").onclick=check;
+document.getElementById("reset").onclick=reset;
+build();timerId=setInterval(tick,1000);tick();
+
+</script>
+<!-- PWA-SCRIPT -->
+<script>
+(function(){
+  var KEY="alexa-chinese-scores";
+  function drillId(){
+    var m=(location.pathname||"").match(/([^/]+)\.html$/i);
+    return m?decodeURIComponent(m[1]):null;
+  }
+  function save(){
+    var r=document.getElementById("result");
+    if(!r)return;
+    var text=r.textContent||"";
+    var m=text.match(/Score:\s*(\d+)\s*\/\s*(\d+)/i)||text.match(/得分[^0-9]*(\d+)\s*\/\s*(\d+)/);
+    if(!m)return;
+    var id=drillId();
+    if(!id)return;
+    var score=+m[1], total=+m[2];
+    if(!(total>0) || !(score>=0) || score>total)return;
+    try{
+      var all={};
+      try{all=JSON.parse(localStorage.getItem(KEY)||"{}")||{};}catch(e){all={};}
+      if(typeof all!=="object"||Array.isArray(all)) all={};
+      all[id]={score:score,total:total,at:new Date().toISOString()};
+      localStorage.setItem(KEY,JSON.stringify(all));
+    }catch(e){}
+  }
+  var btn=document.getElementById("check");
+  if(btn) btn.addEventListener("click", function(){ try{save();}catch(e){} });
+  if("serviceWorker" in navigator){
+    var sw=new URL("../sw.js", location.href);
+    var scope=new URL("../", location.href);
+    navigator.serviceWorker.register(sw.href, {scope: scope.href}).catch(function(){});
+  }
+})();
+</script>
+<!-- /PWA-SCRIPT -->
+</body>
+</html>
