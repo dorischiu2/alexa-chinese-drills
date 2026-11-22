@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Alexa 中文练习 – 23 Nov 2026 (HSK 5 · Day 13 · new cycle)</title>
+<!-- Daily-drill template: each target word = 字 + pinyin + 🔊 + 例句(CN) + English translation; Web Speech zh-CN. See README.md -->
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f4f7fb;color:#222;font-family:-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",Arial,sans-serif;font-size:20px;line-height:1.6}
+.wrap{max-width:760px;margin:0 auto;padding:16px}
+h1{font-size:1.4em;margin:.3em 0 0}
+.sub{color:#666;font-size:.8em;margin-bottom:1em}
+#timer{position:sticky;top:0;background:#fff;border-radius:12px;padding:8px 14px;box-shadow:0 2px 6px rgba(0,0,0,.08);font-size:.85em;z-index:5;display:flex;justify-content:space-between}
+section{background:#fff;border-radius:16px;padding:14px 16px;margin:16px 0;box-shadow:0 2px 6px rgba(0,0,0,.06)}
+h2{font-size:1.1em;margin:.2em 0 .5em}
+h2 small{font-weight:normal;color:#777;font-size:.7em}
+.item{padding:10px 8px;margin:8px 0;border-radius:12px;border:2px solid transparent}
+.q{margin-bottom:6px;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.q .qw{font-weight:600;font-size:1.15em}
+.q .py{color:#64748b;font-size:.85em;font-weight:normal}
+.exbox{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:10px 12px;margin:6px 0 10px;width:100%}
+.ex-cn{font-size:1.05em;margin-bottom:4px}
+.ex-en{color:#475569;font-size:.88em}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.optwrap{display:inline-flex;align-items:center;gap:4px}
+.opt{font-size:1em;padding:10px 16px;border-radius:12px;border:2px solid #c9d4e3;background:#f8fbff;cursor:pointer;min-width:64px;font-family:inherit}
+.opt.sel{background:#3b82f6;color:#fff;border-color:#3b82f6}
+input.txt{font-size:1.1em;padding:8px 12px;border:2px solid #c9d4e3;border-radius:12px;width:10em;max-width:100%;font-family:inherit}
+.passage{background:#fffbea;border-left:5px solid #f5c542;padding:10px 14px;border-radius:8px;font-size:1.05em}
+.pass-head{display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap}
+.item.ok{border-color:#22c55e;background:#effdf3}
+.item.bad{border-color:#ef4444;background:#fef1f1}
+.fb{margin-top:6px;font-size:.85em;display:none}
+.item.ok .fb,.item.bad .fb{display:block}
+.item.ok .fb{color:#15803d}.item.bad .fb{color:#b91c1c}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
+.big{font-size:1.1em;padding:14px 24px;border:none;border-radius:14px;background:#16a34a;color:#fff;cursor:pointer;font-family:inherit}
+.big.sec{background:#64748b}
+#result{display:none;font-size:1.2em;text-align:center;background:#fff;border-radius:16px;padding:16px;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.locked .opt,.locked input.txt{pointer-events:none}
+.say{flex-shrink:0;width:40px;height:40px;border-radius:50%;border:2px solid #93c5fd;background:#eff6ff;color:#1d4ed8;font-size:1.05em;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;padding:0;font-family:inherit;line-height:1;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.say:disabled{opacity:.45;cursor:default}
+.say.sm{width:32px;height:32px;font-size:.9em;border-width:1.5px}
+.say:active:not(:disabled){background:#dbeafe}
+.tip{font-size:.75em;color:#64748b;margin:.4em 0 0}
+</style>
+<!-- PWA-HEAD -->
+<meta name="theme-color" content="#3b82f6">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="中文练习">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<link rel="manifest" href="../manifest.webmanifest">
+<!-- /PWA-HEAD -->
+</head>
+<body>
+<!-- PWA-BAR -->
+<style>
+.pwa-bar{display:flex;align-items:center;gap:8px;background:#eef3f9;border-bottom:1px solid #dbe4ef;padding:6px 10px;padding-top:max(6px,env(safe-area-inset-top));font-family:-apple-system,"PingFang SC","Microsoft YaHei",Arial,sans-serif}
+.pwa-bar a{display:inline-flex;align-items:center;gap:6px;color:#1d4ed8;text-decoration:none;font-size:16px;font-weight:600;padding:8px 10px;border-radius:10px;min-height:44px;box-sizing:border-box}
+.pwa-bar a:active{background:#dbeafe}
+</style>
+<nav class="pwa-bar" aria-label="App navigation"><a href="../index.html">← 练习首页</a></nav>
+<!-- /PWA-BAR -->
+
+<div class="wrap">
+<h1>Alexa 中文练习 🌟 New HSK 5</h1>
+<div class="sub">23 Nov 2026 · Day 13 of a new cycle · New HSK 5 chunk 13 (合作–机构) · pinyin + 🔊 Putonghua · about 15 minutes · 45 questions<br>
+Each word has a short Chinese example and English translation. Tap 🔊 to hear. Answers stay hidden until Check.</div>
+<div id="timer"><span>⏱ <span id="clock">0:00</span></span><span id="prog"></span></div>
+<div id="quiz"></div>
+<div class="btns"><button class="big" id="check">✅ Check answers</button><button class="big sec" id="reset">↺ Try again</button></div>
+<div id="result"></div>
+</div>
+<script>
+var SECTIONS=[{"title":"一、看例句选意思 Meaning in context","hint":"read the sentence, tap the English meaning · 🔊","items":[{"t":"mc","q":"合作","o":["to overlook, to ignore","to cooperate","to breathe","to interact"],"a":1,"say":"合作","sent":"老师希望大家互相合作，把这次活动做好。","sent_en":"The teacher hoped that everyone would cooperate with one another and make this activity a success.","ex":"合作 hézuò — to cooperate · 老师希望大家互相合作，把这次活动做好。 / The teacher hoped that everyone would cooperate with one another and make this activity a success. (合作 is to work together; 互动 is to interact; 忽视 is to ignore)","py":"hézuò"},{"t":"mc","q":"黑","o":["red","gray color","black","gold"],"a":2,"say":"黑","sent":"地上除了红叶，旁边还有一点黑灰。","sent_en":"Besides the red leaves, there was also a bit of black ash on the ground.","ex":"黑 hēi — black · 地上除了红叶，旁边还有一点黑灰。 / Besides the red leaves, there was also a bit of black ash on the ground. (黑 is black; 红 is red; 灰 can mean ash or gray; 灰色 is the gray color)","py":"hēi"},{"t":"mc","q":"红","o":["red","black","gray","gold"],"a":0,"say":"红","sent":"地上的叶子有红的，也有灰色的。","sent_en":"On the ground there were red leaves, and also gray ones.","ex":"红 hóng — red · 地上的叶子有红的，也有灰色的。 / On the ground there were red leaves, and also gray ones. (红 is red; 黑 is black; 灰色 is gray)","py":"hóng"},{"t":"mc","q":"猴子","o":["butterfly","lake","hutong, alley","monkey"],"a":3,"say":"猴子","sent":"不远处的树上还坐着一只猴子。","sent_en":"Not far away, a monkey was still sitting in a tree.","ex":"猴子 hóuzi — monkey · 不远处的树上还坐着一只猴子。 / Not far away, a monkey was still sitting in a tree. (猴子 is a monkey; 子 is neutral tone; 蝴蝶 is a butterfly)","py":"hóuzi"},{"t":"mc","q":"厚度","o":["consequence, aftermath","thickness","exchange rate","chemistry"],"a":1,"say":"厚度","sent":"有人说这块木板的厚度不够，走上去不太安全。","sent_en":"Someone said that the thickness of this wooden board was not enough, and that it was not very safe to walk on it.","ex":"厚度 hòudù — thickness · 有人说这块木板的厚度不够，走上去不太安全。 / Someone said that the thickness of this wooden board was not enough, and that it was not very safe to walk on it. (厚度 is how thick something is; 后果 means consequence; both start with 后, but the second characters are different)","py":"hòudù"},{"t":"mc","q":"后果","o":["thickness","to ignore","consequence, aftermath","to recover"],"a":2,"say":"后果","sent":"谁也不能忽视安全，否则会有严重的后果。","sent_en":"No one should ignore safety, or there will be serious consequences.","ex":"后果 hòuguǒ — consequence, aftermath · 谁也不能忽视安全，否则会有严重的后果。 / No one should ignore safety, or there will be serious consequences. (后果 is the result that follows, often a bad one; 厚度 is thickness)","py":"hòuguǒ"},{"t":"mc","q":"忽视","o":["to overlook, to ignore","to breathe","to ease, to alleviate","to recover"],"a":0,"say":"忽视","sent":"谁也不能忽视安全，不然很容易摔倒。","sent_en":"No one should ignore safety, or it is very easy to fall over.","ex":"忽视 hūshì — to overlook, to ignore · 谁也不能忽视安全，不然很容易摔倒。 / No one should ignore safety, or it is very easy to fall over. (忽视 is to fail to pay attention to something; do not confuse 忽 with 呼 in 呼吸, to breathe)","py":"hūshì"},{"t":"mc","q":"呼吸","o":["to ignore","to interact","to recycle","to breathe"],"a":3,"say":"呼吸","sent":"Alexa深深地呼吸了一下新鲜的空气。","sent_en":"Alexa took a deep breath of the fresh air.","ex":"呼吸 hūxī — to breathe · Alexa深深地呼吸了一下新鲜的空气。 / Alexa took a deep breath of the fresh air. (呼吸 is to breathe; 忽视 is to ignore. 呼 and 忽 look a little alike, but they are different characters)","py":"hūxī"},{"t":"mc","q":"湖","o":["hutong, alley","lake","butterfly","hot pot"],"a":1,"say":"湖","sent":"他们走过胡同，来到湖边。","sent_en":"They walked through the hutong and came to the lakeside.","ex":"湖 hú — lake · 他们走过胡同，来到湖边。 / They walked through the hutong and came to the lakeside. (湖 is a lake; 胡同 is a narrow alley, especially in Beijing)","py":"hú"},{"t":"mc","q":"蝴蝶","o":["monkey","lake","butterfly","cucumber"],"a":2,"say":"蝴蝶","sent":"湖面上飞着几只蝴蝶，看起来十分美丽。","sent_en":"Several butterflies were flying over the lake, and they looked very beautiful.","ex":"蝴蝶 húdié — butterfly · 湖面上飞着几只蝴蝶，看起来十分美丽。 / Several butterflies were flying over the lake, and they looked very beautiful. (蝴蝶 is a butterfly; 猴子 is a monkey; 湖 is a lake)","py":"húdié"}]},{"title":"二、根据意思选词 Choose the word","hint":"read the English and the sentence, tap the Chinese word · 🔊","items":[{"t":"mc","q":"hutong, alley","o":["胡同","湖","户外","互动"],"a":0,"say":"胡同","sent":"他们先走过一条安静的胡同，来到湖边。","sent_en":"They first walked through a quiet hutong, and then came to the lakeside.","ex":"胡同 hútòng — hutong, alley · 他们先走过一条安静的胡同，来到湖边。 / They first walked through a quiet hutong, and then came to the lakeside. (胡同 is a narrow alley, especially in traditional Beijing; 湖 is a lake; 户外 means outdoors)","py":"hútòng"},{"t":"mc","q":"to interact","o":["合作","互动","忽视","恢复"],"a":1,"say":"互动","sent":"老师希望同学之间多互动，不要只顾自己。","sent_en":"The teacher hoped that classmates would interact more with one another, and not only look after themselves.","ex":"互动 hùdòng — to interact · 老师希望同学之间多互动，不要只顾自己。 / The teacher hoped that classmates would interact more with one another, and not only look after themselves. (互动 is to interact or respond to one another; 合作 is to cooperate / work together toward a goal)","py":"hùdòng"},{"t":"mc","q":"outdoors, outdoor","o":["湖","胡同","户外","火锅"],"a":2,"say":"户外","sent":"Alexa和伙伴一起参加了学校组织的一次户外活动。","sent_en":"Alexa and her partner took part in an outdoor activity organised by the school.","ex":"户外 hùwài — outdoors, outdoor · Alexa和伙伴一起参加了学校组织的一次户外活动。 / Alexa and her partner took part in an outdoor activity organised by the school. (户外 means outdoors, as in 户外活动; 湖 is a lake; 胡同 is a hutong)","py":"hùwài"},{"t":"mc","q":"to spend, to cost","o":["话费","汇率","回收","花费"],"a":3,"say":"花费","sent":"这次活动花费了不少时间和精力。","sent_en":"This activity cost quite a lot of time and energy.","ex":"花费 huāfèi — to spend, to cost · 这次活动花费了不少时间和精力。 / This activity cost quite a lot of time and energy. (花费 is to spend time, money or energy; 话费, with 4th-tone huà, is a telephone bill. The two words sound similar but the first tones and characters are different)","py":"huāfèi"},{"t":"mc","q":"slippery; to slide","o":["滑","划","化","灰"],"a":0,"say":"滑","sent":"小雨过后路很滑，大家走的时候都很小心。","sent_en":"After the light rain the path was very slippery, and everyone was very careful when walking.","ex":"滑 huá — slippery; to slide · 小雨过后路很滑，大家走的时候都很小心。 / After the light rain the path was very slippery, and everyone was very careful when walking. (also in textbook Lesson 4 子路背米; 滑 means slippery, or to slide; 划, also pronounced huá, means to row or to paddle, as in 划船)","py":"huá"},{"t":"mc","q":"to row, to paddle","o":["滑","划","挥","化"],"a":1,"say":"划","sent":"有的同学在湖上划船，画面十分美丽。","sent_en":"Some classmates were rowing a boat on the lake, and the scene was very beautiful.","ex":"划 huá — to row, to paddle · 有的同学在湖上划船，画面十分美丽。 / Some classmates were rowing a boat on the lake, and the scene was very beautiful. (here 划 is 2nd-tone huá, as in 划船; 滑 is also huá, but means slippery or to slide. In other words such as 计划, 划 is 4th-tone huà, but today’s word is the ‘row / paddle’ meaning)","py":"huá"},{"t":"mc","q":"telephone bill, call charges","o":["花费","汇率","话费","黄金"],"a":2,"say":"话费","sent":"这次活动花费了不少时间，不过话费倒是没怎么用。","sent_en":"This activity cost quite a lot of time, but they did not really use much on phone charges.","ex":"话费 huàfèi — telephone bill, call charges · 这次活动花费了不少时间，不过话费倒是没怎么用。 / This activity cost quite a lot of time, but they did not really use much on phone charges. (话费 is money spent on phone calls; 花费, with 1st-tone huā, is the general verb ‘to spend’ or ‘to cost’)","py":"huàfèi"}]},{"title":"三、填空 Fill the blank","hint":"choose the word that fits the sentence · 🔊","items":[{"t":"mc","q":"像绿化、现代化这样带____的词，都和改变有关。","o":["化","划","滑","灰"],"a":0,"say":"化","sent":"像绿化、现代化这样带“化”的词，都和改变有关。","sent_en":"Words such as 绿化 (to make greener) and 现代化 (to modernise) that carry this 化 all have to do with change.","ex":"化 huà — suffix indicating change, transformation; (to change) · 像绿化、现代化这样带“化”的词，都和改变有关。 / Words such as 绿化 (to make greener) and 现代化 (to modernise) that carry this 化 all have to do with change. (as a suffix, 化 often turns a word into ‘make / become …’, as in 现代化 / 绿化 / 美化; 划 means to row; 滑 means slippery)","py":"huà"},{"t":"mc","q":"有的同学在湖上划船，____十分美丽。","o":["话题","画面","化学","环节"],"a":1,"say":"画面","sent":"有的同学在湖上划船，画面十分美丽。","sent_en":"Some classmates were rowing a boat on the lake, and the scene was very beautiful.","ex":"画面 huàmiàn — scene, picture, screen · 有的同学在湖上划船，画面十分美丽。 / Some classmates were rowing a boat on the lake, and the scene was very beautiful. (画面 is what you see, like a scene or a picture on a screen; 话题 is a topic of discussion; 化学 is chemistry)","py":"huàmiàn"},{"t":"mc","q":"休息时讨论的____很多，大家说得很热闹。","o":["画面","话费","话题","化学"],"a":2,"say":"话题","sent":"休息时讨论的话题很多，大家说得很热闹。","sent_en":"During the break there were many topics of discussion, and everyone talked very lively.","ex":"话题 huàtí — topic, subject of discussion · 休息时讨论的话题很多，大家说得很热闹。 / During the break there were many topics of discussion, and everyone talked very lively. (话题 is a topic people talk about; 画面 is a scene or picture; 话费 is a phone bill)","py":"huàtí"},{"t":"mc","q":"有人问起____课的实验，老师耐心地作了回答。","o":["黄金","汇率","厚度","化学"],"a":3,"say":"化学","sent":"有人问起化学课的实验，老师耐心地作了回答。","sent_en":"Someone asked about the chemistry-class experiment, and the teacher answered patiently.","ex":"化学 huàxué — chemistry · 有人问起化学课的实验，老师耐心地作了回答。 / Someone asked about the chemistry-class experiment, and the teacher answered patiently. (化学 is the subject chemistry; it also contains the suffix 化. 黄金 is gold; 汇率 is the exchange rate)","py":"huàxué"},{"t":"mc","q":"老师希望大家在每个____都认真互动。","o":["环节","缓解","恢复","机构"],"a":0,"say":"环节","sent":"老师希望大家在每个环节都认真互动。","sent_en":"The teacher hoped that everyone would interact carefully at every stage.","ex":"环节 huánjié — link, segment · 老师希望大家在每个环节都认真互动。 / The teacher hoped that everyone would interact carefully at every stage. (环节 is a step or link in a process, as in 每个环节; 缓解 is to ease; 机构 is an organization)","py":"huánjié"},{"t":"mc","q":"Alexa深深地呼吸了一下，紧张的心情也____了。","o":["恢复","忽视","缓解","缓慢"],"a":2,"say":"缓解","sent":"Alexa深深地呼吸了一下，紧张的心情也缓解了。","sent_en":"Alexa took a deep breath, and her nervous feelings were eased too.","ex":"缓解 huǎnjiě — to ease, to alleviate · Alexa深深地呼吸了一下，紧张的心情也缓解了。 / Alexa took a deep breath, and her nervous feelings were eased too. (缓解 is to make something less serious or tense, as in 缓解压力 / 缓解心情; 恢复 is to recover or restore, as in 恢复体力; 缓慢 means slow)","py":"huǎnjiě"}]},{"title":"四、易混词 Look-alikes in sentences","hint":"choose the word that fits · 🔊","items":[{"t":"mc","q":"小雨过后路很滑，大家走得很____，谁也不能忽视安全。","o":["缓解","缓慢","恢复","忽视"],"a":1,"say":"缓慢","sent":"小雨过后路很滑，大家走得很缓慢，谁也不能忽视安全。","sent_en":"After the light rain the path was very slippery, and everyone walked very slowly; no one should ignore safety.","ex":"缓慢 huǎnmàn — slow · 小雨过后路很滑，大家走得很缓慢，谁也不能忽视安全。 / After the light rain the path was very slippery, and everyone walked very slowly; no one should ignore safety. (缓慢 describes a slow speed, as in 走得很缓慢; 缓解 is to ease or alleviate. Both start with 缓, but the second characters and meanings are different)","py":"huǎnmàn"},{"t":"mc","q":"中午火锅里有新鲜的____，吃起来又脆又香。","o":["黄瓜","黄金","蝴蝶","货物"],"a":0,"say":"黄瓜","sent":"中午火锅里有新鲜的黄瓜，吃起来又脆又香。","sent_en":"In the hot pot at noon there were fresh cucumbers, which tasted crisp and fragrant.","ex":"黄瓜 huángguā — cucumber · 中午火锅里有新鲜的黄瓜，吃起来又脆又香。 / In the hot pot at noon there were fresh cucumbers, which tasted crisp and fragrant. (黄瓜 is cucumber; 黄金 is gold. Both start with 黄, but they are very different things)","py":"huángguā"},{"t":"mc","q":"休息时，还有人想了解____价格，也想知道现在的汇率。","o":["黄瓜","灰色","黄金","火锅"],"a":2,"say":"黄金","sent":"休息时，还有人想了解黄金价格，也想知道现在的汇率。","sent_en":"During the break, someone also wanted to find out about the price of gold, and wanted to know the current exchange rate too.","ex":"黄金 huángjīn — gold · 休息时，还有人想了解黄金价格，也想知道现在的汇率。 / During the break, someone also wanted to find out about the price of gold, and wanted to know the current exchange rate too. (黄金 is gold; 黄瓜 is cucumber; 汇率 is the exchange rate, often for money of different countries)","py":"huángjīn"},{"t":"mc","q":"地上的叶子有红的，也有____的。","o":["汇率","恢复","回收","灰色"],"a":3,"say":"灰色","sent":"地上的叶子有红的，也有灰色的。","sent_en":"On the ground there were red leaves, and also gray ones.","ex":"灰色 huīsè — gray color; gray, ashen · 地上的叶子有红的，也有灰色的。 / On the ground there were red leaves, and also gray ones. (灰色 is the gray color; 灰 can mean ash, or gray. 挥 means to wave; 恢复 means to recover; 回收 means to recycle — these words all start with a similar sound, but the characters are different)","py":"huīsè"},{"t":"mc","q":"老师____了挥手，让大家休息一会儿。","o":["灰","挥","恢复","回收"],"a":1,"say":"挥","sent":"老师挥了挥手，让大家休息一会儿。","sent_en":"The teacher waved a hand, and told everyone to rest for a while.","ex":"挥 huī — to wave, to wield · 老师挥了挥手，让大家休息一会儿。 / The teacher waved a hand, and told everyone to rest for a while. (挥了挥手 is a common way to say ‘waved a hand’; 灰 means ash or gray, and has the same pinyin huī, but a completely different meaning)","py":"huī"},{"t":"mc","q":"老师提醒大家，用过的瓶子要____，不要随便扔掉。","o":["恢复","汇率","回收","灰色"],"a":2,"say":"回收","sent":"老师提醒大家，用过的瓶子要回收，不要随便扔掉。","sent_en":"The teacher reminded everyone that used bottles should be recycled, and should not be thrown away casually.","ex":"回收 huíshōu — to recycle · 老师提醒大家，用过的瓶子要回收，不要随便扔掉。 / The teacher reminded everyone that used bottles should be recycled, and should not be thrown away casually. (回收 is to take something back for reuse or recycling; 恢复 is to recover; 汇率 is the exchange rate. 回 is 2nd-tone huí, not 1st-tone huī)","py":"huíshōu"},{"t":"mc","q":"还有人想了解黄金价格，也想知道现在的____。","o":["汇率","回收","婚礼","恢复"],"a":0,"say":"汇率","sent":"还有人想了解黄金价格，也想知道现在的汇率。","sent_en":"Someone also wanted to find out about the price of gold, and wanted to know the current exchange rate too.","ex":"汇率 huìlǜ — exchange rate · 还有人想了解黄金价格，也想知道现在的汇率。 / Someone also wanted to find out about the price of gold, and wanted to know the current exchange rate too. (汇率 is the rate at which one currency is changed into another; 回收 is to recycle; 汇 is 4th-tone huì, not 2nd-tone huí)","py":"huìlǜ"}]},{"title":"五、默写 Dictation in context","hint":"🔊 listen, read the sentence, type the characters","items":[{"t":"text","q":"huīfù — to recover, to restore","say":"恢复","sent":"活动结束时，大家的体力渐渐____了。","sent_en":"When the activity ended, everyone’s physical strength gradually recovered.","a":["恢复"],"ex":"恢复 huīfù — to recover, to restore · 活动结束时，大家的体力渐渐恢复了。 / When the activity ended, everyone’s physical strength gradually recovered. (恢复 is to return to an earlier state, as in 恢复体力 / 恢复健康; 缓解 is to ease something that is still there, such as stress)"},{"t":"text","q":"hūnlǐ — wedding ceremony","say":"婚礼","sent":"吃完以后，有同学想去看一场____，或是先回学校。","sent_en":"After they had finished eating, some classmates wanted to go and watch a wedding, or else go back to school first.","a":["婚礼"],"ex":"婚礼 hūnlǐ — wedding ceremony · 吃完以后，有同学想去看一场婚礼，或是先回学校。 / After they had finished eating, some classmates wanted to go and watch a wedding, or else go back to school first. (婚礼 is a wedding ceremony; 礼 is 3rd-tone lǐ. 或是 means ‘or’)"},{"t":"text","q":"huǒ — measure word for groups","say":"伙","sent":"中午这一____同学一起吃了火锅。","sent_en":"At noon this group of classmates ate hot pot together.","a":["伙"],"ex":"伙 huǒ — measure word for groups · 中午这一伙同学一起吃了火锅。 / At noon this group of classmates ate hot pot together. (一伙人 / 一伙同学 means a group of people or classmates; 伙伴 means a companion or partner, and also starts with 伙)"},{"t":"text","q":"huǒbàn — companion, partner","say":"伙伴","sent":"这个星期天，Alexa和她的____一起参加了户外活动。","sent_en":"This Sunday, Alexa and her partner took part in the outdoor activity together.","a":["伙伴"],"ex":"伙伴 huǒbàn — companion, partner · 这个星期天，Alexa和她的伙伴一起参加了户外活动。 / This Sunday, Alexa and her partner took part in the outdoor activity together. (伙伴 is a companion or partner; 伙 by itself is often a measure word for a group)"},{"t":"text","q":"huǒguō — hot pot","say":"火锅","sent":"中午这一伙同学一起吃了____，菜里有新鲜的黄瓜。","sent_en":"At noon this group of classmates ate hot pot together, and there were fresh cucumbers among the dishes.","a":["火锅"],"ex":"火锅 huǒguō — hot pot · 中午这一伙同学一起吃了火锅，菜里有新鲜的黄瓜。 / At noon this group of classmates ate hot pot together, and there were fresh cucumbers among the dishes. (火锅 is the well-known Chinese hot-pot meal; 伙伴 is a partner; 伙 is a measure word for groups)"},{"t":"text","q":"jīgòu — organization, institution","say":"机构","sent":"一位在环保____工作的叔叔走过来说了几句话。","sent_en":"An uncle who worked at an environmental organization came over and said a few words.","a":["机构"],"ex":"机构 jīgòu — organization, institution · 一位在环保机构工作的叔叔走过来说了几句话。 / An uncle who worked at an environmental organization came over and said a few words. (机构 is an organization or institution, as in 环保机构 / 教育机构; 机器 means machine, which is a different word)"}]},{"title":"六、声调 Tones","hint":"tap the correct pinyin · 🔊","items":[{"t":"mc","q":"花费","o":["huàfèi","huāfèi","huáfèi","huǎfèi"],"a":1,"say":"花费","sent":"这次活动花费了不少时间和精力。","sent_en":"This activity cost quite a lot of time and energy.","ex":"花费 huāfèi — to spend, to cost (1st + 4th). 花 is 1st-tone huā, not 4th-tone huà (as in 话费). 费 is 4th-tone fèi. · 这次活动花费了不少时间和精力。 / This activity cost quite a lot of time and energy.","py":"huāfèi"},{"t":"mc","q":"回收","o":["huīshōu","huíshǒu","huíshōu","huìshōu"],"a":2,"say":"回收","sent":"老师提醒大家，用过的瓶子要回收。","sent_en":"The teacher reminded everyone that used bottles should be recycled.","ex":"回收 huíshōu — to recycle (2nd + 1st). 回 is 2nd-tone huí, not 1st-tone huī (as in 灰 / 挥) or 4th-tone huì (as in 汇率). 收 is 1st-tone shōu, not 3rd-tone shǒu. · 老师提醒大家，用过的瓶子要回收。 / The teacher reminded everyone that used bottles should be recycled.","py":"huíshōu"},{"t":"mc","q":"汇率","o":["huílǜ","huìlù","huìlǜ","huìshuài"],"a":2,"say":"汇率","sent":"还有人想了解黄金价格，也想知道现在的汇率。","sent_en":"Someone also wanted to find out about the price of gold, and wanted to know the current exchange rate too.","ex":"汇率 huìlǜ — exchange rate (4th + 4th). 汇 is 4th-tone huì, not 2nd-tone huí (as in 回收). 率 here is 4th-tone lǜ (‘rate’), not lù, and not shuài (as in 率先 / 率领). · 还有人想了解黄金价格，也想知道现在的汇率。 / Someone also wanted to find out about the price of gold, and wanted to know the current exchange rate too.","py":"huìlǜ"},{"t":"mc","q":"或许","o":["huòxū","huòxú","huòxù","huòxǔ"],"a":3,"say":"或许","sent":"Alexa想，或许明天还可以再来。","sent_en":"Alexa thought that perhaps they could come again tomorrow.","ex":"或许 huòxǔ — perhaps, maybe (4th + 3rd). 或 is 4th-tone huò. 许 is 3rd-tone xǔ, not 1st-tone xū, 2nd-tone xú, or 4th-tone xù. Do not confuse 或许 (perhaps) with 或是 (or). · Alexa想，或许明天还可以再来。 / Alexa thought that perhaps they could come again tomorrow.","py":"huòxǔ"}]},{"title":"七、阅读 Reading","hint":"🔊 listen to the passage, then tap","passage":"这个星期天，Alexa和她的伙伴一起参加了学校组织的一次户外活动。老师希望大家互相合作，在每个环节都认真互动。他们先走过一条安静的胡同，来到湖边。湖面上飞着几只蝴蝶，不远处的树上还坐着一只猴子。地上的叶子有红的，也有灰色的；旁边还有一点黑灰。小雨过后路很滑，大家走得很缓慢，谁也不能忽视安全，否则会有严重的后果。Alexa深深地呼吸了一下，紧张的心情也缓解了。有的同学在湖上划船，画面十分美丽。老师挥了挥手，让大家休息一会儿。休息时讨论的话题很多：有人问起化学课的实验，有人说这块木板的厚度不够，还有人想了解黄金价格，也想知道现在的汇率。老师提醒大家，用过的瓶子要回收。中午这一伙同学一起吃了火锅，菜里有新鲜的黄瓜。有人点了红汤，有人点了清汤。这次活动花费了不少时间和精力，不过话费倒是没怎么用。吃完以后，有同学想去看一场婚礼，或是先回学校。Alexa想，或许明天还可以再来。一位在环保机构工作的叔叔走过来说，运输货物时也要注意保护环境；像绿化、现代化这样带“化”的词，都和改变有关。活动结束时，大家的体力渐渐恢复。老师笑着说：“今天合作得真好！”","items":[{"t":"mc","q":"关于这次户外活动开始时的情况，哪一项正确？","o":["这个星期天，Alexa和她的伙伴一起参加了学校组织的一次户外活动。老师希望大家互相合作，在每个环节都认真互动。他们先走过一条安静的胡同，来到湖边。湖面上飞着几只蝴蝶，不远处的树上还坐着一只猴子。地上的叶子有红的，也有灰色的；旁边还有一点黑灰。小雨过后路很滑，大家走得很缓慢，谁也不能忽视安全，否则会有严重的后果。","这次活动是在室内举行的，大家不用合作，一路上跑得很快。","树上没有猴子，路上也不滑，所以大家忽视了安全。"],"a":0,"ex":"这个星期天，Alexa和她的伙伴一起参加了学校组织的一次户外活动。老师希望大家互相合作，在每个环节都认真互动。他们先走过一条安静的胡同，来到湖边。湖面上飞着几只蝴蝶，不远处的树上还坐着一只猴子。地上的叶子有红的，也有灰色的；旁边还有一点黑灰。小雨过后路很滑，大家走得很缓慢，谁也不能忽视安全，否则会有严重的后果。 / This Sunday, Alexa and her partner took part in an outdoor activity organised by the school. The teacher hoped that everyone would cooperate with one another and interact carefully at every stage. They first walked through a quiet hutong and came to the lakeside. Several butterflies were flying over the lake, and not far away a monkey was still sitting in a tree. On the ground there were red leaves, and also gray ones; beside them there was also a bit of black ash. After the light rain the path was very slippery, and everyone walked very slowly; no one should ignore safety, or there would be serious consequences."},{"t":"mc","q":"休息前后，同学们做了什么、谈了什么？","o":["没有人划船，老师也没有挥手，大家只谈了火锅。","Alexa深深地呼吸了一下，紧张的心情也缓解了。有的同学在湖上划船，画面十分美丽。老师挥了挥手，让大家休息一会儿。休息时讨论的话题很多：有人问起化学课的实验，有人说这块木板的厚度不够，还有人想了解黄金价格，也想知道现在的汇率。老师提醒大家，用过的瓶子要回收。","老师让大家把瓶子扔掉，不要回收，也别谈化学和汇率。"],"a":1,"ex":"Alexa深深地呼吸了一下，紧张的心情也缓解了。有的同学在湖上划船，画面十分美丽。老师挥了挥手，让大家休息一会儿。休息时讨论的话题很多：有人问起化学课的实验，有人说这块木板的厚度不够，还有人想了解黄金价格，也想知道现在的汇率。老师提醒大家，用过的瓶子要回收。 / Alexa took a deep breath, and her nervous feelings were eased too. Some classmates were rowing a boat on the lake, and the scene was very beautiful. The teacher waved a hand and told everyone to rest for a while. During the break there were many topics of discussion: someone asked about the chemistry-class experiment, someone said that the thickness of this wooden board was not enough, and someone also wanted to find out about the price of gold and to know the current exchange rate. The teacher reminded everyone that used bottles should be recycled."},{"t":"mc","q":"中午吃饭时发生了什么？","o":["中午大家只喝了茶，谁也没有吃火锅，也没有黄瓜。","这次活动完全没有花费时间，话费却用得很多。","中午这一伙同学一起吃了火锅，菜里有新鲜的黄瓜。有人点了红汤，有人点了清汤。这次活动花费了不少时间和精力，不过话费倒是没怎么用。"],"a":2,"ex":"中午这一伙同学一起吃了火锅，菜里有新鲜的黄瓜。有人点了红汤，有人点了清汤。这次活动花费了不少时间和精力，不过话费倒是没怎么用。 / At noon this group of classmates ate hot pot together, and there were fresh cucumbers among the dishes. Some people ordered a red (spicy) broth, and some ordered a light broth. This activity cost quite a lot of time and energy, but they did not really use much on phone charges."},{"t":"mc","q":"吃完以后，有的同学和Alexa有什么打算？","o":["吃完以后，所有人都立刻回家睡觉，谁也不想再来了。","吃完以后，有同学想去看一场婚礼，或是先回学校。Alexa想，或许明天还可以再来。","没有人提起婚礼，Alexa也确定明天一定不会再来。"],"a":1,"ex":"吃完以后，有同学想去看一场婚礼，或是先回学校。Alexa想，或许明天还可以再来。 / After they had finished eating, some classmates wanted to go and watch a wedding, or else go back to school first. Alexa thought that perhaps they could come again tomorrow. (或是 means ‘or’; 或许 means ‘perhaps / maybe’)"},{"t":"mc","q":"那位叔叔说了什么？活动结束时情况如何？","o":["一位在环保机构工作的叔叔走过来说，运输货物时也要注意保护环境；像绿化、现代化这样带“化”的词，都和改变有关。活动结束时，大家的体力渐渐恢复。老师笑着说：“今天合作得真好！”","那位叔叔在银行工作，只谈了话费，没谈货物和环保。老师说今天合作得很差。","活动结束时大家更加疲劳，完全没有恢复，老师也没有说话。"],"a":0,"ex":"一位在环保机构工作的叔叔走过来说，运输货物时也要注意保护环境；像绿化、现代化这样带“化”的词，都和改变有关。活动结束时，大家的体力渐渐恢复。老师笑着说：“今天合作得真好！” / An uncle who worked at an environmental organization came over and said that when transporting goods one should also take care to protect the environment; words such as 绿化 and 现代化 that carry this 化 all have to do with change. When the activity ended, everyone’s physical strength gradually recovered. The teacher said with a smile, “You cooperated really well today!”"}]}];
+
+/* TEMPLATE: every target word needs 字+拼音+🔊 + 例句 CN + EN translation. See README.md */
+var L="ABCDEFG",ALL=[],start=Date.now(),done=false,timerId,zhVoice=null;
+function pickZhVoice(){
+  if(!window.speechSynthesis)return null;
+  var vs=speechSynthesis.getVoices()||[];
+  var pref=vs.filter(function(v){return /^zh(-|_|$)/i.test(v.lang)||/Chinese|中文|普通话|国语/i.test(v.name);});
+  var cn=pref.filter(function(v){return /CN|China|普通话|Chinese\s*\(China\)/i.test(v.lang+" "+v.name);});
+  return cn[0]||pref[0]||null;
+}
+function refreshVoice(){zhVoice=pickZhVoice();}
+if(window.speechSynthesis){refreshVoice();speechSynthesis.onvoiceschanged=refreshVoice;}
+function hasHan(s){return /[\u4e00-\u9fff]/.test(s||"");}
+function speakZh(text,btn){
+  if(!text||!window.speechSynthesis)return;
+  try{speechSynthesis.cancel();}catch(e){}
+  var u=new SpeechSynthesisUtterance(String(text));
+  u.lang="zh-CN";u.rate=0.9;u.pitch=1;
+  if(!zhVoice)refreshVoice();
+  if(zhVoice)u.voice=zhVoice;
+  if(btn)btn.disabled=true;
+  var unlock=function(){if(btn)btn.disabled=false;};
+  u.onend=unlock;u.onerror=unlock;
+  setTimeout(unlock, Math.max(1800, String(text).length*420));
+  speechSynthesis.speak(u);
+}
+function speakBtn(text, small){
+  var b=el("button", small?"say sm":"say");
+  b.type="button";b.setAttribute("aria-label","Pronounce");b.textContent="🔊";
+  b.onclick=function(ev){if(ev&&ev.stopPropagation)ev.stopPropagation();if(ev&&ev.preventDefault)ev.preventDefault();speakZh(text,b);return false;};
+  return b;
+}
+function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e}
+function addExample(box, it){
+  if(!it.sent && !it.sent_en) return;
+  var ex=el("div","exbox");
+  if(it.sent){
+    var row=el("div","ex-cn");
+    row.appendChild(document.createTextNode("例句："+it.sent+" "));
+    if(hasHan(it.sent)) row.appendChild(speakBtn(it.sent.replace(/____/g, it.say||it.q||""), true));
+    ex.appendChild(row);
+  }
+  if(it.sent_en) ex.appendChild(el("div","ex-en","EN: "+it.sent_en));
+  box.appendChild(ex);
+}
+function build(){
+ var quiz=document.getElementById("quiz");quiz.innerHTML="";ALL=[];
+ SECTIONS.forEach(function(s){
+  var sec=el("section");var h=el("h2",null,s.title+" ");h.appendChild(el("small",null,"("+s.hint+")"));sec.appendChild(h);
+  if(s.passage){
+    var ph=el("div","pass-head");ph.appendChild(el("strong",null,"短文"));ph.appendChild(speakBtn(s.passage,false));
+    ph.appendChild(el("span","tip","tap 🔊 to hear the whole passage"));
+    sec.appendChild(ph);
+    sec.appendChild(el("div","passage",s.passage));
+  }
+  s.items.forEach(function(it,i){
+   var box=el("div","item");
+   var qrow=el("div","q");
+   qrow.appendChild(el("span",null,(i+1)+". "));
+   var qw=el("span","qw",it.q);qrow.appendChild(qw);
+   if(it.py) qrow.appendChild(el("span","py","("+it.py+")"));
+   if(it.py_hint) qrow.appendChild(el("span","py","拼音提示: "+it.py_hint));
+   var sayText=it.say||(hasHan(it.q)&&!/____/.test(it.q)?it.q:null);
+   if(sayText && !/____/.test(String(it.q))) qrow.appendChild(speakBtn(sayText,false));
+   box.appendChild(qrow);
+   addExample(box, it);
+   var rec={it:it,box:box,sel:null,input:null};
+   if(it.t==="mc"){
+     var o=el("div","opts");
+     it.o.forEach(function(txt,j){
+       var wrap=el("span","optwrap");
+       var b=el("button","opt",L[j]+". "+txt);b.type="button";
+       b.onclick=function(){if(done)return;rec.sel=j;[].forEach.call(o.querySelectorAll(".opt"),function(c){c.classList.remove("sel")});b.classList.add("sel");prog()};
+       wrap.appendChild(b);
+       if(hasHan(txt) && String(txt).length<=8) wrap.appendChild(speakBtn(txt,true));
+       o.appendChild(wrap);
+     });
+     box.appendChild(o);
+   } else {
+     var row=el("div","optwrap");
+     var inp=el("input","txt");inp.type="text";inp.setAttribute("autocomplete","off");inp.setAttribute("autocapitalize","off");inp.setAttribute("spellcheck","false");inp.placeholder="写汉字…";inp.oninput=prog;rec.input=inp;
+     row.appendChild(inp);
+     if(it.say){var lb=speakBtn(it.say,false);lb.title="Listen (does not show the answer)";row.appendChild(lb);row.appendChild(el("span","tip","听发音"));}
+     box.appendChild(row);
+   }
+   var fb=el("div","fb");box.appendChild(fb);rec.fb=fb;sec.appendChild(box);ALL.push(rec);
+  });
+  quiz.appendChild(sec);
+ });
+ prog();
+}
+function norm(s){return String(s||"").replace(/[\s\u3000]+/g,"")}
+function isCorrect(rec){var it=rec.it;if(it.t==="mc")return rec.sel===it.a;var v=norm(rec.input.value);return it.a.some(function(a){return norm(a)===v})}
+function answered(rec){return rec.it.t==="mc"?rec.sel!==null:norm(rec.input.value)!==""}
+function prog(){var a=ALL.filter(answered).length;document.getElementById("prog").textContent="已答 "+a+" / "+ALL.length}
+function fmt(ms){var s=Math.round(ms/1000);return Math.floor(s/60)+":"+("0"+s%60).slice(-2)}
+function tick(){document.getElementById("clock").textContent=fmt(Date.now()-start)}
+function check(){
+ if(done)return;done=true;clearInterval(timerId);var score=0;
+ ALL.forEach(function(rec){var ok=isCorrect(rec),it=rec.it;rec.box.classList.add(ok?"ok":"bad");
+  var ans=it.t==="mc"?L[it.a]+". "+it.o[it.a]:it.a[0];
+  rec.fb.textContent=ok?"✔ 对了！":"✘ Correct answer: "+ans+" — "+it.ex;if(ok)score++});
+ document.getElementById("quiz").classList.add("locked");
+ var t=fmt(Date.now()-start),pct=Math.round(score/ALL.length*100);
+ var msg=pct===100?"太棒了！🎉":pct>=80?"很好！👍":pct>=60?"不错，继续加油！💪":"加油！Let's review the red ones. 📚";
+ var r=document.getElementById("result");r.style.display="block";r.innerHTML="";
+ r.appendChild(el("div",null,"得分 Score: "+score+" / "+ALL.length+" ("+pct+"%)"));
+ r.appendChild(el("div",null,"用时 Time: "+t));r.appendChild(el("div",null,msg));
+ try{r.scrollIntoView({behavior:"smooth"});}catch(e){}
+ return {score:score,total:ALL.length,time:t};
+}
+function reset(){done=false;try{speechSynthesis&&speechSynthesis.cancel();}catch(e){}
+ document.getElementById("quiz").classList.remove("locked");document.getElementById("result").style.display="none";start=Date.now();clearInterval(timerId);timerId=setInterval(tick,1000);tick();build();try{window.scrollTo(0,0);}catch(e){}}
+document.getElementById("check").onclick=check;
+document.getElementById("reset").onclick=reset;
+build();timerId=setInterval(tick,1000);tick();
+
+</script>
+<!-- PWA-SCRIPT -->
+<script>
+(function(){
+  var KEY="alexa-chinese-scores";
+  function drillId(){
+    var m=(location.pathname||"").match(/([^/]+)\.html$/i);
+    return m?decodeURIComponent(m[1]):null;
+  }
+  function save(){
+    var r=document.getElementById("result");
+    if(!r)return;
+    var text=r.textContent||"";
+    var m=text.match(/Score:\s*(\d+)\s*\/\s*(\d+)/i)||text.match(/得分[^0-9]*(\d+)\s*\/\s*(\d+)/);
+    if(!m)return;
+    var id=drillId();
+    if(!id)return;
+    var score=+m[1], total=+m[2];
+    if(!(total>0) || !(score>=0) || score>total)return;
+    try{
+      var all={};
+      try{all=JSON.parse(localStorage.getItem(KEY)||"{}")||{};}catch(e){all={};}
+      if(typeof all!=="object"||Array.isArray(all)) all={};
+      all[id]={score:score,total:total,at:new Date().toISOString()};
+      localStorage.setItem(KEY,JSON.stringify(all));
+    }catch(e){}
+  }
+  var btn=document.getElementById("check");
+  if(btn) btn.addEventListener("click", function(){ try{save();}catch(e){} });
+  if("serviceWorker" in navigator){
+    var sw=new URL("../sw.js", location.href);
+    var scope=new URL("../", location.href);
+    navigator.serviceWorker.register(sw.href, {scope: scope.href}).catch(function(){});
+  }
+})();
+</script>
+<!-- /PWA-SCRIPT -->
+</body>
+</html>
