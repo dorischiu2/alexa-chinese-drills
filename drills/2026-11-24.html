@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Alexa 中文练习 – 24 Nov 2026 (HSK 5 · Day 14 · new cycle)</title>
+<!-- Daily-drill template: each target word = 字 + pinyin + 🔊 + 例句(CN) + English translation; Web Speech zh-CN. See README.md -->
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f4f7fb;color:#222;font-family:-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",Arial,sans-serif;font-size:20px;line-height:1.6}
+.wrap{max-width:760px;margin:0 auto;padding:16px}
+h1{font-size:1.4em;margin:.3em 0 0}
+.sub{color:#666;font-size:.8em;margin-bottom:1em}
+#timer{position:sticky;top:0;background:#fff;border-radius:12px;padding:8px 14px;box-shadow:0 2px 6px rgba(0,0,0,.08);font-size:.85em;z-index:5;display:flex;justify-content:space-between}
+section{background:#fff;border-radius:16px;padding:14px 16px;margin:16px 0;box-shadow:0 2px 6px rgba(0,0,0,.06)}
+h2{font-size:1.1em;margin:.2em 0 .5em}
+h2 small{font-weight:normal;color:#777;font-size:.7em}
+.item{padding:10px 8px;margin:8px 0;border-radius:12px;border:2px solid transparent}
+.q{margin-bottom:6px;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.q .qw{font-weight:600;font-size:1.15em}
+.q .py{color:#64748b;font-size:.85em;font-weight:normal}
+.exbox{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:10px 12px;margin:6px 0 10px;width:100%}
+.ex-cn{font-size:1.05em;margin-bottom:4px}
+.ex-en{color:#475569;font-size:.88em}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.optwrap{display:inline-flex;align-items:center;gap:4px}
+.opt{font-size:1em;padding:10px 16px;border-radius:12px;border:2px solid #c9d4e3;background:#f8fbff;cursor:pointer;min-width:64px;font-family:inherit}
+.opt.sel{background:#3b82f6;color:#fff;border-color:#3b82f6}
+input.txt{font-size:1.1em;padding:8px 12px;border:2px solid #c9d4e3;border-radius:12px;width:10em;max-width:100%;font-family:inherit}
+.passage{background:#fffbea;border-left:5px solid #f5c542;padding:10px 14px;border-radius:8px;font-size:1.05em}
+.pass-head{display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap}
+.item.ok{border-color:#22c55e;background:#effdf3}
+.item.bad{border-color:#ef4444;background:#fef1f1}
+.fb{margin-top:6px;font-size:.85em;display:none}
+.item.ok .fb,.item.bad .fb{display:block}
+.item.ok .fb{color:#15803d}.item.bad .fb{color:#b91c1c}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
+.big{font-size:1.1em;padding:14px 24px;border:none;border-radius:14px;background:#16a34a;color:#fff;cursor:pointer;font-family:inherit}
+.big.sec{background:#64748b}
+#result{display:none;font-size:1.2em;text-align:center;background:#fff;border-radius:16px;padding:16px;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.locked .opt,.locked input.txt{pointer-events:none}
+.say{flex-shrink:0;width:40px;height:40px;border-radius:50%;border:2px solid #93c5fd;background:#eff6ff;color:#1d4ed8;font-size:1.05em;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;padding:0;font-family:inherit;line-height:1;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.say:disabled{opacity:.45;cursor:default}
+.say.sm{width:32px;height:32px;font-size:.9em;border-width:1.5px}
+.say:active:not(:disabled){background:#dbeafe}
+.tip{font-size:.75em;color:#64748b;margin:.4em 0 0}
+</style>
+<!-- PWA-HEAD -->
+<meta name="theme-color" content="#3b82f6">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="中文练习">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<link rel="manifest" href="../manifest.webmanifest">
+<!-- /PWA-HEAD -->
+</head>
+<body>
+<!-- PWA-BAR -->
+<style>
+.pwa-bar{display:flex;align-items:center;gap:8px;background:#eef3f9;border-bottom:1px solid #dbe4ef;padding:6px 10px;padding-top:max(6px,env(safe-area-inset-top));font-family:-apple-system,"PingFang SC","Microsoft YaHei",Arial,sans-serif}
+.pwa-bar a{display:inline-flex;align-items:center;gap:6px;color:#1d4ed8;text-decoration:none;font-size:16px;font-weight:600;padding:8px 10px;border-radius:10px;min-height:44px;box-sizing:border-box}
+.pwa-bar a:active{background:#dbeafe}
+</style>
+<nav class="pwa-bar" aria-label="App navigation"><a href="../index.html">← 练习首页</a></nav>
+<!-- /PWA-BAR -->
+
+<div class="wrap">
+<h1>Alexa 中文练习 🌟 New HSK 5</h1>
+<div class="sub">24 Nov 2026 · Day 14 of a new cycle · New HSK 5 chunk 14 (激烈–架) · pinyin + 🔊 Putonghua · about 15 minutes · 45 questions<br>
+Each word has a short Chinese example and English translation. Tap 🔊 to hear. Answers stay hidden until Check.</div>
+<div id="timer"><span>⏱ <span id="clock">0:00</span></span><span id="prog"></span></div>
+<div id="quiz"></div>
+<div class="btns"><button class="big" id="check">✅ Check answers</button><button class="big sec" id="reset">↺ Try again</button></div>
+<div id="result"></div>
+</div>
+<script>
+var SECTIONS=[{"title":"一、看例句选意思 Meaning in context","hint":"read the sentence, tap the English meaning · 🔊","items":[{"t":"mc","q":"激烈","o":["to concentrate","fierce, intense","to pass an exam","to gather, to assemble"],"a":1,"say":"激烈","sent":"学校要举行一场极其激烈的机器人比赛。","sent_en":"The school was going to hold an extremely intense robot competition.","ex":"激烈 jīliè — fierce, intense · 学校要举行一场极其激烈的机器人比赛。 / The school was going to hold an extremely intense robot competition. (激烈 describes a strong, intense contest or argument; 集中 means to concentrate)","py":"jīliè"},{"t":"mc","q":"机器","o":["robot","computer","machine","household appliances"],"a":2,"say":"机器","sent":"教室里的机器和计算机都已经准备好了。","sent_en":"The machines and computers in the classroom were already ready.","ex":"机器 jīqì — machine · 教室里的机器和计算机都已经准备好了。 / The machines and computers in the classroom were already ready. (机器 is a machine; 机器人 is a robot; 计算机 is a computer; 家电 means household appliances)","py":"jīqì"},{"t":"mc","q":"机器人","o":["robot","machine","computer","muscle"],"a":0,"say":"机器人","sent":"选手们用自己的技能控制机器人。","sent_en":"The contestants used their own skills to control the robots.","ex":"机器人 jīqìrén — robot · 选手们用自己的技能控制机器人。 / The contestants used their own skills to control the robots. (机器人 is a robot, a machine that looks or acts somewhat like a person; 机器 is a machine in general)","py":"jīqìrén"},{"t":"mc","q":"肌肉","o":["disease","memory","skill","muscle"],"a":3,"say":"肌肉","sent":"选手们的肌肉都绷得很紧。","sent_en":"The contestants' muscles were all tensed very tightly.","ex":"肌肉 jīròu — muscle · 选手们的肌肉都绷得很紧。 / The contestants' muscles were all tensed very tightly. (肌肉 is muscle; do not confuse it with 疾病, disease, which also starts with jí)","py":"jīròu"},{"t":"mc","q":"及","o":["level, grade","and, as well as","to pass an exam","collection, episode"],"a":1,"say":"及","sent":"教室里的机器、计算机及一架模型都已经准备好了。","sent_en":"The machines, computers and a model in the classroom were already ready.","ex":"及 jí — and, as well as · 教室里的机器、计算机及一架模型都已经准备好了。 / The machines, computers and a model in the classroom were already ready. (及 is a slightly formal way to say 'and / as well as'; 及格 means to pass an exam; 级 means a level or grade)","py":"jí"},{"t":"mc","q":"级","o":["and, as well as","to pass an exam","level, grade","to gather, to assemble"],"a":2,"say":"级","sent":"老师让五年级的同学先在大厅集合。","sent_en":"The teacher asked the fifth-grade students to assemble in the hall first.","ex":"级 jí — level, grade · 老师让五年级的同学先在大厅集合。 / The teacher asked the fifth-grade students to assemble in the hall first. (级 is a grade or level, as in 五年级 or 提高一级; 及 means 'and'; 及格 means to pass an exam)","py":"jí"},{"t":"mc","q":"集","o":["level, grade","collection, volume; episode","to gather, to assemble","collective, group"],"a":1,"say":"集","sent":"片子的第一集记载了一位科学家的故事。","sent_en":"The first episode of the film recorded the story of a scientist.","ex":"集 jí — collection, volume; episode · 片子的第一集记载了一位科学家的故事。 / The first episode of the film recorded the story of a scientist. (集 can mean a collection, or an episode of a film or series, as in 第一集; 集合 means to gather; 集体 means a group or collective)","py":"jí"},{"t":"mc","q":"疾病","o":["emergency treatment","muscle","disease","memory"],"a":2,"say":"疾病","sent":"有的疾病来得很快，可能需要去做急诊。","sent_en":"Some diseases come on very quickly, and one may need to go for emergency treatment.","ex":"疾病 jíbìng — disease · 有的疾病来得很快，可能需要去做急诊。 / Some diseases come on very quickly, and one may need to go for emergency treatment. (疾病 is illness or disease; 急诊 is emergency treatment, or an emergency case)","py":"jíbìng"},{"t":"mc","q":"及格","o":["to pass an exam","and, as well as","to urgently need","to concentrate"],"a":0,"say":"及格","sent":"及格只是最低要求。","sent_en":"Passing is only the minimum requirement.","ex":"及格 jígé — to pass an exam · 及格只是最低要求。 / Passing is only the minimum requirement. (及格 means to reach the pass mark; 及 by itself means 'and / as well as')","py":"jígé"},{"t":"mc","q":"集合","o":["collective, group","to concentrate","to pass an exam","to gather, to assemble"],"a":3,"say":"集合","sent":"老师让五年级的同学先在大厅集合。","sent_en":"The teacher asked the fifth-grade students to assemble in the hall first.","ex":"集合 jíhé — to gather, to assemble · 老师让五年级的同学先在大厅集合。 / The teacher asked the fifth-grade students to assemble in the hall first. (集合 is to gather in one place; 集体 is a group or collective; 集中 means to concentrate)","py":"jíhé"}]},{"title":"二、根据意思选词 Choose the word","hint":"read the English and the sentence, tap the Chinese word · 🔊","items":[{"t":"mc","q":"soon, about to","o":["即将","急忙","极其","集中"],"a":0,"say":"即将","sent":"比赛即将开始。","sent_en":"The competition was about to start.","ex":"即将 jíjiāng — soon, about to · 比赛即将开始。 / The competition was about to start. (即将 means something is just about to happen; 急忙 means hurriedly)","py":"jíjiāng"},{"t":"mc","q":"hurriedly, hastily","o":["即将","急忙","急需","急诊"],"a":1,"say":"急忙","sent":"大家急忙走进大厅。","sent_en":"Everyone hurried into the hall.","ex":"急忙 jímáng — hurriedly, hastily · 大家急忙走进大厅。 / Everyone hurried into the hall. (急忙 describes doing something in a hurry; 即将 means 'about to'; 急需 means to need something urgently)","py":"jímáng"},{"t":"mc","q":"extremely","o":["急忙","即将","极其","集中"],"a":2,"say":"极其","sent":"学校要举行一场极其激烈的机器人比赛。","sent_en":"The school was going to hold an extremely intense robot competition.","ex":"极其 jíqí — extremely · 学校要举行一场极其激烈的机器人比赛。 / The school was going to hold an extremely intense robot competition. (极其 is a strong 'extremely', often used before an adjective such as 激烈)","py":"jíqí"},{"t":"mc","q":"collective, group","o":["集合","集中","集","集体"],"a":3,"say":"集体","sent":"Alexa和集体的队员站在一起。","sent_en":"Alexa stood together with the teammates of the group.","ex":"集体 jítǐ — collective, group · Alexa和集体的队员站在一起。 / Alexa stood together with the teammates of the group. (集体 is a group or collective, as in 集体活动 / 集体的队员; 集合 is the verb 'to assemble')","py":"jítǐ"},{"t":"mc","q":"to urgently need","o":["急需","急诊","急忙","及格"],"a":0,"say":"急需","sent":"学校急需一些常用药品。","sent_en":"The school urgently needed some commonly used medicines.","ex":"急需 jíxū — to urgently need · 学校急需一些常用药品。 / The school urgently needed some commonly used medicines. (急需 is to need something very urgently; 急诊 is emergency medical treatment)","py":"jíxū"},{"t":"mc","q":"emergency treatment; emergency case","o":["疾病","急诊","急需","记忆"],"a":1,"say":"急诊","sent":"有的疾病来得很快，可能需要去做急诊。","sent_en":"Some diseases come on very quickly, and one may need to go for emergency treatment.","ex":"急诊 jízhěn — emergency treatment; emergency case · 有的疾病来得很快，可能需要去做急诊。 / Some diseases come on very quickly, and one may need to go for emergency treatment. (急诊 is emergency treatment, or the emergency department, as in 急诊科; 疾病 is disease; 急需 is to need something urgently)","py":"jízhěn"},{"t":"mc","q":"to concentrate; concentrated","o":["集合","集体","集中","集"],"a":2,"say":"集中","sent":"选手们必须集中精神，用自己的技能控制机器人。","sent_en":"The contestants had to concentrate, and use their own skills to control the robots.","ex":"集中 jízhōng — to concentrate; concentrated · 选手们必须集中精神，用自己的技能控制机器人。 / The contestants had to concentrate, and use their own skills to control the robots. (集中精神 means to focus one's mind; 集合 is to gather; 集体 is a group)","py":"jízhōng"}]},{"title":"三、填空 Fill the blank","hint":"choose the word that fits the sentence · 🔊","items":[{"t":"mc","q":"大厅里有点儿____，大家走的时候都很小心。","o":["挤","系","集中","急忙"],"a":0,"say":"挤","sent":"大厅里有点儿挤，大家走的时候都很小心。","sent_en":"The hall was a bit crowded, and everyone was very careful when walking.","ex":"挤 jǐ — to crowd, to squeeze; crowded · 大厅里有点儿挤，大家走的时候都很小心。 / The hall was a bit crowded, and everyone was very careful when walking. (挤 can be an adjective meaning crowded, or a verb meaning to squeeze / to crowd; the tone is 3rd-tone jǐ, not 2nd-tone jí)","py":"jǐ"},{"t":"mc","q":"Alexa____上号码牌，和集体的队员站在一起。","o":["挤","系","集","级"],"a":1,"say":"系","sent":"Alexa系上号码牌，和集体的队员站在一起。","sent_en":"Alexa tied on her number tag and stood together with the teammates of the group.","ex":"系 jì — to tie, to fasten · Alexa系上号码牌，和集体的队员站在一起。 / Alexa tied on her number tag and stood together with the teammates of the group. (In this chunk 系 is 4th-tone jì, 'to tie / to fasten', as in 系鞋带 / 系上号码牌. Later you will also meet 系 xì, meaning a department or a system — same character, different reading.)","py":"jì"},{"t":"mc","q":"假如动作慢了，就很难打破上个____的纪录。","o":["记录","纪录","季度","纪念日"],"a":2,"say":"季度","sent":"假如动作慢了，就很难打破上个季度的纪录。","sent_en":"If their movements were slow, it would be very hard to break last quarter's record.","ex":"季度 jìdù — quarter (of a year) · 假如动作慢了，就很难打破上个季度的纪录。 / If their movements were slow, it would be very hard to break last quarter's record. (一个季度 is three months, as in 上个季度 / 这个季度; 纪录, with 糸 on the left of 纪, is an achievement record)","py":"jìdù"},{"t":"mc","q":"裁判认真____选手的表现。","o":["纪录","记载","记忆","记录"],"a":3,"say":"记录","sent":"裁判认真记录选手的表现。","sent_en":"The referee carefully recorded the contestants' performance.","ex":"记录 jìlù — to record; record · 裁判认真记录选手的表现。 / The referee carefully recorded the contestants' performance. (记录, with 讠 on the left of 记, is to write something down, or that written record; 纪录 is an achievement record, as in 打破纪录; 记载 is to record in a document or in history — also in textbook Lesson 5 济南的泉水)","py":"jìlù"},{"t":"mc","q":"假如动作慢了，就很难打破上个季度的____。","o":["纪录","记录","记载","纪录片"],"a":0,"say":"纪录","sent":"假如动作慢了，就很难打破上个季度的纪录。","sent_en":"If their movements were slow, it would be very hard to break last quarter's record.","ex":"纪录 jìlù — record as in achievement · 假如动作慢了，就很难打破上个季度的纪录。 / If their movements were slow, it would be very hard to break last quarter's record. (纪录 is a best result, as in 世界纪录 / 打破纪录; 记录 is to write something down. They have the same pinyin, but the first characters are different: 纪 vs 记)","py":"jìlù"},{"t":"mc","q":"比赛结束后，大家一起看了一部____。","o":["纪录","记录","纪录片","纪念日"],"a":2,"say":"纪录片","sent":"比赛结束后，大家一起看了一部纪录片。","sent_en":"After the competition ended, everyone watched a documentary together.","ex":"纪录片 jìlùpiàn — documentary · 比赛结束后，大家一起看了一部纪录片。 / After the competition ended, everyone watched a documentary together. (纪录片 is a documentary film; 片 is 4th-tone piàn. 纪录 by itself is an achievement record)","py":"jìlùpiàn"}]},{"title":"四、易混词 Look-alikes in sentences","hint":"choose the word that fits · 🔊","items":[{"t":"mc","q":"选手们必须集中精神，用自己的____控制机器人。","o":["记忆","技能","计算","机器"],"a":1,"say":"技能","sent":"选手们必须集中精神，用自己的技能控制机器人。","sent_en":"The contestants had to concentrate and use their own skills to control the robots.","ex":"技能 jìnéng — skill · 选手们必须集中精神，用自己的技能控制机器人。 / The contestants had to concentrate and use their own skills to control the robots. (技能 is a skill or ability that you can use; 记忆 is memory; 计算 is to calculate)","py":"jìnéng"},{"t":"mc","q":"人们用这种方式____那位科学家。","o":["记忆","记载","纪念","纪念日"],"a":2,"say":"纪念","sent":"人们用这种方式纪念那位科学家。","sent_en":"People commemorated that scientist in this way.","ex":"纪念 jìniàn — to commemorate; commemoration, souvenir · 人们用这种方式纪念那位科学家。 / People commemorated that scientist in this way. (纪念 is to honour the memory of a person or event; 纪念日 is an anniversary; 记忆 is memory in the mind)","py":"jìniàn"},{"t":"mc","q":"今天正好是学校的____。","o":["纪念","记忆","记载","纪念日"],"a":3,"say":"纪念日","sent":"今天正好是学校的纪念日。","sent_en":"Today happened to be the school's anniversary.","ex":"纪念日 jìniànrì — anniversary · 今天正好是学校的纪念日。 / Today happened to be the school's anniversary. (纪念日 is a special date for remembering something, an anniversary; 纪念 is the verb 'to commemorate')","py":"jìniànrì"},{"t":"mc","q":"裁判再用计算机快速____分数。","o":["计算","计算机","记录","记忆"],"a":0,"say":"计算","sent":"裁判再用计算机快速计算分数。","sent_en":"The referee then used a computer to calculate the scores quickly.","ex":"计算 jìsuàn — to calculate · 裁判再用计算机快速计算分数。 / The referee then used a computer to calculate the scores quickly. (计算 is the verb 'to calculate'; 计算机 is the machine, a computer)","py":"jìsuàn"},{"t":"mc","q":"教室里的机器和____都已经准备好了。","o":["计算","机器","计算机","机器人"],"a":2,"say":"计算机","sent":"教室里的机器和计算机都已经准备好了。","sent_en":"The machines and computers in the classroom were already ready.","ex":"计算机 jìsuànjī — computer · 教室里的机器和计算机都已经准备好了。 / The machines and computers in the classroom were already ready. (计算机 is a computer, literally a 'calculating machine'; 机器 is a machine; 机器人 is a robot; 计算 is the verb 'to calculate')","py":"jìsuànjī"},{"t":"mc","q":"他也希望同学们加深对科学的____和理解。","o":["纪念","记载","纪录","记忆"],"a":3,"say":"记忆","sent":"他也希望同学们加深对科学的记忆和理解。","sent_en":"He also hoped that the students would deepen their memory and understanding of science.","ex":"记忆 jìyì — to remember; memory · 他也希望同学们加深对科学的记忆和理解。 / He also hoped that the students would deepen their memory and understanding of science. (记忆 is what you remember, or the act of remembering; 纪念 is to commemorate; 记载 is to record in writing)","py":"jìyì"},{"t":"mc","q":"片子的第一集____了一位科学家的故事。","o":["记载","记录","纪录","记忆"],"a":0,"say":"记载","sent":"片子的第一集记载了一位科学家的故事。","sent_en":"The first episode of the film recorded the story of a scientist.","ex":"记载 jìzǎi — to record · 片子的第一集记载了一位科学家的故事。 / The first episode of the film recorded the story of a scientist. (also in textbook Lesson 5 济南的泉水; 记载 often means to record something in a document, a book or a film. 记录 is to write something down; 纪录 is an achievement record; 记忆 is memory)","py":"jìzǎi"}]},{"title":"五、默写 Dictation in context","hint":"🔊 listen, read the sentence, type the characters","items":[{"t":"text","q":"jiābīn — guest, honored guest","say":"嘉宾","sent":"中场时，一位____来到现场。","sent_en":"During the mid-event break, an honored guest arrived at the site.","a":["嘉宾"],"ex":"嘉宾 jiābīn — guest, honored guest · 中场时，一位嘉宾来到现场。 / During the mid-event break, an honored guest arrived at the site. (嘉宾 is an invited or honored guest, as in 特别嘉宾; 家电 means household appliances, and also starts with jiā)"},{"t":"text","q":"jiādiàn — household appliances","say":"家电","sent":"他改进了____和机器。","sent_en":"He improved household appliances and machines.","a":["家电"],"ex":"家电 jiādiàn — household appliances · 他改进了家电和机器。 / He improved household appliances and machines. (家电 is short for 家用电器, things such as a fridge or a washing machine; 家务 means household chores)"},{"t":"text","q":"jiāgōng — to process","say":"加工","sent":"有的机器人会把材料____得更加平整。","sent_en":"Some robots could process the materials so that they became even smoother.","a":["加工"],"ex":"加工 jiāgōng — to process · 有的机器人会把材料加工得更加平整。 / Some robots could process the materials so that they became even smoother. (加工 is to process or further work on a material; 加热 is to heat; 加深 is to deepen; 加速 is to speed up — all start with 加)"},{"t":"text","q":"jiārè — to heat","say":"加热","sent":"有的机器人会给零件____。","sent_en":"Some robots would heat the parts.","a":["加热"],"ex":"加热 jiārè — to heat · 有的机器人会给零件加热。 / Some robots would heat the parts. (加热 is to make something hotter; 加深 is to deepen; 加速 is to speed up; 加工 is to process)"},{"t":"text","q":"jiāwù — household chores","say":"家务","sent":"回到家，Alexa做了一些____。","sent_en":"After she got home, Alexa did some household chores.","a":["家务"],"ex":"家务 jiāwù — household chores · 回到家，Alexa做了一些家务。 / After she got home, Alexa did some household chores. (做家务 means to do housework, such as cleaning or cooking; 家电 means household appliances)"},{"t":"text","q":"jiǎrú — if","say":"假如","sent":"____动作慢了，就很难打破上个季度的纪录。","sent_en":"If their movements were slow, it would be very hard to break last quarter's record.","a":["假如"],"ex":"假如 jiǎrú — if · 假如动作慢了，就很难打破上个季度的纪录。 / If their movements were slow, it would be very hard to break last quarter's record. (假如 means 'if', like 如果; 甲 is 3rd-tone jiǎ and can mean 'first', as in 甲等 / 甲组, or 'armor')"}]},{"title":"六、声调 Tones","hint":"tap the correct pinyin · 🔊","items":[{"t":"mc","q":"挤","o":["jí","jī","jǐ","jì"],"a":2,"say":"挤","sent":"大厅里有点儿挤，大家走的时候都很小心。","sent_en":"The hall was a bit crowded, and everyone was very careful when walking.","ex":"挤 jǐ — 3rd tone · 大厅里有点儿挤，大家走的时候都很小心。 / The hall was a bit crowded, and everyone was very careful when walking. (挤 is jǐ, 3rd tone. Many words in today's list are 2nd-tone jí, such as 及, 级 and 集, so listen carefully.)","py":"jǐ"},{"t":"mc","q":"及格","o":["jìgé","jígé","jǐgé","jígě"],"a":1,"say":"及格","sent":"及格只是最低要求。","sent_en":"Passing is only the minimum requirement.","ex":"及格 jígé — 2nd tone + 2nd tone · 及格只是最低要求。 / Passing is only the minimum requirement. (Both syllables are 2nd tone: jí-gé. Watch the second syllable: it is gé, not 3rd-tone gě.)","py":"jígé"},{"t":"mc","q":"假如","o":["jiàrú","jiārú","jiárú","jiǎrú"],"a":3,"say":"假如","sent":"假如动作慢了，就很难打破上个季度的纪录。","sent_en":"If their movements were slow, it would be very hard to break last quarter's record.","ex":"假如 jiǎrú — 3rd tone + 2nd tone · 假如动作慢了，就很难打破上个季度的纪录。 / If their movements were slow, it would be very hard to break last quarter's record. (假 here is 3rd-tone jiǎ; 如 is 2nd-tone rú. 架 is 4th-tone jià, a different word.)","py":"jiǎrú"},{"t":"mc","q":"架","o":["jià","jiā","jiá","jiǎ"],"a":0,"say":"架","sent":"回到家，Alexa又把奖杯放到了架上。","sent_en":"After she got home, Alexa also put the trophy onto the shelf.","ex":"架 jià — 4th tone · 回到家，Alexa又把奖杯放到了架上。 / After she got home, Alexa also put the trophy onto the shelf. (架 is 4th-tone jià: a shelf or frame, or a measure word for planes and some machines, as in 一架模型. 甲 and the 假 in 假如 are both 3rd-tone jiǎ.)","py":"jià"}]},{"title":"七、阅读 Reading","hint":"🔊 listen to the passage, then tap","passage":"这个星期五，学校要举行一场极其激烈的机器人比赛。老师让五年级的同学先在大厅集合。大厅里有点儿挤，大家急忙走进来，Alexa系上号码牌，和集体的队员站在一起。教室里的机器、计算机及一架模型都已经准备好了。比赛即将开始。选手们必须集中精神，用自己的技能控制机器人。有的机器人会给零件加热，有的会把材料加工得更加平整，还有的能突然加速。场上的竞争十分激烈，选手们的肌肉都绷得很紧。假如动作慢了，就很难打破上个季度的纪录。裁判认真记录选手的表现，再用计算机快速计算分数。及格只是最低要求，大家真正想做的，是把技能再提高一级。中场时，一位嘉宾来到现场。他是急诊科的医生。他告诉同学，学校急需一些常用药品；运动前要爱护身体，因为有的疾病来得很快，可能需要去做急诊。他也希望同学们加深对科学的记忆和理解。比赛结束后，大家一起看了一部纪录片。片子的第一集记载了一位科学家的故事：他改进了家电和机器，人们用这种方式纪念他。今天正好是学校的纪念日。纪录片里还提到，古人用“甲”表示第一。回到家，Alexa做了一些家务，又把奖杯放到了架上。她想，这次比赛让她学到了很多。","items":[{"t":"mc","q":"比赛开始前，现场是怎样的？","o":["这个星期五，学校要举行一场极其激烈的机器人比赛。老师让五年级的同学先在大厅集合。大厅里有点儿挤，大家急忙走进来，Alexa系上号码牌，和集体的队员站在一起。教室里的机器、计算机及一架模型都已经准备好了。","这次比赛是在星期六举行的，大厅很空，大家走得很慢，谁也没有系号码牌。","老师让同学们先回家，教室里没有机器，也没有计算机。"],"a":0,"ex":"这个星期五，学校要举行一场极其激烈的机器人比赛。老师让五年级的同学先在大厅集合。大厅里有点儿挤，大家急忙走进来，Alexa系上号码牌，和集体的队员站在一起。教室里的机器、计算机及一架模型都已经准备好了。 / This Friday, the school was going to hold an extremely intense robot competition. The teacher asked the fifth-grade students to assemble in the hall first. The hall was a bit crowded, and everyone hurried in; Alexa tied on her number tag and stood together with the teammates of the group. The machines, computers and a model in the classroom were already ready."},{"t":"mc","q":"比赛进行时，选手和裁判做了什么？","o":["选手们不必集中精神，机器人也不会加热或加速，裁判没有记录成绩。","比赛即将开始。选手们必须集中精神，用自己的技能控制机器人。有的机器人会给零件加热，有的会把材料加工得更加平整，还有的能突然加速。场上的竞争十分激烈，选手们的肌肉都绷得很紧。假如动作慢了，就很难打破上个季度的纪录。裁判认真记录选手的表现，再用计算机快速计算分数。及格只是最低要求，大家真正想做的，是把技能再提高一级。","及格已经是最高目标，大家并不想再提高技能。"],"a":1,"ex":"比赛即将开始。选手们必须集中精神，用自己的技能控制机器人。有的机器人会给零件加热，有的会把材料加工得更加平整，还有的能突然加速。场上的竞争十分激烈，选手们的肌肉都绷得很紧。假如动作慢了，就很难打破上个季度的纪录。裁判认真记录选手的表现，再用计算机快速计算分数。及格只是最低要求，大家真正想做的，是把技能再提高一级。 / The competition was about to start. The contestants had to concentrate and use their own skills to control the robots. Some robots would heat the parts, some could process the materials so that they became even smoother, and others could suddenly speed up. The competition on the field was very intense, and the contestants' muscles were all tensed very tightly. If their movements were slow, it would be very hard to break last quarter's record. The referee carefully recorded the contestants' performance, and then used a computer to calculate the scores quickly. Passing was only the minimum requirement; what everyone really wanted to do was to raise their skills by one more level."},{"t":"mc","q":"那位嘉宾说了什么？","o":["那位嘉宾是计算机老师，他只谈了家电，没有谈药品和疾病。","他让同学们不要加深对科学的记忆，也不必爱护身体。","中场时，一位嘉宾来到现场。他是急诊科的医生。他告诉同学，学校急需一些常用药品；运动前要爱护身体，因为有的疾病来得很快，可能需要去做急诊。他也希望同学们加深对科学的记忆和理解。"],"a":2,"ex":"中场时，一位嘉宾来到现场。他是急诊科的医生。他告诉同学，学校急需一些常用药品；运动前要爱护身体，因为有的疾病来得很快，可能需要去做急诊。他也希望同学们加深对科学的记忆和理解。 / During the mid-event break, an honored guest arrived at the site. He was a doctor in the emergency department. He told the students that the school urgently needed some commonly used medicines; before sport they should take care of their bodies, because some diseases come on very quickly, and one may need to go for emergency treatment. He also hoped that the students would deepen their memory and understanding of science."},{"t":"mc","q":"比赛结束后，大家从纪录片里了解到什么？","o":["大家没有看电影，纪录片里也没有提到科学家或纪念日。","比赛结束后，大家一起看了一部纪录片。片子的第一集记载了一位科学家的故事：他改进了家电和机器，人们用这种方式纪念他。今天正好是学校的纪念日。纪录片里还提到，古人用“甲”表示第一。","纪录片只谈了家务，没有记载科学家的故事，也不是学校的纪念日。"],"a":1,"ex":"比赛结束后，大家一起看了一部纪录片。片子的第一集记载了一位科学家的故事：他改进了家电和机器，人们用这种方式纪念他。今天正好是学校的纪念日。纪录片里还提到，古人用“甲”表示第一。 / After the competition ended, everyone watched a documentary together. The first episode of the film recorded the story of a scientist: he improved household appliances and machines, and people commemorated him in this way. Today happened to be the school's anniversary. The documentary also mentioned that the ancients used 甲 to mean 'first'."},{"t":"mc","q":"Alexa回到家以后做了什么？","o":["回到家，Alexa做了一些家务，又把奖杯放到了架上。她想，这次比赛让她学到了很多。","回到家，Alexa什么家务也没做，并把奖杯放在了地上。","Alexa没有回家，她想这次比赛什么也没学到。"],"a":0,"ex":"回到家，Alexa做了一些家务，又把奖杯放到了架上。她想，这次比赛让她学到了很多。 / After she got home, Alexa did some household chores, and also put the trophy onto the shelf. She thought that she had learned a lot from this competition."}]}];
+
+/* TEMPLATE: every target word needs 字+拼音+🔊 + 例句 CN + EN translation. See README.md */
+var L="ABCDEFG",ALL=[],start=Date.now(),done=false,timerId,zhVoice=null;
+function pickZhVoice(){
+  if(!window.speechSynthesis)return null;
+  var vs=speechSynthesis.getVoices()||[];
+  var pref=vs.filter(function(v){return /^zh(-|_|$)/i.test(v.lang)||/Chinese|中文|普通话|国语/i.test(v.name);});
+  var cn=pref.filter(function(v){return /CN|China|普通话|Chinese\s*\(China\)/i.test(v.lang+" "+v.name);});
+  return cn[0]||pref[0]||null;
+}
+function refreshVoice(){zhVoice=pickZhVoice();}
+if(window.speechSynthesis){refreshVoice();speechSynthesis.onvoiceschanged=refreshVoice;}
+function hasHan(s){return /[\u4e00-\u9fff]/.test(s||"");}
+function speakZh(text,btn){
+  if(!text||!window.speechSynthesis)return;
+  try{speechSynthesis.cancel();}catch(e){}
+  var u=new SpeechSynthesisUtterance(String(text));
+  u.lang="zh-CN";u.rate=0.9;u.pitch=1;
+  if(!zhVoice)refreshVoice();
+  if(zhVoice)u.voice=zhVoice;
+  if(btn)btn.disabled=true;
+  var unlock=function(){if(btn)btn.disabled=false;};
+  u.onend=unlock;u.onerror=unlock;
+  setTimeout(unlock, Math.max(1800, String(text).length*420));
+  speechSynthesis.speak(u);
+}
+function speakBtn(text, small){
+  var b=el("button", small?"say sm":"say");
+  b.type="button";b.setAttribute("aria-label","Pronounce");b.textContent="🔊";
+  b.onclick=function(ev){if(ev&&ev.stopPropagation)ev.stopPropagation();if(ev&&ev.preventDefault)ev.preventDefault();speakZh(text,b);return false;};
+  return b;
+}
+function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e}
+function addExample(box, it){
+  if(!it.sent && !it.sent_en) return;
+  var ex=el("div","exbox");
+  if(it.sent){
+    var row=el("div","ex-cn");
+    row.appendChild(document.createTextNode("例句："+it.sent+" "));
+    if(hasHan(it.sent)) row.appendChild(speakBtn(it.sent.replace(/____/g, it.say||it.q||""), true));
+    ex.appendChild(row);
+  }
+  if(it.sent_en) ex.appendChild(el("div","ex-en","EN: "+it.sent_en));
+  box.appendChild(ex);
+}
+function build(){
+ var quiz=document.getElementById("quiz");quiz.innerHTML="";ALL=[];
+ SECTIONS.forEach(function(s){
+  var sec=el("section");var h=el("h2",null,s.title+" ");h.appendChild(el("small",null,"("+s.hint+")"));sec.appendChild(h);
+  if(s.passage){
+    var ph=el("div","pass-head");ph.appendChild(el("strong",null,"短文"));ph.appendChild(speakBtn(s.passage,false));
+    ph.appendChild(el("span","tip","tap 🔊 to hear the whole passage"));
+    sec.appendChild(ph);
+    sec.appendChild(el("div","passage",s.passage));
+  }
+  s.items.forEach(function(it,i){
+   var box=el("div","item");
+   var qrow=el("div","q");
+   qrow.appendChild(el("span",null,(i+1)+". "));
+   var qw=el("span","qw",it.q);qrow.appendChild(qw);
+   if(it.py) qrow.appendChild(el("span","py","("+it.py+")"));
+   if(it.py_hint) qrow.appendChild(el("span","py","拼音提示: "+it.py_hint));
+   var sayText=it.say||(hasHan(it.q)&&!/____/.test(it.q)?it.q:null);
+   if(sayText && !/____/.test(String(it.q))) qrow.appendChild(speakBtn(sayText,false));
+   box.appendChild(qrow);
+   addExample(box, it);
+   var rec={it:it,box:box,sel:null,input:null};
+   if(it.t==="mc"){
+     var o=el("div","opts");
+     it.o.forEach(function(txt,j){
+       var wrap=el("span","optwrap");
+       var b=el("button","opt",L[j]+". "+txt);b.type="button";
+       b.onclick=function(){if(done)return;rec.sel=j;[].forEach.call(o.querySelectorAll(".opt"),function(c){c.classList.remove("sel")});b.classList.add("sel");prog()};
+       wrap.appendChild(b);
+       if(hasHan(txt) && String(txt).length<=8) wrap.appendChild(speakBtn(txt,true));
+       o.appendChild(wrap);
+     });
+     box.appendChild(o);
+   } else {
+     var row=el("div","optwrap");
+     var inp=el("input","txt");inp.type="text";inp.setAttribute("autocomplete","off");inp.setAttribute("autocapitalize","off");inp.setAttribute("spellcheck","false");inp.placeholder="写汉字…";inp.oninput=prog;rec.input=inp;
+     row.appendChild(inp);
+     if(it.say){var lb=speakBtn(it.say,false);lb.title="Listen (does not show the answer)";row.appendChild(lb);row.appendChild(el("span","tip","听发音"));}
+     box.appendChild(row);
+   }
+   var fb=el("div","fb");box.appendChild(fb);rec.fb=fb;sec.appendChild(box);ALL.push(rec);
+  });
+  quiz.appendChild(sec);
+ });
+ prog();
+}
+function norm(s){return String(s||"").replace(/[\s\u3000]+/g,"")}
+function isCorrect(rec){var it=rec.it;if(it.t==="mc")return rec.sel===it.a;var v=norm(rec.input.value);return it.a.some(function(a){return norm(a)===v})}
+function answered(rec){return rec.it.t==="mc"?rec.sel!==null:norm(rec.input.value)!==""}
+function prog(){var a=ALL.filter(answered).length;document.getElementById("prog").textContent="已答 "+a+" / "+ALL.length}
+function fmt(ms){var s=Math.round(ms/1000);return Math.floor(s/60)+":"+("0"+s%60).slice(-2)}
+function tick(){document.getElementById("clock").textContent=fmt(Date.now()-start)}
+function check(){
+ if(done)return;done=true;clearInterval(timerId);var score=0;
+ ALL.forEach(function(rec){var ok=isCorrect(rec),it=rec.it;rec.box.classList.add(ok?"ok":"bad");
+  var ans=it.t==="mc"?L[it.a]+". "+it.o[it.a]:it.a[0];
+  rec.fb.textContent=ok?"✔ 对了！":"✘ Correct answer: "+ans+" — "+it.ex;if(ok)score++});
+ document.getElementById("quiz").classList.add("locked");
+ var t=fmt(Date.now()-start),pct=Math.round(score/ALL.length*100);
+ var msg=pct===100?"太棒了！🎉":pct>=80?"很好！👍":pct>=60?"不错，继续加油！💪":"加油！Let's review the red ones. 📚";
+ var r=document.getElementById("result");r.style.display="block";r.innerHTML="";
+ r.appendChild(el("div",null,"得分 Score: "+score+" / "+ALL.length+" ("+pct+"%)"));
+ r.appendChild(el("div",null,"用时 Time: "+t));r.appendChild(el("div",null,msg));
+ try{r.scrollIntoView({behavior:"smooth"});}catch(e){}
+ return {score:score,total:ALL.length,time:t};
+}
+function reset(){done=false;try{speechSynthesis&&speechSynthesis.cancel();}catch(e){}
+ document.getElementById("quiz").classList.remove("locked");document.getElementById("result").style.display="none";start=Date.now();clearInterval(timerId);timerId=setInterval(tick,1000);tick();build();try{window.scrollTo(0,0);}catch(e){}}
+document.getElementById("check").onclick=check;
+document.getElementById("reset").onclick=reset;
+build();timerId=setInterval(tick,1000);tick();
+
+</script>
+<!-- PWA-SCRIPT -->
+<script>
+(function(){
+  var KEY="alexa-chinese-scores";
+  function drillId(){
+    var m=(location.pathname||"").match(/([^/]+)\.html$/i);
+    return m?decodeURIComponent(m[1]):null;
+  }
+  function save(){
+    var r=document.getElementById("result");
+    if(!r)return;
+    var text=r.textContent||"";
+    var m=text.match(/Score:\s*(\d+)\s*\/\s*(\d+)/i)||text.match(/得分[^0-9]*(\d+)\s*\/\s*(\d+)/);
+    if(!m)return;
+    var id=drillId();
+    if(!id)return;
+    var score=+m[1], total=+m[2];
+    if(!(total>0) || !(score>=0) || score>total)return;
+    try{
+      var all={};
+      try{all=JSON.parse(localStorage.getItem(KEY)||"{}")||{};}catch(e){all={};}
+      if(typeof all!=="object"||Array.isArray(all)) all={};
+      all[id]={score:score,total:total,at:new Date().toISOString()};
+      localStorage.setItem(KEY,JSON.stringify(all));
+    }catch(e){}
+  }
+  var btn=document.getElementById("check");
+  if(btn) btn.addEventListener("click", function(){ try{save();}catch(e){} });
+  if("serviceWorker" in navigator){
+    var sw=new URL("../sw.js", location.href);
+    var scope=new URL("../", location.href);
+    navigator.serviceWorker.register(sw.href, {scope: scope.href}).catch(function(){});
+  }
+})();
+</script>
+<!-- /PWA-SCRIPT -->
+</body>
+</html>
