@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Alexa 中文练习 – 25 Nov 2026 (HSK 5 · Day 15 · new cycle)</title>
+<!-- Daily-drill template: each target word = 字 + pinyin + 🔊 + 例句(CN) + English translation; Web Speech zh-CN. See README.md -->
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f4f7fb;color:#222;font-family:-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",Arial,sans-serif;font-size:20px;line-height:1.6}
+.wrap{max-width:760px;margin:0 auto;padding:16px}
+h1{font-size:1.4em;margin:.3em 0 0}
+.sub{color:#666;font-size:.8em;margin-bottom:1em}
+#timer{position:sticky;top:0;background:#fff;border-radius:12px;padding:8px 14px;box-shadow:0 2px 6px rgba(0,0,0,.08);font-size:.85em;z-index:5;display:flex;justify-content:space-between}
+section{background:#fff;border-radius:16px;padding:14px 16px;margin:16px 0;box-shadow:0 2px 6px rgba(0,0,0,.06)}
+h2{font-size:1.1em;margin:.2em 0 .5em}
+h2 small{font-weight:normal;color:#777;font-size:.7em}
+.item{padding:10px 8px;margin:8px 0;border-radius:12px;border:2px solid transparent}
+.q{margin-bottom:6px;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.q .qw{font-weight:600;font-size:1.15em}
+.q .py{color:#64748b;font-size:.85em;font-weight:normal}
+.exbox{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:10px 12px;margin:6px 0 10px;width:100%}
+.ex-cn{font-size:1.05em;margin-bottom:4px}
+.ex-en{color:#475569;font-size:.88em}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.optwrap{display:inline-flex;align-items:center;gap:4px}
+.opt{font-size:1em;padding:10px 16px;border-radius:12px;border:2px solid #c9d4e3;background:#f8fbff;cursor:pointer;min-width:64px;font-family:inherit}
+.opt.sel{background:#3b82f6;color:#fff;border-color:#3b82f6}
+input.txt{font-size:1.1em;padding:8px 12px;border:2px solid #c9d4e3;border-radius:12px;width:10em;max-width:100%;font-family:inherit}
+.passage{background:#fffbea;border-left:5px solid #f5c542;padding:10px 14px;border-radius:8px;font-size:1.05em}
+.pass-head{display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap}
+.item.ok{border-color:#22c55e;background:#effdf3}
+.item.bad{border-color:#ef4444;background:#fef1f1}
+.fb{margin-top:6px;font-size:.85em;display:none}
+.item.ok .fb,.item.bad .fb{display:block}
+.item.ok .fb{color:#15803d}.item.bad .fb{color:#b91c1c}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
+.big{font-size:1.1em;padding:14px 24px;border:none;border-radius:14px;background:#16a34a;color:#fff;cursor:pointer;font-family:inherit}
+.big.sec{background:#64748b}
+#result{display:none;font-size:1.2em;text-align:center;background:#fff;border-radius:16px;padding:16px;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.locked .opt,.locked input.txt{pointer-events:none}
+.say{flex-shrink:0;width:40px;height:40px;border-radius:50%;border:2px solid #93c5fd;background:#eff6ff;color:#1d4ed8;font-size:1.05em;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;padding:0;font-family:inherit;line-height:1;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.say:disabled{opacity:.45;cursor:default}
+.say.sm{width:32px;height:32px;font-size:.9em;border-width:1.5px}
+.say:active:not(:disabled){background:#dbeafe}
+.tip{font-size:.75em;color:#64748b;margin:.4em 0 0}
+</style>
+<!-- PWA-HEAD -->
+<meta name="theme-color" content="#3b82f6">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="中文练习">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<link rel="manifest" href="../manifest.webmanifest">
+<!-- /PWA-HEAD -->
+</head>
+<body>
+<!-- PWA-BAR -->
+<style>
+.pwa-bar{display:flex;align-items:center;gap:8px;background:#eef3f9;border-bottom:1px solid #dbe4ef;padding:6px 10px;padding-top:max(6px,env(safe-area-inset-top));font-family:-apple-system,"PingFang SC","Microsoft YaHei",Arial,sans-serif}
+.pwa-bar a{display:inline-flex;align-items:center;gap:6px;color:#1d4ed8;text-decoration:none;font-size:16px;font-weight:600;padding:8px 10px;border-radius:10px;min-height:44px;box-sizing:border-box}
+.pwa-bar a:active{background:#dbeafe}
+</style>
+<nav class="pwa-bar" aria-label="App navigation"><a href="../index.html">← 练习首页</a></nav>
+<!-- /PWA-BAR -->
+
+<div class="wrap">
+<h1>Alexa 中文练习 🌟 New HSK 5</h1>
+<div class="sub">25 Nov 2026 · Day 15 of a new cycle · New HSK 5 chunk 15 (驾驶–结) · pinyin + 🔊 Putonghua · about 15 minutes · 45 questions<br>
+Each word has a short Chinese example and English translation. Tap 🔊 to hear. Answers stay hidden until Check.</div>
+<div id="timer"><span>⏱ <span id="clock">0:00</span></span><span id="prog"></span></div>
+<div id="quiz"></div>
+<div class="btns"><button class="big" id="check">✅ Check answers</button><button class="big sec" id="reset">↺ Try again</button></div>
+<div id="result"></div>
+</div>
+<script>
+var SECTIONS=[{"title":"一、看例句选意思 Meaning in context","hint":"read the sentence, tap the English meaning · 🔊","items":[{"t":"mc","q":"驾驶","o":["to cut","to drive","to pick up","to establish"],"a":1,"say":"驾驶","py":"jiàshǐ","sent":"他一面学习驾驶，一面在工地上工作。","sent_en":"He learned to drive on the one hand, and worked on the construction site on the other.","ex":"驾驶 jiàshǐ — to drive · 他一面学习驾驶，一面在工地上工作。 / He learned to drive on the one hand, and worked on the construction site on the other. (also in textbook Lesson 3 人生有选择; 驾驶 means to drive a car or another vehicle; 驾照 is a driver's license)"},{"t":"mc","q":"驾照","o":["resume, CV","teaching materials","driver’s license","keyboard"],"a":2,"say":"驾照","py":"jiàzhào","sent":"渐渐地，他考到了驾照，又建立了自己的工作室。","sent_en":"Gradually, he got his driver’s license, and then established his own studio.","ex":"驾照 jiàzhào — driver’s license · 渐渐地，他考到了驾照，又建立了自己的工作室。 / Gradually, he got his driver’s license, and then established his own studio. (驾照 is the license that allows you to drive; 驾驶 is the verb 'to drive'; 简历 is a resume)"},{"t":"mc","q":"价值","o":["value","angle","speech","transaction, deal"],"a":0,"say":"价值","py":"jiàzhí","sent":"那些建筑不仅有价值，样子也十分讲究。","sent_en":"Those buildings were not only valuable, they also looked very refined.","ex":"价值 jiàzhí — value · 那些建筑不仅有价值，样子也十分讲究。 / Those buildings were not only valuable, they also looked very refined. (价值 is the value of a thing, an idea or a piece of knowledge; 角度 means an angle or a point of view; 讲究 here means refined)"},{"t":"mc","q":"艰苦","o":["strong, steadfast","exquisite, refined","arduous, difficult","gradually"],"a":2,"say":"艰苦","py":"jiānkǔ","sent":"主讲人先讲述了自己年轻时艰苦的经历。","sent_en":"The speaker first recounted his arduous experiences from when he was young.","ex":"艰苦 jiānkǔ — arduous, difficult · 主讲人先讲述了自己年轻时艰苦的经历。 / The speaker first recounted his arduous experiences from when he was young. (艰苦 describes a hard, difficult situation, as in 生活很艰苦; 坚强 means strong and steadfast — that is how a person faces hardship)"},{"t":"mc","q":"坚强","o":["arduous, difficult","strong, steadfast","simply, absolutely","to pick up"],"a":1,"say":"坚强","py":"jiānqiáng","sent":"生活很艰苦，可是他一直很坚强。","sent_en":"Life was very hard, but he had always been steadfast.","ex":"坚强 jiānqiáng — strong, steadfast · 生活很艰苦，可是他一直很坚强。 / Life was very hard, but he had always been steadfast. (坚强 describes a person’s will; 艰苦 describes a difficult life or task. Both start with first-tone jiān, but the second syllables differ: kǔ vs qiáng)"},{"t":"mc","q":"捡","o":["to cut","to water, to pour","to pick up","to tie, to knot"],"a":2,"say":"捡","py":"jiǎn","sent":"她还捡起地上的纸屑。","sent_en":"She also picked up the scraps of paper on the ground.","ex":"捡 jiǎn — to pick up · 她还捡起地上的纸屑。 / She also picked up the scraps of paper on the ground. (捡 is to pick something up from the ground; 剪, also 3rd-tone jiǎn, means to cut, often with 剪刀)"},{"t":"mc","q":"剪","o":["to cut","to pick up","to water, to pour","to build"],"a":0,"say":"剪","py":"jiǎn","sent":"Alexa走到花园，用剪刀剪了一小段绳子。","sent_en":"Alexa walked to the garden and cut a short piece of string with scissors.","ex":"剪 jiǎn — to cut · Alexa走到花园，用剪刀剪了一小段绳子。 / Alexa walked to the garden and cut a short piece of string with scissors. (剪 is the verb 'to cut'; 剪刀 are scissors, the tool you cut with; 捡 means to pick up)"},{"t":"mc","q":"剪刀","o":["keyboard","scissors","teaching materials","resume, CV"],"a":1,"say":"剪刀","py":"jiǎndāo","sent":"Alexa走到花园，用剪刀剪了一小段绳子。","sent_en":"Alexa walked to the garden and cut a short piece of string with scissors.","ex":"剪刀 jiǎndāo — scissors · Alexa走到花园，用剪刀剪了一小段绳子。 / Alexa walked to the garden and cut a short piece of string with scissors. (剪刀 is the tool; 剪 is the verb 'to cut'. 刀 is 1st-tone dāo)"},{"t":"mc","q":"减肥","o":["to reward, to award","to lose weight","to establish","to exchange"],"a":1,"say":"减肥","py":"jiǎnféi","sent":"她说，今天不是来减肥的，但多走走也很好。","sent_en":"She said she wasn’t here to lose weight today, but that walking more was also very good.","ex":"减肥 jiǎnféi — to lose weight · 她说，今天不是来减肥的，但多走走也很好。 / She said she wasn’t here to lose weight today, but that walking more was also very good. (减 means to reduce; 肥 here refers to body fat. It is not about 奖励, to reward)"},{"t":"mc","q":"简历","o":["driver’s license","lecture, seminar","teaching materials","resume, CV"],"a":3,"say":"简历","py":"jiǎnlì","sent":"有人交上了简历，希望以后能来实习。","sent_en":"Someone handed in a resume, hoping to come for an internship later.","ex":"简历 jiǎnlì — resume, CV · 有人交上了简历，希望以后能来实习。 / Someone handed in a resume, hoping to come for an internship later. (简历 is a short document about your study and work history; 驾照 is a driver’s license; 教材 means teaching materials)"}]},{"title":"二、根据意思选词 Choose the word","hint":"read the English and the sentence, tap the Chinese word · 🔊","items":[{"t":"mc","q":"simply, absolutely","o":["简直","渐渐","将近","坚强"],"a":0,"say":"简直","py":"jiǎnzhí","sent":"同学笑她：“你简直像园丁！”","sent_en":"A classmate laughed at her: “You’re simply like a gardener!”","ex":"简直 jiǎnzhí — simply, absolutely · 同学笑她：“你简直像园丁！” / A classmate laughed at her: “You’re simply like a gardener!” (简直 emphasises that something is almost unbelievably true; 渐渐 means gradually; 将近 means nearly, often before a number)"},{"t":"mc","q":"to build (e.g. a bridge)","o":["建","键","捡","剪"],"a":0,"say":"建","py":"jiàn","sent":"他参与城市的建设，在河边建了一座小桥。","sent_en":"He took part in the city’s construction, and built a small bridge by the river.","ex":"建 jiàn — to build · 他参与城市的建设，在河边建了一座小桥。 / He took part in the city’s construction, and built a small bridge by the river. (建 is the general verb 'to build'; 键, also 4th-tone jiàn, is a key on a keyboard. 建设, 建造 and 建立 are longer words built from 建)"},{"t":"mc","q":"key (on a keyboard), button","o":["键盘","键","建","教材"],"a":1,"say":"键","py":"jiàn","sent":"他在键盘上按下一个键。","sent_en":"He pressed a key on the keyboard.","ex":"键 jiàn — key (on a keyboard), button · 他在键盘上按下一个键。 / He pressed a key on the keyboard. (键 is one key; 键盘 is the whole keyboard; 建 means to build)"},{"t":"mc","q":"gradually","o":["渐渐","将近","接近","简直"],"a":0,"say":"渐渐","py":"jiànjiàn","sent":"渐渐地，他考到了驾照，又建立了自己的工作室。","sent_en":"Gradually, he got his driver’s license, and then established his own studio.","ex":"渐渐 jiànjiàn — gradually · 渐渐地，他考到了驾照，又建立了自己的工作室。 / Gradually, he got his driver’s license, and then established his own studio. (渐渐 describes a change that happens step by step; 将近 means 'almost / nearly', often before a number, as in 将近一百名; 接近 means to get close to)"},{"t":"mc","q":"to establish","o":["建立","建设","建造","建筑"],"a":0,"say":"建立","py":"jiànlì","sent":"渐渐地，他考到了驾照，又建立了自己的工作室。","sent_en":"Gradually, he got his driver’s license, and then established his own studio.","ex":"建立 jiànlì — to establish · 渐渐地，他考到了驾照，又建立了自己的工作室。 / Gradually, he got his driver’s license, and then established his own studio. (建立 is to set up an organisation, a system or a relationship; 建设 often means to develop a city or a country; 建造 is to construct a physical building; 建筑 is a building, or architecture)"},{"t":"mc","q":"keyboard","o":["键盘","键","教材","剪刀"],"a":0,"say":"键盘","py":"jiànpán","sent":"他在键盘上按下一个键。","sent_en":"He pressed a key on the keyboard.","ex":"键盘 jiànpán — keyboard · 他在键盘上按下一个键。 / He pressed a key on the keyboard. (键盘 is the whole keyboard; 键 is a single key; 教材 means teaching materials)"},{"t":"mc","q":"to construct, to build (a city or a country)","o":["建立","建造","建设","建筑"],"a":2,"say":"建设","py":"jiànshè","sent":"学校举行了一场关于城市建设和建筑设计的讲座。","sent_en":"The school held a lecture on urban construction and architectural design.","ex":"建设 jiànshè — to construct, to build · 学校举行了一场关于城市建设和建筑设计的讲座。 / The school held a lecture on urban construction and architectural design. (建设 is often used for a city, a country or infrastructure, as in 城市建设; 建造 is to construct a concrete building or bridge; 建立 means to establish; 建筑 is a building or architecture)"}]},{"title":"三、填空 Fill the blank","hint":"choose the word that fits the sentence · 🔊","items":[{"t":"mc","q":"他还参与____新的建筑。","o":["建造","建立","建设","讲座"],"a":0,"say":"建造","py":"jiànzào","sent":"他还参与建造新的建筑。","sent_en":"He also took part in constructing new buildings.","ex":"建造 jiànzào — to construct, to build · 他还参与建造新的建筑。 / He also took part in constructing new buildings. (建造 is used for putting up a physical building or structure; 建立 is to establish an organisation; 建设 is broader, as in 城市建设)"},{"t":"mc","q":"那些____不仅有价值，样子也十分讲究。","o":["建设","建造","建立","建筑"],"a":3,"say":"建筑","py":"jiànzhù","sent":"那些建筑不仅有价值，样子也十分讲究。","sent_en":"Those buildings were not only valuable, they also looked very refined.","ex":"建筑 jiànzhù — building, architecture · 那些建筑不仅有价值，样子也十分讲究。 / Those buildings were not only valuable, they also looked very refined. (建筑 is a noun meaning a building, or architecture, as in 建筑设计; 建设 and 建造 are verbs)"},{"t":"mc","q":"大厅里已经接近坐满，____一百名同学来听他的讲话。","o":["渐渐","将近","接近","简直"],"a":1,"say":"将近","py":"jiāngjìn","sent":"大厅里已经接近坐满，将近一百名同学来听他的讲话。","sent_en":"The hall was already almost full; nearly one hundred students had come to listen to his speech.","ex":"将近 jiāngjìn — almost, nearly · 大厅里已经接近坐满，将近一百名同学来听他的讲话。 / The hall was already almost full; nearly one hundred students had come to listen to his speech. (将近 often comes before a number: 将近一百名. 接近 means to get close to, as in 接近坐满 or 接近目标; 渐渐 means gradually; both syllables of 将近 are 1st tone + 4th tone: jiāng-jìn)"},{"t":"mc","q":"将近一百名同学来听他的____。","o":["讲座","讲述","讲话","讲究"],"a":2,"say":"讲话","py":"jiǎnghuà","sent":"将近一百名同学来听他的讲话。","sent_en":"Nearly one hundred students had come to listen to his speech.","ex":"讲话 jiǎnghuà — speech · 将近一百名同学来听他的讲话。 / Nearly one hundred students had come to listen to his speech. (讲话 is the talk or speech itself; 讲座 is a lecture or seminar, the event; 讲述 is the verb 'to narrate / to tell')"},{"t":"mc","q":"那些建筑不仅有价值，样子也十分____。","o":["奖励","讲述","讲座","讲究"],"a":3,"say":"讲究","py":"jiǎngjiu","sent":"那些建筑不仅有价值，样子也十分讲究。","sent_en":"Those buildings were not only valuable, they also looked very refined.","ex":"讲究 jiǎngjiu — to be particular about; exquisite, refined · 那些建筑不仅有价值，样子也十分讲究。 / Those buildings were not only valuable, they also looked very refined. (Here 讲究 is an adjective meaning refined or tasteful. It can also be a verb: 讲究质量, to be particular about quality. The second syllable is neutral tone: jiǎngjiu. 奖励 means to reward)"},{"t":"mc","q":"讲座结束前，老师____了认真听讲的同学。","o":["讲究","奖励","讲述","讲话"],"a":1,"say":"奖励","py":"jiǎnglì","sent":"讲座结束前，老师奖励了认真听讲的同学。","sent_en":"Before the lecture ended, the teacher rewarded the students who had listened carefully.","ex":"奖励 jiǎnglì — to reward, to award · 讲座结束前，老师奖励了认真听讲的同学。 / Before the lecture ended, the teacher rewarded the students who had listened carefully. (奖励 is to give a prize or a reward; 讲究 means refined, or to be particular about something)"}]},{"title":"四、易混词 Look-alikes in sentences","hint":"choose the word that fits · 🔊","items":[{"t":"mc","q":"主讲人先____了自己年轻时艰苦的经历。","o":["讲话","讲述","讲座","奖励"],"a":1,"say":"讲述","py":"jiǎngshù","sent":"主讲人先讲述了自己年轻时艰苦的经历。","sent_en":"The speaker first recounted his arduous experiences from when he was young.","ex":"讲述 jiǎngshù — to narrate, to tell · 主讲人先讲述了自己年轻时艰苦的经历。 / The speaker first recounted his arduous experiences from when he was young. (讲述 is a verb: to tell a story or an experience; 讲话 is a speech; 讲座 is a lecture)"},{"t":"mc","q":"学校举行了一场关于城市建设和建筑设计的____。","o":["讲话","讲述","讲座","教材"],"a":2,"say":"讲座","py":"jiǎngzuò","sent":"学校举行了一场关于城市建设和建筑设计的讲座。","sent_en":"The school held a lecture on urban construction and architectural design.","ex":"讲座 jiǎngzuò — lecture, seminar · 学校举行了一场关于城市建设和建筑设计的讲座。 / The school held a lecture on urban construction and architectural design. (讲座 is the event, a talk given to an audience; 讲话 is the speech itself; 教材 means teaching materials)"},{"t":"mc","q":"中场时，外面开始____。","o":["浇","降水","接收","接近"],"a":1,"say":"降水","py":"jiàngshuǐ","sent":"中场时，外面开始降水。","sent_en":"During the interval, it began to rain outside.","ex":"降水 jiàngshuǐ — to have precipitation · 中场时，外面开始降水。 / During the interval, it began to rain outside. (降水 is a slightly formal word for rain or snow falling; 降 is 4th-tone jiàng. 浇, 1st-tone jiāo, means to water plants or to pour water)"},{"t":"mc","q":"Alexa给被风吹斜的花____了水。","o":["降水","浇","剪","捡"],"a":1,"say":"浇","py":"jiāo","sent":"Alexa给被风吹斜的花浇了水。","sent_en":"Alexa watered the flowers that had been blown slanted by the wind.","ex":"浇 jiāo — to water, to pour · Alexa给被风吹斜的花浇了水。 / Alexa watered the flowers that had been blown slanted by the wind. (浇水 is to water plants; 降水 means precipitation / rain. 浇 is 1st-tone jiāo, not 4th-tone jiào as in 较)"},{"t":"mc","q":"还要和别人____意见。","o":["交往","交易","交换","接收"],"a":2,"say":"交换","py":"jiāohuàn","sent":"还要和别人交换意见、认真交往。","sent_en":"One also has to exchange opinions with others and interact with them sincerely.","ex":"交换 jiāohuàn — to exchange · 还要和别人交换意见、认真交往。 / One also has to exchange opinions with others and interact with them sincerely. (交换 is to exchange things, ideas or contact details, as in 交换意见; 交往 is to associate or interact with people; 交易 is a business deal; 接收 means to receive)"},{"t":"mc","q":"还要和别人交换意见、认真____。","o":["交换","交往","交易","接待"],"a":1,"say":"交往","py":"jiāowǎng","sent":"还要和别人交换意见、认真交往。","sent_en":"One also has to exchange opinions with others and interact with them sincerely.","ex":"交往 jiāowǎng — to associate, to interact · 还要和别人交换意见、认真交往。 / One also has to exchange opinions with others and interact with them sincerely. (交往 is about spending time and communicating with people; 交换 is to exchange something; 交易 is a trade or deal; 接待 is to receive guests)"},{"t":"mc","q":"他从安全的____讲开车。","o":["脚步","阶段","价值","角度"],"a":3,"say":"角度","py":"jiǎodù","sent":"他从安全的角度讲开车。","sent_en":"He talked about driving from the angle of safety.","ex":"角度 jiǎodù — angle · 他从安全的角度讲开车。 / He talked about driving from the angle of safety. (also in textbook Lesson 5 济南的泉水; 角度 can be a geometric angle, or a point of view, as in 从……的角度. 脚步 means footsteps; 阶段 means a stage or phase)"}]},{"title":"五、默写 Dictation in context","hint":"🔊 listen, read the sentence, type the characters","items":[{"t":"text","q":"jiāoyì — transaction, deal","say":"交易","sent":"有时还要完成一笔____。","sent_en":"Sometimes one also has to complete a transaction.","a":["交易"],"ex":"交易 jiāoyì — transaction, deal · 有时还要完成一笔交易。 / Sometimes one also has to complete a transaction. (交易 is a business deal or trade; 交换 is to exchange; 交往 is to interact with people)"},{"t":"text","q":"jiǎobù — footstep, step","say":"脚步","sent":"走路时____也要小心。","sent_en":"When walking, one should also be careful with one’s steps.","a":["脚步"],"ex":"脚步 jiǎobù — footstep, step · 走路时脚步也要小心。 / When walking, one should also be careful with one’s steps. (脚步 is a person’s step or footstep; 角度 means an angle or a point of view. 脚 is 3rd-tone jiǎo)"},{"t":"text","q":"jiào — relatively, comparatively","say":"较","sent":"Alexa坐在____前的位置，打开教材，准备做笔记。","sent_en":"Alexa sat in a seat relatively near the front, opened the teaching materials, and got ready to take notes.","a":["较"],"ex":"较 jiào — than; relatively, comparatively · Alexa坐在较前的位置，打开教材，准备做笔记。 / Alexa sat in a seat relatively near the front, opened the teaching materials, and got ready to take notes. (较 can mean 'comparatively', as in 较前 / 较好, or 'than'. It is 4th-tone jiào. Do not write 教, which can also be jiào but means to teach)"},{"t":"text","q":"jiàocái — teaching materials","say":"教材","sent":"Alexa坐在较前的位置，打开____，准备做笔记。","sent_en":"Alexa sat in a seat relatively near the front, opened the teaching materials, and got ready to take notes.","a":["教材"],"ex":"教材 jiàocái — teaching materials · Alexa坐在较前的位置，打开教材，准备做笔记。 / Alexa sat in a seat relatively near the front, opened the teaching materials, and got ready to take notes. (教材 are the materials used for teaching and study, such as a textbook; 简历 is a resume)"},{"t":"text","q":"jiēchù — to contact","say":"接触","sent":"这一阶段要多____不同的人。","sent_en":"At this stage one should have more contact with different people.","a":["接触"],"ex":"接触 jiēchù — to contact · 这一阶段要多接触不同的人。 / At this stage one should have more contact with different people. (接触 is to come into contact with a person or a thing; 接待 is to receive or host guests; 接收 is to receive something, such as a signal or a message)"},{"t":"text","q":"jiēdài — to receive (guests), to host","say":"接待","sent":"也要____来参观的客人。","sent_en":"One should also receive visitors who come to look around.","a":["接待"],"ex":"接待 jiēdài — to receive (guests), to host · 也要接待来参观的客人。 / One should also receive visitors who come to look around. (接待 is to host or receive guests; 接触 means to come into contact with; 接收 means to receive a signal, a package or information)"}]},{"title":"六、声调 Tones","hint":"tap the correct pinyin · 🔊","items":[{"t":"mc","q":"浇","o":["jiāo","jiáo","jiǎo","jiào"],"a":0,"say":"浇","py":"jiāo","sent":"Alexa给被风吹斜的花浇了水。","sent_en":"Alexa watered the flowers that had been blown slanted by the wind.","ex":"浇 jiāo — 1st tone · Alexa给被风吹斜的花浇了水。 / Alexa watered the flowers that had been blown slanted by the wind. (浇 is 1st-tone jiāo. Do not confuse it with 脚 in 脚步, which is 3rd-tone jiǎo, or with 较, which is 4th-tone jiào.)"},{"t":"mc","q":"结","o":["jiē","jié","jiě","jiè"],"a":1,"say":"结","py":"jié","sent":"她又在茎上结了一个结。","sent_en":"She also tied a knot on the stem.","ex":"结 jié — 2nd tone · 她又在茎上结了一个结。 / She also tied a knot on the stem. (In this HSK 5 list, 结 is 2nd-tone jié: to tie, or a knot, as in 结了一个结. You may later meet 结实 jiēshi, where 结 is 1st-tone jiē — same character, different reading.)"},{"t":"mc","q":"将近","o":["jiànjìn","jiāngjìn","jiànjiàn","jiǎngjìn"],"a":1,"say":"将近","py":"jiāngjìn","sent":"将近一百名同学来听他的讲话。","sent_en":"Nearly one hundred students had come to listen to his speech.","ex":"将近 jiāngjìn — 1st tone + 4th tone · 将近一百名同学来听他的讲话。 / Nearly one hundred students had come to listen to his speech. (将近 is jiāng-jìn, 1st + 4th. 渐渐 is jiànjiàn, 4th + 4th, and means gradually; 接近 is jiējìn, 1st + 4th, and means to get close to.)"},{"t":"mc","q":"简直","o":["jiānzhí","jiǎnzhí","jiànzhí","jiǎnzhì"],"a":1,"say":"简直","py":"jiǎnzhí","sent":"同学笑她：“你简直像园丁！”","sent_en":"A classmate laughed at her: “You’re simply like a gardener!”","ex":"简直 jiǎnzhí — 3rd tone + 2nd tone · 同学笑她：“你简直像园丁！” / A classmate laughed at her: “You’re simply like a gardener!” (简直 is jiǎn-zhí: 3rd tone then 2nd tone. The first syllable is not 1st-tone jiān as in 艰苦 / 坚强, and not 4th-tone jiàn as in 建设. The second syllable is zhí, not 4th-tone zhì.)"}]},{"title":"七、阅读 Reading","hint":"🔊 listen to the passage, then tap","passage":"这个星期六，学校举行了一场关于城市建设和建筑设计的讲座。主讲人先讲述了自己年轻时艰苦的经历：他一面学习驾驶，一面在工地上工作，生活很艰苦，可是他一直很坚强。渐渐地，他考到了驾照，又建立了自己的工作室。他参与城市的建设，在河边建了一座小桥，还参与建造新的建筑。他在键盘上按下一个键，屏幕上出现了他设计的作品。那些建筑不仅有价值，样子也十分讲究。大厅里已经接近坐满，将近一百名同学来听他的讲话。Alexa坐在较前的位置，打开教材，准备做笔记。主讲人说，这一阶段要多接触不同的人，也要接待来参观的客人，还要和别人交换意见、认真交往，有时还要完成一笔交易。他从安全的角度讲开车：车上的设备会接收路况信息，驾驶才更安全；走路时脚步也要小心。中场时，外面开始降水。Alexa走到花园，用剪刀剪了一小段绳子，给被风吹斜的花浇了水，又在茎上结了一个结。她还捡起地上的纸屑。同学笑她：“你简直像园丁！”她说，今天不是来减肥的，但多走走也很好。讲座结束前，老师奖励了认真听讲的同学。有人交上了简历，希望以后能来实习。大家还互相交换了联系方式。Alexa想，这些知识很有价值，她又向自己的目标接近了一步。","items":[{"t":"mc","q":"主讲人年轻时的经历是怎样的？他后来做了什么？","o":["这个星期六，学校举行了一场关于城市建设和建筑设计的讲座。主讲人先讲述了自己年轻时艰苦的经历：他一面学习驾驶，一面在工地上工作，生活很艰苦，可是他一直很坚强。渐渐地，他考到了驾照，又建立了自己的工作室。他参与城市的建设，在河边建了一座小桥，还参与建造新的建筑。","主讲人从小就有驾照，从来没有在工地上工作过，生活一点也不艰苦。","学校取消了讲座，主讲人没有讲述自己的经历，也没有建桥或建造新的建筑。"],"a":0,"ex":"这个星期六，学校举行了一场关于城市建设和建筑设计的讲座。主讲人先讲述了自己年轻时艰苦的经历：他一面学习驾驶，一面在工地上工作，生活很艰苦，可是他一直很坚强。渐渐地，他考到了驾照，又建立了自己的工作室。他参与城市的建设，在河边建了一座小桥，还参与建造新的建筑。 / This Saturday, the school held a lecture on urban construction and architectural design. The speaker first recounted his arduous experiences from when he was young: he learned to drive on the one hand, and worked on the construction site on the other; life was very hard, but he had always been steadfast. Gradually, he got his driver’s license, and then established his own studio. He took part in the city’s construction, built a small bridge by the river, and also took part in constructing new buildings."},{"t":"mc","q":"主讲人怎样展示作品？大厅里的情况如何？","o":["他没有带键盘，屏幕上什么也没有出现，大厅里只有很少同学。","他在键盘上按下一个键，屏幕上出现了他设计的作品。那些建筑不仅有价值，样子也十分讲究。大厅里已经接近坐满，将近一百名同学来听他的讲话。Alexa坐在较前的位置，打开教材，准备做笔记。","Alexa坐在最后一排，没有打开教材，也不准备做笔记。"],"a":1,"ex":"他在键盘上按下一个键，屏幕上出现了他设计的作品。那些建筑不仅有价值，样子也十分讲究。大厅里已经接近坐满，将近一百名同学来听他的讲话。Alexa坐在较前的位置，打开教材，准备做笔记。 / He pressed a key on the keyboard, and the works he had designed appeared on the screen. Those buildings were not only valuable, they also looked very refined. The hall was already almost full; nearly one hundred students had come to listen to his speech. Alexa sat in a seat relatively near the front, opened the teaching materials, and got ready to take notes."},{"t":"mc","q":"主讲人对这一阶段的工作和开车安全说了什么？","o":["他说现在不必接触别人，也不用接待客人，开车时可以不看路况。","他说交易比交往更重要，走路时脚步不必小心。","主讲人说，这一阶段要多接触不同的人，也要接待来参观的客人，还要和别人交换意见、认真交往，有时还要完成一笔交易。他从安全的角度讲开车：车上的设备会接收路况信息，驾驶才更安全；走路时脚步也要小心。"],"a":2,"ex":"主讲人说，这一阶段要多接触不同的人，也要接待来参观的客人，还要和别人交换意见、认真交往，有时还要完成一笔交易。他从安全的角度讲开车：车上的设备会接收路况信息，驾驶才更安全；走路时脚步也要小心。 / The speaker said that at this stage one should have more contact with different people, and also receive visitors who come to look around; one also has to exchange opinions with others, interact with them sincerely, and sometimes complete a transaction. He talked about driving from the angle of safety: the equipment in the car can receive traffic information, and only then is driving safer; when walking, one should also be careful with one’s steps."},{"t":"mc","q":"中场时外面的天气如何？Alexa做了什么？","o":["中场时，外面开始降水。Alexa走到花园，用剪刀剪了一小段绳子，给被风吹斜的花浇了水，又在茎上结了一个结。她还捡起地上的纸屑。同学笑她：“你简直像园丁！”她说，今天不是来减肥的，但多走走也很好。","中场时外面出了太阳，Alexa没有去花园，也没有浇水或捡纸屑。","Alexa用键盘剪绳子，把花放到大厅里，同学说她今天是专门来减肥的。"],"a":0,"ex":"中场时，外面开始降水。Alexa走到花园，用剪刀剪了一小段绳子，给被风吹斜的花浇了水，又在茎上结了一个结。她还捡起地上的纸屑。同学笑她：“你简直像园丁！”她说，今天不是来减肥的，但多走走也很好。 / During the interval, it began to rain outside. Alexa walked to the garden, cut a short piece of string with scissors, watered the flowers that had been blown slanted by the wind, and tied a knot on the stem. She also picked up the scraps of paper on the ground. A classmate laughed at her: “You’re simply like a gardener!” She said she wasn’t here to lose weight today, but that walking more was also very good."},{"t":"mc","q":"讲座结束前发生了什么？Alexa怎么想？","o":["老师没有奖励任何人，也没有人交简历，Alexa觉得这些知识没有价值。","讲座结束前，老师奖励了认真听讲的同学。有人交上了简历，希望以后能来实习。大家还互相交换了联系方式。Alexa想，这些知识很有价值，她又向自己的目标接近了一步。","大家没有交换联系方式，Alexa觉得自己离目标更远了。"],"a":1,"ex":"讲座结束前，老师奖励了认真听讲的同学。有人交上了简历，希望以后能来实习。大家还互相交换了联系方式。Alexa想，这些知识很有价值，她又向自己的目标接近了一步。 / Before the lecture ended, the teacher rewarded the students who had listened carefully. Someone handed in a resume, hoping to come for an internship later. Everyone also exchanged contact details with each other. Alexa thought that this knowledge was very valuable, and that she had taken another step closer to her goal."}]}];
+
+/* TEMPLATE: every target word needs 字+拼音+🔊 + 例句 CN + EN translation. See README.md */
+var L="ABCDEFG",ALL=[],start=Date.now(),done=false,timerId,zhVoice=null;
+function pickZhVoice(){
+  if(!window.speechSynthesis)return null;
+  var vs=speechSynthesis.getVoices()||[];
+  var pref=vs.filter(function(v){return /^zh(-|_|$)/i.test(v.lang)||/Chinese|中文|普通话|国语/i.test(v.name);});
+  var cn=pref.filter(function(v){return /CN|China|普通话|Chinese\s*\(China\)/i.test(v.lang+" "+v.name);});
+  return cn[0]||pref[0]||null;
+}
+function refreshVoice(){zhVoice=pickZhVoice();}
+if(window.speechSynthesis){refreshVoice();speechSynthesis.onvoiceschanged=refreshVoice;}
+function hasHan(s){return /[\u4e00-\u9fff]/.test(s||"");}
+function speakZh(text,btn){
+  if(!text||!window.speechSynthesis)return;
+  try{speechSynthesis.cancel();}catch(e){}
+  var u=new SpeechSynthesisUtterance(String(text));
+  u.lang="zh-CN";u.rate=0.9;u.pitch=1;
+  if(!zhVoice)refreshVoice();
+  if(zhVoice)u.voice=zhVoice;
+  if(btn)btn.disabled=true;
+  var unlock=function(){if(btn)btn.disabled=false;};
+  u.onend=unlock;u.onerror=unlock;
+  setTimeout(unlock, Math.max(1800, String(text).length*420));
+  speechSynthesis.speak(u);
+}
+function speakBtn(text, small){
+  var b=el("button", small?"say sm":"say");
+  b.type="button";b.setAttribute("aria-label","Pronounce");b.textContent="🔊";
+  b.onclick=function(ev){if(ev&&ev.stopPropagation)ev.stopPropagation();if(ev&&ev.preventDefault)ev.preventDefault();speakZh(text,b);return false;};
+  return b;
+}
+function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e}
+function addExample(box, it){
+  if(!it.sent && !it.sent_en) return;
+  var ex=el("div","exbox");
+  if(it.sent){
+    var row=el("div","ex-cn");
+    row.appendChild(document.createTextNode("例句："+it.sent+" "));
+    if(hasHan(it.sent)) row.appendChild(speakBtn(it.sent.replace(/____/g, it.say||it.q||""), true));
+    ex.appendChild(row);
+  }
+  if(it.sent_en) ex.appendChild(el("div","ex-en","EN: "+it.sent_en));
+  box.appendChild(ex);
+}
+function build(){
+ var quiz=document.getElementById("quiz");quiz.innerHTML="";ALL=[];
+ SECTIONS.forEach(function(s){
+  var sec=el("section");var h=el("h2",null,s.title+" ");h.appendChild(el("small",null,"("+s.hint+")"));sec.appendChild(h);
+  if(s.passage){
+    var ph=el("div","pass-head");ph.appendChild(el("strong",null,"短文"));ph.appendChild(speakBtn(s.passage,false));
+    ph.appendChild(el("span","tip","tap 🔊 to hear the whole passage"));
+    sec.appendChild(ph);
+    sec.appendChild(el("div","passage",s.passage));
+  }
+  s.items.forEach(function(it,i){
+   var box=el("div","item");
+   var qrow=el("div","q");
+   qrow.appendChild(el("span",null,(i+1)+". "));
+   var qw=el("span","qw",it.q);qrow.appendChild(qw);
+   if(it.py) qrow.appendChild(el("span","py","("+it.py+")"));
+   if(it.py_hint) qrow.appendChild(el("span","py","拼音提示: "+it.py_hint));
+   var sayText=it.say||(hasHan(it.q)&&!/____/.test(it.q)?it.q:null);
+   if(sayText && !/____/.test(String(it.q))) qrow.appendChild(speakBtn(sayText,false));
+   box.appendChild(qrow);
+   addExample(box, it);
+   var rec={it:it,box:box,sel:null,input:null};
+   if(it.t==="mc"){
+     var o=el("div","opts");
+     it.o.forEach(function(txt,j){
+       var wrap=el("span","optwrap");
+       var b=el("button","opt",L[j]+". "+txt);b.type="button";
+       b.onclick=function(){if(done)return;rec.sel=j;[].forEach.call(o.querySelectorAll(".opt"),function(c){c.classList.remove("sel")});b.classList.add("sel");prog()};
+       wrap.appendChild(b);
+       if(hasHan(txt) && String(txt).length<=8) wrap.appendChild(speakBtn(txt,true));
+       o.appendChild(wrap);
+     });
+     box.appendChild(o);
+   } else {
+     var row=el("div","optwrap");
+     var inp=el("input","txt");inp.type="text";inp.setAttribute("autocomplete","off");inp.setAttribute("autocapitalize","off");inp.setAttribute("spellcheck","false");inp.placeholder="写汉字…";inp.oninput=prog;rec.input=inp;
+     row.appendChild(inp);
+     if(it.say){var lb=speakBtn(it.say,false);lb.title="Listen (does not show the answer)";row.appendChild(lb);row.appendChild(el("span","tip","听发音"));}
+     box.appendChild(row);
+   }
+   var fb=el("div","fb");box.appendChild(fb);rec.fb=fb;sec.appendChild(box);ALL.push(rec);
+  });
+  quiz.appendChild(sec);
+ });
+ prog();
+}
+function norm(s){return String(s||"").replace(/[\s\u3000]+/g,"")}
+function isCorrect(rec){var it=rec.it;if(it.t==="mc")return rec.sel===it.a;var v=norm(rec.input.value);return it.a.some(function(a){return norm(a)===v})}
+function answered(rec){return rec.it.t==="mc"?rec.sel!==null:norm(rec.input.value)!==""}
+function prog(){var a=ALL.filter(answered).length;document.getElementById("prog").textContent="已答 "+a+" / "+ALL.length}
+function fmt(ms){var s=Math.round(ms/1000);return Math.floor(s/60)+":"+("0"+s%60).slice(-2)}
+function tick(){document.getElementById("clock").textContent=fmt(Date.now()-start)}
+function check(){
+ if(done)return;done=true;clearInterval(timerId);var score=0;
+ ALL.forEach(function(rec){var ok=isCorrect(rec),it=rec.it;rec.box.classList.add(ok?"ok":"bad");
+  var ans=it.t==="mc"?L[it.a]+". "+it.o[it.a]:it.a[0];
+  rec.fb.textContent=ok?"✔ 对了！":"✘ Correct answer: "+ans+" — "+it.ex;if(ok)score++});
+ document.getElementById("quiz").classList.add("locked");
+ var t=fmt(Date.now()-start),pct=Math.round(score/ALL.length*100);
+ var msg=pct===100?"太棒了！🎉":pct>=80?"很好！👍":pct>=60?"不错，继续加油！💪":"加油！Let's review the red ones. 📚";
+ var r=document.getElementById("result");r.style.display="block";r.innerHTML="";
+ r.appendChild(el("div",null,"得分 Score: "+score+" / "+ALL.length+" ("+pct+"%)"));
+ r.appendChild(el("div",null,"用时 Time: "+t));r.appendChild(el("div",null,msg));
+ try{r.scrollIntoView({behavior:"smooth"});}catch(e){}
+ return {score:score,total:ALL.length,time:t};
+}
+function reset(){done=false;try{speechSynthesis&&speechSynthesis.cancel();}catch(e){}
+ document.getElementById("quiz").classList.remove("locked");document.getElementById("result").style.display="none";start=Date.now();clearInterval(timerId);timerId=setInterval(tick,1000);tick();build();try{window.scrollTo(0,0);}catch(e){}}
+document.getElementById("check").onclick=check;
+document.getElementById("reset").onclick=reset;
+build();timerId=setInterval(tick,1000);tick();
+
+</script>
+<!-- PWA-SCRIPT -->
+<script>
+(function(){
+  var KEY="alexa-chinese-scores";
+  function drillId(){
+    var m=(location.pathname||"").match(/([^/]+)\.html$/i);
+    return m?decodeURIComponent(m[1]):null;
+  }
+  function save(){
+    var r=document.getElementById("result");
+    if(!r)return;
+    var text=r.textContent||"";
+    var m=text.match(/Score:\s*(\d+)\s*\/\s*(\d+)/i)||text.match(/得分[^0-9]*(\d+)\s*\/\s*(\d+)/);
+    if(!m)return;
+    var id=drillId();
+    if(!id)return;
+    var score=+m[1], total=+m[2];
+    if(!(total>0) || !(score>=0) || score>total)return;
+    try{
+      var all={};
+      try{all=JSON.parse(localStorage.getItem(KEY)||"{}")||{};}catch(e){all={};}
+      if(typeof all!=="object"||Array.isArray(all)) all={};
+      all[id]={score:score,total:total,at:new Date().toISOString()};
+      localStorage.setItem(KEY,JSON.stringify(all));
+    }catch(e){}
+  }
+  var btn=document.getElementById("check");
+  if(btn) btn.addEventListener("click", function(){ try{save();}catch(e){} });
+  if("serviceWorker" in navigator){
+    var sw=new URL("../sw.js", location.href);
+    var scope=new URL("../", location.href);
+    navigator.serviceWorker.register(sw.href, {scope: scope.href}).catch(function(){});
+  }
+})();
+</script>
+<!-- /PWA-SCRIPT -->
+</body>
+</html>
