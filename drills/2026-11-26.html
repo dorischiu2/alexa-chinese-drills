@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Alexa 中文练习 – 26 Nov 2026 (HSK 5 · Day 16 · new cycle)</title>
+<!-- Daily-drill template: each target word = 字 + pinyin + 🔊 + 例句(CN) + English translation; Web Speech zh-CN. See README.md -->
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f4f7fb;color:#222;font-family:-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",Arial,sans-serif;font-size:20px;line-height:1.6}
+.wrap{max-width:760px;margin:0 auto;padding:16px}
+h1{font-size:1.4em;margin:.3em 0 0}
+.sub{color:#666;font-size:.8em;margin-bottom:1em}
+#timer{position:sticky;top:0;background:#fff;border-radius:12px;padding:8px 14px;box-shadow:0 2px 6px rgba(0,0,0,.08);font-size:.85em;z-index:5;display:flex;justify-content:space-between}
+section{background:#fff;border-radius:16px;padding:14px 16px;margin:16px 0;box-shadow:0 2px 6px rgba(0,0,0,.06)}
+h2{font-size:1.1em;margin:.2em 0 .5em}
+h2 small{font-weight:normal;color:#777;font-size:.7em}
+.item{padding:10px 8px;margin:8px 0;border-radius:12px;border:2px solid transparent}
+.q{margin-bottom:6px;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.q .qw{font-weight:600;font-size:1.15em}
+.q .py{color:#64748b;font-size:.85em;font-weight:normal}
+.exbox{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:10px 12px;margin:6px 0 10px;width:100%}
+.ex-cn{font-size:1.05em;margin-bottom:4px}
+.ex-en{color:#475569;font-size:.88em}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.optwrap{display:inline-flex;align-items:center;gap:4px}
+.opt{font-size:1em;padding:10px 16px;border-radius:12px;border:2px solid #c9d4e3;background:#f8fbff;cursor:pointer;min-width:64px;font-family:inherit}
+.opt.sel{background:#3b82f6;color:#fff;border-color:#3b82f6}
+input.txt{font-size:1.1em;padding:8px 12px;border:2px solid #c9d4e3;border-radius:12px;width:10em;max-width:100%;font-family:inherit}
+.passage{background:#fffbea;border-left:5px solid #f5c542;padding:10px 14px;border-radius:8px;font-size:1.05em}
+.pass-head{display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap}
+.item.ok{border-color:#22c55e;background:#effdf3}
+.item.bad{border-color:#ef4444;background:#fef1f1}
+.fb{margin-top:6px;font-size:.85em;display:none}
+.item.ok .fb,.item.bad .fb{display:block}
+.item.ok .fb{color:#15803d}.item.bad .fb{color:#b91c1c}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
+.big{font-size:1.1em;padding:14px 24px;border:none;border-radius:14px;background:#16a34a;color:#fff;cursor:pointer;font-family:inherit}
+.big.sec{background:#64748b}
+#result{display:none;font-size:1.2em;text-align:center;background:#fff;border-radius:16px;padding:16px;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.locked .opt,.locked input.txt{pointer-events:none}
+.say{flex-shrink:0;width:40px;height:40px;border-radius:50%;border:2px solid #93c5fd;background:#eff6ff;color:#1d4ed8;font-size:1.05em;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;padding:0;font-family:inherit;line-height:1;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.say:disabled{opacity:.45;cursor:default}
+.say.sm{width:32px;height:32px;font-size:.9em;border-width:1.5px}
+.say:active:not(:disabled){background:#dbeafe}
+.tip{font-size:.75em;color:#64748b;margin:.4em 0 0}
+</style>
+<!-- PWA-HEAD -->
+<meta name="theme-color" content="#3b82f6">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="中文练习">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<link rel="manifest" href="../manifest.webmanifest">
+<!-- /PWA-HEAD -->
+</head>
+<body>
+<!-- PWA-BAR -->
+<style>
+.pwa-bar{display:flex;align-items:center;gap:8px;background:#eef3f9;border-bottom:1px solid #dbe4ef;padding:6px 10px;padding-top:max(6px,env(safe-area-inset-top));font-family:-apple-system,"PingFang SC","Microsoft YaHei",Arial,sans-serif}
+.pwa-bar a{display:inline-flex;align-items:center;gap:6px;color:#1d4ed8;text-decoration:none;font-size:16px;font-weight:600;padding:8px 10px;border-radius:10px;min-height:44px;box-sizing:border-box}
+.pwa-bar a:active{background:#dbeafe}
+</style>
+<nav class="pwa-bar" aria-label="App navigation"><a href="../index.html">← 练习首页</a></nav>
+<!-- /PWA-BAR -->
+
+<div class="wrap">
+<h1>Alexa 中文练习 🌟 New HSK 5</h1>
+<div class="sub">26 Nov 2026 · Day 16 of a new cycle · New HSK 5 chunk 16 (结构–巨大) · pinyin + 🔊 Putonghua · about 15 minutes · 45 questions<br>
+Each word has a short Chinese example and English translation. Tap 🔊 to hear. Answers stay hidden until Check.</div>
+<div id="timer"><span>⏱ <span id="clock">0:00</span></span><span id="prog"></span></div>
+<div id="quiz"></div>
+<div class="btns"><button class="big" id="check">✅ Check answers</button><button class="big sec" id="reset">↺ Try again</button></div>
+<div id="result"></div>
+</div>
+<script>
+var SECTIONS=[{"title":"一、看例句选意思 Meaning in context","hint":"read the sentence, tap the English meaning · 🔊","items":[{"t":"mc","q":"结构","o":["structure","conclusion","classic; classical","theater"],"a":0,"say":"结构","py":"jiégòu","sent":"近日，大家决定进一步把传统建筑结构与经典文化结合起来。","sent_en":"Recently, everyone decided to go a step further and combine traditional building structures with classic culture.","ex":"结构 jiégòu — structure · 近日，大家决定进一步把传统建筑结构与经典文化结合起来。 / Recently, everyone decided to go a step further and combine traditional building structures with classic culture. (结构 is the structure of a building, a text or a system; 结论 means a conclusion; 结合 means to combine two things)"},{"t":"mc","q":"结合","o":["to import","to combine, to unite","to save, to economize","to rescue"],"a":1,"say":"结合","py":"jiéhé","sent":"近日，大家决定进一步把传统建筑结构与经典文化结合起来。","sent_en":"Recently, everyone decided to go a step further and combine traditional building structures with classic culture.","ex":"结合 jiéhé — to combine, to unite · 近日，大家决定进一步把传统建筑结构与经典文化结合起来。 / Recently, everyone decided to go a step further and combine traditional building structures with classic culture. (结合 means to bring two things together; 结构 is the structure itself; 结论 is a conclusion you reach after thinking or examining)"},{"t":"mc","q":"结论","o":["structure","progress, improvement","conclusion","pleasant surprise, delight"],"a":2,"say":"结论","py":"jiélùn","sent":"医生检查后得出结论：只是太累了，休息一下就好。","sent_en":"After examining him, the doctor reached a conclusion: he was only too tired, and would be fine after a rest.","ex":"结论 jiélùn — conclusion · 医生检查后得出结论：只是太累了，休息一下就好。 / After examining him, the doctor reached a conclusion: he was only too tired, and would be fine after a rest. (结论 is the conclusion you draw, as in 得出结论, 'to reach a conclusion'; 结构 means structure; 结合 means to combine)"},{"t":"mc","q":"节省","o":["to do one’s best","to import","to manage, to operate","to save, to economize"],"a":3,"say":"节省","py":"jiéshěng","sent":"组织者经营得很谨慎，尽量节省开支，只进口必要的设备。","sent_en":"The organizers managed things very cautiously, saved on expenses as much as they could, and only imported the necessary equipment.","ex":"节省 jiéshěng — to save, to economize · 组织者经营得很谨慎，尽量节省开支，只进口必要的设备。 / The organizers managed things very cautiously, saved on expenses as much as they could, and only imported the necessary equipment. (节省 means to use less money, time or energy; 尽力 means to do one’s best; 进口 means to import)"},{"t":"mc","q":"届","o":["measure word for sessions, terms","today","bar","orange"],"a":0,"say":"届","py":"jiè","sent":"近日，大家决定进一步把传统建筑结构与经典文化结合起来，在剧场举办本届文化节。","sent_en":"Recently, everyone decided to go a step further and combine traditional building structures with classic culture, and to hold this session of the cultural festival at the theater.","ex":"届 jiè — measure word for sessions, terms · 在剧场举办本届文化节。 / They held this session of the cultural festival at the theater. (届 is the measure word for a session, term or edition of an event, as in 本届文化节, 'this edition of the cultural festival'; 今日 means today)"},{"t":"mc","q":"今日","o":["recently, in recent days","in recent years","today","recent period"],"a":2,"say":"今日","py":"jīnrì","sent":"今日，Alexa来到居民们居住的小区参观。","sent_en":"Today, Alexa came to visit the neighborhood where the residents live.","ex":"今日 jīnrì — today · 今日，Alexa来到居民们居住的小区参观。 / Today, Alexa came to visit the neighborhood where the residents live. (今日 means today. 近日 means in recent days; 近期 means in the recent period, a little longer; 近年来 means in recent years. Do not mix up the time range or the first tone of 今 jīn with the fourth tone of 近 jìn.)"},{"t":"mc","q":"紧","o":["quiet, still","urgent, critical","tight; to tighten","close, tight"],"a":2,"say":"紧","py":"jǐn","sent":"突然，有人胸口发紧，情况紧急。","sent_en":"Suddenly, someone felt tightness in the chest, and the situation was urgent.","ex":"紧 jǐn — tight; to tighten · 突然，有人胸口发紧，情况紧急。 / Suddenly, someone felt tightness in the chest, and the situation was urgent. (紧 means tight, as in 胸口发紧, 'to feel tightness in the chest', or a tight shoe. 紧密 means a close connection between people or groups; 紧急 means an urgent, critical situation; 静, jìng, means quiet.)"},{"t":"mc","q":"紧急","o":["tight; to tighten","urgent, critical","cautious, prudent","as soon as possible"],"a":1,"say":"紧急","py":"jǐnjí","sent":"突然，有人胸口发紧，情况紧急。","sent_en":"Suddenly, someone felt tightness in the chest, and the situation was urgent.","ex":"紧急 jǐnjí — urgent, critical · 突然，有人胸口发紧，情况紧急。 / Suddenly, someone felt tightness in the chest, and the situation was urgent. (紧急 describes a situation that must be dealt with at once; 紧 describes something tight; 谨慎 means cautious; 尽快 means as soon as possible)"},{"t":"mc","q":"尽快","o":["to the best of one’s ability","further","as soon as possible","to do one’s best"],"a":2,"say":"尽快","py":"jǐnkuài","sent":"大家尽快叫了救护车来救他。","sent_en":"Everyone called an ambulance as soon as possible to rescue him.","ex":"尽快 jǐnkuài — as soon as possible · 大家尽快叫了救护车来救他。 / Everyone called an ambulance as soon as possible to rescue him. (尽快 is about speed: do it as quickly as you can. 尽量 is about degree: do it as much as you can. 尽力 is a verb meaning to do one’s best. 尽 in 尽快 and 尽量 is 3rd-tone jǐn; in 尽力 it is 4th-tone jìn.)"},{"t":"mc","q":"尽量","o":["to do one’s best","as soon as possible","further","to the best of one’s ability"],"a":3,"say":"尽量","py":"jǐnliàng","sent":"组织者经营得很谨慎，尽量节省开支，只进口必要的设备。","sent_en":"The organizers managed things very cautiously, saved on expenses as much as they could, and only imported the necessary equipment.","ex":"尽量 jǐnliàng — to the best of one’s ability · 组织者经营得很谨慎，尽量节省开支。 / The organizers managed things very cautiously and saved on expenses as much as they could. (尽量 is an adverb: do something to the greatest extent you can. 尽力 is a verb: to do one’s best. 尽快 means as soon as possible. Watch the tone: 尽 in 尽量 is 3rd-tone jǐn, not 4th-tone jìn.)"}]},{"title":"二、根据意思选词 Choose the word","hint":"read the English and the sentence, tap the Chinese word · 🔊","items":[{"t":"mc","q":"close, tight","o":["紧密","紧","紧急","谨慎"],"a":0,"say":"紧密","py":"jǐnmì","sent":"社区和医院保持着紧密的联系。","sent_en":"The community and the hospital maintained a close connection.","ex":"紧密 jǐnmì — close, tight · 社区和医院保持着紧密的联系。 / The community and the hospital maintained a close connection. (紧密 often describes a close relationship or connection, as in 紧密的联系. 紧 means tight, like a tight chest or a tight lid; 紧急 means urgent; 谨慎 means cautious)"},{"t":"mc","q":"cautious, prudent","o":["紧急","谨慎","紧密","经典"],"a":1,"say":"谨慎","py":"jǐnshèn","sent":"组织者经营得很谨慎，尽量节省开支，只进口必要的设备。","sent_en":"The organizers managed things very cautiously, saved on expenses as much as they could, and only imported the necessary equipment.","ex":"谨慎 jǐnshèn — cautious, prudent · 组织者经营得很谨慎。 / The organizers managed things very cautiously. (谨慎 describes a careful, prudent attitude; 紧急 means urgent; 紧密 means close, as in a close connection; 经典 means classic)"},{"t":"mc","q":"to advance, to improve; progress, improvement","o":["进一步","进口","进步","近代"],"a":2,"say":"进步","py":"jìnbù","sent":"近期，居委会还关注年轻人的就业问题，鼓励大家尽力进步。","sent_en":"In the recent period, the residents’ committee has also been paying attention to young people’s employment, and has encouraged everyone to do their best and make progress.","ex":"进步 jìnbù — to advance, to improve; progress, improvement · 鼓励大家尽力进步。 / …encouraged everyone to do their best and make progress. (进步 is to make progress, or the progress itself. 进一步 is an adverb meaning 'further, a step further', as in 进一步改善. 进口 means to import; 近代 means modern times)"},{"t":"mc","q":"modern times","o":["近代","近年来","近期","近日"],"a":0,"say":"近代","py":"jìndài","sent":"据居委会介绍，这个地方历史久远，近代也一直很静。","sent_en":"According to the residents’ committee, this place has a long history, and in modern times it has also always been very quiet.","ex":"近代 jìndài — modern times · 这个地方历史久远，近代也一直很静。 / This place has a long history, and in modern times it has also always been very quiet. (近代 means modern times, a period in history. 近年来 means in recent years; 近期 means the recent period; 近日 means in recent days.)"},{"t":"mc","q":"to import","o":["进步","进口","经营","结合"],"a":1,"say":"进口","py":"jìnkǒu","sent":"组织者经营得很谨慎，尽量节省开支，只进口必要的设备。","sent_en":"The organizers managed things very cautiously, saved on expenses as much as they could, and only imported the necessary equipment.","ex":"进口 jìnkǒu — to import · 只进口必要的设备。 / They only imported the necessary equipment. (进口 is to bring goods in from another country; 进步 means to make progress; 经营 means to manage or operate; 结合 means to combine)"},{"t":"mc","q":"to do one’s best","o":["尽力","尽量","尽快","节省"],"a":0,"say":"尽力","py":"jìnlì","sent":"近期，居委会还关注年轻人的就业问题，鼓励大家尽力进步。","sent_en":"In the recent period, the residents’ committee has also been paying attention to young people’s employment, and has encouraged everyone to do their best and make progress.","ex":"尽力 jìnlì — to do one’s best · 鼓励大家尽力进步。 / …encouraged everyone to do their best and make progress. (尽力 is a verb: to do one’s utmost. 尽量 is an adverb: as much as one can. 尽快 means as soon as possible. Watch the tone: 尽 in 尽力 is 4th-tone jìn, but in 尽量 and 尽快 it is 3rd-tone jǐn.)"},{"t":"mc","q":"in recent years","o":["近日","今日","近期","近年来"],"a":3,"say":"近年来","py":"jìnnián lái","sent":"近年来，这里的变化巨大。","sent_en":"In recent years, the changes here have been huge.","ex":"近年来 jìnnián lái — in recent years · 近年来，这里的变化巨大。 / In recent years, the changes here have been huge. (近年来 covers the last few years. 近日 is only recent days; 近期 is a recent period, often weeks or months; 今日 means today.)"}]},{"title":"三、填空 Fill the blank","hint":"choose the word that fits the sentence · 🔊","items":[{"t":"mc","q":"____，居委会还关注年轻人的就业问题。","o":["近期","近日","今日","近代"],"a":0,"say":"近期","py":"jìnqī","sent":"近期，居委会还关注年轻人的就业问题。","sent_en":"In the recent period, the residents’ committee has also been paying attention to young people’s employment.","ex":"近期 jìnqī — recent period · 近期，居委会还关注年轻人的就业问题。 / In the recent period, the residents’ committee has also been paying attention to young people’s employment. (近期 is a recent stretch of time, often weeks or months. 近日 is shorter, recent days; 今日 is today; 近代 means modern times in history.)"},{"t":"mc","q":"____，大家决定进一步把传统建筑结构与经典文化结合起来。","o":["近年来","近日","今日","近代"],"a":1,"say":"近日","py":"jìnrì","sent":"近日，大家决定进一步把传统建筑结构与经典文化结合起来。","sent_en":"Recently, everyone decided to go a step further and combine traditional building structures with classic culture.","ex":"近日 jìnrì — recently, in recent days · 近日，大家决定进一步把传统建筑结构与经典文化结合起来。 / Recently, everyone decided to go a step further and combine traditional building structures with classic culture. (近日 means in the last few days. 今日, jīnrì, looks similar but means today and starts with first-tone 今 jīn; 近年来 means in recent years.)"},{"t":"mc","q":"近日，大家决定____把传统建筑结构与经典文化结合起来。","o":["尽快","尽量","进一步","尽力"],"a":2,"say":"进一步","py":"jìnyíbù","sent":"近日，大家决定进一步把传统建筑结构与经典文化结合起来。","sent_en":"Recently, everyone decided to go a step further and combine traditional building structures with classic culture.","ex":"进一步 jìnyíbù — further · 大家决定进一步把传统建筑结构与经典文化结合起来。 / Everyone decided to go a step further and combine traditional building structures with classic culture. (进一步 is an adverb meaning 'a step further, further'. 进步 is the verb or noun 'to progress / progress'. 尽量 and 尽力 are about doing as much, or as well, as you can, not about taking a further step.)"},{"t":"mc","q":"近日，大家决定进一步把传统建筑结构与____文化结合起来。","o":["经典","精神","精力","经营"],"a":0,"say":"经典","py":"jīngdiǎn","sent":"近日，大家决定进一步把传统建筑结构与经典文化结合起来。","sent_en":"Recently, everyone decided to go a step further and combine traditional building structures with classic culture.","ex":"经典 jīngdiǎn — classic; classical · 把传统建筑结构与经典文化结合起来。 / …combine traditional building structures with classic culture. (经典 means a classic work, or classical / classic in style, as in 经典文化. 精神 means spirit or mind; 精力 means energy; 经营 means to manage.)"},{"t":"mc","q":"他们具备丰富的经验，____充沛，精神也很好。","o":["精神","惊喜","精力","经典"],"a":2,"say":"精力","py":"jīnglì","sent":"他们具备丰富的经验，精力充沛，精神也很好。","sent_en":"They possessed rich experience, were full of energy, and were also in very good spirits.","ex":"精力 jīnglì — energy, vigor · 他们具备丰富的经验，精力充沛，精神也很好。 / They possessed rich experience, were full of energy, and were also in very good spirits. (精力 is physical or mental energy, often in 精力充沛, 'full of energy'. 精神 means spirit, mind, or being lively; 惊喜 is a pleasant surprise; 经典 means classic.)"},{"t":"mc","q":"他们具备丰富的经验，精力充沛，____也很好。","o":["精力","精神","经营","惊喜"],"a":1,"say":"精神","py":"jīngshen","sent":"他们具备丰富的经验，精力充沛，精神也很好。","sent_en":"They possessed rich experience, were full of energy, and were also in very good spirits.","ex":"精神 jīngshen — spirit, mind; mental, lively · 精力充沛，精神也很好。 / They were full of energy, and were also in very good spirits. (精神 here means one’s spirits or state of mind, as in 精神很好. The official HSK 5 pinyin is jīngshen, with a neutral second syllable. 精力 is energy; 惊喜 is a pleasant surprise; 经营 means to manage.)"}]},{"title":"四、易混词 Look-alikes in sentences","hint":"choose the word that fits · 🔊","items":[{"t":"mc","q":"活动开始前，有人送给Alexa一个橘子，让她感到____。","o":["精神","惊喜","精力","经典"],"a":1,"say":"惊喜","py":"jīngxǐ","sent":"活动开始前，有人送给Alexa一个橘子，让她感到惊喜。","sent_en":"Before the event started, someone gave Alexa an orange, which gave her a pleasant surprise.","ex":"惊喜 jīngxǐ — pleasant surprise, delight · 有人送给Alexa一个橘子，让她感到惊喜。 / Someone gave Alexa an orange, which gave her a pleasant surprise. (惊喜 is a happy surprise. 精神 means spirit or mind; 精力 means energy; 经典 means classic. All of these start with jīng, but only 惊喜 is a surprise.)"},{"t":"mc","q":"组织者____得很谨慎，尽量节省开支，只进口必要的设备。","o":["经营","结论","结合","进口"],"a":0,"say":"经营","py":"jīngyíng","sent":"组织者经营得很谨慎，尽量节省开支，只进口必要的设备。","sent_en":"The organizers managed things very cautiously, saved on expenses as much as they could, and only imported the necessary equipment.","ex":"经营 jīngyíng — to manage, to operate · 组织者经营得很谨慎。 / The organizers managed things very cautiously. (经营 means to run or manage an organisation, a business or an event. 结论 is a conclusion; 结合 means to combine; 进口 means to import.)"},{"t":"mc","q":"据居委会介绍，这个地方历史久远，近代也一直很____。","o":["紧","紧急","静","紧密"],"a":2,"say":"静","py":"jìng","sent":"据居委会介绍，这个地方历史久远，近代也一直很静。","sent_en":"According to the residents’ committee, this place has a long history, and in modern times it has also always been very quiet.","ex":"静 jìng — quiet, still; to become quiet · 这个地方历史久远，近代也一直很静。 / This place has a long history, and in modern times it has also always been very quiet. (静 means quiet or still. 紧, 3rd-tone jǐn, means tight; 紧急 means urgent; 紧密 means close. Do not mix up 4th-tone 静 jìng with 3rd-tone 紧 jǐn.)"},{"t":"mc","q":"有人说晚上别去____，要把精力放在学习上，保持安静。","o":["剧场","酒吧","救护车","橘子"],"a":1,"say":"酒吧","py":"jiǔbā","sent":"有人说晚上别去酒吧，要把精力放在学习上，保持安静。","sent_en":"Someone said not to go to a bar in the evening, and to put one’s energy into studying and keep quiet.","ex":"酒吧 jiǔbā — bar · 有人说晚上别去酒吧。 / Someone said not to go to a bar in the evening. (酒吧 is a bar where people drink. 剧场 is a theater; 救护车 is an ambulance; 橘子 is an orange. 酒 in 酒吧 is 3rd-tone jiǔ, like 久 in 久远, but the words mean very different things.)"},{"t":"mc","q":"据居委会介绍，这个地方历史____，近代也一直很静。","o":["巨大","近代","久远","近期"],"a":2,"say":"久远","py":"jiǔyuǎn","sent":"据居委会介绍，这个地方历史久远，近代也一直很静。","sent_en":"According to the residents’ committee, this place has a long history, and in modern times it has also always been very quiet.","ex":"久远 jiǔyuǎn — long, remote, far-reaching · 这个地方历史久远。 / This place has a long history. (久远 describes something that goes back a long way in time, as in 历史久远. 近代 means modern times; 巨大 means huge; 近期 means the recent period.)"},{"t":"mc","q":"大家尽快叫了救护车来____他。","o":["救","就业","居住","具备"],"a":0,"say":"救","py":"jiù","sent":"大家尽快叫了救护车来救他。","sent_en":"Everyone called an ambulance as soon as possible to rescue him.","ex":"救 jiù — to save, to rescue · 大家尽快叫了救护车来救他。 / Everyone called an ambulance as soon as possible to rescue him. (also in textbook Lesson 5 济南的泉水; 救 is the verb 'to rescue'. 救护车 is the ambulance that comes to help; 就业 means to get a job; 居住 means to live / reside.)"},{"t":"mc","q":"大家尽快叫了____来救他。","o":["酒吧","剧场","救护车","居民"],"a":2,"say":"救护车","py":"jiùhùchē","sent":"大家尽快叫了救护车来救他。","sent_en":"Everyone called an ambulance as soon as possible to rescue him.","ex":"救护车 jiùhùchē — ambulance · 大家尽快叫了救护车来救他。 / Everyone called an ambulance as soon as possible to rescue him. (救护车 is the vehicle; 救 is the verb 'to rescue'. 酒吧 is a bar; 剧场 is a theater; 居民 means residents.)"}]},{"title":"五、默写 Dictation in context","hint":"🔊 listen, read the sentence, type the characters","items":[{"t":"text","q":"jiùyè — to get a job, to be employed","say":"就业","sent":"近期，居委会还关注年轻人的____问题。","sent_en":"In the recent period, the residents’ committee has also been paying attention to young people’s employment.","a":["就业"],"ex":"就业 jiùyè — to get a job, to be employed · 近期，居委会还关注年轻人的就业问题。 / In the recent period, the residents’ committee has also been paying attention to young people’s employment. (就业 is about getting or having a job. 救 means to rescue; 救护车 is an ambulance. Same first syllable jiù, different characters and meanings.)"},{"t":"text","q":"jūmín — resident","say":"居民","sent":"今日，Alexa来到____们居住的小区参观。","sent_en":"Today, Alexa came to visit the neighborhood where the residents live.","a":["居民"],"ex":"居民 jūmín — resident · 今日，Alexa来到居民们居住的小区参观。 / Today, Alexa came to visit the neighborhood where the residents live. (居民 are the people who live in a place; 居住 is the verb 'to live, to reside'. Both start with 居 jū.)"},{"t":"text","q":"jūzhù — to live, to reside","say":"居住","sent":"今日，Alexa来到居民们____的小区参观。","sent_en":"Today, Alexa came to visit the neighborhood where the residents live.","a":["居住"],"ex":"居住 jūzhù — to live, to reside · 今日，Alexa来到居民们居住的小区参观。 / Today, Alexa came to visit the neighborhood where the residents live. (居住 is the verb 'to reside'; 居民 is the noun 'resident'. 居然, jūrán, looks similar at the start but means 'unexpectedly'.)"},{"t":"text","q":"jù — according to, based on","say":"据","sent":"____居委会介绍，这个地方历史久远，近代也一直很静。","sent_en":"According to the residents’ committee, this place has a long history, and in modern times it has also always been very quiet.","a":["据"],"ex":"据 jù — according to, based on · 据居委会介绍，这个地方历史久远。 / According to the residents’ committee, this place has a long history. (据 means 'according to', as in 据他说, 'according to what he said'. 距 is also 4th-tone jù, but means 'to be apart from', as in 距医院很近. Same sound, different character.)"},{"t":"text","q":"jù — to be apart from, to distance","say":"距","sent":"居然几分钟就到了，因为这里____医院很近。","sent_en":"Unexpectedly, it arrived in just a few minutes, because this place is very close to the hospital.","a":["距"],"ex":"距 jù — to be apart from, to distance · 因为这里距医院很近。 / …because this place is very close to the hospital. (距 talks about distance: 距医院很近 means 'not far from the hospital'. 据 is the same pinyin jù, but means 'according to'. Write the right character for the meaning.)"},{"t":"text","q":"jùchǎng — theater","say":"剧场","sent":"近日，大家决定进一步把传统建筑结构与经典文化结合起来，在____举办本届文化节。","sent_en":"Recently, everyone decided to go a step further and combine traditional building structures with classic culture, and to hold this session of the cultural festival at the theater.","a":["剧场"],"ex":"剧场 jùchǎng — theater · 在剧场举办本届文化节。 / They held this session of the cultural festival at the theater. (剧场 is a theater for plays or performances. 酒吧 is a bar; 巨大 means huge. 剧 is 4th-tone jù.)"}]},{"title":"六、声调 Tones","hint":"tap the correct pinyin · 🔊","items":[{"t":"mc","q":"居然","o":["jūrán","jùrán","júrán","jǔrán"],"a":0,"say":"居然","py":"jūrán","sent":"居然几分钟就到了，因为这里距医院很近。","sent_en":"Unexpectedly, it arrived in just a few minutes, because this place is very close to the hospital.","ex":"居然 jūrán — 1st tone + 2nd tone · 居然几分钟就到了。 / Unexpectedly, it arrived in just a few minutes. (居然 means 'unexpectedly, to one’s surprise'. 居 is 1st-tone jū, the same as in 居民 and 居住. Do not read it as 4th-tone jù, which is the tone of 据, 距, 具备 and 巨大.)"},{"t":"mc","q":"橘子","o":["jūzi","júzi","jǔzi","jùzi"],"a":1,"say":"橘子","py":"júzi","sent":"活动开始前，有人送给Alexa一个橘子，让她感到惊喜。","sent_en":"Before the event started, someone gave Alexa an orange, which gave her a pleasant surprise.","ex":"橘子 júzi — 2nd tone + neutral · 有人送给Alexa一个橘子，让她感到惊喜。 / Someone gave Alexa an orange, which gave her a pleasant surprise. (橘 is 2nd-tone jú; 子 is neutral. Do not read 橘 as 1st-tone jū, like 居 in 居然, or as 4th-tone jù, like 据 and 距.)"},{"t":"mc","q":"具备","o":["jūbèi","júbèi","jǔbèi","jùbèi"],"a":3,"say":"具备","py":"jùbèi","sent":"他们具备丰富的经验，精力充沛，精神也很好。","sent_en":"They possessed rich experience, were full of energy, and were also in very good spirits.","ex":"具备 jùbèi — 4th tone + 4th tone · 他们具备丰富的经验。 / They possessed rich experience. (具备 means to possess or to have, as in skills or experience. 具 is 4th-tone jù, the same tone as 据, 距, 剧场 and 巨大. It is not 1st-tone jū, like 居 in 居然.)"},{"t":"mc","q":"巨大","o":["jūdà","júdà","jǔdà","jùdà"],"a":3,"say":"巨大","py":"jùdà","sent":"近年来，这里的变化巨大。","sent_en":"In recent years, the changes here have been huge.","ex":"巨大 jùdà — 4th tone + 4th tone · 近年来，这里的变化巨大。 / In recent years, the changes here have been huge. (巨大 means huge or enormous. 巨 is 4th-tone jù. Do not read it as 1st-tone jū or 2nd-tone jú, like 橘 in 橘子.)"}]},{"title":"七、阅读 Reading","hint":"🔊 listen to the passage, then tap","passage":"今日，Alexa来到居民们居住的小区参观。近年来，这里的变化巨大。据居委会介绍，这个地方历史久远，近代也一直很静。近日，大家决定进一步把传统建筑结构与经典文化结合起来，在剧场举办本届文化节。组织者经营得很谨慎，尽量节省开支，只进口必要的设备。他们具备丰富的经验，精力充沛，精神也很好。活动开始前，有人送给Alexa一个橘子，让她感到惊喜。突然，有人胸口发紧，情况紧急。大家尽快叫了救护车来救他。居然几分钟就到了，因为这里距医院很近，社区和医院保持着紧密的联系。医生检查后得出结论：只是太累了，休息一下就好。近期，居委会还关注年轻人的就业问题，鼓励大家尽力进步。有人说晚上别去酒吧，要把精力放在学习上，保持安静。","items":[{"t":"mc","q":"Alexa今日去了哪里？近年来这里有什么变化？居委会怎么介绍这个地方？","o":["今日，Alexa来到居民们居住的小区参观。近年来，这里的变化巨大。据居委会介绍，这个地方历史久远，近代也一直很静。","Alexa今日去了酒吧，近年来这里没有什么变化，居委会说这个地方历史很短，近代十分热闹。","Alexa没有去小区参观，近年来变化很小，居委会也没有介绍这个地方。"],"a":0,"ex":"今日，Alexa来到居民们居住的小区参观。近年来，这里的变化巨大。据居委会介绍，这个地方历史久远，近代也一直很静。 / Today, Alexa came to visit the neighborhood where the residents live. In recent years, the changes here have been huge. According to the residents’ committee, this place has a long history, and in modern times it has also always been very quiet."},{"t":"mc","q":"近日大家做了什么决定？文化节的组织者是怎样工作的？","o":["大家决定取消文化节，不把传统结构与经典文化结合起来，组织者开支很大，进口了许多不必要的设备。","近日，大家决定进一步把传统建筑结构与经典文化结合起来，在剧场举办本届文化节。组织者经营得很谨慎，尽量节省开支，只进口必要的设备。","文化节在酒吧举办，组织者经营得很马虎，没有节省开支。"],"a":1,"ex":"近日，大家决定进一步把传统建筑结构与经典文化结合起来，在剧场举办本届文化节。组织者经营得很谨慎，尽量节省开支，只进口必要的设备。 / Recently, everyone decided to go a step further and combine traditional building structures with classic culture, and to hold this session of the cultural festival at the theater. The organizers managed things very cautiously, saved on expenses as much as they could, and only imported the necessary equipment."},{"t":"mc","q":"组织者具备什么？活动开始前发生了什么？","o":["他们不具备经验，精力不足，精神也不好。活动开始前没有人送东西给Alexa。","有人送给Alexa一辆救护车，她一点也不感到惊喜。","他们具备丰富的经验，精力充沛，精神也很好。活动开始前，有人送给Alexa一个橘子，让她感到惊喜。"],"a":2,"ex":"他们具备丰富的经验，精力充沛，精神也很好。活动开始前，有人送给Alexa一个橘子，让她感到惊喜。 / They possessed rich experience, were full of energy, and were also in very good spirits. Before the event started, someone gave Alexa an orange, which gave her a pleasant surprise."},{"t":"mc","q":"突然发生了什么事？救护车为什么很快就到了？医生的结论是什么？","o":["突然，有人胸口发紧，情况紧急。大家尽快叫了救护车来救他。居然几分钟就到了，因为这里距医院很近，社区和医院保持着紧密的联系。医生检查后得出结论：只是太累了，休息一下就好。","突然有人想去酒吧，大家没有叫救护车。医院距这里很远，过了一个小时才到。医生的结论是必须马上做手术。","没有人胸口发紧，也没有人来救他。医生没有给出结论。"],"a":0,"ex":"突然，有人胸口发紧，情况紧急。大家尽快叫了救护车来救他。居然几分钟就到了，因为这里距医院很近，社区和医院保持着紧密的联系。医生检查后得出结论：只是太累了，休息一下就好。 / Suddenly, someone felt tightness in the chest, and the situation was urgent. Everyone called an ambulance as soon as possible to rescue him. Unexpectedly, it arrived in just a few minutes, because this place is very close to the hospital, and the community and the hospital maintained a close connection. After examining him, the doctor reached a conclusion: he was only too tired, and would be fine after a rest."},{"t":"mc","q":"近期居委会还关注什么？有人提出了什么建议？","o":["居委会不关心就业问题，也不鼓励大家进步。有人说晚上应该去酒吧，不必学习。","近期，居委会还关注年轻人的就业问题，鼓励大家尽力进步。有人说晚上别去酒吧，要把精力放在学习上，保持安静。","有人说要把剧场改成酒吧，年轻人不必就业。"],"a":1,"ex":"近期，居委会还关注年轻人的就业问题，鼓励大家尽力进步。有人说晚上别去酒吧，要把精力放在学习上，保持安静。 / In the recent period, the residents’ committee has also been paying attention to young people’s employment, and has encouraged everyone to do their best and make progress. Someone said not to go to a bar in the evening, and to put one’s energy into studying and keep quiet."}]}];
+
+/* TEMPLATE: every target word needs 字+拼音+🔊 + 例句 CN + EN translation. See README.md */
+var L="ABCDEFG",ALL=[],start=Date.now(),done=false,timerId,zhVoice=null;
+function pickZhVoice(){
+  if(!window.speechSynthesis)return null;
+  var vs=speechSynthesis.getVoices()||[];
+  var pref=vs.filter(function(v){return /^zh(-|_|$)/i.test(v.lang)||/Chinese|中文|普通话|国语/i.test(v.name);});
+  var cn=pref.filter(function(v){return /CN|China|普通话|Chinese\s*\(China\)/i.test(v.lang+" "+v.name);});
+  return cn[0]||pref[0]||null;
+}
+function refreshVoice(){zhVoice=pickZhVoice();}
+if(window.speechSynthesis){refreshVoice();speechSynthesis.onvoiceschanged=refreshVoice;}
+function hasHan(s){return /[\u4e00-\u9fff]/.test(s||"");}
+function speakZh(text,btn){
+  if(!text||!window.speechSynthesis)return;
+  try{speechSynthesis.cancel();}catch(e){}
+  var u=new SpeechSynthesisUtterance(String(text));
+  u.lang="zh-CN";u.rate=0.9;u.pitch=1;
+  if(!zhVoice)refreshVoice();
+  if(zhVoice)u.voice=zhVoice;
+  if(btn)btn.disabled=true;
+  var unlock=function(){if(btn)btn.disabled=false;};
+  u.onend=unlock;u.onerror=unlock;
+  setTimeout(unlock, Math.max(1800, String(text).length*420));
+  speechSynthesis.speak(u);
+}
+function speakBtn(text, small){
+  var b=el("button", small?"say sm":"say");
+  b.type="button";b.setAttribute("aria-label","Pronounce");b.textContent="🔊";
+  b.onclick=function(ev){if(ev&&ev.stopPropagation)ev.stopPropagation();if(ev&&ev.preventDefault)ev.preventDefault();speakZh(text,b);return false;};
+  return b;
+}
+function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e}
+function addExample(box, it){
+  if(!it.sent && !it.sent_en) return;
+  var ex=el("div","exbox");
+  if(it.sent){
+    var row=el("div","ex-cn");
+    row.appendChild(document.createTextNode("例句："+it.sent+" "));
+    if(hasHan(it.sent)) row.appendChild(speakBtn(it.sent.replace(/____/g, it.say||it.q||""), true));
+    ex.appendChild(row);
+  }
+  if(it.sent_en) ex.appendChild(el("div","ex-en","EN: "+it.sent_en));
+  box.appendChild(ex);
+}
+function build(){
+ var quiz=document.getElementById("quiz");quiz.innerHTML="";ALL=[];
+ SECTIONS.forEach(function(s){
+  var sec=el("section");var h=el("h2",null,s.title+" ");h.appendChild(el("small",null,"("+s.hint+")"));sec.appendChild(h);
+  if(s.passage){
+    var ph=el("div","pass-head");ph.appendChild(el("strong",null,"短文"));ph.appendChild(speakBtn(s.passage,false));
+    ph.appendChild(el("span","tip","tap 🔊 to hear the whole passage"));
+    sec.appendChild(ph);
+    sec.appendChild(el("div","passage",s.passage));
+  }
+  s.items.forEach(function(it,i){
+   var box=el("div","item");
+   var qrow=el("div","q");
+   qrow.appendChild(el("span",null,(i+1)+". "));
+   var qw=el("span","qw",it.q);qrow.appendChild(qw);
+   if(it.py) qrow.appendChild(el("span","py","("+it.py+")"));
+   if(it.py_hint) qrow.appendChild(el("span","py","拼音提示: "+it.py_hint));
+   var sayText=it.say||(hasHan(it.q)&&!/____/.test(it.q)?it.q:null);
+   if(sayText && !/____/.test(String(it.q))) qrow.appendChild(speakBtn(sayText,false));
+   box.appendChild(qrow);
+   addExample(box, it);
+   var rec={it:it,box:box,sel:null,input:null};
+   if(it.t==="mc"){
+     var o=el("div","opts");
+     it.o.forEach(function(txt,j){
+       var wrap=el("span","optwrap");
+       var b=el("button","opt",L[j]+". "+txt);b.type="button";
+       b.onclick=function(){if(done)return;rec.sel=j;[].forEach.call(o.querySelectorAll(".opt"),function(c){c.classList.remove("sel")});b.classList.add("sel");prog()};
+       wrap.appendChild(b);
+       if(hasHan(txt) && String(txt).length<=8) wrap.appendChild(speakBtn(txt,true));
+       o.appendChild(wrap);
+     });
+     box.appendChild(o);
+   } else {
+     var row=el("div","optwrap");
+     var inp=el("input","txt");inp.type="text";inp.setAttribute("autocomplete","off");inp.setAttribute("autocapitalize","off");inp.setAttribute("spellcheck","false");inp.placeholder="写汉字…";inp.oninput=prog;rec.input=inp;
+     row.appendChild(inp);
+     if(it.say){var lb=speakBtn(it.say,false);lb.title="Listen (does not show the answer)";row.appendChild(lb);row.appendChild(el("span","tip","听发音"));}
+     box.appendChild(row);
+   }
+   var fb=el("div","fb");box.appendChild(fb);rec.fb=fb;sec.appendChild(box);ALL.push(rec);
+  });
+  quiz.appendChild(sec);
+ });
+ prog();
+}
+function norm(s){return String(s||"").replace(/[\s\u3000]+/g,"")}
+function isCorrect(rec){var it=rec.it;if(it.t==="mc")return rec.sel===it.a;var v=norm(rec.input.value);return it.a.some(function(a){return norm(a)===v})}
+function answered(rec){return rec.it.t==="mc"?rec.sel!==null:norm(rec.input.value)!==""}
+function prog(){var a=ALL.filter(answered).length;document.getElementById("prog").textContent="已答 "+a+" / "+ALL.length}
+function fmt(ms){var s=Math.round(ms/1000);return Math.floor(s/60)+":"+("0"+s%60).slice(-2)}
+function tick(){document.getElementById("clock").textContent=fmt(Date.now()-start)}
+function check(){
+ if(done)return;done=true;clearInterval(timerId);var score=0;
+ ALL.forEach(function(rec){var ok=isCorrect(rec),it=rec.it;rec.box.classList.add(ok?"ok":"bad");
+  var ans=it.t==="mc"?L[it.a]+". "+it.o[it.a]:it.a[0];
+  rec.fb.textContent=ok?"✔ 对了！":"✘ Correct answer: "+ans+" — "+it.ex;if(ok)score++});
+ document.getElementById("quiz").classList.add("locked");
+ var t=fmt(Date.now()-start),pct=Math.round(score/ALL.length*100);
+ var msg=pct===100?"太棒了！🎉":pct>=80?"很好！👍":pct>=60?"不错，继续加油！💪":"加油！Let's review the red ones. 📚";
+ var r=document.getElementById("result");r.style.display="block";r.innerHTML="";
+ r.appendChild(el("div",null,"得分 Score: "+score+" / "+ALL.length+" ("+pct+"%)"));
+ r.appendChild(el("div",null,"用时 Time: "+t));r.appendChild(el("div",null,msg));
+ try{r.scrollIntoView({behavior:"smooth"});}catch(e){}
+ return {score:score,total:ALL.length,time:t};
+}
+function reset(){done=false;try{speechSynthesis&&speechSynthesis.cancel();}catch(e){}
+ document.getElementById("quiz").classList.remove("locked");document.getElementById("result").style.display="none";start=Date.now();clearInterval(timerId);timerId=setInterval(tick,1000);tick();build();try{window.scrollTo(0,0);}catch(e){}}
+document.getElementById("check").onclick=check;
+document.getElementById("reset").onclick=reset;
+build();timerId=setInterval(tick,1000);tick();
+
+</script>
+<!-- PWA-SCRIPT -->
+<script>
+(function(){
+  var KEY="alexa-chinese-scores";
+  function drillId(){
+    var m=(location.pathname||"").match(/([^/]+)\.html$/i);
+    return m?decodeURIComponent(m[1]):null;
+  }
+  function save(){
+    var r=document.getElementById("result");
+    if(!r)return;
+    var text=r.textContent||"";
+    var m=text.match(/Score:\s*(\d+)\s*\/\s*(\d+)/i)||text.match(/得分[^0-9]*(\d+)\s*\/\s*(\d+)/);
+    if(!m)return;
+    var id=drillId();
+    if(!id)return;
+    var score=+m[1], total=+m[2];
+    if(!(total>0) || !(score>=0) || score>total)return;
+    try{
+      var all={};
+      try{all=JSON.parse(localStorage.getItem(KEY)||"{}")||{};}catch(e){all={};}
+      if(typeof all!=="object"||Array.isArray(all)) all={};
+      all[id]={score:score,total:total,at:new Date().toISOString()};
+      localStorage.setItem(KEY,JSON.stringify(all));
+    }catch(e){}
+  }
+  var btn=document.getElementById("check");
+  if(btn) btn.addEventListener("click", function(){ try{save();}catch(e){} });
+  if("serviceWorker" in navigator){
+    var sw=new URL("../sw.js", location.href);
+    var scope=new URL("../", location.href);
+    navigator.serviceWorker.register(sw.href, {scope: scope.href}).catch(function(){});
+  }
+})();
+</script>
+<!-- /PWA-SCRIPT -->
+</body>
+</html>
