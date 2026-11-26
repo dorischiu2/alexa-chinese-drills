@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Alexa 中文练习 – 27 Nov 2026 (HSK 5 · Day 17 · new cycle)</title>
+<!-- Daily-drill template: each target word = 字 + pinyin + 🔊 + 例句(CN) + English translation; Web Speech zh-CN. See README.md -->
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f4f7fb;color:#222;font-family:-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",Arial,sans-serif;font-size:20px;line-height:1.6}
+.wrap{max-width:760px;margin:0 auto;padding:16px}
+h1{font-size:1.4em;margin:.3em 0 0}
+.sub{color:#666;font-size:.8em;margin-bottom:1em}
+#timer{position:sticky;top:0;background:#fff;border-radius:12px;padding:8px 14px;box-shadow:0 2px 6px rgba(0,0,0,.08);font-size:.85em;z-index:5;display:flex;justify-content:space-between}
+section{background:#fff;border-radius:16px;padding:14px 16px;margin:16px 0;box-shadow:0 2px 6px rgba(0,0,0,.06)}
+h2{font-size:1.1em;margin:.2em 0 .5em}
+h2 small{font-weight:normal;color:#777;font-size:.7em}
+.item{padding:10px 8px;margin:8px 0;border-radius:12px;border:2px solid transparent}
+.q{margin-bottom:6px;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.q .qw{font-weight:600;font-size:1.15em}
+.q .py{color:#64748b;font-size:.85em;font-weight:normal}
+.exbox{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:10px 12px;margin:6px 0 10px;width:100%}
+.ex-cn{font-size:1.05em;margin-bottom:4px}
+.ex-en{color:#475569;font-size:.88em}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.optwrap{display:inline-flex;align-items:center;gap:4px}
+.opt{font-size:1em;padding:10px 16px;border-radius:12px;border:2px solid #c9d4e3;background:#f8fbff;cursor:pointer;min-width:64px;font-family:inherit}
+.opt.sel{background:#3b82f6;color:#fff;border-color:#3b82f6}
+input.txt{font-size:1.1em;padding:8px 12px;border:2px solid #c9d4e3;border-radius:12px;width:10em;max-width:100%;font-family:inherit}
+.passage{background:#fffbea;border-left:5px solid #f5c542;padding:10px 14px;border-radius:8px;font-size:1.05em}
+.pass-head{display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap}
+.item.ok{border-color:#22c55e;background:#effdf3}
+.item.bad{border-color:#ef4444;background:#fef1f1}
+.fb{margin-top:6px;font-size:.85em;display:none}
+.item.ok .fb,.item.bad .fb{display:block}
+.item.ok .fb{color:#15803d}.item.bad .fb{color:#b91c1c}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
+.big{font-size:1.1em;padding:14px 24px;border:none;border-radius:14px;background:#16a34a;color:#fff;cursor:pointer;font-family:inherit}
+.big.sec{background:#64748b}
+#result{display:none;font-size:1.2em;text-align:center;background:#fff;border-radius:16px;padding:16px;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.locked .opt,.locked input.txt{pointer-events:none}
+.say{flex-shrink:0;width:40px;height:40px;border-radius:50%;border:2px solid #93c5fd;background:#eff6ff;color:#1d4ed8;font-size:1.05em;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;padding:0;font-family:inherit;line-height:1;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.say:disabled{opacity:.45;cursor:default}
+.say.sm{width:32px;height:32px;font-size:.9em;border-width:1.5px}
+.say:active:not(:disabled){background:#dbeafe}
+.tip{font-size:.75em;color:#64748b;margin:.4em 0 0}
+</style>
+<!-- PWA-HEAD -->
+<meta name="theme-color" content="#3b82f6">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="中文练习">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<link rel="manifest" href="../manifest.webmanifest">
+<!-- /PWA-HEAD -->
+</head>
+<body>
+<!-- PWA-BAR -->
+<style>
+.pwa-bar{display:flex;align-items:center;gap:8px;background:#eef3f9;border-bottom:1px solid #dbe4ef;padding:6px 10px;padding-top:max(6px,env(safe-area-inset-top));font-family:-apple-system,"PingFang SC","Microsoft YaHei",Arial,sans-serif}
+.pwa-bar a{display:inline-flex;align-items:center;gap:6px;color:#1d4ed8;text-decoration:none;font-size:16px;font-weight:600;padding:8px 10px;border-radius:10px;min-height:44px;box-sizing:border-box}
+.pwa-bar a:active{background:#dbeafe}
+</style>
+<nav class="pwa-bar" aria-label="App navigation"><a href="../index.html">← 练习首页</a></nav>
+<!-- /PWA-BAR -->
+
+<div class="wrap">
+<h1>Alexa 中文练习 🌟 New HSK 5</h1>
+<div class="sub">27 Nov 2026 · Day 17 of a new cycle · New HSK 5 chunk 17 (据说–昆虫) · pinyin + 🔊 Putonghua · about 15 minutes · 45 questions<br>
+Each word has a short Chinese example and English translation. Tap 🔊 to hear. Answers stay hidden until Check.</div>
+<div id="timer"><span>⏱ <span id="clock">0:00</span></span><span id="prog"></span></div>
+<div id="quiz"></div>
+<div class="btns"><button class="big" id="check">✅ Check answers</button><button class="big sec" id="reset">↺ Try again</button></div>
+<div id="result"></div>
+</div>
+<script>
+var SECTIONS=[{"title":"一、看例句选意思 Meaning in context","hint":"read the sentence, tap the English meaning · 🔊","items":[{"t":"mc","q":"据说","o":["it is said, reportedly","to have, to possess","concrete, specific","to donate"],"a":0,"say":"据说","py":"jùshuō","sent":"据说，这个中心具有先进的设备，正在开发新技术，并开展关于昆虫的研究。","sent_en":"It is said that this center has advanced equipment, is developing new technology, and is carrying out research on insects.","ex":"据说 jùshuō — it is said, reportedly · 据说，这个中心具有先进的设备。 / It is said that this center has advanced equipment. (据说 introduces something you have heard or that people say. 具有 means to possess; 具体 means concrete or specific; 捐 means to donate.)"},{"t":"mc","q":"具体","o":["to open for business","absolute; absolutely","concrete, specific","to develop"],"a":2,"say":"具体","py":"jùtǐ","sent":"中心介绍了一项具体计划：请大家捐一些资料放到库里。","sent_en":"The center introduced a specific plan: please donate some materials to put in the storeroom.","ex":"具体 jùtǐ — concrete, specific · 中心介绍了一项具体计划。 / The center introduced a specific plan. (具体 means concrete or detailed, not vague. 绝对 means absolutely; 开发 means to develop; 开业 means to open for business.)"},{"t":"mc","q":"具有","o":["to donate","to have, to possess","to visit","to overcome"],"a":1,"say":"具有","py":"jùyǒu","sent":"据说，这个中心具有先进的设备，正在开发新技术，并开展关于昆虫的研究。","sent_en":"It is said that this center has advanced equipment, is developing new technology, and is carrying out research on insects.","ex":"具有 jùyǒu — to have, to possess · 这个中心具有先进的设备。 / This center has advanced equipment. (具有 is a formal way to say that something possesses a quality or resource. 据说 means it is said; 捐 means to donate; 克服 means to overcome.)"},{"t":"mc","q":"捐","o":["to donate","to control","to rely on","to open a ceremony"],"a":0,"say":"捐","py":"juān","sent":"中心介绍了一项具体计划：请大家捐一些资料放到库里。","sent_en":"The center introduced a specific plan: please donate some materials to put in the storeroom.","ex":"捐 juān — to donate · 请大家捐一些资料放到库里。 / Please donate some materials to put in the storeroom. (捐 means to give something to help, often money or goods. 控制 means to control; 靠 means to rely on; 开幕 means to open a ceremony.)"},{"t":"mc","q":"绝对","o":["reliable, dependable","terrible, frightening","objective","absolute; absolutely"],"a":3,"say":"绝对","py":"juéduì","sent":"这场决赛绝对精彩。","sent_en":"This final match was absolutely wonderful.","ex":"绝对 juéduì — absolute; absolutely · 这场决赛绝对精彩。 / This final match was absolutely wonderful. (绝对 means completely, with no exception. 可靠 means reliable; 可怕 means frightening; 客观 means objective.)"},{"t":"mc","q":"决赛","o":["opening ceremony","final match","scientific research","customer service"],"a":1,"say":"决赛","py":"juésài","sent":"下午还举行了球赛决赛。","sent_en":"In the afternoon there was also the final of a ball game.","ex":"决赛 juésài — final match · 下午还举行了球赛决赛。 / In the afternoon there was also the final of a ball game. (决赛 is the last, deciding match. 开幕式 is an opening ceremony; 科研 is scientific research; 客服 is customer service.)"},{"t":"mc","q":"角色","o":["role, character","client, customer","pocket","insect"],"a":0,"say":"角色","py":"juésè","sent":"每个角色都很重要。","sent_en":"Every role was very important.","ex":"角色 juésè — role, character · 每个角色都很重要。 / Every role was very important. (角色 is a part someone plays, in a story, a team or a situation. In this word list it is read juésè, not jiǎosè. 客户 means a client; 口袋 means a pocket; 昆虫 means an insect.)"},{"t":"mc","q":"决心","o":["to overcome","determination, resolve","boiled water","width"],"a":1,"say":"决心","py":"juéxīn","sent":"可见，他们办事很客观，也有决心克服困难。","sent_en":"It can be seen that they handle matters objectively and also have the determination to overcome difficulties.","ex":"决心 juéxīn — determination, resolve · 他们也有决心克服困难。 / They also have the determination to overcome difficulties. (决心 is a firm decision to do something. This word also appeared in Lesson 4 子路背米. 克服 is the verb 'to overcome'; 开水 is boiled water; 宽度 means width.)"},{"t":"mc","q":"开发","o":["to open; open","to carry out","to develop","to open for business"],"a":2,"say":"开发","py":"kāifā","sent":"据说，这个中心具有先进的设备，正在开发新技术，并开展关于昆虫的研究。","sent_en":"It is said that this center has advanced equipment, is developing new technology, and is carrying out research on insects.","ex":"开发 kāifā — to develop · 正在开发新技术。 / (They) are developing new technology. (开发 is to develop something new, such as technology or a resource. 开放 means to open up; 开展 means to carry out an activity or a project; 开业 means to open for business.)"},{"t":"mc","q":"开放","o":["to develop","to open a service or line","to open a ceremony","to open; open"],"a":3,"say":"开放","py":"kāifàng","sent":"开幕以后，中心开通了网上服务，还开放了部分实验室给公众参观。","sent_en":"After the opening, the center launched an online service and also opened some laboratories to the public for visits.","ex":"开放 kāifàng — to open; open · 还开放了部分实验室给公众参观。 / (They) also opened some laboratories to the public for visits. (开放 means to open something to people, or to be open-minded. 开发 means to develop; 开通 means to open a service or a line; 开幕 means to open a ceremony.)"}]},{"title":"二、根据意思选词 Choose the word","hint":"read the English and the sentence, tap the Chinese word · 🔊","items":[{"t":"mc","q":"to open a ceremony or exhibition","o":["开幕","开幕式","开业","开放"],"a":0,"say":"开幕","py":"kāimù","sent":"开幕以后，中心开通了网上服务，还开放了部分实验室给公众参观。","sent_en":"After the opening, the center launched an online service and also opened some laboratories to the public for visits.","ex":"开幕 kāimù — to open a ceremony or exhibition · 开幕以后，中心开通了网上服务。 / After the opening, the center launched an online service. (开幕 is the verb 'to open' a ceremony or show. 开幕式 is the noun 'opening ceremony'; 开业 means to open for business; 开放 means to open something to the public.)"},{"t":"mc","q":"opening ceremony","o":["开幕","开幕式","开业","开通"],"a":1,"say":"开幕式","py":"kāimùshì","sent":"开幕式在一个很宽的大厅里举行，大厅的宽度超过三十米，空间很大，空中挂着许多彩灯。","sent_en":"The opening ceremony was held in a very wide hall; the hall’s width was more than thirty meters, the space was large, and many colored lights were hanging in the air.","ex":"开幕式 kāimùshì — opening ceremony · 开幕式在一个很宽的大厅里举行。 / The opening ceremony was held in a very wide hall. (开幕式 is the ceremony itself. 开幕 is the verb 'to open (a ceremony)'; 开业 means to open for business; 开通 means to open a service or a line.)"},{"t":"mc","q":"boiled water","o":["开业","开通","开水","开放"],"a":2,"say":"开水","py":"kāishuǐ","sent":"老师请她喝开水，又从口袋里拿出一颗糖。","sent_en":"The teacher offered her some boiled water, and then took a sweet out of her pocket.","ex":"开水 kāishuǐ — boiled water · 老师请她喝开水。 / The teacher offered her some boiled water. (开水 is water that has been boiled, often for drinking. Do not confuse it with 开业, 开通 or 开放, which are all 'open' words but have nothing to do with water.)"},{"t":"mc","q":"to open a service or line","o":["开放","开发","开通","开业"],"a":2,"say":"开通","py":"kāitōng","sent":"开幕以后，中心开通了网上服务，还开放了部分实验室给公众参观。","sent_en":"After the opening, the center launched an online service and also opened some laboratories to the public for visits.","ex":"开通 kāitōng — to open a service or line · 中心开通了网上服务。 / The center launched an online service. (开通 is used for opening a phone line, a route or an online service. 开放 means to open something to the public; 开发 means to develop; 开业 means to open for business.)"},{"t":"mc","q":"to open for business","o":["开幕","开放","开通","开业"],"a":3,"say":"开业","py":"kāiyè","sent":"今日，一座新的科研中心开业了。","sent_en":"Today, a new scientific-research center opened for business.","ex":"开业 kāiyè — to open for business · 一座新的科研中心开业了。 / A new scientific-research center opened for business. (开业 is when a shop, company or center starts operating. 开幕 opens a ceremony; 开放 opens something to the public; 开通 opens a service or a line.)"},{"t":"mc","q":"to carry out, to launch (an activity or project)","o":["开发","开展","开放","开通"],"a":1,"say":"开展","py":"kāizhǎn","sent":"据说，这个中心具有先进的设备，正在开发新技术，并开展关于昆虫的研究。","sent_en":"It is said that this center has advanced equipment, is developing new technology, and is carrying out research on insects.","ex":"开展 kāizhǎn — to carry out, to launch · 并开展关于昆虫的研究。 / and is carrying out research on insects. (开展 means to start and carry out a project, an activity or research. 开发 means to develop something new, such as technology; 开放 means to open up; 开通 means to open a service.)"},{"t":"mc","q":"to visit (someone)","o":["看作","看望","靠近","靠"],"a":1,"say":"看望","py":"kànwàng","sent":"Alexa前来看望一位在这里工作的老师。","sent_en":"Alexa came to visit a teacher who works here.","ex":"看望 kànwàng — to visit (someone) · Alexa前来看望一位在这里工作的老师。 / Alexa came to visit a teacher who works here. (看望 is to go and see someone, often a teacher, a relative or a person who is ill. 看作 means to regard as; 靠近 means to get close to; 靠 means to lean on or rely on.)"}]},{"title":"三、填空 Fill the blank","hint":"choose the word that fits the sentence · 🔊","items":[{"t":"mc","q":"Alexa把这里____一个友好的地方。","o":["看望","看作","看","靠近"],"a":1,"say":"看作","py":"kànzuò","sent":"Alexa把这里看作一个友好的地方。","sent_en":"Alexa regarded this place as a friendly one.","ex":"看作 kànzuò — to regard as, to consider as · Alexa把这里看作一个友好的地方。 / Alexa regarded this place as a friendly one. (看作 means to treat or consider A as B. 看望 means to visit someone; 看 here would be incomplete; 靠近 means to get close to.)"},{"t":"mc","q":"他们____认真的态度控制每一个环节，绝不让工作亏本。","o":["靠近","捐","靠","控制"],"a":2,"say":"靠","py":"kào","sent":"他们靠认真的态度控制每一个环节，绝不让工作亏本。","sent_en":"They relied on a careful attitude to control every step, and would never let the work run at a loss.","ex":"靠 kào — to lean on, to rely on · 他们靠认真的态度控制每一个环节。 / They relied on a careful attitude to control every step. (靠 can mean to depend on something, or to lean on someone. 靠近 means to get close to; 捐 means to donate; 控制 is already the later verb in this sentence, 'to control'.)"},{"t":"mc","q":"老师说可以慢慢____，不必害怕。","o":["靠","靠近","开放","看望"],"a":1,"say":"靠近","py":"kàojìn","sent":"老师说可以慢慢靠近，不必害怕。","sent_en":"The teacher said they could approach slowly and need not be afraid.","ex":"靠近 kàojìn — to approach, to get close to · 老师说可以慢慢靠近，不必害怕。 / The teacher said they could approach slowly and need not be afraid. (靠近 means to move nearer. 靠 means to lean on or rely on, but does not by itself mean 'to come close'; 开放 means to open; 看望 means to visit.)"},{"t":"mc","q":"老师请她喝开水，又从口袋里拿出一____糖。","o":["库","宽","角色","颗"],"a":3,"say":"颗","py":"kē","sent":"老师请她喝开水，又从口袋里拿出一颗糖。","sent_en":"The teacher offered her some boiled water, and then took a sweet out of her pocket.","ex":"颗 kē — measure word for small round objects · 又从口袋里拿出一颗糖。 / and then took a sweet out of her pocket. (颗 is used for small, round things such as sweets, stars or pearls. 库 means a storeroom or warehouse; 宽 means wide; 角色 means a role.)"},{"t":"mc","q":"今日，一座新的____中心开业了。","o":["客服","科研","决赛","开幕式"],"a":1,"say":"科研","py":"kēyán","sent":"今日，一座新的科研中心开业了。","sent_en":"Today, a new scientific-research center opened for business.","ex":"科研 kēyán — scientific research · 一座新的科研中心开业了。 / A new scientific-research center opened for business. (科研 is short for 科学研究, scientific research. 客服 is customer service; 决赛 is a final match; 开幕式 is an opening ceremony.)"},{"t":"mc","q":"____，他们办事很客观，也有决心克服困难。","o":["据说","绝对","可见","具体"],"a":2,"say":"可见","py":"kějiàn","sent":"可见，他们办事很客观，也有决心克服困难。","sent_en":"It can be seen that they handle matters objectively and also have the determination to overcome difficulties.","ex":"可见 kějiàn — it can be seen that, obviously · 可见，他们办事很客观。 / It can be seen that they handle matters objectively. (可见 draws a conclusion from what was just said. 据说 means 'it is said' and introduces a rumour or report, not a conclusion; 绝对 means absolutely; 具体 means specific.)"}]},{"title":"四、易混词 Look-alikes in sentences","hint":"choose the word that fits · 🔊","items":[{"t":"mc","q":"客服人员把每一位客户都看作重要的合作伙伴，服务非常____。","o":["可靠","可怕","客观","可见"],"a":0,"say":"可靠","py":"kěkào","sent":"客服人员把每一位客户都看作重要的合作伙伴，服务非常可靠。","sent_en":"The customer-service staff regarded every client as an important partner, and their service was very reliable.","ex":"可靠 kěkào — reliable, dependable · 服务非常可靠。 / Their service was very reliable. (可靠 means you can trust it or them. 可怕 means frightening; 客观 means objective, not influenced by personal feeling; 可见 means 'it can be seen that'. All four start with 可, but only 可靠 means reliable.)"},{"t":"mc","q":"有人觉得科研有点儿____，老师说可以慢慢靠近，不必害怕。","o":["可靠","客观","可怕","克服"],"a":2,"say":"可怕","py":"kěpà","sent":"有人觉得科研有点儿可怕，老师说可以慢慢靠近，不必害怕。","sent_en":"Some people found scientific research a little frightening; the teacher said they could approach slowly and need not be afraid.","ex":"可怕 kěpà — terrible, frightening · 有人觉得科研有点儿可怕。 / Some people found scientific research a little frightening. (可怕 describes something that makes you afraid. 可靠 means reliable; 客观 means objective; 克服 means to overcome. The sentence also has 不必害怕, which matches 可怕.)"},{"t":"mc","q":"可见，他们办事很客观，也有决心____困难。","o":["客服","客观","控制","克服"],"a":3,"say":"克服","py":"kèfú","sent":"可见，他们办事很客观，也有决心克服困难。","sent_en":"It can be seen that they handle matters objectively and also have the determination to overcome difficulties.","ex":"克服 kèfú — to overcome · 也有决心克服困难。 / and also have the determination to overcome difficulties. (克服 means to get over a difficulty. 客服 is customer service and is pronounced the same, kèfú, but it is a different word with different characters. 客观 means objective; 控制 means to control.)"},{"t":"mc","q":"____人员把每一位客户都看作重要的合作伙伴，服务非常可靠。","o":["客户","客服","克服","客观"],"a":1,"say":"客服","py":"kèfú","sent":"客服人员把每一位客户都看作重要的合作伙伴，服务非常可靠。","sent_en":"The customer-service staff regarded every client as an important partner, and their service was very reliable.","ex":"客服 kèfú — customer service · 客服人员把每一位客户都看作重要的合作伙伴。 / The customer-service staff regarded every client as an important partner. (客服 is short for 客户服务. It has the same pinyin as 克服, kèfú, but 克服 means to overcome. 客户 is the client; 客观 means objective.)"},{"t":"mc","q":"可见，他们办事很____，也有决心克服困难。","o":["可靠","具体","客观","绝对"],"a":2,"say":"客观","py":"kèguān","sent":"可见，他们办事很客观，也有决心克服困难。","sent_en":"It can be seen that they handle matters objectively and also have the determination to overcome difficulties.","ex":"客观 kèguān — objective · 他们办事很客观。 / They handle matters objectively. (客观 means based on facts, not only on personal feeling. 可靠 means reliable; 具体 means specific; 绝对 means absolutely. 客观 and 客服 / 客户 all start with 客, so look carefully at the second character 观.)"},{"t":"mc","q":"客服人员把每一位____都看作重要的合作伙伴，服务非常可靠。","o":["客服","角色","口味","客户"],"a":3,"say":"客户","py":"kèhù","sent":"客服人员把每一位客户都看作重要的合作伙伴，服务非常可靠。","sent_en":"The customer-service staff regarded every client as an important partner, and their service was very reliable.","ex":"客户 kèhù — client, customer · 把每一位客户都看作重要的合作伙伴。 / regarded every client as an important partner. (客户 is the person or company being served. 客服 is the service team; 角色 means a role; 口味 means taste or flavor.)"},{"t":"mc","q":"大厅的宽度超过三十米，____很大，空中挂着许多彩灯。","o":["空中","空间","控制","宽度"],"a":1,"say":"空间","py":"kōngjiān","sent":"大厅的宽度超过三十米，空间很大，空中挂着许多彩灯。","sent_en":"The hall’s width was more than thirty meters, the space was large, and many colored lights were hanging in the air.","ex":"空间 kōngjiān — space · 空间很大。 / The space was large. (空间 is the room or space inside a place. 空中 means in the air, as in 空中挂着许多彩灯; 控制 means to control; 宽度 means width. 空间 and 空中 both start with 空 kōng, but they are not the same word.)"}]},{"title":"五、默写 Dictation in context","hint":"🔊 listen, read the sentence, type the characters","items":[{"t":"text","q":"kōngzhōng — in the air, sky","say":"空中","sent":"大厅的宽度超过三十米，空间很大，____挂着许多彩灯。","sent_en":"The hall’s width was more than thirty meters, the space was large, and many colored lights were hanging in the air.","a":["空中"],"ex":"空中 kōngzhōng — in the air, sky · 空中挂着许多彩灯。 / Many colored lights were hanging in the air. (空中 means up in the air. 空间 means space, as in how much room there is. Both start with 空 kōng, first tone.)"},{"t":"text","q":"kǒudai — pocket","say":"口袋","sent":"老师请她喝开水，又从____里拿出一颗糖。","sent_en":"The teacher offered her some boiled water, and then took a sweet out of her pocket.","a":["口袋"],"ex":"口袋 kǒudai — pocket · 又从口袋里拿出一颗糖。 / and then took a sweet out of her pocket. (口袋 is a pocket in clothing. 口 is 3rd-tone kǒu; 袋 is neutral dai. Do not write 口味, which means taste or flavor.)"},{"t":"text","q":"kǒuwèi — taste, flavor","say":"口味","sent":"他口袋里还装着自己喜欢的____的糖果。","sent_en":"In his pocket there were also sweets in the flavor he likes.","a":["口味"],"ex":"口味 kǒuwèi — taste, flavor · 他口袋里还装着自己喜欢的口味的糖果。 / In his pocket there were also sweets in the flavor he likes. (口味 is how something tastes, or the kind of flavor a person prefers. 口袋 is a pocket — same first character 口, different second character.)"},{"t":"text","q":"kù — warehouse, storeroom","say":"库","sent":"请大家捐一些资料放到____里。","sent_en":"Please donate some materials to put in the storeroom.","a":["库"],"ex":"库 kù — warehouse, storeroom · 请大家捐一些资料放到库里。 / Please donate some materials to put in the storeroom. (库 is a place for storing things, such as a warehouse or a data store. It is 4th-tone kù, a single character.)"},{"t":"text","q":"kuān — wide, broad","say":"宽","sent":"开幕式在一个很____的大厅里举行。","sent_en":"The opening ceremony was held in a very wide hall.","a":["宽"],"ex":"宽 kuān — wide, broad · 开幕式在一个很宽的大厅里举行。 / The opening ceremony was held in a very wide hall. (宽 describes something that is wide. 宽度 is the noun 'width'. Both start with 1st-tone kuān.)"},{"t":"text","q":"kuāndù — width","say":"宽度","sent":"大厅的____超过三十米，空间很大，空中挂着许多彩灯。","sent_en":"The hall’s width was more than thirty meters, the space was large, and many colored lights were hanging in the air.","a":["宽度"],"ex":"宽度 kuāndù — width · 大厅的宽度超过三十米。 / The hall’s width was more than thirty meters. (宽度 is the measurement of how wide something is. 宽 is the adjective 'wide'. Write both characters: 宽 and 度.)"}]},{"title":"六、声调 Tones","hint":"tap the correct pinyin · 🔊","items":[{"t":"mc","q":"看","o":["kān","kàn","kǎn","kán"],"a":0,"say":"看","py":"kān","sent":"靠近场地时，有个小朋友靠在妈妈身边，请妈妈看一会儿书包。","sent_en":"When they came near the field, a little child leaned against his mom and asked her to look after his schoolbag for a while.","ex":"看 kān — 1st tone · 请妈妈看一会儿书包。 / (He) asked his mom to look after his schoolbag for a while. (Here 看 means to look after or watch over, and it is 1st-tone kān. The more common 看 'to look / to see' is 4th-tone kàn, as in 看望 and 看作. The sentence meaning 'look after the bag' tells you to choose kān.)"},{"t":"mc","q":"控制","o":["kōngzhì","kǒngzhì","kòngzhì","kóngzhì"],"a":2,"say":"控制","py":"kòngzhì","sent":"他们靠认真的态度控制每一个环节，绝不让工作亏本。","sent_en":"They relied on a careful attitude to control every step, and would never let the work run at a loss.","ex":"控制 kòngzhì — 4th tone + 4th tone · 他们靠认真的态度控制每一个环节。 / They relied on a careful attitude to control every step. (控 is 4th-tone kòng, not 1st-tone kōng. 空 in 空间 and 空中 is kōng, a different character and a different tone.)"},{"t":"mc","q":"亏","o":["kuí","kuǐ","kuì","kuī"],"a":3,"say":"亏","py":"kuī","sent":"他们靠认真的态度控制每一个环节，绝不让工作亏本。","sent_en":"They relied on a careful attitude to control every step, and would never let the work run at a loss.","ex":"亏 kuī — 1st tone · 绝不让工作亏本。 / and would never let the work run at a loss. (亏 means to suffer a loss. It is 1st-tone kuī, the same tone as 宽 kuān, but a different sound. Do not read it as 4th-tone kuì.)"},{"t":"mc","q":"昆虫","o":["kǔnchóng","kūnchóng","kùnchóng","kúnchóng"],"a":1,"say":"昆虫","py":"kūnchóng","sent":"据说，这个中心具有先进的设备，正在开发新技术，并开展关于昆虫的研究。","sent_en":"It is said that this center has advanced equipment, is developing new technology, and is carrying out research on insects.","ex":"昆虫 kūnchóng — 1st tone + 2nd tone · 并开展关于昆虫的研究。 / and is carrying out research on insects. (昆 is 1st-tone kūn; 虫 is 2nd-tone chóng. Do not read 昆 as 3rd-tone kǔn or 4th-tone kùn.)"}]},{"title":"七、阅读 Reading","hint":"🔊 listen to the passage, then tap","passage":"今日，一座新的科研中心开业了。开幕式在一个很宽的大厅里举行，大厅的宽度超过三十米，空间很大，空中挂着许多彩灯。据说，这个中心具有先进的设备，正在开发新技术，并开展关于昆虫的研究。开幕以后，中心开通了网上服务，还开放了部分实验室给公众参观。Alexa前来看望一位在这里工作的老师。老师请她喝开水，又从口袋里拿出一颗糖。Alexa把这里看作一个友好的地方。客服人员把每一位客户都看作重要的合作伙伴，服务非常可靠。中心介绍了一项具体计划：请大家捐一些资料放到库里。可见，他们办事很客观，也有决心克服困难。他们靠认真的态度控制每一个环节，绝不让工作亏本。有人觉得科研有点儿可怕，老师说可以慢慢靠近，不必害怕。下午还举行了球赛决赛。每个角色都很重要。这场决赛绝对精彩。靠近场地时，有个小朋友靠在妈妈身边，请妈妈看一会儿书包。他口袋里还装着自己喜欢的口味的糖果。","items":[{"t":"mc","q":"今日开业的是什么地方？开幕式在什么样的大厅里举行？","o":["今日，一座新的科研中心开业了。开幕式在一个很宽的大厅里举行，大厅的宽度超过三十米，空间很大，空中挂着许多彩灯。","今日开业的是一家客服公司。开幕式在一个很窄的大厅里举行，空间很小，空中什么也没有。","今日没有中心开业，也没有举行开幕式。"],"a":0,"ex":"今日，一座新的科研中心开业了。开幕式在一个很宽的大厅里举行，大厅的宽度超过三十米，空间很大，空中挂着许多彩灯。 / Today, a new scientific-research center opened for business. The opening ceremony was held in a very wide hall; the hall’s width was more than thirty meters, the space was large, and many colored lights were hanging in the air."},{"t":"mc","q":"据说这个中心具有什么？开幕以后他们做了什么？","o":["据说这个中心没有先进设备，也不开发新技术。开幕以后，他们关闭了网上服务，不开放实验室。","据说，这个中心具有先进的设备，正在开发新技术，并开展关于昆虫的研究。开幕以后，中心开通了网上服务，还开放了部分实验室给公众参观。","这个中心只举行球赛决赛，不开展科学研究，也不开通网上服务。"],"a":1,"ex":"据说，这个中心具有先进的设备，正在开发新技术，并开展关于昆虫的研究。开幕以后，中心开通了网上服务，还开放了部分实验室给公众参观。 / It is said that this center has advanced equipment, is developing new technology, and is carrying out research on insects. After the opening, the center launched an online service and also opened some laboratories to the public for visits."},{"t":"mc","q":"Alexa来做什么？老师请她喝了什么？客服人员怎样对待客户？","o":["Alexa来看决赛，老师请她喝口味很奇怪的饮料，客服人员对客户很可怕。","Alexa没有看望老师，老师也没有请她喝开水，客服人员不可靠。","Alexa前来看望一位在这里工作的老师。老师请她喝开水，又从口袋里拿出一颗糖。Alexa把这里看作一个友好的地方。客服人员把每一位客户都看作重要的合作伙伴，服务非常可靠。"],"a":2,"ex":"Alexa前来看望一位在这里工作的老师。老师请她喝开水，又从口袋里拿出一颗糖。Alexa把这里看作一个友好的地方。客服人员把每一位客户都看作重要的合作伙伴，服务非常可靠。 / Alexa came to visit a teacher who works here. The teacher offered her some boiled water, and then took a sweet out of her pocket. Alexa regarded this place as a friendly one. The customer-service staff regarded every client as an important partner, and their service was very reliable."},{"t":"mc","q":"中心介绍了什么具体计划？可见他们做事怎样？有人为什么觉得可怕？","o":["中心介绍了一项具体计划：请大家捐一些资料放到库里。可见，他们办事很客观，也有决心克服困难。他们靠认真的态度控制每一个环节，绝不让工作亏本。有人觉得科研有点儿可怕，老师说可以慢慢靠近，不必害怕。","中心没有具体计划，也不请大家捐资料。他们办事不客观，没有决心克服困难，让工作亏了本。老师说科研很可怕，不要靠近。","具体计划是取消科研，把库关掉。没有人觉得可怕。"],"a":0,"ex":"中心介绍了一项具体计划：请大家捐一些资料放到库里。可见，他们办事很客观，也有决心克服困难。他们靠认真的态度控制每一个环节，绝不让工作亏本。有人觉得科研有点儿可怕，老师说可以慢慢靠近，不必害怕。 / The center introduced a specific plan: please donate some materials to put in the storeroom. It can be seen that they handle matters objectively and also have the determination to overcome difficulties. They relied on a careful attitude to control every step, and would never let the work run at a loss. Some people found scientific research a little frightening; the teacher said they could approach slowly and need not be afraid."},{"t":"mc","q":"下午举行了什么比赛？靠近场地时发生了什么？","o":["下午没有比赛。靠近场地时，小朋友自己看书包，口袋里什么也没有。","下午还举行了球赛决赛。每个角色都很重要。这场决赛绝对精彩。靠近场地时，有个小朋友靠在妈妈身边，请妈妈看一会儿书包。他口袋里还装着自己喜欢的口味的糖果。","下午举行的是开幕式，不是决赛。小朋友远离妈妈，谁也不靠。"],"a":1,"ex":"下午还举行了球赛决赛。每个角色都很重要。这场决赛绝对精彩。靠近场地时，有个小朋友靠在妈妈身边，请妈妈看一会儿书包。他口袋里还装着自己喜欢的口味的糖果。 / In the afternoon there was also the final of a ball game. Every role was very important. This final match was absolutely wonderful. When they came near the field, a little child leaned against his mom and asked her to look after his schoolbag for a while. In his pocket there were also sweets in the flavor he likes."}]}];
+
+/* TEMPLATE: every target word needs 字+拼音+🔊 + 例句 CN + EN translation. See README.md */
+var L="ABCDEFG",ALL=[],start=Date.now(),done=false,timerId,zhVoice=null;
+function pickZhVoice(){
+  if(!window.speechSynthesis)return null;
+  var vs=speechSynthesis.getVoices()||[];
+  var pref=vs.filter(function(v){return /^zh(-|_|$)/i.test(v.lang)||/Chinese|中文|普通话|国语/i.test(v.name);});
+  var cn=pref.filter(function(v){return /CN|China|普通话|Chinese\s*\(China\)/i.test(v.lang+" "+v.name);});
+  return cn[0]||pref[0]||null;
+}
+function refreshVoice(){zhVoice=pickZhVoice();}
+if(window.speechSynthesis){refreshVoice();speechSynthesis.onvoiceschanged=refreshVoice;}
+function hasHan(s){return /[\u4e00-\u9fff]/.test(s||"");}
+function speakZh(text,btn){
+  if(!text||!window.speechSynthesis)return;
+  try{speechSynthesis.cancel();}catch(e){}
+  var u=new SpeechSynthesisUtterance(String(text));
+  u.lang="zh-CN";u.rate=0.9;u.pitch=1;
+  if(!zhVoice)refreshVoice();
+  if(zhVoice)u.voice=zhVoice;
+  if(btn)btn.disabled=true;
+  var unlock=function(){if(btn)btn.disabled=false;};
+  u.onend=unlock;u.onerror=unlock;
+  setTimeout(unlock, Math.max(1800, String(text).length*420));
+  speechSynthesis.speak(u);
+}
+function speakBtn(text, small){
+  var b=el("button", small?"say sm":"say");
+  b.type="button";b.setAttribute("aria-label","Pronounce");b.textContent="🔊";
+  b.onclick=function(ev){if(ev&&ev.stopPropagation)ev.stopPropagation();if(ev&&ev.preventDefault)ev.preventDefault();speakZh(text,b);return false;};
+  return b;
+}
+function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e}
+function addExample(box, it){
+  if(!it.sent && !it.sent_en) return;
+  var ex=el("div","exbox");
+  if(it.sent){
+    var row=el("div","ex-cn");
+    row.appendChild(document.createTextNode("例句："+it.sent+" "));
+    if(hasHan(it.sent)) row.appendChild(speakBtn(it.sent.replace(/____/g, it.say||it.q||""), true));
+    ex.appendChild(row);
+  }
+  if(it.sent_en) ex.appendChild(el("div","ex-en","EN: "+it.sent_en));
+  box.appendChild(ex);
+}
+function build(){
+ var quiz=document.getElementById("quiz");quiz.innerHTML="";ALL=[];
+ SECTIONS.forEach(function(s){
+  var sec=el("section");var h=el("h2",null,s.title+" ");h.appendChild(el("small",null,"("+s.hint+")"));sec.appendChild(h);
+  if(s.passage){
+    var ph=el("div","pass-head");ph.appendChild(el("strong",null,"短文"));ph.appendChild(speakBtn(s.passage,false));
+    ph.appendChild(el("span","tip","tap 🔊 to hear the whole passage"));
+    sec.appendChild(ph);
+    sec.appendChild(el("div","passage",s.passage));
+  }
+  s.items.forEach(function(it,i){
+   var box=el("div","item");
+   var qrow=el("div","q");
+   qrow.appendChild(el("span",null,(i+1)+". "));
+   var qw=el("span","qw",it.q);qrow.appendChild(qw);
+   if(it.py) qrow.appendChild(el("span","py","("+it.py+")"));
+   if(it.py_hint) qrow.appendChild(el("span","py","拼音提示: "+it.py_hint));
+   var sayText=it.say||(hasHan(it.q)&&!/____/.test(it.q)?it.q:null);
+   if(sayText && !/____/.test(String(it.q))) qrow.appendChild(speakBtn(sayText,false));
+   box.appendChild(qrow);
+   addExample(box, it);
+   var rec={it:it,box:box,sel:null,input:null};
+   if(it.t==="mc"){
+     var o=el("div","opts");
+     it.o.forEach(function(txt,j){
+       var wrap=el("span","optwrap");
+       var b=el("button","opt",L[j]+". "+txt);b.type="button";
+       b.onclick=function(){if(done)return;rec.sel=j;[].forEach.call(o.querySelectorAll(".opt"),function(c){c.classList.remove("sel")});b.classList.add("sel");prog()};
+       wrap.appendChild(b);
+       if(hasHan(txt) && String(txt).length<=8) wrap.appendChild(speakBtn(txt,true));
+       o.appendChild(wrap);
+     });
+     box.appendChild(o);
+   } else {
+     var row=el("div","optwrap");
+     var inp=el("input","txt");inp.type="text";inp.setAttribute("autocomplete","off");inp.setAttribute("autocapitalize","off");inp.setAttribute("spellcheck","false");inp.placeholder="写汉字…";inp.oninput=prog;rec.input=inp;
+     row.appendChild(inp);
+     if(it.say){var lb=speakBtn(it.say,false);lb.title="Listen (does not show the answer)";row.appendChild(lb);row.appendChild(el("span","tip","听发音"));}
+     box.appendChild(row);
+   }
+   var fb=el("div","fb");box.appendChild(fb);rec.fb=fb;sec.appendChild(box);ALL.push(rec);
+  });
+  quiz.appendChild(sec);
+ });
+ prog();
+}
+function norm(s){return String(s||"").replace(/[\s\u3000]+/g,"")}
+function isCorrect(rec){var it=rec.it;if(it.t==="mc")return rec.sel===it.a;var v=norm(rec.input.value);return it.a.some(function(a){return norm(a)===v})}
+function answered(rec){return rec.it.t==="mc"?rec.sel!==null:norm(rec.input.value)!==""}
+function prog(){var a=ALL.filter(answered).length;document.getElementById("prog").textContent="已答 "+a+" / "+ALL.length}
+function fmt(ms){var s=Math.round(ms/1000);return Math.floor(s/60)+":"+("0"+s%60).slice(-2)}
+function tick(){document.getElementById("clock").textContent=fmt(Date.now()-start)}
+function check(){
+ if(done)return;done=true;clearInterval(timerId);var score=0;
+ ALL.forEach(function(rec){var ok=isCorrect(rec),it=rec.it;rec.box.classList.add(ok?"ok":"bad");
+  var ans=it.t==="mc"?L[it.a]+". "+it.o[it.a]:it.a[0];
+  rec.fb.textContent=ok?"✔ 对了！":"✘ Correct answer: "+ans+" — "+it.ex;if(ok)score++});
+ document.getElementById("quiz").classList.add("locked");
+ var t=fmt(Date.now()-start),pct=Math.round(score/ALL.length*100);
+ var msg=pct===100?"太棒了！🎉":pct>=80?"很好！👍":pct>=60?"不错，继续加油！💪":"加油！Let's review the red ones. 📚";
+ var r=document.getElementById("result");r.style.display="block";r.innerHTML="";
+ r.appendChild(el("div",null,"得分 Score: "+score+" / "+ALL.length+" ("+pct+"%)"));
+ r.appendChild(el("div",null,"用时 Time: "+t));r.appendChild(el("div",null,msg));
+ try{r.scrollIntoView({behavior:"smooth"});}catch(e){}
+ return {score:score,total:ALL.length,time:t};
+}
+function reset(){done=false;try{speechSynthesis&&speechSynthesis.cancel();}catch(e){}
+ document.getElementById("quiz").classList.remove("locked");document.getElementById("result").style.display="none";start=Date.now();clearInterval(timerId);timerId=setInterval(tick,1000);tick();build();try{window.scrollTo(0,0);}catch(e){}}
+document.getElementById("check").onclick=check;
+document.getElementById("reset").onclick=reset;
+build();timerId=setInterval(tick,1000);tick();
+
+</script>
+<!-- PWA-SCRIPT -->
+<script>
+(function(){
+  var KEY="alexa-chinese-scores";
+  function drillId(){
+    var m=(location.pathname||"").match(/([^/]+)\.html$/i);
+    return m?decodeURIComponent(m[1]):null;
+  }
+  function save(){
+    var r=document.getElementById("result");
+    if(!r)return;
+    var text=r.textContent||"";
+    var m=text.match(/Score:\s*(\d+)\s*\/\s*(\d+)/i)||text.match(/得分[^0-9]*(\d+)\s*\/\s*(\d+)/);
+    if(!m)return;
+    var id=drillId();
+    if(!id)return;
+    var score=+m[1], total=+m[2];
+    if(!(total>0) || !(score>=0) || score>total)return;
+    try{
+      var all={};
+      try{all=JSON.parse(localStorage.getItem(KEY)||"{}")||{};}catch(e){all={};}
+      if(typeof all!=="object"||Array.isArray(all)) all={};
+      all[id]={score:score,total:total,at:new Date().toISOString()};
+      localStorage.setItem(KEY,JSON.stringify(all));
+    }catch(e){}
+  }
+  var btn=document.getElementById("check");
+  if(btn) btn.addEventListener("click", function(){ try{save();}catch(e){} });
+  if("serviceWorker" in navigator){
+    var sw=new URL("../sw.js", location.href);
+    var scope=new URL("../", location.href);
+    navigator.serviceWorker.register(sw.href, {scope: scope.href}).catch(function(){});
+  }
+})();
+</script>
+<!-- /PWA-SCRIPT -->
+</body>
+</html>
